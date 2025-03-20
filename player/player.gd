@@ -20,4 +20,8 @@ func _process(delta):
 	move_and_slide()
 	
 func collect(item):
+	if inv==null:
+		print("Inventory not assigned")
+		return
+	print("adding item to inventory")
 	inv.insert(item)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bv8r5dfmekrat"]
 
-[ext_resource type="Script" path="res://player.gd" id="1_dyhk3"]
+[ext_resource type="Script" path="res://player/player.gd" id="1_dyhk3"]
 [ext_resource type="Resource" uid="uid://8rsnjptgyvis" path="res://inventory/player_inv.tres" id="2_a04gq"]
 [ext_resource type="Texture2D" uid="uid://lflttdtqw2wc" path="res://assets/SmallSpriteCat_nonAnim_Movedown.png" id="2_spals"]
 
