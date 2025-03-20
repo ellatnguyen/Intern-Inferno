@@ -1,6 +1,6 @@
-extends StaticBody2D  # StaticBody2D ensures the player can't walk through it
+extends StaticBody2D 
 
-@export var vending_ui: PackedScene  # Assign vending UI scene in Inspector
+@export var vending_ui: PackedScene  
 
 var player_near = false  # Track if player is in interaction range
 
@@ -9,7 +9,7 @@ func _ready():
 	$Area2D.body_exited.connect(_on_body_exited)
 
 func _on_body_entered(body):
-	if body.name == "Player":  # Ensure Player is the correct node name
+	if body.name == "Player": 
 		player_near = true
 
 func _on_body_exited(body):

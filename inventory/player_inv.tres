@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="Inv" load_steps=3 format=3 uid="uid://8rsnjptgyvis"]
+[gd_resource type="Resource" script_class="Inv" load_steps=4 format=3 uid="uid://8rsnjptgyvis"]
 
-[ext_resource type="Script" path="res://inventory/inventory_item.gd" id="1_dj1k3"]
-[ext_resource type="Script" path="res://inventory/inventory.gd" id="2_ll7wu"]
+[ext_resource type="Script" path="res://inventory/inventory_item.gd" id="1_bp86a"]
+[ext_resource type="Resource" uid="uid://gw222hecgd62" path="res://inventory/items/coin.tres" id="2_cyq7o"]
+[ext_resource type="Script" path="res://inventory/inventory.gd" id="3_eu6v8"]
 
 [resource]
-script = ExtResource("2_ll7wu")
-items = Array[ExtResource("1_dj1k3")]([null, null, null])
+script = ExtResource("3_eu6v8")
+items = Array[ExtResource("1_bp86a")]([ExtResource("2_cyq7o"), null, null])

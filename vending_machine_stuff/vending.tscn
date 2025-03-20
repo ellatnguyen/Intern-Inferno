@@ -21,11 +21,12 @@ vending_ui = ExtResource("2_rhrf2")
 texture = ExtResource("2_8myff")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+visible = false
 
 [node name="Player" parent="." instance=ExtResource("3_nqt6v")]
+visible = false
 position = Vector2(358, 23)
 scale = Vector2(0.3, 0.3)
-collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, -5)

@@ -13,21 +13,17 @@ script = ExtResource("1_t0amy")
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -14.325
-anchor_top = -9.225
-anchor_right = 17.675
-anchor_bottom = 9.15
-offset_top = 15.0
-offset_right = -6.10352e-05
-offset_bottom = -3.05176e-05
+anchor_right = 26.725
+anchor_bottom = 26.625
+offset_left = 7.0
+offset_top = 23.0
+offset_right = -88.0
+offset_bottom = -0.00012207
 texture = ExtResource("2_hrdww")
 stretch_mode = 3
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
+offset_left = -378.0
 offset_right = 8.0
 offset_bottom = 8.0
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(845, 404)
-scale = Vector2(1.5, 1.5)

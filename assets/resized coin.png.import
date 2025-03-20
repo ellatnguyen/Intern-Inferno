@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqr12ll0mpfsb"
-path="res://.godot/imported/clipbard_open.png-2e05cf4d6c54342486cbf78432d3365c.ctex"
+uid="uid://b2njr3ytbhfnj"
+path="res://.godot/imported/resized coin.png-643deff4fdb7027f354dc1de7fc208e9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/clipbard_open.png"
-dest_files=["res://.godot/imported/clipbard_open.png-2e05cf4d6c54342486cbf78432d3365c.ctex"]
+source_file="res://assets/resized coin.png"
+dest_files=["res://.godot/imported/resized coin.png-643deff4fdb7027f354dc1de7fc208e9.ctex"]
 
 [params]
 
