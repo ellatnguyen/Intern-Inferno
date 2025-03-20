@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dplwtea3vse1f"]
 
 [ext_resource type="Script" path="res://vending_machine_stuff/vending_ui.gd" id="1_t0amy"]
-[ext_resource type="Texture2D" uid="uid://dcdns44bndcrs" path="res://assets/temp_vending_screen.png" id="2_5wh6e"]
+[ext_resource type="Texture2D" uid="uid://b6sufscdohx1o" path="res://assets/ver2_vending_screen.png" id="2_hrdww"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -20,7 +20,7 @@ anchor_bottom = 9.15
 offset_top = 15.0
 offset_right = -6.10352e-05
 offset_bottom = -3.05176e-05
-texture = ExtResource("2_5wh6e")
+texture = ExtResource("2_hrdww")
 stretch_mode = 3
 
 [node name="Button" type="Button" parent="."]

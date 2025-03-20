@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+@export var inv: Inv
 @export var speed: float = 200  # Movement speed in pixels per second
 
 func _process(delta):

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcdns44bndcrs"
-path="res://.godot/imported/temp_vending_screen.png-92af3e0b7e91c80cde31532e5610110a.ctex"
+uid="uid://crr1gtbii438m"
+path="res://.godot/imported/goldcoin.png-14b7d0ad53d3982fc4cf466e76dec563.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/temp_vending_screen.png"
-dest_files=["res://.godot/imported/temp_vending_screen.png-92af3e0b7e91c80cde31532e5610110a.ctex"]
+source_file="res://assets/goldcoin.png"
+dest_files=["res://.godot/imported/goldcoin.png-14b7d0ad53d3982fc4cf466e76dec563.ctex"]
 
 [params]
 
