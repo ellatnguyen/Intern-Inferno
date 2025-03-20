@@ -18,3 +18,6 @@ func _process(delta):
 	direction = direction.normalized()  # Normalize to prevent faster diagonal movement
 	velocity = direction * speed
 	move_and_slide()
+	
+func collect(item):
+	inv.insert(item)

@@ -1,9 +1,20 @@
-[gd_resource type="Resource" script_class="Inv" load_steps=4 format=3 uid="uid://8rsnjptgyvis"]
+[gd_resource type="Resource" script_class="Inv" load_steps=6 format=3 uid="uid://8rsnjptgyvis"]
 
-[ext_resource type="Script" path="res://inventory/inventory_item.gd" id="1_bp86a"]
-[ext_resource type="Resource" uid="uid://gw222hecgd62" path="res://inventory/items/coin.tres" id="2_cyq7o"]
+[ext_resource type="Script" path="res://Inv_slot.gd" id="2_humel"]
 [ext_resource type="Script" path="res://inventory/inventory.gd" id="3_eu6v8"]
+
+[sub_resource type="Resource" id="Resource_i888p"]
+script = ExtResource("2_humel")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_pfxpb"]
+script = ExtResource("2_humel")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_jbvt7"]
+script = ExtResource("2_humel")
+amount = 0
 
 [resource]
 script = ExtResource("3_eu6v8")
-items = Array[ExtResource("1_bp86a")]([ExtResource("2_cyq7o"), null, null])
+slots = Array[ExtResource("2_humel")]([SubResource("Resource_i888p"), SubResource("Resource_pfxpb"), SubResource("Resource_jbvt7")])
