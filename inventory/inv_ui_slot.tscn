@@ -5,7 +5,6 @@
 
 [node name="inv_UI_slot" type="Panel"]
 custom_minimum_size = Vector2(46, 46)
-anchors_preset = -1
 offset_right = 46.0
 offset_bottom = 46.0
 script = ExtResource("1_utj6c")
