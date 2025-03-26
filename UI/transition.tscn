@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://bu37oqhwopen"]
+
+[ext_resource type="Script" path="res://UI/transition.gd" id="1_7ods5"]
+
+[node name="Transition" type="Control"]
+z_index = 999
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_7ods5")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_right = 1165.0
+offset_bottom = 667.0
