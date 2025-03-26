@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://de6upgnsf7rg7"]
+
+[ext_resource type="Script" path="res://vending_machine_stuff/vending.gd" id="1_38sc8"]
+[ext_resource type="Texture2D" uid="uid://dw73a5mgwslcj" path="res://audrey_assets/vending.png" id="2_8myff"]
+[ext_resource type="PackedScene" uid="uid://dplwtea3vse1f" path="res://vending_machine_stuff/UIvendingmachine.tscn" id="2_rhrf2"]
+[ext_resource type="PackedScene" uid="uid://bv8r5dfmekrat" path="res://player/player.tscn" id="3_nqt6v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_824xh"]
+size = Vector2(217, 346)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_13q4n"]
+size = Vector2(259, 397)
+
+[node name="VendingMachine" type="StaticBody2D"]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_38sc8")
+vending_ui = ExtResource("2_rhrf2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_8myff")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+visible = false
+
+[node name="Player" parent="." instance=ExtResource("3_nqt6v")]
+visible = false
+position = Vector2(358, 23)
+scale = Vector2(0.3, 0.3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -5)
+shape = SubResource("RectangleShape2D_824xh")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1, -5)
+shape = SubResource("RectangleShape2D_13q4n")
