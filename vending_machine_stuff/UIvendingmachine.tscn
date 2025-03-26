@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dplwtea3vse1f"]
 
 [ext_resource type="Script" path="res://vending_machine_stuff/vending_ui.gd" id="1_t0amy"]
-[ext_resource type="Texture2D" uid="uid://b6sufscdohx1o" path="res://assets/ver2_vending_screen.png" id="2_hrdww"]
+[ext_resource type="Texture2D" uid="uid://b6sufscdohx1o" path="res://audrey_assets/ver2_vending_screen.png" id="2_hrdww"]
 
 [node name="Control" type="Control"]
 layout_mode = 3

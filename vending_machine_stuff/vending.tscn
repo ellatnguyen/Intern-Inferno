@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://de6upgnsf7rg7"]
 
 [ext_resource type="Script" path="res://vending_machine_stuff/vending.gd" id="1_38sc8"]
-[ext_resource type="Texture2D" uid="uid://dw73a5mgwslcj" path="res://assets/vending.png" id="2_8myff"]
+[ext_resource type="Texture2D" uid="uid://dw73a5mgwslcj" path="res://audrey_assets/vending.png" id="2_8myff"]
 [ext_resource type="PackedScene" uid="uid://dplwtea3vse1f" path="res://vending_machine_stuff/UIvendingmachine.tscn" id="2_rhrf2"]
 [ext_resource type="PackedScene" uid="uid://bv8r5dfmekrat" path="res://player/player.tscn" id="3_nqt6v"]
 
