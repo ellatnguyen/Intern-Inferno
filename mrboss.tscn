@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfsjjlbilo4v4"]
+
+[ext_resource type="Texture2D" uid="uid://cso8sj30ipbc2" path="res://TempAssets/mrbiglol.png" id="1_67rbu"]
+
+[node name="MrBoss" type="Node2D"]
+
+[node name="Mrbiglol" type="Sprite2D" parent="."]
+position = Vector2(547, 310)
+scale = Vector2(0.688198, 0.688198)
+texture = ExtResource("1_67rbu")
