@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://UI/transition.gd" id="1_7ods5"]
 
 [node name="Transition" type="Control"]
+z_index = 999
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_7ods5")
