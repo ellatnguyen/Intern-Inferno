@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://3qfx5c6m0bf2"]
+
+[ext_resource type="PackedScene" path="res://Characters/Player/Player.tscn" id="2"]
+[ext_resource type="Script" path="res://Game.gd" id="3"]
+[ext_resource type="PackedScene" path="res://Characters/Enemies/Goblin/Goblin.tscn" id="4_6wwd3"]
+[ext_resource type="Script" path="res://UI.gd" id="7"]
+
+[node name="Game" type="Node2D"]
+texture_filter = 1
+script = ExtResource("3")
+
+[node name="UI" type="CanvasLayer" parent="."]
+script = ExtResource("7")
+
+[node name="Player" parent="." instance=ExtResource("2")]
+position = Vector2(64, 80)
+scale = Vector2(5, 5)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Goblin" parent="." instance=ExtResource("4_6wwd3")]
+position = Vector2(202, 124)
+scale = Vector2(5, 5)
+
+[connection signal="weapon_droped" from="Player" to="UI" method="_on_Player_weapon_droped"]
+[connection signal="weapon_picked_up" from="Player" to="UI" method="_on_Player_weapon_picked_up"]
+[connection signal="weapon_switched" from="Player" to="UI" method="_on_Player_weapon_switched"]
