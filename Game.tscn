@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://u6okdsefflug"]
+
+[ext_resource type="PackedScene" uid="uid://dftvfv1jceskv" path="res://Characters/Player/Player.tscn" id="2"]
+[ext_resource type="Script" path="res://Game.gd" id="3"]
+[ext_resource type="Script" path="res://Rooms.gd" id="4"]
+[ext_resource type="Script" path="res://UI.gd" id="7"]
+
+[node name="Game" type="Node2D"]
+texture_filter = 1
+script = ExtResource("3")
+
+[node name="UI" type="CanvasLayer" parent="."]
+script = ExtResource("7")
+
+[node name="Rooms" type="Node2D" parent="."]
+script = ExtResource("4")
+
+[node name="Player" parent="." instance=ExtResource("2")]
+position = Vector2(133.183, 118.911)
+
+[node name="Camera2D" type="Camera2D" parent="."]

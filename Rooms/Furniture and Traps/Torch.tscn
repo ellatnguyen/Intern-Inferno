@@ -1,0 +1,63 @@
+[gd_scene load_steps=10 format=3 uid="uid://faq8866gndk6"]
+
+[ext_resource type="Texture2D" uid="uid://du50brb47a3bp" path="res://Art/TorchLight.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://r7wtgfupv22u" path="res://Art/v1.1 dungeon crawler 16x16 pixel pack/props_itens/torch_spritesheet.png" id="2"]
+
+[sub_resource type="AtlasTexture" id="1"]
+atlas = ExtResource("2")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="2"]
+atlas = ExtResource("2")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="3"]
+atlas = ExtResource("2")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="4"]
+atlas = ExtResource("2")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="5"]
+atlas = ExtResource("2")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="6"]
+atlas = ExtResource("2")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("1")
+}, {
+"duration": 1.0,
+"texture": SubResource("2")
+}, {
+"duration": 1.0,
+"texture": SubResource("3")
+}, {
+"duration": 1.0,
+"texture": SubResource("4")
+}, {
+"duration": 1.0,
+"texture": SubResource("5")
+}, {
+"duration": 1.0,
+"texture": SubResource("6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="Torch" type="PointLight2D"]
+color = Color(0.862745, 0.423529, 0.101961, 1)
+shadow_enabled = true
+texture = ExtResource("1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("7")
+frame = 5
