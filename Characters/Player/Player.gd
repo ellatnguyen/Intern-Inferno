@@ -12,11 +12,12 @@ func _ready() -> void:
 	pass
 
 func _process(_delta: float) -> void:
-	var mouse_direction: Vector2 = (get_global_mouse_position() - global_position).normalized()
+	get_input()
 
-	if mouse_direction.x > 0 and animated_sprite.flip_h:
+	# Flip character based on movement direction
+	if mov_direction.x > 0:
 		animated_sprite.flip_h = false
-	elif mouse_direction.x < 0 and not animated_sprite.flip_h:
+	elif mov_direction.x < 0:
 		animated_sprite.flip_h = true
 
 func get_input() -> void:

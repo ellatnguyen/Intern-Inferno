@@ -1392,6 +1392,7 @@ margins = Vector2i(112, 96)
 0:0/7/flip_h = true
 0:0/7/flip_v = true
 0:0/7/transpose = true
+1:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xd7kk"]
 texture = ExtResource("1")

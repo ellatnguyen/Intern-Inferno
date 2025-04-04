@@ -3,8 +3,6 @@
 extends CharacterBody2D
 class_name Character
 
-const HIT_EFFECT_SCENE: PackedScene = preload("res://Characters/HitEffect.tscn")
-
 const FRICTION: float = 0.15
 
 @export var accerelation: int = 40
@@ -17,7 +15,6 @@ const FRICTION: float = 0.15
 
 var mov_direction: Vector2 = Vector2.ZERO
 
-
 func _physics_process(_delta: float) -> void:
 	move_and_slide()
 	velocity = lerp(velocity, Vector2.ZERO, FRICTION)
@@ -27,8 +24,3 @@ func move() -> void:
 	mov_direction = mov_direction.normalized()
 	velocity += mov_direction * accerelation
 	velocity = velocity.limit_length(max_speed)
-
-
-func _spawn_hit_effect() -> void:
-	var hit_effect: Sprite2D = HIT_EFFECT_SCENE.instantiate()
-	add_child(hit_effect)
