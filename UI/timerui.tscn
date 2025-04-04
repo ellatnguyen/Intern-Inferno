@@ -4,6 +4,7 @@
 [ext_resource type="Script" path="res://UI/productivity_bar.gd" id="2_dv0uv"]
 [ext_resource type="Script" path="res://UI/clock.gd" id="3_nd3it"]
 [ext_resource type="Script" path="res://BigBoss/boss_office_cutscene.gd" id="4_mu2g7"]
+
 [ext_resource type="Texture2D" path="res://UI/UIAssets/ClockTimerPositions/ClockTimerPositions1.png" id="5_5y55n"]
 [ext_resource type="Texture2D" path="res://UI/UIAssets/ClockTimerPositions/ClockTimerPositions2.png" id="6_qmm3r"]
 [ext_resource type="Texture2D" path="res://UI/UIAssets/ClockTimerPositions/ClockTimerPositions3.png" id="7_2ust3"]
