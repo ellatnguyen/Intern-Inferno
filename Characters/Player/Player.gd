@@ -16,9 +16,9 @@ func _process(_delta: float) -> void:
 
 	# Flip character based on movement direction
 	if mov_direction.x > 0:
-		animated_sprite.flip_h = false
-	elif mov_direction.x < 0:
 		animated_sprite.flip_h = true
+	elif mov_direction.x < 0:
+		animated_sprite.flip_h = false
 
 func get_input() -> void:
 	mov_direction = Vector2.ZERO
