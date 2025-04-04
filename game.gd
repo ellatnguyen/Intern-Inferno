@@ -4,6 +4,7 @@ extends Node2D
 @onready var player = $Player
 @onready var goblin = $Goblin
 
+var battle = preload("res://Battle Scene/Battle.tscn") # THIS WILL BE USED TO SWITCH OVER TO BATTLE SCENE (TBA)
 var can_interact = false  # Tracks if the player is in range of the Goblin
 
 func _ready() -> void:
@@ -13,6 +14,11 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if can_interact and Input.is_action_just_pressed("interact"):  # 'E' should be mapped to 'interact' in InputMap
 		_show_dialogue_window()  # Show everything when 'E' is pressed
+		
+		# THIS WILL BE USED TO SWITCH OVER TO BATTLE SCENE (TBA)
+		#var battleTemp = battle.instantiate()
+		#get_parent().addchild(battleTemp)
+		#queue_free()
 
 func _on_goblin_player_near(state: bool) -> void:
 	can_interact = state

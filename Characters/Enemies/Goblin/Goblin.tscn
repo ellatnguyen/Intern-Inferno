@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://dlx82s7ngu5af"]
+[gd_scene load_steps=32 format=3 uid="uid://dlx82s7ngu5af"]
 
 [ext_resource type="PackedScene" uid="uid://dkpis7w2h85hp" path="res://Characters/Enemies/Enemy.tscn" id="1"]
 [ext_resource type="Texture2D" uid="uid://6nmcbyj7hu8v" path="res://Art/v1.1 dungeon crawler 16x16 pixel pack/enemies/goblin/goblin_idle_spritesheet.png" id="2"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://5s650l0opflc" path="res://Art/v1.1 dungeon crawler 16x16 pixel pack/effects (new)/enemy_afterdead_explosion_anim_spritesheet.png" id="4"]
 [ext_resource type="Script" path="res://Characters/Enemies/Goblin/Goblin.gd" id="5"]
 [ext_resource type="Script" path="res://Characters/Enemies/Goblin/GoblinFSM.gd" id="6"]
+[ext_resource type="Texture2D" uid="uid://cd7tu4jyr7bx" path="res://Assets/Character Assets/NPCs/Bear Bones (enemy NPC)/Bear Bones, Enemy NPC, On Map Pose.png" id="7_wj584"]
 
 [sub_resource type="AtlasTexture" id="13"]
 atlas = ExtResource("4")
@@ -305,9 +306,10 @@ script = ExtResource("5")
 script = ExtResource("6")
 
 [node name="AnimatedSprite2D" parent="." index="1"]
+visible = false
 sprite_frames = SubResource("17")
-animation = &"move"
-frame = 1
+animation = &"idle"
+frame = 3
 
 [node name="CollisionShape2D" parent="." index="2"]
 position = Vector2(1, 2)
@@ -334,6 +336,11 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" index="0"]
 scale = Vector2(2, 2)
 shape = SubResource("CircleShape2D_mtfhh")
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="9"]
+position = Vector2(-3, -4)
+scale = Vector2(0.039974, 0.039974)
+texture = ExtResource("7_wj584")
 
 [connection signal="timeout" from="AttackTimer" to="." method="_on_AttackTimer_timeout"]
 [connection signal="body_entered" from="InteractionArea" to="." method="_on_interaction_area_body_entered"]
