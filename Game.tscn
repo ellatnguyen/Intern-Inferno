@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://dx7fph6p7hl12"]
+
+[ext_resource type="PackedScene" uid="uid://dftvfv1jceskv" path="res://Characters/Player/Player.tscn" id="1_52576"]
+[ext_resource type="Script" path="res://game.gd" id="1_sls5x"]
+[ext_resource type="PackedScene" uid="uid://dlx82s7ngu5af" path="res://Characters/Enemies/Goblin/Goblin.tscn" id="2_bqsak"]
+[ext_resource type="PackedScene" uid="uid://ojlcl7pyw41j" path="res://node_2d.tscn" id="3_helcj"]
+
+[node name="Game" type="Node2D"]
+texture_filter = 1
+script = ExtResource("1_sls5x")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Player" parent="." instance=ExtResource("1_52576")]
+position = Vector2(132, 150)
+scale = Vector2(5, 5)
+
+[node name="Goblin" parent="." instance=ExtResource("2_bqsak")]
+position = Vector2(314, 181)
+scale = Vector2(5, 5)
+collision_mask = 3
+
+[node name="DialogueWindow" parent="." instance=ExtResource("3_helcj")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(5, 5)
