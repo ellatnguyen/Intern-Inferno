@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://r88elkkvv60o"]
+
+[ext_resource type="Script" path="res://Rooms/Furniture and Traps/Door.gd" id="1"]
+
+[node name="Door" type="StaticBody2D"]
+collision_mask = 0
+script = ExtResource("1")
