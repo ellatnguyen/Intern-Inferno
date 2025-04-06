@@ -1,6 +1,6 @@
-[gd_scene load_steps=18 format=3 uid="uid://ojlcl7pyw41j"]
+[gd_scene load_steps=18 format=3 uid="uid://bfhymvscy3g8h"]
 
-[ext_resource type="Script" path="res://dialogue_window.gd" id="1_2a4uh"]
+[ext_resource type="Script" path="res://dialogue_window.gd" id="1_cn4pr"]
 [ext_resource type="Texture2D" uid="uid://108bpp23fgbs" path="res://Assets/dialogue boxes with darkened background.PNG" id="2_jhs51"]
 [ext_resource type="Texture2D" uid="uid://bvj8rrosv83bb" path="res://Assets/Character Assets/NPCs/Bear Bones (enemy NPC)/Bear Bones, Enemy NPC Incombat Pose.png" id="3_uw0vv"]
 [ext_resource type="Texture2D" uid="uid://le726garw2um" path="res://Assets/Character Assets/Main Character MC/INDialougueMCReactions/NuetralINdialougeposeMCTransparetnBackround.png" id="4_pu86p"]
@@ -71,13 +71,13 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -575.0
 offset_top = -325.0
-offset_right = 575.0
-offset_bottom = 325.0
+offset_right = 625.0
+offset_bottom = 375.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource("1_2a4uh")
+script = ExtResource("1_cn4pr")
 metadata/_edit_use_anchors_ = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
