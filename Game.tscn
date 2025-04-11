@@ -1,27 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://cx03r03twpb74"]
+[gd_scene load_steps=4 format=3 uid="uid://u6okdsefflug"]
 
-[ext_resource type="Script" path="res://game.gd" id="1_sls5x"]
-[ext_resource type="PackedScene" uid="uid://smetfn8s0tt1" path="res://Character/Player/Player.tscn" id="2_7jmo6"]
-[ext_resource type="PackedScene" uid="uid://bfhymvscy3g8h" path="res://node_2d.tscn" id="3_helcj"]
-[ext_resource type="PackedScene" uid="uid://dsw5dmox2mg1w" path="res://Character/NPC/npc.tscn" id="3_xd52q"]
+[ext_resource type="Script" path="res://Game.gd" id="3"]
+[ext_resource type="PackedScene" uid="uid://smetfn8s0tt1" path="res://Character/Player/Player.tscn" id="3_4rtyr"]
+[ext_resource type="Script" path="res://Rooms.gd" id="4"]
 
 [node name="Game" type="Node2D"]
 texture_filter = 1
-script = ExtResource("1_sls5x")
+script = ExtResource("3")
 
-[node name="UI" type="CanvasLayer" parent="."]
+[node name="Rooms" type="Node2D" parent="."]
+script = ExtResource("4")
 
-[node name="Player" parent="." instance=ExtResource("2_7jmo6")]
-position = Vector2(136, 74)
-scale = Vector2(5, 5)
+[node name="Player" parent="." instance=ExtResource("3_4rtyr")]
 
-[node name="NPC" parent="." instance=ExtResource("3_xd52q")]
-position = Vector2(332, 154)
-scale = Vector2(3, 3)
-
-[node name="DialogueWindow" parent="." instance=ExtResource("3_helcj")]
-visible = true
-offset_left = -154.0
-offset_top = -49.0
-offset_right = 996.0
-offset_bottom = 601.0
+[node name="Camera2D" type="Camera2D" parent="."]

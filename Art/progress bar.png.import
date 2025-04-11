@@ -2,26 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<<< HEAD:Art/progress bar.png.import
-uid="uid://c535uh5i7hsc8"
+uid="uid://bgrljmu6tydo8"
 path="res://.godot/imported/progress bar.png-055028e17f5742b82c6b3ae31b891e1d.ctex"
-========
-uid="uid://ddauwq8fiuthy"
-path="res://.godot/imported/breakroomv1.JPG-55db80fa32577cedf0a32a95d8f6b28e.ctex"
->>>>>>>> main:Art/breakroomv1.JPG.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<<< HEAD:Art/progress bar.png.import
 source_file="res://Art/progress bar.png"
 dest_files=["res://.godot/imported/progress bar.png-055028e17f5742b82c6b3ae31b891e1d.ctex"]
-========
-source_file="res://audrey_assets/breakroomv1.JPG"
-dest_files=["res://.godot/imported/breakroomv1.JPG-55db80fa32577cedf0a32a95d8f6b28e.ctex"]
->>>>>>>> main:Art/breakroomv1.JPG.import
 
 [params]
 
