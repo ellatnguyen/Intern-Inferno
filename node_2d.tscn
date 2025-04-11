@@ -126,15 +126,15 @@ texture = ExtResource("4_pu86p")
 
 [node name="DialogueText" type="Label" parent="CanvasLayer"]
 modulate = Color(0, 0, 0, 1)
-custom_minimum_size = Vector2(550, 100)
+custom_minimum_size = Vector2(300, 100)
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 288.0
-offset_top = -548.0
-offset_right = -314.0
-offset_bottom = -448.0
+offset_left = 423.0
+offset_top = -551.0
+offset_right = -429.0
+offset_bottom = -451.0
 grow_horizontal = 2
 grow_vertical = 0
 horizontal_alignment = 1
