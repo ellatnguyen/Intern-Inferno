@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2njr3ytbhfnj"
-path="res://.godot/imported/resized coin.png-69fca2ab8dc86a18103054cfbe790fe9.ctex"
+uid="uid://crp206kfgiigu"
+path="res://.godot/imported/empty clipboard expanded.PNG-e7adb9858e353d4fefca2768000f139c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://audrey_assets/resized coin.png"
-dest_files=["res://.godot/imported/resized coin.png-69fca2ab8dc86a18103054cfbe790fe9.ctex"]
+source_file="res://UI/empty clipboard expanded.PNG"
+dest_files=["res://.godot/imported/empty clipboard expanded.PNG-e7adb9858e353d4fefca2768000f139c.ctex"]
 
 [params]
 

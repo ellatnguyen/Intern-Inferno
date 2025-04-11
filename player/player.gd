@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @export var inv: Inv
 @export var speed: float = 200  # Movement speed in pixels per second
+@onready var animated_sprite =$AnimatedSprite2D
 
 func _process(delta):
 	var direction = Vector2.ZERO  # Initialize movement direction
@@ -18,6 +19,21 @@ func _process(delta):
 	direction = direction.normalized()  # Normalize to prevent faster diagonal movement
 	velocity = direction * speed
 	move_and_slide()
+	
+	if direction.x<0:
+		animated_sprite.flip_h=false
+		animated_sprite.play("walk_left")
+	elif direction.x>0:
+		animated_sprite.flip_h = true
+		animated_sprite.play("walk_left")
+	elif direction.y<0:
+		pass
+		#animated_sprite.play("walk_up")
+	elif direction.y>0:
+		pass
+		#animated_sprite.play("walk_down")
+	else:
+		animated_sprite.stop()
 	
 func collect(item):
 	if inv==null:
