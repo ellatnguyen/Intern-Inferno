@@ -165,7 +165,8 @@ radius = 75.3311
 height = 150.753
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
-collision_mask = 2
+collision_layer = 3
+collision_mask = 6
 script = ExtResource("1_dyhk3")
 inv = ExtResource("2_a04gq")
 

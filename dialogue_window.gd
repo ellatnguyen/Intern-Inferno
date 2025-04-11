@@ -2,12 +2,14 @@ extends Control
 
 @onready var dialogue_text = $CanvasLayer/DialogueText
 @onready var int_button = $CanvasLayer/INT_Button
-@onready var per_button = $CanvasLayer/PER_Button  
+@onready var per_button = $CanvasLayer/PER_Button
 @onready var leave_button = $CanvasLayer/LEAVE_Button
 @onready var dialogue_window = $DialogueWindow
 @onready var health_bar = $"CanvasLayer/PrototypeEnemy/ComplianceBar"
 
-var current_line = 0
+var current_int_line = 0  # Tracks the current line for INT dialogue
+var current_per_line = 0  # Tracks the current line for PER dialogue
+
 var per_dialogue = []
 var int_dialogue = []
 var current_dialogue = []
@@ -20,12 +22,12 @@ func _ready():
 		print("Error: One or more buttons not found.")
 		return
 	
-	print("Buttons found successfully!")  
+	print("Buttons found successfully!")
 
 	int_button.pressed.connect(_on_int_button_pressed)  
 	per_button.pressed.connect(_on_per_button_pressed)  
 
-	var file = FileAccess.open("res://dialogues.txt", FileAccess.READ)  
+	var file = FileAccess.open("res://dialogues.txt", FileAccess.READ)
 	if file:
 		var text = file.get_as_text()
 		file.close()
@@ -45,29 +47,48 @@ func parse_dialogue(dialogue_content):
 			current_type = "INT"
 		elif line.strip_edges() != "":
 			if current_type == "PER":
-				per_dialogue.append(line)
+				per_dialogue.append(line.strip_edges())  # Add to PER dialogue
 			elif current_type == "INT":
-				int_dialogue.append(line)
+				int_dialogue.append(line.strip_edges())  # Add to INT dialogue
+
+	# Debugging output
+	print("INT Dialogue:", int_dialogue)
+	print("PER Dialogue:", per_dialogue)
 
 func update_dialogue():
-	if current_line < current_dialogue.size():
-		dialogue_text.text = current_dialogue[current_line]
+	if current_dialogue.size() > 0:
+		if current_dialogue == int_dialogue:
+			if current_int_line < int_dialogue.size():
+				dialogue_text.text = int_dialogue[current_int_line]
+			else:
+				dialogue_text.text = "End of INT dialogue."
+		elif current_dialogue == per_dialogue:
+			if current_per_line < per_dialogue.size():
+				dialogue_text.text = per_dialogue[current_per_line]
+			else:
+				dialogue_text.text = "End of PER dialogue."
 	else:
-		dialogue_text.text = "End of dialogue."
+		dialogue_text.text = "No dialogue available."
 
 func _on_int_button_pressed():
-	print("INT Button Pressed!")  
-	current_line = 0  
-	current_dialogue = int_dialogue  
-	update_dialogue()
-	decrease_enemy_health()  # Reduce health
+	print("INT Button Pressed!")
+	current_dialogue = int_dialogue
+	current_int_line += 1
+	if current_int_line < int_dialogue.size():
+		update_dialogue()
+		decrease_enemy_health()  # Reduce health
+	else:
+		dialogue_text.text = "End of INT dialogue."  # End of INT section
 
 func _on_per_button_pressed():
-	print("PER Button Pressed!")  
-	current_line = 0  
-	current_dialogue = per_dialogue  
-	update_dialogue()
-	decrease_enemy_health()  # Reduce health
+	print("PER Button Pressed!")
+	current_dialogue = per_dialogue
+	current_per_line += 1
+	if current_per_line < per_dialogue.size():
+		update_dialogue()
+		decrease_enemy_health()  # Reduce health
+	else:
+		dialogue_text.text = "End of PER dialogue."  # End of PER section
 
 func decrease_enemy_health():
 	if enemy_health > 0:
