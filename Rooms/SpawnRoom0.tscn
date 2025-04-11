@@ -18,7 +18,7 @@ layer_0/tile_data = PackedInt32Array(720897, 10, 65536, 720898, 10, 65536, 72089
 [node name="FurnitureTileMap" parent="." index="2"]
 layer_0/tile_data = PackedInt32Array(131073, 35, 0, 196612, 31, 0, 524289, 31, 0, 589825, 31, 0)
 
-[node name="Door" parent="Doors" index="0" instance=ExtResource("2")]
+[node name="DoorNorth" parent="Doors" index="0" instance=ExtResource("2")]
 position = Vector2(96, 16)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetector" index="0"]
