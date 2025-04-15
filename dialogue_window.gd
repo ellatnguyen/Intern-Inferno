@@ -7,15 +7,15 @@ extends Control
 @onready var dialogue_window = $DialogueWindow
 @onready var health_bar = $"CanvasLayer/PrototypeEnemy/ComplianceBar"
 
-var current_int_line = 0  # Tracks the current line for INT dialogue
-var current_per_line = 0  # Tracks the current line for PER dialogue
+var current_int_line = 0
+var current_per_line = 0
 
 var per_dialogue = []
 var int_dialogue = []
 var current_dialogue = []
 
-const MAX_HEALTH = 11  # Max frame index
-var enemy_health = MAX_HEALTH  # Start at full health
+const MAX_HEALTH = 11
+var enemy_health = MAX_HEALTH
 
 func _ready():
 	if int_button == null or per_button == null:
@@ -24,8 +24,9 @@ func _ready():
 	
 	print("Buttons found successfully!")
 
-	int_button.pressed.connect(_on_int_button_pressed)  
-	per_button.pressed.connect(_on_per_button_pressed)  
+	int_button.pressed.connect(_on_int_button_pressed)
+	per_button.pressed.connect(_on_per_button_pressed)
+	leave_button.pressed.connect(_on_leave_button_pressed)
 
 	var file = FileAccess.open("res://dialogues.txt", FileAccess.READ)
 	if file:
@@ -35,6 +36,23 @@ func _ready():
 
 	update_dialogue()
 	update_health_bar()
+
+func _unhandled_input(event):
+	if event.is_action_pressed("interact"):  # Press E
+		start_battle()
+
+func start_battle():
+	print("Battle started!")
+	enemy_health = MAX_HEALTH
+	current_int_line = 0
+	current_per_line = 0
+	current_dialogue = []
+	update_dialogue()
+	update_health_bar()
+	
+	self.visible = true
+	for child in get_children():
+		child.visible = true
 
 func parse_dialogue(dialogue_content):
 	var lines = dialogue_content.split("\n")
@@ -47,11 +65,10 @@ func parse_dialogue(dialogue_content):
 			current_type = "INT"
 		elif line.strip_edges() != "":
 			if current_type == "PER":
-				per_dialogue.append(line.strip_edges())  # Add to PER dialogue
+				per_dialogue.append(line.strip_edges())
 			elif current_type == "INT":
-				int_dialogue.append(line.strip_edges())  # Add to INT dialogue
+				int_dialogue.append(line.strip_edges())
 
-	# Debugging output
 	print("INT Dialogue:", int_dialogue)
 	print("PER Dialogue:", per_dialogue)
 
@@ -76,9 +93,9 @@ func _on_int_button_pressed():
 	current_int_line += 1
 	if current_int_line < int_dialogue.size():
 		update_dialogue()
-		decrease_enemy_health()  # Reduce health
+		decrease_enemy_health(1)  # INT reduces by 1
 	else:
-		dialogue_text.text = "End of INT dialogue."  # End of INT section
+		dialogue_text.text = "End of INT dialogue."
 
 func _on_per_button_pressed():
 	print("PER Button Pressed!")
@@ -86,33 +103,35 @@ func _on_per_button_pressed():
 	current_per_line += 1
 	if current_per_line < per_dialogue.size():
 		update_dialogue()
-		decrease_enemy_health()  # Reduce health
+		decrease_enemy_health(2)  # PER reduces by 2
 	else:
-		dialogue_text.text = "End of PER dialogue."  # End of PER section
+		dialogue_text.text = "End of PER dialogue."
 
-func decrease_enemy_health():
+# Updated this function to take an amount
+func decrease_enemy_health(amount := 1):
 	if enemy_health > 0:
-		enemy_health -= 1
+		enemy_health -= amount
+		enemy_health = max(enemy_health, 0)  # Prevents negative health
 		update_health_bar()
 
 		if enemy_health == 0:
-			end_battle()  # Trigger battle end when health reaches 0
+			end_battle()
 
 func update_health_bar():
 	if health_bar:
-		health_bar.frame = enemy_health  # Set the correct frame based on health
-		print("Enemy Health:", enemy_health)  # Debugging output
+		health_bar.frame = enemy_health
+		print("Enemy Health:", enemy_health)
 	else:
 		print("Error: Health bar not found.")
 
 func end_battle():
-	print("Battle Over!")  
-	self.visible = false  
+	print("Battle Over!")
+	self.visible = false
 	for child in get_children():
-		child.visible = false  
+		child.visible = false
 
 func _on_leave_button_pressed():
-	print("LEAVE Button Pressed!")  
-	self.visible = false  
+	print("LEAVE Button Pressed!")
+	self.visible = false
 	for child in get_children():
-		child.visible = false  
+		child.visible = false
