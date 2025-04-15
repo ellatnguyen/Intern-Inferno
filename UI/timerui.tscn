@@ -453,12 +453,11 @@ animations = [{
 "speed": 1.0
 }]
 
-[node name="TimerUI" type="Control"]
-layout_mode = 3
-anchors_preset = 0
+[node name="TimerUI" type="CanvasLayer"]
 
 [node name="BossOfficeCutscene" type="Control" parent="."]
 visible = false
+layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -491,7 +490,6 @@ text = "Continue"
 
 [node name="ProductivityBarEXP" type="ProgressBar" parent="."]
 visible = false
-layout_mode = 0
 offset_left = 658.0
 offset_top = 558.0
 offset_right = 895.0
@@ -499,25 +497,26 @@ offset_bottom = 585.0
 
 [node name="ProductivityBarCONST" type="ProgressBar" parent="."]
 visible = false
-layout_mode = 0
 offset_left = 656.0
 offset_top = 596.0
 offset_right = 896.0
 offset_bottom = 623.0
 
-[node name="ProductivityMeterBase" type="Sprite2D" parent="."]
-position = Vector2(238, 133)
-scale = Vector2(0.169596, 0.169596)
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ProductivityMeterBase" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(63.6979, 32.2734)
+scale = Vector2(0.0582377, 0.0582377)
 texture = ExtResource("1_1p37k")
 
-[node name="Clock" type="AnimatedSprite2D" parent="."]
-position = Vector2(238.111, 134.5)
-scale = Vector2(0.249074, 0.249074)
+[node name="Clock" type="AnimatedSprite2D" parent="CanvasLayer"]
+position = Vector2(69, 32)
+scale = Vector2(0.0967593, 0.0967593)
 sprite_frames = SubResource("SpriteFrames_agw84")
 animation = &"clockrun"
 script = ExtResource("3_nd3it")
 
-[node name="ClockLabel" type="Label" parent="Clock"]
+[node name="ClockLabel" type="Label" parent="CanvasLayer/Clock"]
 visible = false
 offset_left = 925.0
 offset_top = 504.0
@@ -527,15 +526,15 @@ theme_override_font_sizes/font_size = 30
 horizontal_alignment = 2
 vertical_alignment = 2
 
-[node name="ClockTimer" type="Timer" parent="Clock"]
+[node name="ClockTimer" type="Timer" parent="CanvasLayer/Clock"]
 
-[node name="ProductivityBar" type="AnimatedSprite2D" parent="."]
-position = Vector2(235, 136)
-scale = Vector2(0.16862, 0.16862)
+[node name="ProductivityBar" type="AnimatedSprite2D" parent="CanvasLayer"]
+position = Vector2(63, 34)
+scale = Vector2(0.0594076, 0.0594076)
 sprite_frames = SubResource("SpriteFrames_l6b8y")
 animation = &"productivityrun"
 script = ExtResource("109_8xmrj")
 
-[node name="ProductivityTimer" type="Timer" parent="ProductivityBar"]
+[node name="ProductivityTimer" type="Timer" parent="CanvasLayer/ProductivityBar"]
 
-[connection signal="timeout" from="ProductivityBar/ProductivityTimer" to="ProductivityBar" method="_on_productivity_timer_timeout"]
+[connection signal="timeout" from="CanvasLayer/ProductivityBar/ProductivityTimer" to="CanvasLayer/ProductivityBar" method="_on_productivity_timer_timeout"]

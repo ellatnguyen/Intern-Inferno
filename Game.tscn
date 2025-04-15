@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://u6okdsefflug"]
+[gd_scene load_steps=5 format=3 uid="uid://u6okdsefflug"]
 
 [ext_resource type="Script" path="res://Game.gd" id="3"]
 [ext_resource type="PackedScene" uid="uid://smetfn8s0tt1" path="res://Character/Player/Player.tscn" id="3_4rtyr"]
 [ext_resource type="Script" path="res://Rooms.gd" id="4"]
+[ext_resource type="PackedScene" uid="uid://cwdhjfvc85pcm" path="res://UI/timerui.tscn" id="4_cyfp8"]
 
 [node name="Game" type="Node2D"]
 texture_filter = 1
@@ -14,3 +15,11 @@ script = ExtResource("4")
 [node name="Player" parent="." instance=ExtResource("3_4rtyr")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TimerUI" parent="CanvasLayer" instance=ExtResource("4_cyfp8")]
+offset_left = -514.0
+offset_top = -440.0
+offset_right = -514.0
+offset_bottom = -440.0
