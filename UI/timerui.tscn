@@ -1,52 +1,240 @@
-[gd_scene load_steps=45 format=3 uid="uid://cwdhjfvc85pcm"]
+[gd_scene load_steps=113 format=3 uid="uid://cwdhjfvc85pcm"]
 
-[ext_resource type="Script" path="res://UI/productivity_bar_exp.gd" id="1_jtm81"]
-[ext_resource type="Script" path="res://UI/productivity_bar.gd" id="2_dv0uv"]
+[ext_resource type="Texture2D" uid="uid://cwktcdfhhdbay" path="res://Assets/Timer_ProductivityMeter/ProductivityMeterParts/Productivity MeterBase.png" id="1_1p37k"]
+[ext_resource type="Texture2D" uid="uid://cq6f6ywtr3bsn" path="res://Assets/Timer_ProductivityMeter/ClockTimerPositions/ClockTimerPositionsT1.png" id="1_jhv0f"]
+[ext_resource type="Texture2D" uid="uid://bsxcf1mvwpdko" path="res://Assets/Timer_ProductivityMeter/ClockTimerPositions/ClockTimerPositionsT2.png" id="2_l7fco"]
+[ext_resource type="Texture2D" uid="uid://b507hrvbdw2x0" path="res://Assets/Timer_ProductivityMeter/ClockTimerPositions/ClockTimerPositionsT3.png" id="3_0d3l3"]
 [ext_resource type="Script" path="res://UI/clock.gd" id="3_nd3it"]
-[ext_resource type="Script" path="res://BigBoss/boss_office_cutscene.gd" id="4_mu2g7"]
-
-[ext_resource type="Texture2D" path="res://UI/UIAssets/ClockTimerPositions/ClockTimerPositions1.png" id="5_5y55n"]
-[ext_resource type="Texture2D" path="res://UI/UIAssets/ClockTimerPositions/ClockTimerPositions2.png" id="6_qmm3r"]
-[ext_resource type="Texture2D" path="res://UI/UIAssets/ClockTimerPositions/ClockTimerPositions3.png" id="7_2ust3"]
-[ext_resource type="Texture2D" path="res://UI/UIAssets/ClockTimerPositions/ClockTimerPositions4.png" id="8_3p64e"]
-[ext_resource type="Texture2D" path="res://UI/UIAssets/ClockTimerPositions/ClockTimerPositions5.png" id="9_32x0a"]
-[ext_resource type="Texture2D" path="res://UI/UIAssets/ClockTimerPositions/ClockTimerPositions6.png" id="10_7ubae"]
-[ext_resource type="Texture2D" path="res://UI/UIAssets/ClockTimerPositions/ClockTimerPositions7.png" id="11_tjkno"]
-[ext_resource type="Texture2D" path="res://UI/UIAssets/ClockTimerPositions/ClockTimerPositions8.png" id="12_s4vdj"]
-[ext_resource type="Texture2D" path="res://UI/UIAssets/ClockTimerPositions/ClockTimerPositions9.png" id="13_ayiwq"]
-[ext_resource type="Texture2D" path="res://UI/UIAssets/ClockTimerPositions/ClockTimerPositions10.png" id="14_ogsmr"]
-[ext_resource type="Texture2D" path="res://UI/UIAssets/ClockTimerPositions/ClockTimerPositions11.png" id="15_r4ik3"]
-[ext_resource type="Texture2D" path="res://UI/UIAssets/ClockTimerPositions/ClockTimerPositions12.png" id="16_fs7m5"]
-[ext_resource type="Texture2D" path="res://UI/UIAssets/ClockTimerPositions/ClockTimerPositions13.png" id="17_rph5b"]
-[ext_resource type="Texture2D" path="res://UI/UIAssets/ClockTimerPositions/ClockTimerPositions14.png" id="18_fwop4"]
-[ext_resource type="Texture2D" path="res://UI/UIAssets/ClockTimerPositions/ClockTimerPositions15.png" id="19_gjc2c"]
-[ext_resource type="Texture2D" path="res://UI/UIAssets/ClockTimerPositions/ClockTimerPositions16.png" id="20_3x538"]
-[ext_resource type="Texture2D" path="res://UI/UIAssets/ClockTimerPositions/ClockTimerPositions17.png" id="21_jnarg"]
-[ext_resource type="Texture2D" path="res://UI/UIAssets/ClockTimerPositions/ClockTimerPositions18.png" id="22_o4qjl"]
-[ext_resource type="Texture2D" path="res://UI/UIAssets/ClockTimerPositions/ClockTimerPositions19.png" id="23_vo8fk"]
-[ext_resource type="Texture2D" path="res://UI/UIAssets/ClockTimerPositions/ClockTimerPositions20.png" id="24_qpf6q"]
-[ext_resource type="Texture2D" path="res://UI/UIAssets/ClockTimerPositions/ClockTimerPositions21.png" id="25_nn2wg"]
-[ext_resource type="Texture2D" path="res://UI/UIAssets/ClockTimerPositions/ClockTimerPositions22.png" id="26_vjpb7"]
-[ext_resource type="Texture2D" path="res://UI/UIAssets/ClockTimerPositions/ClockTimerPositions23.png" id="27_c4bym"]
-[ext_resource type="Texture2D" path="res://UI/UIAssets/ClockTimerPositions/ClockTimerPositions24.png" id="28_272du"]
-[ext_resource type="Texture2D" path="res://UI/UIAssets/ClockTimerPositions/ClockTimerPositions25.png" id="29_nvokg"]
-[ext_resource type="Texture2D" path="res://UI/UIAssets/ClockTimerPositions/ClockTimerPositions26.png" id="30_1wgg2"]
-[ext_resource type="Texture2D" path="res://UI/UIAssets/ClockTimerPositions/ClockTimerPositions27.png" id="31_2aajp"]
-[ext_resource type="Texture2D" path="res://UI/UIAssets/ClockTimerPositions/ClockTimerPositions28.png" id="32_4hktk"]
-[ext_resource type="Texture2D" path="res://UI/UIAssets/ClockTimerPositions/ClockTimerPositions29.png" id="33_blmhr"]
-[ext_resource type="Texture2D" path="res://UI/UIAssets/ClockTimerPositions/ClockTimerPositions30.png" id="34_auumb"]
-[ext_resource type="Texture2D" path="res://UI/UIAssets/ClockTimerPositions/ClockTimerPositions31.png" id="35_2tdxm"]
-[ext_resource type="Texture2D" path="res://UI/UIAssets/ClockTimerPositions/ClockTimerPositions32.png" id="36_wgrpm"]
-[ext_resource type="Texture2D" path="res://UI/UIAssets/ClockTimerPositions/ClockTimerPositions33.png" id="37_18nep"]
-[ext_resource type="Texture2D" path="res://UI/UIAssets/ClockTimerPositions/ClockTimerPositions34.png" id="38_kyd0s"]
-[ext_resource type="Texture2D" path="res://UI/UIAssets/ClockTimerPositions/ClockTimerPositions35.png" id="39_kj278"]
-[ext_resource type="Texture2D" path="res://UI/UIAssets/ClockTimerPositions/ClockTimerPositions36.png" id="40_twv7p"]
-[ext_resource type="Texture2D" path="res://UI/UIAssets/ClockTimerPositions/ClockTimerPositions37.png" id="41_5dyac"]
-[ext_resource type="Texture2D" path="res://UI/UIAssets/ClockTimerPositions/ClockTimerPositions38.png" id="42_ewn6y"]
-[ext_resource type="Texture2D" path="res://UI/UIAssets/ClockTimerPositions/ClockTimerPositions39.png" id="43_o1w7k"]
+[ext_resource type="Texture2D" uid="uid://ydy7udc8drm4" path="res://Assets/Timer_ProductivityMeter/ClockTimerPositions/ClockTimerPositionsT4.png" id="4_e0cn5"]
+[ext_resource type="Texture2D" uid="uid://cljvn0xj7glqr" path="res://UI/UIAssets/ClockTimerPositions/ClockTimerPositions1.png" id="5_5y55n"]
+[ext_resource type="Texture2D" uid="uid://nacip8ut83ye" path="res://Assets/Timer_ProductivityMeter/ClockTimerPositions/ClockTimerPositionsT5.png" id="5_t1kcn"]
+[ext_resource type="Texture2D" uid="uid://85l2lrcyn3ws" path="res://Assets/Timer_ProductivityMeter/ClockTimerPositions/ClockTimerPositionsT6.png" id="6_nny8c"]
+[ext_resource type="Texture2D" uid="uid://b5furuaukgjkx" path="res://UI/UIAssets/ClockTimerPositions/ClockTimerPositions2.png" id="6_qmm3r"]
+[ext_resource type="Texture2D" uid="uid://brt3fmr13ktfk" path="res://UI/UIAssets/ClockTimerPositions/ClockTimerPositions3.png" id="7_2ust3"]
+[ext_resource type="Texture2D" uid="uid://duiwusdsk6o54" path="res://Assets/Timer_ProductivityMeter/ClockTimerPositions/ClockTimerPositionsT7.png" id="7_61bbk"]
+[ext_resource type="Texture2D" uid="uid://dcsy51ra3fde8" path="res://UI/UIAssets/ClockTimerPositions/ClockTimerPositions4.png" id="8_3p64e"]
+[ext_resource type="Texture2D" uid="uid://cnlmbl4rh2wmx" path="res://Assets/Timer_ProductivityMeter/ClockTimerPositions/ClockTimerPositionsT8.png" id="8_t6k1y"]
+[ext_resource type="Texture2D" uid="uid://d5le31om46qj" path="res://UI/UIAssets/ClockTimerPositions/ClockTimerPositions5.png" id="9_32x0a"]
+[ext_resource type="Texture2D" uid="uid://b5kb541fm4j7m" path="res://Assets/Timer_ProductivityMeter/ClockTimerPositions/ClockTimerPositionsT9.png" id="9_w4lyc"]
+[ext_resource type="Texture2D" uid="uid://7s1xb5hw0i48" path="res://UI/UIAssets/ClockTimerPositions/ClockTimerPositions6.png" id="10_7ubae"]
+[ext_resource type="Texture2D" uid="uid://bpn3fquoihm2i" path="res://Assets/Timer_ProductivityMeter/ClockTimerPositions/ClockTimerPositionsT10.png" id="10_g5hp8"]
+[ext_resource type="Texture2D" uid="uid://t8rmfo2h16cy" path="res://Assets/Timer_ProductivityMeter/ClockTimerPositions/ClockTimerPositionsT11.png" id="11_dpxaq"]
+[ext_resource type="Texture2D" uid="uid://dpd4os0jhk7br" path="res://UI/UIAssets/ClockTimerPositions/ClockTimerPositions7.png" id="11_tjkno"]
+[ext_resource type="Texture2D" uid="uid://d0mkoh830506t" path="res://Assets/Timer_ProductivityMeter/ClockTimerPositions/ClockTimerPositionsT12.png" id="12_pu4ah"]
+[ext_resource type="Texture2D" uid="uid://d3epeppqy74l8" path="res://UI/UIAssets/ClockTimerPositions/ClockTimerPositions8.png" id="12_s4vdj"]
+[ext_resource type="Texture2D" uid="uid://d0lpvqku0omwv" path="res://Assets/Timer_ProductivityMeter/ClockTimerPositions/ClockTimerPositionsT13.png" id="13_8sbbr"]
+[ext_resource type="Texture2D" uid="uid://dj0tgk5ujgyu1" path="res://UI/UIAssets/ClockTimerPositions/ClockTimerPositions9.png" id="13_ayiwq"]
+[ext_resource type="Texture2D" uid="uid://bbthdul0arhvs" path="res://UI/UIAssets/ClockTimerPositions/ClockTimerPositions10.png" id="14_ogsmr"]
+[ext_resource type="Texture2D" uid="uid://g23anx3qr5tm" path="res://Assets/Timer_ProductivityMeter/ClockTimerPositions/ClockTimerPositionsT14.png" id="14_tbecn"]
+[ext_resource type="Texture2D" uid="uid://cw2qsbcvg8hlu" path="res://UI/UIAssets/ClockTimerPositions/ClockTimerPositions11.png" id="15_r4ik3"]
+[ext_resource type="Texture2D" uid="uid://cbgmtoqrvgk87" path="res://Assets/Timer_ProductivityMeter/ClockTimerPositions/ClockTimerPositionsT15.png" id="15_wb11b"]
+[ext_resource type="Texture2D" uid="uid://dopj46dumtx77" path="res://Assets/Timer_ProductivityMeter/ClockTimerPositions/ClockTimerPositionsT16.png" id="16_brrhk"]
+[ext_resource type="Texture2D" uid="uid://ditq3eeiluq3d" path="res://UI/UIAssets/ClockTimerPositions/ClockTimerPositions12.png" id="16_fs7m5"]
+[ext_resource type="Texture2D" uid="uid://db37vd7242jjm" path="res://Assets/Timer_ProductivityMeter/ClockTimerPositions/ClockTimerPositionsT17.png" id="17_mdure"]
+[ext_resource type="Texture2D" uid="uid://bqv6edxp5t5cn" path="res://UI/UIAssets/ClockTimerPositions/ClockTimerPositions13.png" id="17_rph5b"]
+[ext_resource type="Texture2D" uid="uid://b8yypdkiwsjuw" path="res://UI/UIAssets/ClockTimerPositions/ClockTimerPositions14.png" id="18_fwop4"]
+[ext_resource type="Texture2D" uid="uid://dx3kki65rjksf" path="res://Assets/Timer_ProductivityMeter/ClockTimerPositions/ClockTimerPositionsT18.png" id="18_vp40k"]
+[ext_resource type="Texture2D" uid="uid://bx05am84ayhdb" path="res://UI/UIAssets/ClockTimerPositions/ClockTimerPositions15.png" id="19_gjc2c"]
+[ext_resource type="Texture2D" uid="uid://di1fpud2pbjt2" path="res://Assets/Timer_ProductivityMeter/ClockTimerPositions/ClockTimerPositionsT19.png" id="19_vqitj"]
+[ext_resource type="Texture2D" uid="uid://pih3pkcqcm5a" path="res://UI/UIAssets/ClockTimerPositions/ClockTimerPositions16.png" id="20_3x538"]
+[ext_resource type="Texture2D" uid="uid://ci5y53pd3hrd7" path="res://Assets/Timer_ProductivityMeter/ClockTimerPositions/ClockTimerPositionsT20.png" id="20_vn3b6"]
+[ext_resource type="Texture2D" uid="uid://bj31attons4o" path="res://UI/UIAssets/ClockTimerPositions/ClockTimerPositions17.png" id="21_jnarg"]
+[ext_resource type="Texture2D" uid="uid://bc88uxof8oor2" path="res://Assets/Timer_ProductivityMeter/ClockTimerPositions/ClockTimerPositionsT21.png" id="21_m5anl"]
+[ext_resource type="Texture2D" uid="uid://vdfb1ffbxekw" path="res://Assets/Timer_ProductivityMeter/ClockTimerPositions/ClockTimerPositionsT22.png" id="22_aawnu"]
+[ext_resource type="Texture2D" uid="uid://bp7lndqa1ckrr" path="res://UI/UIAssets/ClockTimerPositions/ClockTimerPositions18.png" id="22_o4qjl"]
+[ext_resource type="Texture2D" uid="uid://c712fo6bpa1lm" path="res://Assets/Timer_ProductivityMeter/ClockTimerPositions/ClockTimerPositionsT23.png" id="23_dmf7w"]
+[ext_resource type="Texture2D" uid="uid://c3eb0k5eleh7x" path="res://UI/UIAssets/ClockTimerPositions/ClockTimerPositions19.png" id="23_vo8fk"]
+[ext_resource type="Texture2D" uid="uid://b2svtjyxci5ck" path="res://Assets/Timer_ProductivityMeter/ClockTimerPositions/ClockTimerPositionsT24.png" id="24_f72ww"]
+[ext_resource type="Texture2D" uid="uid://mm8ckny1lt15" path="res://UI/UIAssets/ClockTimerPositions/ClockTimerPositions20.png" id="24_qpf6q"]
+[ext_resource type="Texture2D" uid="uid://bgp15npsi43u1" path="res://Assets/Timer_ProductivityMeter/ClockTimerPositions/ClockTimerPositionsT25.png" id="25_57jgg"]
+[ext_resource type="Texture2D" uid="uid://cg4x3mpfqore2" path="res://UI/UIAssets/ClockTimerPositions/ClockTimerPositions21.png" id="25_nn2wg"]
+[ext_resource type="Texture2D" uid="uid://dqfiqtlrol7h7" path="res://Assets/Timer_ProductivityMeter/ClockTimerPositions/ClockTimerPositionsT26.png" id="26_k302q"]
+[ext_resource type="Texture2D" uid="uid://dvx2ny2k6nerf" path="res://UI/UIAssets/ClockTimerPositions/ClockTimerPositions22.png" id="26_vjpb7"]
+[ext_resource type="Texture2D" uid="uid://bdmei07eu5gav" path="res://UI/UIAssets/ClockTimerPositions/ClockTimerPositions23.png" id="27_c4bym"]
+[ext_resource type="Texture2D" uid="uid://ce4uyvv1i2gc8" path="res://Assets/Timer_ProductivityMeter/ClockTimerPositions/ClockTimerPositionsT27.png" id="27_hsn4c"]
+[ext_resource type="Texture2D" uid="uid://cwcewiveq0oo8" path="res://Assets/Timer_ProductivityMeter/ClockTimerPositions/ClockTimerPositionsT28.png" id="28_80l5l"]
+[ext_resource type="Texture2D" uid="uid://cexsfwfr4ndni" path="res://UI/UIAssets/ClockTimerPositions/ClockTimerPositions24.png" id="28_272du"]
+[ext_resource type="Texture2D" uid="uid://gacwdyir2axc" path="res://UI/UIAssets/ClockTimerPositions/ClockTimerPositions25.png" id="29_nvokg"]
+[ext_resource type="Texture2D" uid="uid://fec0vfmk3dms" path="res://Assets/Timer_ProductivityMeter/ClockTimerPositions/ClockTimerPositionsT29.png" id="29_w1owd"]
+[ext_resource type="Texture2D" uid="uid://5gbveysxepst" path="res://UI/UIAssets/ClockTimerPositions/ClockTimerPositions26.png" id="30_1wgg2"]
+[ext_resource type="Texture2D" uid="uid://ciljdcgyx4ojp" path="res://Assets/Timer_ProductivityMeter/ClockTimerPositions/ClockTimerPositionsT30.png" id="30_vqpm6"]
+[ext_resource type="Texture2D" uid="uid://drthmyv2t1dms" path="res://UI/UIAssets/ClockTimerPositions/ClockTimerPositions27.png" id="31_2aajp"]
+[ext_resource type="Texture2D" uid="uid://obuexcfe2uwl" path="res://Assets/Timer_ProductivityMeter/ClockTimerPositions/ClockTimerPositionsT31.png" id="31_k0ey6"]
+[ext_resource type="Texture2D" uid="uid://dw0vir0p2vpek" path="res://UI/UIAssets/ClockTimerPositions/ClockTimerPositions28.png" id="32_4hktk"]
+[ext_resource type="Texture2D" uid="uid://bbl4i4a74fx5d" path="res://Assets/Timer_ProductivityMeter/ClockTimerPositions/ClockTimerPositionsT32.png" id="32_edm0h"]
+[ext_resource type="Texture2D" uid="uid://btu073je66wxc" path="res://UI/UIAssets/ClockTimerPositions/ClockTimerPositions29.png" id="33_blmhr"]
+[ext_resource type="Texture2D" uid="uid://1afo8axug6e1" path="res://Assets/Timer_ProductivityMeter/ClockTimerPositions/ClockTimerPositionsT33.png" id="33_i7q5d"]
+[ext_resource type="Texture2D" uid="uid://274ccr6dep8u" path="res://UI/UIAssets/ClockTimerPositions/ClockTimerPositions30.png" id="34_auumb"]
+[ext_resource type="Texture2D" uid="uid://dwh1wi3rfmth4" path="res://Assets/Timer_ProductivityMeter/ClockTimerPositions/ClockTimerPositionsT34.png" id="34_dneu3"]
+[ext_resource type="Texture2D" uid="uid://dgjwi5215wej2" path="res://UI/UIAssets/ClockTimerPositions/ClockTimerPositions31.png" id="35_2tdxm"]
+[ext_resource type="Texture2D" uid="uid://kt60j3fnatns" path="res://Assets/Timer_ProductivityMeter/ClockTimerPositions/ClockTimerPositionsT35.png" id="35_s1h8i"]
+[ext_resource type="Texture2D" uid="uid://cnxoea2mrysit" path="res://Assets/Timer_ProductivityMeter/ClockTimerPositions/ClockTimerPositionsT36.png" id="36_d2f37"]
+[ext_resource type="Texture2D" uid="uid://c664rd253hhfb" path="res://UI/UIAssets/ClockTimerPositions/ClockTimerPositions32.png" id="36_wgrpm"]
+[ext_resource type="Texture2D" uid="uid://dbetroney7bqv" path="res://UI/UIAssets/ClockTimerPositions/ClockTimerPositions33.png" id="37_18nep"]
+[ext_resource type="Texture2D" uid="uid://dxu4h7mdvfqek" path="res://Assets/Timer_ProductivityMeter/ClockTimerPositions/ClockTimerPositionsT37.png" id="37_ngdoi"]
+[ext_resource type="Texture2D" uid="uid://dj3jtcvr0874p" path="res://Assets/Timer_ProductivityMeter/ClockTimerPositions/ClockTimerPositionsT38.png" id="38_hoad0"]
+[ext_resource type="Texture2D" uid="uid://bbjn15wirqq4k" path="res://UI/UIAssets/ClockTimerPositions/ClockTimerPositions34.png" id="38_kyd0s"]
+[ext_resource type="Texture2D" uid="uid://divdkv85yqiq1" path="res://UI/UIAssets/ClockTimerPositions/ClockTimerPositions35.png" id="39_kj278"]
+[ext_resource type="Texture2D" uid="uid://nmctdevsa3tr" path="res://Assets/Timer_ProductivityMeter/ClockTimerPositions/ClockTimerPositionsT39.png" id="39_sqd42"]
+[ext_resource type="Texture2D" uid="uid://qgjolpnthyb0" path="res://UI/UIAssets/ClockTimerPositions/ClockTimerPositions36.png" id="40_twv7p"]
+[ext_resource type="Texture2D" uid="uid://ca6rk6rrlhs2r" path="res://UI/UIAssets/ClockTimerPositions/ClockTimerPositions37.png" id="41_5dyac"]
+[ext_resource type="Texture2D" uid="uid://r6hsv1ihheqs" path="res://UI/UIAssets/ClockTimerPositions/ClockTimerPositions38.png" id="42_ewn6y"]
+[ext_resource type="Texture2D" uid="uid://bd7bu4jvhfsep" path="res://UI/UIAssets/ClockTimerPositions/ClockTimerPositions39.png" id="43_o1w7k"]
+[ext_resource type="Texture2D" uid="uid://n8ta15kac3ok" path="res://Assets/Timer_ProductivityMeter/ProductivityMeterParts/Untitled_Artwork-2 7.png" id="80_11li7"]
+[ext_resource type="Texture2D" uid="uid://oys3261nbnd7" path="res://Assets/Timer_ProductivityMeter/ProductivityMeterParts/Untitled_Artwork-3 5.png" id="81_u6klf"]
+[ext_resource type="Texture2D" uid="uid://smtqvpe6hrx4" path="res://Assets/Timer_ProductivityMeter/ProductivityMeterParts/Untitled_Artwork-4 4.png" id="82_645ty"]
+[ext_resource type="Texture2D" uid="uid://bpkpshhfxdjpq" path="res://Assets/Timer_ProductivityMeter/ProductivityMeterParts/Untitled_Artwork-5 2.png" id="83_s3de6"]
+[ext_resource type="Texture2D" uid="uid://cfbokkufrcv2d" path="res://Assets/Timer_ProductivityMeter/ProductivityMeterParts/Untitled_Artwork-6 2.png" id="84_k0f88"]
+[ext_resource type="Texture2D" uid="uid://dxa70jm7574r" path="res://Assets/Timer_ProductivityMeter/ProductivityMeterParts/Untitled_Artwork-7.png" id="85_dsxx3"]
+[ext_resource type="Texture2D" uid="uid://ct8657jnj1sp3" path="res://Assets/Timer_ProductivityMeter/ProductivityMeterParts/Untitled_Artwork-8.png" id="86_p15x5"]
+[ext_resource type="Texture2D" uid="uid://btkodl8ox2ccr" path="res://Assets/Timer_ProductivityMeter/ProductivityMeterParts/Untitled_Artwork-9.png" id="87_bo35h"]
+[ext_resource type="Texture2D" uid="uid://c4wdp6ty6iskt" path="res://Assets/Timer_ProductivityMeter/ProductivityMeterParts/Untitled_Artwork-10.png" id="88_uemuc"]
+[ext_resource type="Texture2D" uid="uid://biwtrf5qxnkx2" path="res://Assets/Timer_ProductivityMeter/ProductivityMeterParts/Untitled_Artwork-11.png" id="89_i8lff"]
+[ext_resource type="Texture2D" uid="uid://drboa8difcbes" path="res://Assets/Timer_ProductivityMeter/ProductivityMeterParts/Untitled_Artwork-12.png" id="90_wt8ae"]
+[ext_resource type="Texture2D" uid="uid://dvu66dkxpgap8" path="res://Assets/Timer_ProductivityMeter/ProductivityMeterParts/Untitled_Artwork-13.png" id="91_aud25"]
+[ext_resource type="Texture2D" uid="uid://bsoj21me0jsmu" path="res://Assets/Timer_ProductivityMeter/ProductivityMeterParts/Untitled_Artwork-14.png" id="92_qv37j"]
+[ext_resource type="Texture2D" uid="uid://bg0xtt20j80qx" path="res://Assets/Timer_ProductivityMeter/ProductivityMeterParts/Untitled_Artwork-15.png" id="93_tdt12"]
+[ext_resource type="Texture2D" uid="uid://dqxsh6h1ehgm6" path="res://Assets/Timer_ProductivityMeter/ProductivityMeterParts/Untitled_Artwork-16.png" id="94_i0ypl"]
+[ext_resource type="Texture2D" uid="uid://iur5lijlmdlg" path="res://Assets/Timer_ProductivityMeter/ProductivityMeterParts/Untitled_Artwork-17.png" id="95_br5gp"]
+[ext_resource type="Texture2D" uid="uid://by8o4ooujs04o" path="res://Assets/Timer_ProductivityMeter/ProductivityMeterParts/Untitled_Artwork-18.png" id="96_ki0sx"]
+[ext_resource type="Texture2D" uid="uid://c7706mqc1j107" path="res://Assets/Timer_ProductivityMeter/ProductivityMeterParts/Untitled_Artwork-19.png" id="97_pdm0r"]
+[ext_resource type="Texture2D" uid="uid://dvsblh44mpwrd" path="res://Assets/Timer_ProductivityMeter/ProductivityMeterParts/Untitled_Artwork-20.png" id="98_uy4um"]
+[ext_resource type="Texture2D" uid="uid://ck8g03wd8v8d5" path="res://Assets/Timer_ProductivityMeter/ProductivityMeterParts/Untitled_Artwork-21.png" id="99_o4173"]
+[ext_resource type="Texture2D" uid="uid://byaku7nd7n31s" path="res://Assets/Timer_ProductivityMeter/ProductivityMeterParts/Untitled_Artwork-22.png" id="100_kk11i"]
+[ext_resource type="Texture2D" uid="uid://xy4gmdyar53d" path="res://Assets/Timer_ProductivityMeter/ProductivityMeterParts/Untitled_Artwork-23.png" id="101_57gsi"]
+[ext_resource type="Texture2D" uid="uid://ikl6yx8toff3" path="res://Assets/Timer_ProductivityMeter/ProductivityMeterParts/Untitled_Artwork-24.png" id="102_pdrji"]
+[ext_resource type="Texture2D" uid="uid://dj8afwwelaf44" path="res://Assets/Timer_ProductivityMeter/ProductivityMeterParts/Untitled_Artwork-25.png" id="103_y071e"]
+[ext_resource type="Texture2D" uid="uid://4e7fvbjopi1f" path="res://Assets/Timer_ProductivityMeter/ProductivityMeterParts/Untitled_Artwork-26.png" id="104_yinct"]
+[ext_resource type="Texture2D" uid="uid://c33ybjc12x6tl" path="res://Assets/Timer_ProductivityMeter/ProductivityMeterParts/Untitled_Artwork-27.png" id="105_710c0"]
+[ext_resource type="Texture2D" uid="uid://be3au1843bcxb" path="res://Assets/Timer_ProductivityMeter/ProductivityMeterParts/Untitled_Artwork-28.png" id="106_c4y76"]
+[ext_resource type="Texture2D" uid="uid://bay4bsyqw4ghw" path="res://Assets/Timer_ProductivityMeter/ProductivityMeterParts/Untitled_Artwork-29.png" id="107_rnkkx"]
+[ext_resource type="Texture2D" uid="uid://crwx5q58ul4sq" path="res://Assets/Timer_ProductivityMeter/ProductivityMeterParts/Untitled_Artwork-30.png" id="108_jkqq7"]
+[ext_resource type="Script" path="res://UI/productivity_bar.gd" id="109_8xmrj"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_agw84"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_jhv0f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_l7fco")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_0d3l3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_e0cn5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_t1kcn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_nny8c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_61bbk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_t6k1y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_w4lyc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_g5hp8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_dpxaq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_pu4ah")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_8sbbr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_tbecn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_wb11b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_brrhk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_mdure")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_vp40k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_vqitj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_vn3b6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_m5anl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_aawnu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_dmf7w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_f72ww")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_57jgg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_k302q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_hsn4c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_80l5l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_w1owd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_vqpm6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_k0ey6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_edm0h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_i7q5d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_dneu3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_s1h8i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_d2f37")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_ngdoi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_hoad0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_sqd42")
+}],
+"loop": true,
+"name": &"clockrun",
+"speed": 1.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("5_5y55n")
@@ -166,7 +354,102 @@ animations = [{
 "texture": ExtResource("43_o1w7k")
 }],
 "loop": true,
-"name": &"clockrun",
+"name": &"oldclockrun",
+"speed": 1.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l6b8y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("80_11li7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81_u6klf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82_645ty")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83_s3de6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_k0f88")
+}, {
+"duration": 1.0,
+"texture": ExtResource("85_dsxx3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("86_p15x5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("87_bo35h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("88_uemuc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("89_i8lff")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90_wt8ae")
+}, {
+"duration": 1.0,
+"texture": ExtResource("91_aud25")
+}, {
+"duration": 1.0,
+"texture": ExtResource("92_qv37j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93_tdt12")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94_i0ypl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("95_br5gp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("96_ki0sx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("97_pdm0r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98_uy4um")
+}, {
+"duration": 1.0,
+"texture": ExtResource("99_o4173")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100_kk11i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("101_57gsi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("102_pdrji")
+}, {
+"duration": 1.0,
+"texture": ExtResource("103_y071e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("104_yinct")
+}, {
+"duration": 1.0,
+"texture": ExtResource("105_710c0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("106_c4y76")
+}, {
+"duration": 1.0,
+"texture": ExtResource("107_rnkkx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("108_jkqq7")
+}],
+"loop": true,
+"name": &"productivityrun",
 "speed": 1.0
 }]
 
@@ -179,7 +462,6 @@ visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("4_mu2g7")
 
 [node name="Panel" type="Panel" parent="BossOfficeCutscene"]
 layout_mode = 0
@@ -208,12 +490,12 @@ offset_bottom = 237.0
 text = "Continue"
 
 [node name="ProductivityBarEXP" type="ProgressBar" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 658.0
 offset_top = 558.0
 offset_right = 895.0
 offset_bottom = 585.0
-script = ExtResource("1_jtm81")
 
 [node name="ProductivityBarCONST" type="ProgressBar" parent="."]
 visible = false
@@ -222,11 +504,15 @@ offset_left = 656.0
 offset_top = 596.0
 offset_right = 896.0
 offset_bottom = 623.0
-script = ExtResource("2_dv0uv")
+
+[node name="ProductivityMeterBase" type="Sprite2D" parent="."]
+position = Vector2(238, 133)
+scale = Vector2(0.169596, 0.169596)
+texture = ExtResource("1_1p37k")
 
 [node name="Clock" type="AnimatedSprite2D" parent="."]
-position = Vector2(576, 324)
-scale = Vector2(0.594445, 0.594445)
+position = Vector2(238.111, 134.5)
+scale = Vector2(0.249074, 0.249074)
 sprite_frames = SubResource("SpriteFrames_agw84")
 animation = &"clockrun"
 script = ExtResource("3_nd3it")
@@ -242,3 +528,14 @@ horizontal_alignment = 2
 vertical_alignment = 2
 
 [node name="ClockTimer" type="Timer" parent="Clock"]
+
+[node name="ProductivityBar" type="AnimatedSprite2D" parent="."]
+position = Vector2(235, 136)
+scale = Vector2(0.16862, 0.16862)
+sprite_frames = SubResource("SpriteFrames_l6b8y")
+animation = &"productivityrun"
+script = ExtResource("109_8xmrj")
+
+[node name="ProductivityTimer" type="Timer" parent="ProductivityBar"]
+
+[connection signal="timeout" from="ProductivityBar/ProductivityTimer" to="ProductivityBar" method="_on_productivity_timer_timeout"]
