@@ -93,7 +93,7 @@ func _on_int_button_pressed():
 	current_int_line += 1
 	if current_int_line < int_dialogue.size():
 		update_dialogue()
-		decrease_enemy_health()
+		decrease_enemy_health(1)  # INT reduces by 1
 	else:
 		dialogue_text.text = "End of INT dialogue."
 
@@ -103,13 +103,15 @@ func _on_per_button_pressed():
 	current_per_line += 1
 	if current_per_line < per_dialogue.size():
 		update_dialogue()
-		decrease_enemy_health()
+		decrease_enemy_health(2)  # PER reduces by 2
 	else:
 		dialogue_text.text = "End of PER dialogue."
 
-func decrease_enemy_health():
+# Updated this function to take an amount
+func decrease_enemy_health(amount := 1):
 	if enemy_health > 0:
-		enemy_health -= 1
+		enemy_health -= amount
+		enemy_health = max(enemy_health, 0)  # Prevents negative health
 		update_health_bar()
 
 		if enemy_health == 0:
