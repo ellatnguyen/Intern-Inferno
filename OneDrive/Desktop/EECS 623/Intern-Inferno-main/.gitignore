@@ -1,0 +1,6 @@
+*.bin
+*.cfg
+*.md5
+*.ctex
+/.godot/editor
+/.godot
