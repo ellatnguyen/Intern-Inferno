@@ -329,19 +329,25 @@ offset_right = 646.0
 offset_bottom = 237.0
 text = "Continue"
 
-[node name="ProductivityBarBase" type="Sprite2D" parent="."]
+[node name="Container" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 277.0
+offset_bottom = 131.0
+
+[node name="ProductivityBarBase" type="Sprite2D" parent="Container"]
 position = Vector2(148, 72)
 scale = Vector2(0.122396, 0.122396)
 texture = ExtResource("2_rji0s")
 
-[node name="Clock" type="AnimatedSprite2D" parent="."]
+[node name="Clock" type="AnimatedSprite2D" parent="Container"]
 position = Vector2(158, 76)
 scale = Vector2(0.219445, 0.219445)
 sprite_frames = SubResource("SpriteFrames_agw84")
 animation = &"clockrun"
 script = ExtResource("3_nd3it")
 
-[node name="ClockLabel" type="Label" parent="Clock"]
+[node name="ClockLabel" type="Label" parent="Container/Clock"]
 visible = false
 offset_left = 925.0
 offset_top = 504.0
@@ -351,15 +357,15 @@ theme_override_font_sizes/font_size = 30
 horizontal_alignment = 2
 vertical_alignment = 2
 
-[node name="ClockTimer" type="Timer" parent="Clock"]
+[node name="ClockTimer" type="Timer" parent="Container/Clock"]
 
-[node name="ProductivityBar" type="AnimatedSprite2D" parent="."]
+[node name="ProductivityBar" type="AnimatedSprite2D" parent="Container"]
 position = Vector2(142.917, 80.4375)
 scale = Vector2(0.134847, 0.134847)
 sprite_frames = SubResource("SpriteFrames_sgcf4")
 animation = &"productivityrun"
 script = ExtResource("2_dv0uv")
 
-[node name="ProductivityTimer" type="Timer" parent="ProductivityBar"]
+[node name="ProductivityTimer" type="Timer" parent="Container/ProductivityBar"]
 
-[connection signal="timeout" from="ProductivityBar/ProductivityTimer" to="ProductivityBar" method="_on_productivity_timer_timeout"]
+[connection signal="timeout" from="Container/ProductivityBar/ProductivityTimer" to="Container/ProductivityBar" method="_on_productivity_timer_timeout"]
