@@ -11,7 +11,7 @@ func _ready():
 
 	update_clock_animation()
 
-	timer.wait_time = 0.5  # Debug time interval (adjust as needed)
+	timer.wait_time = 1.0  # Debug time interval (adjust as needed)
 	timer.start()
 	timer.timeout.connect(_on_timer_timeout)
 
