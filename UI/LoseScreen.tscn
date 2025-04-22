@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dk3cijlstx2xw"]
+
+[ext_resource type="Texture2D" uid="uid://b5fceousqvt2g" path="res://UI/lose screen.PNG" id="1_atosw"]
+
+[node name="EndingScene" type="Node2D"]
+
+[node name="LoseScreen" type="Sprite2D" parent="."]
+position = Vector2(563.222, 332)
+scale = Vector2(0.897222, 0.897222)
+texture = ExtResource("1_atosw")
