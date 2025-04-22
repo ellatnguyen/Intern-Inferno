@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dk3cijlstx2xw"]
 
-[ext_resource type="Texture2D" uid="uid://b5fceousqvt2g" path="res://UI/lose screen.PNG" id="1_atosw"]
+[ext_resource type="Texture2D" uid="uid://b5fceousqvt2g" path="res://UI/UIAssets/lose screen.PNG" id="1_atosw"]
 
 [node name="EndingScene" type="Node2D"]
 
