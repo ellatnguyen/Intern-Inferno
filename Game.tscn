@@ -20,7 +20,6 @@ position = Vector2(332, 154)
 scale = Vector2(3, 3)
 
 [node name="DialogueWindow" parent="." instance=ExtResource("3_helcj")]
-visible = true
 offset_left = -154.0
 offset_top = -49.0
 offset_right = 996.0
