@@ -13,12 +13,16 @@ const MAX_SPEED: int = 100
 
 var current_enemy: BaseEnemy = null
 var mov_direction: Vector2 = Vector2.ZERO
+var controls_enabled := true
 
 func _ready() -> void:
 	add_to_group("player")
 	fsm.init(self, animation_player)
 
 func _physics_process(_delta: float) -> void:
+	if not controls_enabled:
+		return
+		
 	fsm._physics_process(_delta)
 	move_and_slide()
 	velocity = lerp(velocity, Vector2.ZERO, FRICTION)
@@ -54,7 +58,10 @@ func _on_enemy_player_near(state: bool, enemy: BaseEnemy) -> void:
 		current_enemy = enemy
 	else:
 		current_enemy = null
-
+		
+func _unhandled_input(event):
+	if not controls_enabled:
+		return
 #func _unhandled_input(event: InputEvent) -> void:
 	#if event.is_action_pressed("interact") and current_enemy:
 		#current_enemy.start_battle()

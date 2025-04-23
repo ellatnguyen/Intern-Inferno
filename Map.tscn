@@ -16,10 +16,10 @@ script = ExtResource("4")
 
 [node name="Player" parent="." groups=["player"] instance=ExtResource("3_4rtyr")]
 
-[node name="TimerUI" parent="." instance=ExtResource("4_nm2n1")]
-
 [node name="InventoryUI" type="CanvasLayer" parent="."]
 
 [node name="Inv_UI" parent="InventoryUI" instance=ExtResource("5_e2ith")]
 
 [node name="DialogueBattleUI" parent="." instance=ExtResource("6_86hdy")]
+
+[node name="TimerUI" parent="." instance=ExtResource("4_nm2n1")]
