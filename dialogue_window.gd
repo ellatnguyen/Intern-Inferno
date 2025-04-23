@@ -1,11 +1,10 @@
 extends Control
 
-@onready var dialogue_text = $CanvasLayer/DialogueText
-@onready var int_button = $CanvasLayer/INT_Button
-@onready var per_button = $CanvasLayer/PER_Button
-@onready var leave_button = $CanvasLayer/LEAVE_Button
-@onready var dialogue_window = $DialogueWindow
-@onready var health_bar = $"CanvasLayer/PrototypeEnemy/ComplianceBar"
+@onready var dialogue_text = $DialogueBoxesWithDarkenedBackground/DialogueText
+@onready var int_button = $INT_Button
+@onready var per_button = $PER_Button
+@onready var leave_button = $LEAVE_Button
+@onready var health_bar = $"PrototypeEnemy/ComplianceBar"
 
 var current_int_line = 0
 var current_per_line = 0
@@ -17,42 +16,123 @@ var current_dialogue = []
 const MAX_HEALTH = 11
 var enemy_health = MAX_HEALTH
 
+# New: hold a reference to the enemy
+var current_enemy: Node = null
+
 func _ready():
 	if int_button == null or per_button == null:
 		print("Error: One or more buttons not found.")
 		return
 	
 	print("Buttons found successfully!")
-
-	int_button.pressed.connect(_on_int_button_pressed)
-	per_button.pressed.connect(_on_per_button_pressed)
-	leave_button.pressed.connect(_on_leave_button_pressed)
-
-	var file = FileAccess.open("res://dialogues.txt", FileAccess.READ)
-	if file:
-		var text = file.get_as_text()
-		file.close()
-		parse_dialogue(text)
-
-	update_dialogue()
-	update_health_bar()
+	# UI hidden by default; gets shown in start_battle_with
+	self.visible = false
 
 func _unhandled_input(event):
-	if event.is_action_pressed("interact"):  # Press E
-		start_battle()
+	if not self.visible:
+		return  # Only allow inputs during battle
 
-func start_battle():
-	print("Battle started!")
-	enemy_health = MAX_HEALTH
+	if event.is_action_pressed("battle_per"):
+		_on_per_button_pressed()
+	elif event.is_action_pressed("battle_int"):
+		_on_int_button_pressed()
+	elif event.is_action_pressed("battle_leave"):
+		_on_leave_button_pressed()
+
+## 🆕 Main method for initiating a battle with an enemy
+#func start_battle_with(enemy: Node):
+	#print("Battle started with:", enemy.name)
+	#current_enemy = enemy
+#
+	## Reset UI states
+	#current_int_line = 0
+	#current_per_line = 0
+	#enemy_health = MAX_HEALTH
+	#current_dialogue = int_dialogue
+#
+	## Load dialogue from enemy-specific path
+	#if enemy.dialogue_file_path != "":
+		#var file = FileAccess.open(enemy.dialogue_file_path, FileAccess.READ)
+		#if file:
+			#var text = file.get_as_text()
+			#file.close()
+			#per_dialogue.clear()
+			#int_dialogue.clear()
+			#parse_dialogue(text)
+		#else:
+			#print("Failed to open dialogue file:", enemy.dialogue_file_path)
+#
+	#update_dialogue()
+	#update_health_bar()
+#
+	## Show and enable all buttons
+	#int_button.visible = true
+	#per_button.visible = true
+	#leave_button.visible = true
+#
+	#int_button.disabled = false
+	#per_button.disabled = false
+	#leave_button.disabled = false
+#
+	#self.visible = true
+	#for child in get_children():
+		#child.visible = true
+func start_battle_with(enemy: Node):
+	print("Battle started with:", enemy.name)
+
+	current_enemy = enemy
 	current_int_line = 0
 	current_per_line = 0
-	current_dialogue = []
-	update_dialogue()
-	update_health_bar()
+
+	# Read enemy stats
+	enemy_health = enemy.stats.get("MAX_HEALTH", MAX_HEALTH)
+	per_dialogue.clear()
+	int_dialogue.clear()
 	
+	# Load dialogue from enemy
+	if enemy.dialogue_file_path != "":
+		var file = FileAccess.open(enemy.dialogue_file_path, FileAccess.READ)
+		if file:
+			var text = file.get_as_text()
+			file.close()
+			parse_dialogue(text)
+		else:
+			print("Failed to open dialogue file:", enemy.dialogue_file_path)
+	else:
+		print("Enemy has no dialogue_file_path.")
+
+	# Load dialogue from enemy
+	#if enemy.has("dialogue_file_path") and enemy.dialogue_file_path != "":
+		#var file = FileAccess.open(enemy.dialogue_file_path, FileAccess.READ)
+		#if file:
+			#var text = file.get_as_text()
+			#file.close()
+			#parse_dialogue(text)
+		#else:
+			#print("Failed to open dialogue file:", enemy.dialogue_file_path)
+	#else:
+		#print("Enemy has no dialogue_file_path.")
+	
+
+	# Set starting dialogue type (optional: choose based on enemy preference?)
+	current_dialogue = int_dialogue
+
+	# Make UI visible
 	self.visible = true
 	for child in get_children():
 		child.visible = true
+
+	# Enable buttons
+	int_button.visible = true
+	per_button.visible = true
+	leave_button.visible = true
+
+	int_button.disabled = false
+	per_button.disabled = false
+	leave_button.disabled = false
+
+	update_dialogue()
+	update_health_bar()
 
 func parse_dialogue(dialogue_content):
 	var lines = dialogue_content.split("\n")
@@ -90,28 +170,29 @@ func update_dialogue():
 func _on_int_button_pressed():
 	print("INT Button Pressed!")
 	current_dialogue = int_dialogue
-	current_int_line += 1
 	if current_int_line < int_dialogue.size():
 		update_dialogue()
-		decrease_enemy_health(1)  # INT reduces by 1
+		var dmg = current_enemy.stats.get("INT_DMG", 1)
+		decrease_enemy_health(dmg)
+		current_int_line += 1
 	else:
 		dialogue_text.text = "End of INT dialogue."
 
 func _on_per_button_pressed():
 	print("PER Button Pressed!")
 	current_dialogue = per_dialogue
-	current_per_line += 1
 	if current_per_line < per_dialogue.size():
 		update_dialogue()
-		decrease_enemy_health(2)  # PER reduces by 2
+		var dmg = current_enemy.stats.get("PER_DMG", 2)
+		decrease_enemy_health(dmg)
+		current_per_line += 1
 	else:
 		dialogue_text.text = "End of PER dialogue."
 
-# Updated this function to take an amount
 func decrease_enemy_health(amount := 1):
 	if enemy_health > 0:
 		enemy_health -= amount
-		enemy_health = max(enemy_health, 0)  # Prevents negative health
+		enemy_health = max(enemy_health, 0)
 		update_health_bar()
 
 		if enemy_health == 0:

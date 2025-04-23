@@ -31,6 +31,7 @@ scale = Vector2(2, 2)
 transform = Transform2D(2, 0, 0, 2, 0, 0)
 
 [node name="Inv_UI" parent="CanvasLayer" instance=ExtResource("4_cyqyf")]
+anchors_preset = -1
 anchor_right = 0.438
 anchor_bottom = 0.447
 offset_left = 28.24

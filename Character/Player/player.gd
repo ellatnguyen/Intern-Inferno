@@ -11,6 +11,7 @@ const MAX_SPEED: int = 100
 @onready var fsm: PlayerFSM = $PlayerFSM
 @onready var camera_main: Camera2D = $Camera2D
 
+var current_enemy: BaseEnemy = null
 var mov_direction: Vector2 = Vector2.ZERO
 
 func _ready() -> void:
@@ -47,3 +48,13 @@ func _process(_delta: float) -> void:
 func switch_camera() -> void:
 	camera_main.position = position
 	camera_main.current = true
+
+func _on_enemy_player_near(state: bool, enemy: BaseEnemy) -> void:
+	if state:
+		current_enemy = enemy
+	else:
+		current_enemy = null
+
+#func _unhandled_input(event: InputEvent) -> void:
+	#if event.is_action_pressed("interact") and current_enemy:
+		#current_enemy.start_battle()
