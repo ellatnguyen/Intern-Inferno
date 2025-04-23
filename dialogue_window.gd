@@ -42,6 +42,13 @@ func _unhandled_input(event):
 		
 func start_battle_with(enemy: Node):
 	print("Battle started with:", enemy.name)
+	
+	GameManager.in_battle = true
+	
+	# Disable user controls
+	var player = get_tree().get_first_node_in_group("player")
+	if player:
+		player.controls_enabled = false
 
 	current_enemy = enemy
 	current_int_line = 0
@@ -161,17 +168,6 @@ func update_health_bar():
 	else:
 		print("Error: Health bar not found.")
 
-#func end_battle():
-	#print("Battle Over!")
-	#self.visible = false
-	#for child in get_children():
-		#child.visible = false
-#
-#func _on_leave_button_pressed():
-	#print("LEAVE Button Pressed!")
-	#self.visible = false
-	#for child in get_children():
-		#child.visible = false
 func reset_battle():
 	self.visible = false
 	for child in get_children():
@@ -186,6 +182,12 @@ func reset_battle():
 	current_int_line = 0
 	current_per_line = 0
 	current_enemy = null
+	
+	GameManager.in_battle = false
+	
+	var player = get_tree().get_first_node_in_group("player")
+	if player:
+		player.controls_enabled = true
 
 func _on_leave_button_pressed():
 	print("LEAVE Button Pressed!")
