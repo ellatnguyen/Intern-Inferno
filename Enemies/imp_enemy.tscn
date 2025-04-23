@@ -125,7 +125,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"imp_animation",
-"speed": 10.0
+"speed": 20.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s50h4"]
@@ -141,11 +141,12 @@ collision_mask = 2
 scale = Vector2(2, 2)
 shape = SubResource("CircleShape2D_bljew")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["coworker"]]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["enemies"]]
 position = Vector2(5, -6)
 scale = Vector2(0.170972, 0.170972)
 sprite_frames = SubResource("SpriteFrames_qgft7")
 animation = &"imp_animation"
+frame_progress = 0.668233
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(0.5, 1.3)
