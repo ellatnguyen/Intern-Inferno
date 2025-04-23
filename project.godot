@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="intern-inferno"
-run/main_scene="res://Game.tscn"
+run/main_scene="res://Map.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 SceneTransistor="*res://Autoloads/SceneTransistor.tscn"
 SavedData="*res://Autoloads/SavedData.gd"
 TransitionManager="*res://UI/transition.tscn"
+GameManager="*res://Autoloads/GameManager.gd"
 
 [display]
 
@@ -28,6 +29,11 @@ window/size/window_height_override=720
 window/stretch/mode="canvas_items"
 mouse_cursor/custom_image="res://Art/v1.1 dungeon crawler 16x16 pixel pack/ui (new)/crosshair_3.png"
 mouse_cursor/custom_image_hotspot=Vector2(16, 16)
+
+[global_group]
+
+enemies=""
+player=""
 
 [importer_defaults]
 

@@ -61,28 +61,13 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="PrototypeWindow" type="Panel"]
-custom_minimum_size = Vector2(1150, 650)
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -575.0
-offset_top = -325.0
-offset_right = 625.0
-offset_bottom = 375.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-mouse_filter = 2
+[node name="PrototypeWindow" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_cn4pr")
 metadata/_edit_use_anchors_ = true
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="INT_Button" type="Button" parent="CanvasLayer"]
+[node name="INT_Button" type="Button" parent="."]
 custom_minimum_size = Vector2(200, 50)
 offset_left = 348.0
 offset_top = 349.0
@@ -90,7 +75,7 @@ offset_right = 626.0
 offset_bottom = 401.0
 text = "INTIMIDATION"
 
-[node name="PER_Button" type="Button" parent="CanvasLayer"]
+[node name="PER_Button" type="Button" parent="."]
 custom_minimum_size = Vector2(200, 50)
 offset_left = 345.0
 offset_top = 269.0
@@ -98,18 +83,18 @@ offset_right = 624.0
 offset_bottom = 319.0
 text = "PERSUASION"
 
-[node name="LEAVE_Button" type="Button" parent="CanvasLayer"]
+[node name="LEAVE_Button" type="Button" parent="."]
 offset_left = 349.0
 offset_top = 432.0
 offset_right = 564.0
 offset_bottom = 464.0
 
-[node name="DialogueBoxesWithDarkenedBackground" type="Sprite2D" parent="CanvasLayer"]
+[node name="DialogueBoxesWithDarkenedBackground" type="Sprite2D" parent="."]
 position = Vector2(575.764, 319.438)
 scale = Vector2(0.899747, 0.90434)
 texture = ExtResource("2_jhs51")
 
-[node name="INT_Label" type="Label" parent="CanvasLayer/DialogueBoxesWithDarkenedBackground"]
+[node name="INT_Label" type="Label" parent="DialogueBoxesWithDarkenedBackground"]
 modulate = Color(0, 0, 0, 1)
 offset_left = -366.507
 offset_top = 41.5353
@@ -120,7 +105,7 @@ text = "INTIMIDATION"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PER_Label" type="Label" parent="CanvasLayer/DialogueBoxesWithDarkenedBackground"]
+[node name="PER_Label" type="Label" parent="DialogueBoxesWithDarkenedBackground"]
 modulate = Color(0, 0, 0, 1)
 offset_left = -369.842
 offset_top = -49.1386
@@ -131,7 +116,7 @@ text = "PERSUASION"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="LEAVE_Label" type="Label" parent="CanvasLayer/DialogueBoxesWithDarkenedBackground"]
+[node name="LEAVE_Label" type="Label" parent="DialogueBoxesWithDarkenedBackground"]
 modulate = Color(0, 0, 0, 1)
 offset_left = -317.605
 offset_top = 128.892
@@ -142,7 +127,7 @@ text = "LEAVE BATTLE"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="DialogueText" type="Label" parent="CanvasLayer/DialogueBoxesWithDarkenedBackground"]
+[node name="DialogueText" type="Label" parent="DialogueBoxesWithDarkenedBackground"]
 modulate = Color(0, 0, 0, 1)
 custom_minimum_size = Vector2(300, 100)
 anchors_preset = 12
@@ -159,21 +144,21 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="PrototypeEnemy" type="Sprite2D" parent="CanvasLayer"]
+[node name="PrototypeEnemy" type="Sprite2D" parent="."]
 position = Vector2(952, 489)
 scale = Vector2(0.44401, 0.44401)
 texture = ExtResource("3_uw0vv")
 
-[node name="ComplianceBar" type="AnimatedSprite2D" parent="CanvasLayer/PrototypeEnemy"]
+[node name="ComplianceBar" type="AnimatedSprite2D" parent="PrototypeEnemy"]
 position = Vector2(-853.834, -372.739)
 scale = Vector2(2.02385, 2.02385)
 sprite_frames = SubResource("SpriteFrames_ttqau")
 
-[node name="PrototypePlayer" type="Sprite2D" parent="CanvasLayer"]
+[node name="PrototypePlayer" type="Sprite2D" parent="."]
 position = Vector2(156, 525)
 scale = Vector2(0.23451, 0.23451)
 texture = ExtResource("4_pu86p")
 
-[connection signal="pressed" from="CanvasLayer/INT_Button" to="." method="_on_int_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/PER_Button" to="." method="_on_per_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/LEAVE_Button" to="." method="_on_leave_button_pressed"]
+[connection signal="pressed" from="INT_Button" to="." method="_on_int_button_pressed"]
+[connection signal="pressed" from="PER_Button" to="." method="_on_per_button_pressed"]
+[connection signal="pressed" from="LEAVE_Button" to="." method="_on_leave_button_pressed"]

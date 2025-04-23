@@ -1,0 +1,9 @@
+INT
+imp int 1
+imp int 2
+imp int 3
+
+PER
+imp per 1
+imp per 2
+imp per 3

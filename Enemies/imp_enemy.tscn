@@ -1,0 +1,152 @@
+[gd_scene load_steps=34 format=3 uid="uid://d11ye7ex6k5tq"]
+
+[ext_resource type="Script" path="res://Enemies/imp_enemy.gd" id="1_3u7we"]
+[ext_resource type="Texture2D" uid="uid://prwhfxgnmxw3" path="res://Assets/Character Assets/NPCs/Fire Imps/Fire Imp ONe on mapspriteanim/FireImpeONeonfloor1.png" id="1_6we6d"]
+[ext_resource type="Texture2D" uid="uid://t062cfeol5im" path="res://Assets/Character Assets/NPCs/Fire Imps/Fire Imp ONe on mapspriteanim/FireImpeONeonfloor2.png" id="2_ujyae"]
+[ext_resource type="Texture2D" uid="uid://dbjujdje7u02g" path="res://Assets/Character Assets/NPCs/Fire Imps/Fire Imp ONe on mapspriteanim/FireImpeONeonfloor3.png" id="3_plqti"]
+[ext_resource type="Texture2D" uid="uid://dujk8kov8xuh5" path="res://Assets/Character Assets/NPCs/Fire Imps/Fire Imp ONe on mapspriteanim/FireImpeONeonfloor4.png" id="4_7bbre"]
+[ext_resource type="Texture2D" uid="uid://b2bug45fjcnc7" path="res://Assets/Character Assets/NPCs/Fire Imps/Fire Imp ONe on mapspriteanim/FireImpeONeonfloor5.png" id="5_akipd"]
+[ext_resource type="Texture2D" uid="uid://t1qr7fww2k5e" path="res://Assets/Character Assets/NPCs/Fire Imps/Fire Imp ONe on mapspriteanim/FireImpeONeonfloor6.png" id="6_7ukyk"]
+[ext_resource type="Texture2D" uid="uid://oyoyf7v8ttcx" path="res://Assets/Character Assets/NPCs/Fire Imps/Fire Imp ONe on mapspriteanim/FireImpeONeonfloor7.png" id="7_o22yw"]
+[ext_resource type="Texture2D" uid="uid://bgngpuqsm6kxo" path="res://Assets/Character Assets/NPCs/Fire Imps/Fire Imp ONe on mapspriteanim/FireImpeONeonfloor8.png" id="8_cq8fa"]
+[ext_resource type="Texture2D" uid="uid://c1d46jvh3hvmp" path="res://Assets/Character Assets/NPCs/Fire Imps/Fire Imp ONe on mapspriteanim/FireImpeONeonfloor9.png" id="9_cxmbc"]
+[ext_resource type="Texture2D" uid="uid://ybveeafmxobx" path="res://Assets/Character Assets/NPCs/Fire Imps/Fire Imp ONe on mapspriteanim/FireImpeONeonfloor10.png" id="10_thnng"]
+[ext_resource type="Texture2D" uid="uid://du8bp10lg3syw" path="res://Assets/Character Assets/NPCs/Fire Imps/Fire Imp ONe on mapspriteanim/FireImpeONeonfloor11.png" id="11_aej3w"]
+[ext_resource type="Texture2D" uid="uid://dxfjvus8fubr1" path="res://Assets/Character Assets/NPCs/Fire Imps/Fire Imp ONe on mapspriteanim/FireImpeONeonfloor12.png" id="12_smbuh"]
+[ext_resource type="Texture2D" uid="uid://u614k6ddjaq7" path="res://Assets/Character Assets/NPCs/Fire Imps/Fire Imp ONe on mapspriteanim/FireImpeONeonfloor13.png" id="13_qw8li"]
+[ext_resource type="Texture2D" uid="uid://dqxxjcpgqpksq" path="res://Assets/Character Assets/NPCs/Fire Imps/Fire Imp ONe on mapspriteanim/FireImpeONeonfloor14.png" id="14_3m67f"]
+[ext_resource type="Texture2D" uid="uid://cljlk1m4ht6y6" path="res://Assets/Character Assets/NPCs/Fire Imps/Fire Imp ONe on mapspriteanim/FireImpeONeonfloor15.png" id="15_36mwr"]
+[ext_resource type="Texture2D" uid="uid://7s6pyae5q1lh" path="res://Assets/Character Assets/NPCs/Fire Imps/Fire Imp ONe on mapspriteanim/FireImpeONeonfloor16.png" id="16_mkgrj"]
+[ext_resource type="Texture2D" uid="uid://dedtv7mij4eva" path="res://Assets/Character Assets/NPCs/Fire Imps/Fire Imp ONe on mapspriteanim/FireImpeONeonfloor17.png" id="17_3tc67"]
+[ext_resource type="Texture2D" uid="uid://cn2m8uej3yowb" path="res://Assets/Character Assets/NPCs/Fire Imps/Fire Imp ONe on mapspriteanim/FireImpeONeonfloor18.png" id="18_w34lh"]
+[ext_resource type="Texture2D" uid="uid://bd0v272hu6gqd" path="res://Assets/Character Assets/NPCs/Fire Imps/Fire Imp ONe on mapspriteanim/FireImpeONeonfloor19.png" id="19_3r23d"]
+[ext_resource type="Texture2D" uid="uid://yjvbhakgobht" path="res://Assets/Character Assets/NPCs/Fire Imps/Fire Imp ONe on mapspriteanim/FireImpeONeonfloor20.png" id="20_e4kj1"]
+[ext_resource type="Texture2D" uid="uid://ckhsd3r06rt1l" path="res://Assets/Character Assets/NPCs/Fire Imps/Fire Imp ONe on mapspriteanim/FireImpeONeonfloor21.png" id="21_0epxj"]
+[ext_resource type="Texture2D" uid="uid://uc47e8vcnpyc" path="res://Assets/Character Assets/NPCs/Fire Imps/Fire Imp ONe on mapspriteanim/FireImpeONeonfloor22.png" id="22_u5x1y"]
+[ext_resource type="Texture2D" uid="uid://bri82f83drba4" path="res://Assets/Character Assets/NPCs/Fire Imps/Fire Imp ONe on mapspriteanim/FireImpeONeonfloor23.png" id="23_5xhcb"]
+[ext_resource type="Texture2D" uid="uid://cm2dvmc11c55d" path="res://Assets/Character Assets/NPCs/Fire Imps/Fire Imp ONe on mapspriteanim/FireImpeONeonfloor24.png" id="24_dyogc"]
+[ext_resource type="Texture2D" uid="uid://46ibb0p4j12w" path="res://Assets/Character Assets/NPCs/Fire Imps/Fire Imp ONe on mapspriteanim/FireImpeONeonfloor25.png" id="25_k1sxe"]
+[ext_resource type="Texture2D" uid="uid://1jq00bjbihr4" path="res://Assets/Character Assets/NPCs/Fire Imps/Fire Imp ONe on mapspriteanim/FireImpeONeonfloor26.png" id="26_48olt"]
+[ext_resource type="Texture2D" uid="uid://cndi53aie8bo2" path="res://Assets/Character Assets/NPCs/Fire Imps/Fire Imp ONe on mapspriteanim/FireImpeONeonfloor27.png" id="27_ca27v"]
+[ext_resource type="Texture2D" uid="uid://c7qh6qvl1lqg4" path="res://Assets/Character Assets/NPCs/Fire Imps/Fire Imp ONe on mapspriteanim/FireImpeONeonfloor28.png" id="28_oge0b"]
+[ext_resource type="Texture2D" uid="uid://bb7ui6qrdawqe" path="res://Assets/Character Assets/NPCs/Fire Imps/Fire Imp ONe on mapspriteanim/FireImpeONeonfloor29.png" id="29_mhdn2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bljew"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qgft7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_6we6d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ujyae")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_plqti")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7bbre")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_akipd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_7ukyk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_o22yw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_cq8fa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_cxmbc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_thnng")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_aej3w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_smbuh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_qw8li")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_3m67f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_36mwr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_mkgrj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_3tc67")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_w34lh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_3r23d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_e4kj1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_0epxj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_u5x1y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_5xhcb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_dyogc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_k1sxe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_48olt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_ca27v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_oge0b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_mhdn2")
+}],
+"loop": true,
+"name": &"imp_animation",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s50h4"]
+
+[node name="ImpEnemy" type="CharacterBody2D" groups=["enemies"]]
+script = ExtResource("1_3u7we")
+
+[node name="InteractionArea" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+scale = Vector2(2, 2)
+shape = SubResource("CircleShape2D_bljew")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["coworker"]]
+position = Vector2(5, -6)
+scale = Vector2(0.170972, 0.170972)
+sprite_frames = SubResource("SpriteFrames_qgft7")
+animation = &"imp_animation"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.5, 1.3)
+shape = SubResource("CapsuleShape2D_s50h4")

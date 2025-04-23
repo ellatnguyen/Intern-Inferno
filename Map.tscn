@@ -14,7 +14,7 @@ script = ExtResource("1_och07")
 [node name="Rooms" type="Node2D" parent="."]
 script = ExtResource("4")
 
-[node name="Player" parent="." instance=ExtResource("3_4rtyr")]
+[node name="Player" parent="." groups=["player"] instance=ExtResource("3_4rtyr")]
 
 [node name="TimerUI" parent="." instance=ExtResource("4_nm2n1")]
 

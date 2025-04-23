@@ -12,7 +12,7 @@ func _ready():
 	update_productivity_animation()
 
 	#timer.wait_time = 0.2
-	timer.wait_time = 0.2
+	timer.wait_time = 50
 	timer.start()
 	timer.timeout.connect(_on_productivity_timer_timeout)
 
