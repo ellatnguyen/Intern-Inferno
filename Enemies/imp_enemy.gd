@@ -8,3 +8,5 @@ func _ready():
 	}
 	dialogue_file_path = "res://Enemies/Dialogue/imp_dialogue.txt"
 	super._ready()
+	
+	dialogue_sprite = preload("res://Enemies/DialogueBattleSprites/FireImp.png")

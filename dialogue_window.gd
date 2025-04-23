@@ -5,6 +5,7 @@ extends Control
 @onready var per_button = $PER_Button
 @onready var leave_button = $LEAVE_Button
 @onready var health_bar = $"PrototypeEnemy/ComplianceBar"
+@onready var enemy_portrait = $EnemyPortrait
 
 var current_int_line = 0
 var current_per_line = 0
@@ -38,45 +39,7 @@ func _unhandled_input(event):
 		_on_int_button_pressed()
 	elif event.is_action_pressed("battle_leave"):
 		_on_leave_button_pressed()
-
-## 🆕 Main method for initiating a battle with an enemy
-#func start_battle_with(enemy: Node):
-	#print("Battle started with:", enemy.name)
-	#current_enemy = enemy
-#
-	## Reset UI states
-	#current_int_line = 0
-	#current_per_line = 0
-	#enemy_health = MAX_HEALTH
-	#current_dialogue = int_dialogue
-#
-	## Load dialogue from enemy-specific path
-	#if enemy.dialogue_file_path != "":
-		#var file = FileAccess.open(enemy.dialogue_file_path, FileAccess.READ)
-		#if file:
-			#var text = file.get_as_text()
-			#file.close()
-			#per_dialogue.clear()
-			#int_dialogue.clear()
-			#parse_dialogue(text)
-		#else:
-			#print("Failed to open dialogue file:", enemy.dialogue_file_path)
-#
-	#update_dialogue()
-	#update_health_bar()
-#
-	## Show and enable all buttons
-	#int_button.visible = true
-	#per_button.visible = true
-	#leave_button.visible = true
-#
-	#int_button.disabled = false
-	#per_button.disabled = false
-	#leave_button.disabled = false
-#
-	#self.visible = true
-	#for child in get_children():
-		#child.visible = true
+		
 func start_battle_with(enemy: Node):
 	print("Battle started with:", enemy.name)
 
@@ -100,23 +63,16 @@ func start_battle_with(enemy: Node):
 			print("Failed to open dialogue file:", enemy.dialogue_file_path)
 	else:
 		print("Enemy has no dialogue_file_path.")
-
-	# Load dialogue from enemy
-	#if enemy.has("dialogue_file_path") and enemy.dialogue_file_path != "":
-		#var file = FileAccess.open(enemy.dialogue_file_path, FileAccess.READ)
-		#if file:
-			#var text = file.get_as_text()
-			#file.close()
-			#parse_dialogue(text)
-		#else:
-			#print("Failed to open dialogue file:", enemy.dialogue_file_path)
-	#else:
-		#print("Enemy has no dialogue_file_path.")
 	
 
 	# Set starting dialogue type (optional: choose based on enemy preference?)
 	current_dialogue = int_dialogue
-
+	
+	# Set portrait if available
+	if enemy.dialogue_sprite:
+		enemy_portrait.texture = enemy.dialogue_sprite
+	else:
+		enemy_portrait.texture = null  # or a default "mystery" portrait
 	# Make UI visible
 	self.visible = true
 	for child in get_children():

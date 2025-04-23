@@ -25,8 +25,11 @@ position = Vector2(332, 154)
 scale = Vector2(3, 3)
 
 [node name="DialogueWindow" parent="." instance=ExtResource("3_helcj")]
+anchors_preset = -1
 anchor_left = 0.456597
 anchor_top = 0.422839
+anchor_right = 0.456597
+anchor_bottom = 0.422839
 offset_left = -154.0
 offset_top = -49.0
 offset_right = 996.0

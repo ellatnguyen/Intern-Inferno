@@ -144,12 +144,12 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="PrototypeEnemy" type="Sprite2D" parent="."]
+[node name="EnemyPortrait" type="Sprite2D" parent="."]
 position = Vector2(952, 489)
 scale = Vector2(0.44401, 0.44401)
 texture = ExtResource("3_uw0vv")
 
-[node name="ComplianceBar" type="AnimatedSprite2D" parent="PrototypeEnemy"]
+[node name="ComplianceBar" type="AnimatedSprite2D" parent="EnemyPortrait"]
 position = Vector2(-853.834, -372.739)
 scale = Vector2(2.02385, 2.02385)
 sprite_frames = SubResource("SpriteFrames_ttqau")
