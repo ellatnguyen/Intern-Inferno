@@ -2,8 +2,14 @@ INT
 imp int 1
 imp int 2
 imp int 3
+imp int 4
+imp int 5
+imp int 6
 
 PER
 imp per 1
 imp per 2
 imp per 3
+imp per 4
+imp per 5
+imp per 6

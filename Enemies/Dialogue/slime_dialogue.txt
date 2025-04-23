@@ -1,0 +1,15 @@
+INT
+slime int 1
+slime int 2
+slime int 3
+slime int 4
+slime int 5
+slime int 6
+
+PER
+slime per 1
+slime per 2
+slime per 3
+slime per 4
+slime per 5
+slime per 6

@@ -4,7 +4,7 @@ extends Control
 @onready var int_button = $INT_Button
 @onready var per_button = $PER_Button
 @onready var leave_button = $LEAVE_Button
-@onready var health_bar = $"PrototypeEnemy/ComplianceBar"
+@onready var health_bar = $"EnemyPortrait/ComplianceBar"
 @onready var enemy_portrait = $EnemyPortrait
 
 var current_int_line = 0
@@ -161,14 +161,36 @@ func update_health_bar():
 	else:
 		print("Error: Health bar not found.")
 
-func end_battle():
-	print("Battle Over!")
+#func end_battle():
+	#print("Battle Over!")
+	#self.visible = false
+	#for child in get_children():
+		#child.visible = false
+#
+#func _on_leave_button_pressed():
+	#print("LEAVE Button Pressed!")
+	#self.visible = false
+	#for child in get_children():
+		#child.visible = false
+func reset_battle():
 	self.visible = false
 	for child in get_children():
 		child.visible = false
+	
+	# Clear the portrait
+	enemy_portrait.texture = null
+	
+	# Reset dialogue data
+	per_dialogue.clear()
+	int_dialogue.clear()
+	current_int_line = 0
+	current_per_line = 0
+	current_enemy = null
 
 func _on_leave_button_pressed():
 	print("LEAVE Button Pressed!")
-	self.visible = false
-	for child in get_children():
-		child.visible = false
+	reset_battle()
+
+func end_battle():
+	print("Battle Over!")
+	reset_battle()
