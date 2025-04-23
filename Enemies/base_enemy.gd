@@ -9,6 +9,8 @@ var stats = {
 }
 
 var dialogue_file_path: String = ""
+var dialogue_sprite: Texture = null
+
 @onready var interaction_area = $InteractionArea  # Adjust if your structure differs
 @onready var enemy_animation = $AnimatedSprite2D
 
