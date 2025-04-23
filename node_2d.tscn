@@ -61,7 +61,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="DialogueWindow" type="Panel"]
+[node name="PrototypeWindow" type="Panel"]
 custom_minimum_size = Vector2(1150, 650)
 anchors_preset = 8
 anchor_left = 0.5

@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dehtxhciuiucy"]
+
+[ext_resource type="PackedScene" uid="uid://bfhymvscy3g8h" path="res://node_2d.tscn" id="4_6pn84"]
+
+[node name="DialogueBattleUI" type="CanvasLayer"]
+
+[node name="DialogueWindow" parent="." instance=ExtResource("4_6pn84")]
+offset_left = -598.0
+offset_top = 336.0
+offset_right = 552.0
+offset_bottom = 986.0
