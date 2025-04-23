@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://m2lxqkstfmij"]
 
-[ext_resource type="Texture2D" uid="uid://kpq5xah1fgc2" path="res://UI/win screen.PNG" id="1_kyoet"]
+[ext_resource type="Texture2D" uid="uid://kpq5xah1fgc2" path="res://UI/UIAssets/win screen.PNG" id="1_kyoet"]
 
 [node name="WinScreen" type="Node2D"]
 
