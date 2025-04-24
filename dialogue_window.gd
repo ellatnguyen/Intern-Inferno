@@ -6,6 +6,9 @@ extends Control
 @onready var leave_button = $LEAVE_Button
 @onready var health_bar = $"EnemyPortrait/ComplianceBar"
 @onready var enemy_portrait = $EnemyPortrait
+@onready var productivity_bar = get_node("/root/Game/TimerUI/Container/ProductivityBar")  # Adjust path as needed
+
+var battle_ended = false
 
 var current_int_line = 0
 var current_per_line = 0
@@ -41,21 +44,21 @@ func _unhandled_input(event):
 		_on_leave_button_pressed()
 		
 func start_battle_with(enemy: Node):
+	# Reset all previous battle state
+	reset_battle()  # Ensure everything is cleared before starting a new battle
+
 	print("Battle started with:", enemy.name)
-	
 	GameManager.in_battle = true
-	
-	# Disable user controls
+
+	# Disable player controls
 	var player = get_tree().get_first_node_in_group("player")
 	if player:
 		player.controls_enabled = false
 
 	current_enemy = enemy
-	current_int_line = 0
-	current_per_line = 0
-
-	# Read enemy stats
 	enemy_health = enemy.stats.get("MAX_HEALTH", MAX_HEALTH)
+	update_health_bar()  # Reflect new enemy health
+	
 	per_dialogue.clear()
 	int_dialogue.clear()
 	
@@ -158,8 +161,16 @@ func decrease_enemy_health(amount := 1):
 		enemy_health = max(enemy_health, 0)
 		update_health_bar()
 
-		if enemy_health == 0:
-			end_battle()
+		if enemy_health == 0 and not battle_ended:
+			battle_ended = true
+			print("Enemy defeated!")
+
+			if productivity_bar:
+				print("Incrementing Productivity Bar!")
+				productivity_bar.increase_productivity_by_percent(0.20)
+			
+			end_battle()  # Ensure battle always ends cleanly
+
 
 func update_health_bar():
 	if health_bar:
@@ -172,22 +183,30 @@ func reset_battle():
 	self.visible = false
 	for child in get_children():
 		child.visible = false
-	
-	# Clear the portrait
-	enemy_portrait.texture = null
-	
-	# Reset dialogue data
-	per_dialogue.clear()
-	int_dialogue.clear()
+
+	# Clear battle state variables
+	battle_ended = false
+	enemy_health = MAX_HEALTH
 	current_int_line = 0
 	current_per_line = 0
 	current_enemy = null
-	
+
+	# Clear dialogue data
+	per_dialogue.clear()
+	int_dialogue.clear()
+
+	# Reset health bar visuals
+	update_health_bar()
+
+	# Clear enemy portrait
+	enemy_portrait.texture = null
+
+	# Re-enable player controls
 	GameManager.in_battle = false
-	
-	var player = get_tree().get_first_node_in_group("player")
-	if player:
-		player.controls_enabled = true
+	if productivity_bar.is_full == false:
+		var player = get_tree().get_first_node_in_group("player")
+		if player:
+			player.controls_enabled = true
 
 func _on_leave_button_pressed():
 	print("LEAVE Button Pressed!")
