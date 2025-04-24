@@ -33,7 +33,5 @@ func drop_random_item():
 	if possible_items.is_empty():
 		return
 	var rand_index = randi() % possible_items.size()
-	#var item_scene = preload("res://scenes/collectable_item.tscn").instantiate()
-	#item_scene.item = possible_items[rand_index] # Set the InvItem resource
-	#item_scene.global_position = $Position2D.global_position
-	#get_parent().add_child(item_scene)
+	var selected_item = possible_items[rand_index]
+	player.collect(selected_item)

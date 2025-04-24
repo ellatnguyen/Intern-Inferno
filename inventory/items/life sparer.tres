@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://d0p2w2xfvg3wp"]
+
+[ext_resource type="Script" path="res://inventory/inventory_item.gd" id="1_2ufhv"]
+[ext_resource type="Texture2D" uid="uid://b46h5jsjdcrbd" path="res://audrey_assets/CoinAssetTransparent_2_optimized.png" id="2_rcj2l"]
+
+[resource]
+script = ExtResource("1_2ufhv")
+name = "coin"
+texture = ExtResource("2_rcj2l")
