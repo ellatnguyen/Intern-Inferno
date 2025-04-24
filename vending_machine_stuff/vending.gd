@@ -32,6 +32,8 @@ func shake_machine():
 func drop_random_item():
 	if possible_items.is_empty():
 		return
+	print("Possible items: ", possible_items)
 	var rand_index = randi() % possible_items.size()
 	var selected_item = possible_items[rand_index]
+	print("Vending machine gave: ", selected_item.name)  # <- Add this
 	player.collect(selected_item)
