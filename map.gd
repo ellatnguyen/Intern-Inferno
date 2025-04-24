@@ -32,8 +32,6 @@ func _ready():
 	for enemy in get_tree().get_nodes_in_group("enemies"):
 		enemy.connect("player_near", Callable(self, "_on_enemy_player_near"))
 
-	
-
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_focus_next"):
 		get_tree().paused = true
@@ -41,20 +39,6 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact") and nearby_enemy and GameManager.in_battle == false:
 		print("MAP.GD: Starting battle with:", nearby_enemy.name)
 		dialogue_battle_ui.start_battle_with(nearby_enemy)
-		
-	#if nearby_enemy and event.is_action_pressed("interact"):
-		#print("MAP Starting battle with:", nearby_enemy.name)
-		#dialogue_battle_ui.start_battle_with(nearby_enemy)
-
-#func _on_enemy_area_entered(area):
-	#if area.is_in_group("enemies"):
-		#print("Player entered range of enemy:", area.name)
-		#nearby_enemy = area
-#
-#func _on_enemy_area_exited(area):
-	#if area == nearby_enemy:
-		#print("Player exited range of enemy:", area.name)
-		#nearby_enemy = null
 
 func _on_enemy_player_near(state: bool, enemy: Node):
 	if state:
