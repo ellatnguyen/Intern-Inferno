@@ -27,45 +27,6 @@ position = Vector2(168, 104)
 [node name="PositionWest" type="Marker2D" parent="Entrance" index="2"]
 position = Vector2(23, 121)
 
-[node name="DoorNorth" parent="Doors" index="0"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-position = Vector2(96, 17)
-script = null
-
-[node name="DoorEast" parent="Doors" index="1"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-position = Vector2(191, 113)
-script = null
-
-[node name="DoorWest" parent="Doors" index="2"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-position = Vector2(0, 112)
-script = null
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetector" index="0"]
 position = Vector2(96, 177)
 shape = SubResource("1")

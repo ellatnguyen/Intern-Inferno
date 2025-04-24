@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://clspty7525vby"
-path="res://.godot/imported/breakroomv1.JPG-761775cea43afa69085631acdae34165.ctex"
+uid="uid://2w87lrr416q5"
+path="res://.godot/imported/stuck clock frame 1, hold for 14.PNG-90ab382eb8bee597a319cf1da8ec3ca3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/rooms/breakroomv1.JPG"
-dest_files=["res://.godot/imported/breakroomv1.JPG-761775cea43afa69085631acdae34165.ctex"]
+source_file="res://Assets/rooms (old)/stuck clock animation frames/stuck clock frame 1, hold for 14.PNG"
+dest_files=["res://.godot/imported/stuck clock frame 1, hold for 14.PNG-90ab382eb8bee597a319cf1da8ec3ca3.ctex"]
 
 [params]
 

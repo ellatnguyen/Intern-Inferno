@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://clspty7525vby"
-path="res://.godot/imported/breakroomv1.JPG-761775cea43afa69085631acdae34165.ctex"
+uid="uid://n4xd3oe4tjdp"
+path="res://.godot/imported/office_plants-removebg-preview.png-b9890c7a9b649e7b32a6c100cfaa7d02.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/rooms/breakroomv1.JPG"
-dest_files=["res://.godot/imported/breakroomv1.JPG-761775cea43afa69085631acdae34165.ctex"]
+source_file="res://Assets/rooms (old)/office_plants-removebg-preview.png"
+dest_files=["res://.godot/imported/office_plants-removebg-preview.png-b9890c7a9b649e7b32a6c100cfaa7d02.ctex"]
 
 [params]
 

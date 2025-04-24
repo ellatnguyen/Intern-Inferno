@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://clspty7525vby"
-path="res://.godot/imported/breakroomv1.JPG-761775cea43afa69085631acdae34165.ctex"
+uid="uid://c652mmsuxcm33"
+path="res://.godot/imported/tile reference image.PNG-a66f8160485d80c7579b4e959ff215ca.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/rooms/breakroomv1.JPG"
-dest_files=["res://.godot/imported/breakroomv1.JPG-761775cea43afa69085631acdae34165.ctex"]
+source_file="res://Assets/rooms/tile reference image.PNG"
+dest_files=["res://.godot/imported/tile reference image.PNG-a66f8160485d80c7579b4e959ff215ca.ctex"]
 
 [params]
 
