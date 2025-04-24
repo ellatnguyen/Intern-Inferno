@@ -180,8 +180,8 @@ offset_bottom = -48.312
 scale = Vector2(1.35, 1.35)
 
 [node name="coin" parent="." instance=ExtResource("5_lw8ao")]
-position = Vector2(-302, -22)
+position = Vector2(532, 1150)
 scale = Vector2(0.45, 0.45)
 
 [node name="VendingMachine" parent="." instance=ExtResource("6_vx0lg")]
-position = Vector2(165, -102)
+position = Vector2(112, -132)

@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://c45qyqp8wv7gl"]
 
 [ext_resource type="Script" path="res://inventory/coin/coin.gd" id="1_rvu8b"]
-[ext_resource type="Resource" uid="uid://gw222hecgd62" path="res://inventory/items/coin.tres" id="2_nrxsi"]
+[ext_resource type="Resource" uid="uid://gw222hecgd62" path="res://inventory/coin/coin.tres" id="2_nrxsi"]
 [ext_resource type="Texture2D" uid="uid://n4xd3oe4tjdp" path="res://Assets/rooms/office_plants-removebg-preview.png" id="3_3yc46"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4aw1s"]
