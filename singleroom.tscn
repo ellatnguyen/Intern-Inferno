@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://one_room_scale.gd" id="2_lji61"]
 [ext_resource type="PackedScene" uid="uid://bv8r5dfmekrat" path="res://player/player.tscn" id="2_nuiwc"]
 [ext_resource type="PackedScene" uid="uid://bwwpnla8wmau4" path="res://inventory/inv_UI.tscn" id="3_cdahx"]
-[ext_resource type="PackedScene" uid="uid://c45qyqp8wv7gl" path="res://coin/coin.tscn" id="5_lw8ao"]
+[ext_resource type="PackedScene" uid="uid://c45qyqp8wv7gl" path="res://inventory/coin/coin.tscn" id="5_lw8ao"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e4y7a"]
 size = Vector2(178.5, 15.1132)

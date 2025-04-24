@@ -347,6 +347,7 @@ script = ExtResource("1_dgov3")
 script = ExtResource("2_b7fkq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
 scale = Vector2(0.015, 0.015)
 sprite_frames = SubResource("SpriteFrames_x1iip")
 animation = &"idle"
