@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dl2rbfql0c4m4"]
+[gd_scene load_steps=5 format=3 uid="uid://dl2rbfql0c4m4"]
 
 [ext_resource type="PackedScene" uid="uid://7oeqdu22e1q5" path="res://Rooms/Room.tscn" id="1_wxo5t"]
 [ext_resource type="PackedScene" uid="uid://d11ye7ex6k5tq" path="res://Enemies/imp_enemy.tscn" id="2_gb20m"]
+[ext_resource type="PackedScene" uid="uid://de6upgnsf7rg7" path="res://vending_machine_stuff/vending.tscn" id="3_ddpth"]
 
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(16, 8)
@@ -34,3 +35,7 @@ shape = SubResource("1")
 
 [node name="ImpEnemy" parent="." index="7" instance=ExtResource("2_gb20m")]
 position = Vector2(57, 96)
+
+[node name="VendingMachine" parent="." index="8" instance=ExtResource("3_ddpth")]
+position = Vector2(159, 37)
+scale = Vector2(0.13, 0.13)

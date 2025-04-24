@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://c51eohj6oxx2j"]
+[gd_scene load_steps=6 format=3 uid="uid://c51eohj6oxx2j"]
 
 [ext_resource type="PackedScene" uid="uid://7oeqdu22e1q5" path="res://Rooms/Room.tscn" id="1_722v8"]
 [ext_resource type="PackedScene" path="res://Rooms/Furniture and Traps/Torch.tscn" id="2_e7m8x"]
 [ext_resource type="PackedScene" uid="uid://c6bdn56nwfpo8" path="res://Enemies/slime_enemy.tscn" id="3_avu25"]
+[ext_resource type="PackedScene" uid="uid://de6upgnsf7rg7" path="res://vending_machine_stuff/vending.tscn" id="4_2c8k3"]
 
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(16, 8)
@@ -36,3 +37,7 @@ position = Vector2(52, 23)
 
 [node name="SlimeEnemy" parent="." index="8" instance=ExtResource("3_avu25")]
 position = Vector2(100, 101)
+
+[node name="VendingMachine" parent="." index="9" instance=ExtResource("4_2c8k3")]
+position = Vector2(38, 44)
+scale = Vector2(0.13, 0.13)

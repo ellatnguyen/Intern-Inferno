@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://d0p2w2xfvg3wp"]
+
+[ext_resource type="Script" path="res://inventory/inventory_item.gd" id="1_2ufhv"]
+[ext_resource type="Texture2D" uid="uid://dws7c3n7of676" path="res://Assets/Vending/enlarged life sparer.PNG" id="2_pcrio"]
+
+[resource]
+script = ExtResource("1_2ufhv")
+name = "lifesparer"
+texture = ExtResource("2_pcrio")

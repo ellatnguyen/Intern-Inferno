@@ -69,6 +69,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="INT_Button" type="Button" parent="."]
 custom_minimum_size = Vector2(200, 50)
+layout_mode = 0
 offset_left = 348.0
 offset_top = 349.0
 offset_right = 626.0
@@ -77,6 +78,7 @@ text = "INTIMIDATION"
 
 [node name="PER_Button" type="Button" parent="."]
 custom_minimum_size = Vector2(200, 50)
+layout_mode = 0
 offset_left = 345.0
 offset_top = 269.0
 offset_right = 624.0
@@ -84,6 +86,7 @@ offset_bottom = 319.0
 text = "PERSUASION"
 
 [node name="LEAVE_Button" type="Button" parent="."]
+layout_mode = 0
 offset_left = 349.0
 offset_top = 432.0
 offset_right = 564.0

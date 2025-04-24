@@ -6,6 +6,7 @@ const FRICTION: float = 0.15
 const ACCELERATION: int = 40
 const MAX_SPEED: int = 100
 
+@export var inv: Inv
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var fsm: PlayerFSM = $PlayerFSM
@@ -65,3 +66,9 @@ func _unhandled_input(event):
 #func _unhandled_input(event: InputEvent) -> void:
 	#if event.is_action_pressed("interact") and current_enemy:
 		#current_enemy.start_battle()
+func collect(item):
+	if inv==null:
+		print("Inventory not assigned")
+		return
+	print("adding item to inventory")
+	inv.insert(item)

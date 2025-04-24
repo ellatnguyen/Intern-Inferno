@@ -17,8 +17,14 @@ script = ExtResource("4")
 [node name="Player" parent="." groups=["player"] instance=ExtResource("3_4rtyr")]
 
 [node name="InventoryUI" type="CanvasLayer" parent="."]
+scale = Vector2(1.5, 1.5)
+transform = Transform2D(1.5, 0, 0, 1.5, 0, 0)
 
 [node name="Inv_UI" parent="InventoryUI" instance=ExtResource("5_e2ith")]
+offset_left = 135.333
+offset_top = -216.0
+offset_right = 135.333
+offset_bottom = -216.0
 
 [node name="DialogueBattleUI" parent="." instance=ExtResource("6_86hdy")]
 
