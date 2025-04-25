@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ddansyru2ormh"
-path="res://.godot/imported/VendingMachineItems.png-80f35c4becb67819babdae2a0f853341.ctex"
+uid="uid://dacw5yspdxx4p"
+path="res://.godot/imported/centered_lifesparer.png-0b593aa92b28e517968beda66ea0e49e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Vending/VendingMachineItems.png"
-dest_files=["res://.godot/imported/VendingMachineItems.png-80f35c4becb67819babdae2a0f853341.ctex"]
+source_file="res://Assets/Vending/centered_lifesparer.png"
+dest_files=["res://.godot/imported/centered_lifesparer.png-0b593aa92b28e517968beda66ea0e49e.ctex"]
 
 [params]
 

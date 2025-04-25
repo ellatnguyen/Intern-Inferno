@@ -2,6 +2,8 @@ extends Control
 
 @onready var inv: Inv=preload("res://inventory/player_inv.tres")
 @onready var slots: Array = $NinePatchRect/GridContainer.get_children()
+@onready var closed_clipboard: Node=$ClosedClipboard
+@onready var inventory_panel: Node=$NinePatchRect
 
 
 var is_open = false
@@ -26,9 +28,11 @@ func _process(_delta):
 			open()
 
 func open():
-	visible=true
+	inventory_panel.visible=true
+	closed_clipboard.visible=false
 	is_open=true
 	
 func close():
-	visible=false
+	inventory_panel.visible=false
+	closed_clipboard.visible=true
 	is_open = false

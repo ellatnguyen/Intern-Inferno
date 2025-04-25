@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://45g5un3b3ok7"
-path="res://.godot/imported/fahrenheit.png-069b987d8d3487e00b6c3f8e77704253.ctex"
+uid="uid://bx6i5gntm2gif"
+path="res://.godot/imported/better_empty_slot.png-5f6e6fd8613ff94dfe1b5a783c004b52.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Vending/fahrenheit.png"
-dest_files=["res://.godot/imported/fahrenheit.png-069b987d8d3487e00b6c3f8e77704253.ctex"]
+source_file="res://Assets/Vending/better_empty_slot.png"
+dest_files=["res://.godot/imported/better_empty_slot.png-5f6e6fd8613ff94dfe1b5a783c004b52.ctex"]
 
 [params]
 

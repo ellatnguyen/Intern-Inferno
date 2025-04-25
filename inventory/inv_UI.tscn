@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bwwpnla8wmau4"]
+[gd_scene load_steps=5 format=3 uid="uid://bwwpnla8wmau4"]
 
 [ext_resource type="Script" path="res://inventory/Inv_UI.gd" id="1_06iax"]
 [ext_resource type="Texture2D" uid="uid://bqk0e056l8gs1" path="res://audrey_assets/empty clipboard expanded.PNG" id="2_8ng60"]
+[ext_resource type="Texture2D" uid="uid://df8m8sqxkhbdx" path="res://Assets/empty clipboard hidden.PNG" id="4_2vpmf"]
 [ext_resource type="PackedScene" uid="uid://uk0lrnj0irjc" path="res://inventory/inv_ui_slot.tscn" id="5_h7fe6"]
 
 [node name="Inv_UI" type="Control"]
@@ -21,34 +22,38 @@ patch_margin_left = 1
 patch_margin_top = 1
 patch_margin_right = 1
 patch_margin_bottom = 1
+metadata/_edit_group_ = true
 
 [node name="GridContainer" type="GridContainer" parent="NinePatchRect"]
-custom_minimum_size = Vector2(148, 46)
+custom_minimum_size = Vector2(150, 100)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.787
-anchor_right = 0.572
+anchor_left = 0.594
+anchor_top = 0.683
+anchor_right = 0.641
 anchor_bottom = 0.924
-offset_left = -177.5
-offset_top = 11.373
-offset_right = 175.548
-offset_bottom = 21.396
-scale = Vector2(0.9, 0.9)
+offset_left = -178.614
+offset_top = 11.981
+offset_right = 1037.22
+offset_bottom = 178.396
+scale = Vector2(0.3, 0.3)
 pivot_offset = Vector2(1, 0)
-columns = 5
+columns = 4
 
 [node name="inv_UI_slot1" parent="NinePatchRect/GridContainer" instance=ExtResource("5_h7fe6")]
+custom_minimum_size = Vector2(270, 90)
 layout_mode = 2
+size_flags_horizontal = 0
 
 [node name="inv_UI_slot2" parent="NinePatchRect/GridContainer" instance=ExtResource("5_h7fe6")]
+custom_minimum_size = Vector2(270, 130)
 layout_mode = 2
 
 [node name="inv_UI_slot3" parent="NinePatchRect/GridContainer" instance=ExtResource("5_h7fe6")]
+custom_minimum_size = Vector2(270, 90)
 layout_mode = 2
 
-[node name="inv_UI_slot4" parent="NinePatchRect/GridContainer" instance=ExtResource("5_h7fe6")]
-layout_mode = 2
-
-[node name="inv_UI_slot5" parent="NinePatchRect/GridContainer" instance=ExtResource("5_h7fe6")]
-layout_mode = 2
+[node name="ClosedClipboard" type="Sprite2D" parent="."]
+position = Vector2(238, 494)
+scale = Vector2(0.42, 0.42)
+texture = ExtResource("4_2vpmf")
