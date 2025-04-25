@@ -214,4 +214,23 @@ func _on_leave_button_pressed():
 
 func end_battle():
 	print("Battle Over!")
-	reset_battle()
+	#i forgot to get rid of the UI before despawning ;-;
+	self.visible=false
+	for child in get_children():
+		child.visible=false
+
+	var defeated_enemy = current_enemy
+	current_enemy=null
+	
+	GameManager.in_battle=false
+	
+	if is_inside_tree():
+		var player = get_tree().get_first_node_in_group("player")
+		if player:
+			player.controls_enabled= true
+		else:
+			print("dialogue windo is no longer inside the scene tree")
+
+	if defeated_enemy and is_instance_valid(defeated_enemy) and defeated_enemy.has_method("despawn"):
+		defeated_enemy.despawn()
+	#reset_battle()
