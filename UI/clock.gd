@@ -11,7 +11,7 @@ func _ready():
 
 	update_clock_animation()
 
-	timer.wait_time = 0.5  # Debug time interval (adjust as needed)
+	timer.wait_time = 50  # Debug time interval (adjust as needed)
 	timer.start()
 	timer.timeout.connect(_on_timer_timeout)
 
@@ -35,3 +35,4 @@ func update_clock_animation():
 func end_work_day():
 	print("Workday Over!")  
 	timer.stop()
+	get_tree().change_scene_to_file("res://UI/LoseScreen.tscn")

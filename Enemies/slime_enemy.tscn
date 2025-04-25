@@ -1,0 +1,152 @@
+[gd_scene load_steps=34 format=3 uid="uid://c6bdn56nwfpo8"]
+
+[ext_resource type="Script" path="res://Enemies/slime_enemy.gd" id="1_jc1gt"]
+[ext_resource type="Texture2D" uid="uid://kvrmdfq0hiwe" path="res://Assets/Character Assets/NPCs/SlimeGrunts/SLimeGruntONeonfloor/SlimeGuyoneonmapanimsprite/slimeGruntONeonfloor1.png" id="2_4eudn"]
+[ext_resource type="Texture2D" uid="uid://27o55ivhcobi" path="res://Assets/Character Assets/NPCs/SlimeGrunts/SLimeGruntONeonfloor/SlimeGuyoneonmapanimsprite/slimeGruntONeonfloor2.png" id="3_4wdux"]
+[ext_resource type="Texture2D" uid="uid://c18p4g0u3obt4" path="res://Assets/Character Assets/NPCs/SlimeGrunts/SLimeGruntONeonfloor/SlimeGuyoneonmapanimsprite/slimeGruntONeonfloor3.png" id="4_jhnyb"]
+[ext_resource type="Texture2D" uid="uid://n1ltp6pma33o" path="res://Assets/Character Assets/NPCs/SlimeGrunts/SLimeGruntONeonfloor/SlimeGuyoneonmapanimsprite/slimeGruntONeonfloor4.png" id="5_8omri"]
+[ext_resource type="Texture2D" uid="uid://1qy4u7l4aydv" path="res://Assets/Character Assets/NPCs/SlimeGrunts/SLimeGruntONeonfloor/SlimeGuyoneonmapanimsprite/slimeGruntONeonfloor5.png" id="6_gurek"]
+[ext_resource type="Texture2D" uid="uid://bs6a6g6yw4p8g" path="res://Assets/Character Assets/NPCs/SlimeGrunts/SLimeGruntONeonfloor/SlimeGuyoneonmapanimsprite/slimeGruntONeonfloor6.png" id="7_ik683"]
+[ext_resource type="Texture2D" uid="uid://b1ygat46gqf6k" path="res://Assets/Character Assets/NPCs/SlimeGrunts/SLimeGruntONeonfloor/SlimeGuyoneonmapanimsprite/slimeGruntONeonfloor7.png" id="8_lc6wu"]
+[ext_resource type="Texture2D" uid="uid://labpy4wrw1m8" path="res://Assets/Character Assets/NPCs/SlimeGrunts/SLimeGruntONeonfloor/SlimeGuyoneonmapanimsprite/slimeGruntONeonfloor8.png" id="9_7ajx5"]
+[ext_resource type="Texture2D" uid="uid://c28cc4rk5sb8q" path="res://Assets/Character Assets/NPCs/SlimeGrunts/SLimeGruntONeonfloor/SlimeGuyoneonmapanimsprite/slimeGruntONeonfloor9.png" id="10_k17gq"]
+[ext_resource type="Texture2D" uid="uid://oa1n31j7huow" path="res://Assets/Character Assets/NPCs/SlimeGrunts/SLimeGruntONeonfloor/SlimeGuyoneonmapanimsprite/slimeGruntONeonfloor10.png" id="11_jrwnw"]
+[ext_resource type="Texture2D" uid="uid://dlevj0p4jppoj" path="res://Assets/Character Assets/NPCs/SlimeGrunts/SLimeGruntONeonfloor/SlimeGuyoneonmapanimsprite/slimeGruntONeonfloor11.png" id="12_oe2ef"]
+[ext_resource type="Texture2D" uid="uid://d35lnk1t4hcpu" path="res://Assets/Character Assets/NPCs/SlimeGrunts/SLimeGruntONeonfloor/SlimeGuyoneonmapanimsprite/slimeGruntONeonfloor12.png" id="13_enru7"]
+[ext_resource type="Texture2D" uid="uid://k87fsn642snj" path="res://Assets/Character Assets/NPCs/SlimeGrunts/SLimeGruntONeonfloor/SlimeGuyoneonmapanimsprite/slimeGruntONeonfloor13.png" id="14_3nd1c"]
+[ext_resource type="Texture2D" uid="uid://uj0l2dlw0nyj" path="res://Assets/Character Assets/NPCs/SlimeGrunts/SLimeGruntONeonfloor/SlimeGuyoneonmapanimsprite/slimeGruntONeonfloor14.png" id="15_wwimh"]
+[ext_resource type="Texture2D" uid="uid://b1cc2mh4vxqd2" path="res://Assets/Character Assets/NPCs/SlimeGrunts/SLimeGruntONeonfloor/SlimeGuyoneonmapanimsprite/slimeGruntONeonfloor15.png" id="16_o1trv"]
+[ext_resource type="Texture2D" uid="uid://4eup41w8pomi" path="res://Assets/Character Assets/NPCs/SlimeGrunts/SLimeGruntONeonfloor/SlimeGuyoneonmapanimsprite/slimeGruntONeonfloor16.png" id="17_v706j"]
+[ext_resource type="Texture2D" uid="uid://bmq7mhsw545og" path="res://Assets/Character Assets/NPCs/SlimeGrunts/SLimeGruntONeonfloor/SlimeGuyoneonmapanimsprite/slimeGruntONeonfloor17.png" id="18_bil1v"]
+[ext_resource type="Texture2D" uid="uid://b4pr4exadnr6" path="res://Assets/Character Assets/NPCs/SlimeGrunts/SLimeGruntONeonfloor/SlimeGuyoneonmapanimsprite/slimeGruntONeonfloor18.png" id="19_vta6t"]
+[ext_resource type="Texture2D" uid="uid://d0d7syx2xprdu" path="res://Assets/Character Assets/NPCs/SlimeGrunts/SLimeGruntONeonfloor/SlimeGuyoneonmapanimsprite/slimeGruntONeonfloor19.png" id="20_kck18"]
+[ext_resource type="Texture2D" uid="uid://fvb7flftapm1" path="res://Assets/Character Assets/NPCs/SlimeGrunts/SLimeGruntONeonfloor/SlimeGuyoneonmapanimsprite/slimeGruntONeonfloor20.png" id="21_hd8r7"]
+[ext_resource type="Texture2D" uid="uid://qyfy0yvb56yj" path="res://Assets/Character Assets/NPCs/SlimeGrunts/SLimeGruntONeonfloor/SlimeGuyoneonmapanimsprite/slimeGruntONeonfloor21.png" id="22_mhm0t"]
+[ext_resource type="Texture2D" uid="uid://b6em5augavkh8" path="res://Assets/Character Assets/NPCs/SlimeGrunts/SLimeGruntONeonfloor/SlimeGuyoneonmapanimsprite/slimeGruntONeonfloor22.png" id="23_yr0qc"]
+[ext_resource type="Texture2D" uid="uid://diqs6a1mxbod8" path="res://Assets/Character Assets/NPCs/SlimeGrunts/SLimeGruntONeonfloor/SlimeGuyoneonmapanimsprite/slimeGruntONeonfloor23.png" id="24_tke4v"]
+[ext_resource type="Texture2D" uid="uid://dpkxaytb3rf4u" path="res://Assets/Character Assets/NPCs/SlimeGrunts/SLimeGruntONeonfloor/SlimeGuyoneonmapanimsprite/slimeGruntONeonfloor24.png" id="25_d0iro"]
+[ext_resource type="Texture2D" uid="uid://dr5wpoukfgpoy" path="res://Assets/Character Assets/NPCs/SlimeGrunts/SLimeGruntONeonfloor/SlimeGuyoneonmapanimsprite/slimeGruntONeonfloor25.png" id="26_iy6jf"]
+[ext_resource type="Texture2D" uid="uid://b5sfy205cjsyu" path="res://Assets/Character Assets/NPCs/SlimeGrunts/SLimeGruntONeonfloor/SlimeGuyoneonmapanimsprite/slimeGruntONeonfloor26.png" id="27_eg037"]
+[ext_resource type="Texture2D" uid="uid://lckhle1mbtkg" path="res://Assets/Character Assets/NPCs/SlimeGrunts/SLimeGruntONeonfloor/SlimeGuyoneonmapanimsprite/slimeGruntONeonfloor27.png" id="28_4hhrv"]
+[ext_resource type="Texture2D" uid="uid://bl777g5ulqu85" path="res://Assets/Character Assets/NPCs/SlimeGrunts/SLimeGruntONeonfloor/SlimeGuyoneonmapanimsprite/slimeGruntONeonfloor28.png" id="29_yj8ae"]
+[ext_resource type="Texture2D" uid="uid://dvcaow8c840in" path="res://Assets/Character Assets/NPCs/SlimeGrunts/SLimeGruntONeonfloor/SlimeGuyoneonmapanimsprite/slimeGruntONeonfloor29.png" id="30_f4fn3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bljew"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r0f6c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_4eudn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_4wdux")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_jhnyb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_8omri")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_gurek")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ik683")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_lc6wu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_7ajx5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_k17gq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_jrwnw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_oe2ef")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_enru7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_3nd1c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_wwimh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_o1trv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_v706j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_bil1v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_vta6t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_kck18")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_hd8r7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_mhm0t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_yr0qc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_tke4v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_d0iro")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_iy6jf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_eg037")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_4hhrv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_yj8ae")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_f4fn3")
+}],
+"loop": true,
+"name": &"slime_overworld",
+"speed": 20.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s50h4"]
+
+[node name="SlimeEnemy" type="CharacterBody2D" groups=["enemies"]]
+script = ExtResource("1_jc1gt")
+
+[node name="InteractionArea" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+scale = Vector2(2, 2)
+shape = SubResource("CircleShape2D_bljew")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["enemies"]]
+position = Vector2(31, -5)
+scale = Vector2(0.170972, 0.170972)
+sprite_frames = SubResource("SpriteFrames_r0f6c")
+animation = &"slime_overworld"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.5, 1.3)
+shape = SubResource("CapsuleShape2D_s50h4")

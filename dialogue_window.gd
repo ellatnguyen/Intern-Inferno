@@ -1,11 +1,14 @@
 extends Control
 
-@onready var dialogue_text = $CanvasLayer/DialogueText
-@onready var int_button = $CanvasLayer/INT_Button
-@onready var per_button = $CanvasLayer/PER_Button
-@onready var leave_button = $CanvasLayer/LEAVE_Button
-@onready var dialogue_window = $DialogueWindow
-@onready var health_bar = $"CanvasLayer/PrototypeEnemy/ComplianceBar"
+@onready var dialogue_text = $DialogueBoxesWithDarkenedBackground/DialogueText
+@onready var int_button = $INT_Button
+@onready var per_button = $PER_Button
+@onready var leave_button = $LEAVE_Button
+@onready var health_bar = $"EnemyPortrait/ComplianceBar"
+@onready var enemy_portrait = $EnemyPortrait
+@onready var productivity_bar = get_node("/root/Game/TimerUI/Container/ProductivityBar")  # Adjust path as needed
+
+var battle_ended = false
 
 var current_int_line = 0
 var current_per_line = 0
@@ -17,42 +20,85 @@ var current_dialogue = []
 const MAX_HEALTH = 11
 var enemy_health = MAX_HEALTH
 
+# New: hold a reference to the enemy
+var current_enemy: Node = null
+
 func _ready():
 	if int_button == null or per_button == null:
 		print("Error: One or more buttons not found.")
 		return
 	
 	print("Buttons found successfully!")
-
-	int_button.pressed.connect(_on_int_button_pressed)
-	per_button.pressed.connect(_on_per_button_pressed)
-	leave_button.pressed.connect(_on_leave_button_pressed)
-
-	var file = FileAccess.open("res://dialogues.txt", FileAccess.READ)
-	if file:
-		var text = file.get_as_text()
-		file.close()
-		parse_dialogue(text)
-
-	update_dialogue()
-	update_health_bar()
+	# UI hidden by default; gets shown in start_battle_with
+	self.visible = false
 
 func _unhandled_input(event):
-	if event.is_action_pressed("interact"):  # Press E
-		start_battle()
+	if not self.visible:
+		return  # Only allow inputs during battle
 
-func start_battle():
-	print("Battle started!")
-	enemy_health = MAX_HEALTH
-	current_int_line = 0
-	current_per_line = 0
-	current_dialogue = []
-	update_dialogue()
-	update_health_bar()
+	if event.is_action_pressed("battle_per"):
+		_on_per_button_pressed()
+	elif event.is_action_pressed("battle_int"):
+		_on_int_button_pressed()
+	elif event.is_action_pressed("battle_leave"):
+		_on_leave_button_pressed()
+		
+func start_battle_with(enemy: Node):
+	# Reset all previous battle state
+	reset_battle()  # Ensure everything is cleared before starting a new battle
+
+	print("Battle started with:", enemy.name)
+	GameManager.in_battle = true
+
+	# Disable player controls
+	var player = get_tree().get_first_node_in_group("player")
+	if player:
+		player.controls_enabled = false
+
+	current_enemy = enemy
+	enemy_health = enemy.stats.get("MAX_HEALTH", MAX_HEALTH)
+	update_health_bar()  # Reflect new enemy health
 	
+	per_dialogue.clear()
+	int_dialogue.clear()
+	
+	# Load dialogue from enemy
+	if enemy.dialogue_file_path != "":
+		var file = FileAccess.open(enemy.dialogue_file_path, FileAccess.READ)
+		if file:
+			var text = file.get_as_text()
+			file.close()
+			parse_dialogue(text)
+		else:
+			print("Failed to open dialogue file:", enemy.dialogue_file_path)
+	else:
+		print("Enemy has no dialogue_file_path.")
+	
+
+	# Set starting dialogue type (optional: choose based on enemy preference?)
+	current_dialogue = int_dialogue
+	
+	# Set portrait if available
+	if enemy.dialogue_sprite:
+		enemy_portrait.texture = enemy.dialogue_sprite
+	else:
+		enemy_portrait.texture = null  # or a default "mystery" portrait
+	# Make UI visible
 	self.visible = true
 	for child in get_children():
 		child.visible = true
+
+	# Enable buttons
+	int_button.visible = true
+	per_button.visible = true
+	leave_button.visible = true
+
+	int_button.disabled = false
+	per_button.disabled = false
+	leave_button.disabled = false
+
+	update_dialogue()
+	update_health_bar()
 
 func parse_dialogue(dialogue_content):
 	var lines = dialogue_content.split("\n")
@@ -90,32 +136,41 @@ func update_dialogue():
 func _on_int_button_pressed():
 	print("INT Button Pressed!")
 	current_dialogue = int_dialogue
-	current_int_line += 1
 	if current_int_line < int_dialogue.size():
 		update_dialogue()
-		decrease_enemy_health(1)  # INT reduces by 1
+		var dmg = current_enemy.stats.get("INT_DMG", 1)
+		decrease_enemy_health(dmg)
+		current_int_line += 1
 	else:
 		dialogue_text.text = "End of INT dialogue."
 
 func _on_per_button_pressed():
 	print("PER Button Pressed!")
 	current_dialogue = per_dialogue
-	current_per_line += 1
 	if current_per_line < per_dialogue.size():
 		update_dialogue()
-		decrease_enemy_health(2)  # PER reduces by 2
+		var dmg = current_enemy.stats.get("PER_DMG", 2)
+		decrease_enemy_health(dmg)
+		current_per_line += 1
 	else:
 		dialogue_text.text = "End of PER dialogue."
 
-# Updated this function to take an amount
 func decrease_enemy_health(amount := 1):
 	if enemy_health > 0:
 		enemy_health -= amount
-		enemy_health = max(enemy_health, 0)  # Prevents negative health
+		enemy_health = max(enemy_health, 0)
 		update_health_bar()
 
-		if enemy_health == 0:
-			end_battle()
+		if enemy_health == 0 and not battle_ended:
+			battle_ended = true
+			print("Enemy defeated!")
+
+			if productivity_bar:
+				print("Incrementing Productivity Bar!")
+				productivity_bar.increase_productivity_by_percent(0.20)
+			
+			end_battle()  # Ensure battle always ends cleanly
+
 
 func update_health_bar():
 	if health_bar:
@@ -124,14 +179,39 @@ func update_health_bar():
 	else:
 		print("Error: Health bar not found.")
 
-func end_battle():
-	print("Battle Over!")
+func reset_battle():
 	self.visible = false
 	for child in get_children():
 		child.visible = false
 
+	# Clear battle state variables
+	battle_ended = false
+	enemy_health = MAX_HEALTH
+	current_int_line = 0
+	current_per_line = 0
+	current_enemy = null
+
+	# Clear dialogue data
+	per_dialogue.clear()
+	int_dialogue.clear()
+
+	# Reset health bar visuals
+	update_health_bar()
+
+	# Clear enemy portrait
+	enemy_portrait.texture = null
+
+	# Re-enable player controls
+	GameManager.in_battle = false
+	if productivity_bar.is_full == false:
+		var player = get_tree().get_first_node_in_group("player")
+		if player:
+			player.controls_enabled = true
+
 func _on_leave_button_pressed():
 	print("LEAVE Button Pressed!")
-	self.visible = false
-	for child in get_children():
-		child.visible = false
+	reset_battle()
+
+func end_battle():
+	print("Battle Over!")
+	reset_battle()

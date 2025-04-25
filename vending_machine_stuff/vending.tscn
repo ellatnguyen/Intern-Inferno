@@ -1,39 +1,99 @@
-[gd_scene load_steps=7 format=3 uid="uid://de6upgnsf7rg7"]
+[gd_scene load_steps=23 format=3 uid="uid://de6upgnsf7rg7"]
 
 [ext_resource type="Script" path="res://vending_machine_stuff/vending.gd" id="1_38sc8"]
-[ext_resource type="Texture2D" uid="uid://dw73a5mgwslcj" path="res://audrey_assets/vending.png" id="2_8myff"]
-[ext_resource type="PackedScene" uid="uid://dplwtea3vse1f" path="res://vending_machine_stuff/UIvendingmachine.tscn" id="2_rhrf2"]
-[ext_resource type="PackedScene" uid="uid://bv8r5dfmekrat" path="res://player/player.tscn" id="3_nqt6v"]
+[ext_resource type="Resource" uid="uid://bk3kp6uojy3rf" path="res://inventory/items/fahrenheit.tres" id="2_8dmnx"]
+[ext_resource type="Resource" uid="uid://d0p2w2xfvg3wp" path="res://inventory/items/life sparer.tres" id="3_qg4k6"]
+[ext_resource type="Texture2D" uid="uid://d1e6cw7rqbtks" path="res://Assets/Vending/VendingMachineAsset.png" id="3_xaqtg"]
+[ext_resource type="Resource" uid="uid://dklal65moncry" path="res://inventory/items/luckyharms.tres" id="4_5afry"]
+[ext_resource type="Texture2D" uid="uid://cvrig4in78eli" path="res://Assets/Vending/Vending Machine Animated Shake/VendingMachineShake1.png" id="4_ffm6x"]
+[ext_resource type="Resource" uid="uid://jjgtdajyjjyh" path="res://inventory/items/scrappy.tres" id="5_da7sc"]
+[ext_resource type="Texture2D" uid="uid://d10sqegpsp7ld" path="res://Assets/Vending/Vending Machine Animated Shake/VendingMachineShake2.png" id="5_ju3cu"]
+[ext_resource type="Texture2D" uid="uid://bm3qco6ovnehj" path="res://Assets/Vending/Vending Machine Animated Shake/VendingMachineShake3.png" id="6_rothd"]
+[ext_resource type="Texture2D" uid="uid://pjp17lrducl2" path="res://Assets/Vending/Vending Machine Animated Shake/VendingMachineShake4.png" id="7_7p2a3"]
+[ext_resource type="Texture2D" uid="uid://dvchhc610kkqj" path="res://Assets/Vending/Vending Machine Animated Shake/VendingMachineShake5.png" id="8_0lpfp"]
+[ext_resource type="Texture2D" uid="uid://c26yfwfxoysi5" path="res://Assets/Vending/Vending Machine Animated Shake/VendingMachineShake6.png" id="9_hd7ir"]
+[ext_resource type="Texture2D" uid="uid://b56in2035wnpb" path="res://Assets/Vending/Vending Machine Animated Shake/VendingMachineShake7.png" id="10_ck2qr"]
+[ext_resource type="Texture2D" uid="uid://cxwqgxcg6wcsr" path="res://Assets/Vending/Vending Machine Animated Shake/VendingMachineShake8.png" id="11_dp70b"]
+[ext_resource type="Texture2D" uid="uid://bfshsuopiiraw" path="res://Assets/Vending/Vending Machine Animated Shake/VendingMachineShake9.png" id="12_ix38v"]
+[ext_resource type="Texture2D" uid="uid://tefqoplc211d" path="res://Assets/Vending/Vending Machine Animated Shake/VendingMachineShake10.png" id="13_rk7db"]
+[ext_resource type="Texture2D" uid="uid://bvsu8uhxqp2a3" path="res://Assets/Vending/Vending Machine Animated Shake/VendingMachineShake11.png" id="14_h66xr"]
+[ext_resource type="Texture2D" uid="uid://bmao66frfnpyx" path="res://Assets/Vending/Vending Machine Animated Shake/VendingMachineShake12.png" id="15_y6c0i"]
+[ext_resource type="Texture2D" uid="uid://klwr6wrrin7n" path="res://Assets/Vending/Vending Machine Animated Shake/VendingMachineShake13.png" id="16_og8jv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_824xh"]
-size = Vector2(217, 346)
+size = Vector2(264, 283)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_13q4n"]
-size = Vector2(259, 397)
+size = Vector2(287.5, 350.5)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kvaap"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_ffm6x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ju3cu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_rothd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_7p2a3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_0lpfp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_hd7ir")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ck2qr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_dp70b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ix38v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_rk7db")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_h66xr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_y6c0i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_og8jv")
+}],
+"loop": false,
+"name": &"shake",
+"speed": 16.0
+}]
 
 [node name="VendingMachine" type="StaticBody2D"]
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_38sc8")
-vending_ui = ExtResource("2_rhrf2")
+possible_items = Array[Resource]([ExtResource("2_8dmnx"), ExtResource("3_qg4k6"), ExtResource("4_5afry"), ExtResource("5_da7sc")])
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_8myff")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-visible = false
-
-[node name="Player" parent="." instance=ExtResource("3_nqt6v")]
-visible = false
-position = Vector2(358, 23)
-scale = Vector2(0.3, 0.3)
+position = Vector2(304, 189)
+texture = ExtResource("3_xaqtg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, -5)
+position = Vector2(-16, 8)
 shape = SubResource("RectangleShape2D_824xh")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(1, -5)
+position = Vector2(-19, 13)
 shape = SubResource("RectangleShape2D_13q4n")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(342, 218)
+sprite_frames = SubResource("SpriteFrames_kvaap")
+animation = &"shake"

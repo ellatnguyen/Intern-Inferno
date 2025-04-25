@@ -1,8 +1,7 @@
 extends Sprite2D
-#CHECK IF WE NEED ANY THING PAUSED IN THE GAME WHEN INVENTORY IS OPENED
-#likely not since the productivity meter will always go down but doesn't hurt to ask
+
 @export var closed_texture: Texture2D #closed clipboarddd
-@export var open_texture: Texture2D # the open clipboard ig
+@export var open_texture: Texture2D # the open clipboard 
 
 var is_open = false
 
