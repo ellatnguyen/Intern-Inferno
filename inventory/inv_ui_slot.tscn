@@ -1,30 +1,34 @@
 [gd_scene load_steps=3 format=3 uid="uid://uk0lrnj0irjc"]
 
-[ext_resource type="Texture2D" uid="uid://ctnrwvr5x5j6p" path="res://audrey_assets/inv_slot.png" id="1_adhan"]
 [ext_resource type="Script" path="res://inventory/inv_ui_slot.gd" id="1_utj6c"]
+[ext_resource type="Texture2D" uid="uid://bx6i5gntm2gif" path="res://Assets/Vending/better_empty_slot.png" id="2_s57hi"]
 
 [node name="inv_UI_slot" type="Panel"]
-custom_minimum_size = Vector2(46, 46)
-offset_right = 46.0
-offset_bottom = 46.0
+custom_minimum_size = Vector2(185, 175)
+offset_left = 2.0
+offset_top = 3.0
+offset_right = 276.0
+offset_bottom = 277.0
 script = ExtResource("1_utj6c")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.54023, 0.528736)
-texture = ExtResource("1_adhan")
+position = Vector2(-3, -4)
+scale = Vector2(1.51648, 1.55056)
+texture = ExtResource("2_s57hi")
 centered = false
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
-custom_minimum_size = Vector2(43, 42)
+custom_minimum_size = Vector2(185, 175)
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.978
 anchor_bottom = 0.957
-offset_left = 2.0
-offset_top = 2.0
-offset_right = 0.0119972
-offset_bottom = -0.0219994
+offset_left = 4.0
+offset_top = 1.0
+offset_right = -78.972
+offset_bottom = -77.218
 grow_horizontal = 2
+scale = Vector2(1.5, 1.5)
 
 [node name="Panel" type="Panel" parent="CenterContainer"]
 self_modulate = Color(1, 1, 1, 0)
@@ -36,10 +40,10 @@ layout_mode = 2
 self_modulate = Color(0, 0, 0, 1)
 custom_minimum_size = Vector2(19, 23)
 layout_mode = 0
-offset_left = 3.0
-offset_top = 3.0
-offset_right = 22.0
-offset_bottom = 26.0
-scale = Vector2(0.9, 0.9)
+offset_left = 12.6666
+offset_top = 34.0
+offset_right = 42.6666
+offset_bottom = 64.0
+scale = Vector2(2, 2)
 text = "99"
 horizontal_alignment = 2

@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://bk3kp6uojy3rf"]
 
 [ext_resource type="Script" path="res://inventory/inventory_item.gd" id="1_mraan"]
-[ext_resource type="Texture2D" uid="uid://45g5un3b3ok7" path="res://Assets/Vending/fahrenheit.png" id="2_7w7kt"]
+[ext_resource type="Texture2D" uid="uid://w3aetewxodi5" path="res://Assets/Vending/centered_fahrenheit.png" id="2_bi2yr"]
 
 [resource]
 script = ExtResource("1_mraan")
 name = "fahrenheit"
-texture = ExtResource("2_7w7kt")
+texture = ExtResource("2_bi2yr")

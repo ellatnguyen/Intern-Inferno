@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0lnjtjk0py1g"
-path="res://.godot/imported/luckyharms.png-ad516efee3148cce9c4ba019760992ac.ctex"
+uid="uid://lkkvoujjaa0n"
+path="res://.godot/imported/centered_scrappy.png-ba60ab1c9aaa459057dc3b4db06aa485.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Vending/luckyharms.png"
-dest_files=["res://.godot/imported/luckyharms.png-ad516efee3148cce9c4ba019760992ac.ctex"]
+source_file="res://Assets/Vending/centered_scrappy.png"
+dest_files=["res://.godot/imported/centered_scrappy.png-ba60ab1c9aaa459057dc3b4db06aa485.ctex"]
 
 [params]
 
