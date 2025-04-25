@@ -1,38 +1,64 @@
-extends Node2D
+extends Node
 
-@onready var dialogue_window = $DialogueWindow
-@onready var player = $Player
-@onready var npc = $NPC
+var dialogue_file_path = "res://dialogues/Fire_Imp_Multiple.txt"
 
-var battle = preload("res://Battle Scene/Battle.tscn") # THIS WILL BE USED TO SWITCH OVER TO BATTLE SCENE (TBA)
-var can_interact = false  # Tracks if the player is in range of the Goblin
+var intimidation_dialogues = []
+var persuasion_dialogues = []
+var current_dialogue_index = 0
+var current_mode = "INT"  # can be "INT" or "PER"
 
-func _ready() -> void:
-	_hide_dialogue_window()  # Hide everything initially
-	npc.connect("player_near", Callable(self, "_on_npc_player_near"))  # Connect Goblin signal to Game
+onready var dialogue_box = $DialogueBox
+onready var intimidate_button = $IntimidateButton
+onready var persuade_button = $PersuadeButton
 
-func _process(_delta: float) -> void:
-	if can_interact and Input.is_action_just_pressed("interact"):  # 'E' should be mapped to 'interact' in InputMap
-		_show_dialogue_window()  # Show everything when 'E' is pressed
-		
-		# THIS WILL BE USED TO SWITCH OVER TO BATTLE SCENE (TBA)
-		#var battleTemp = battle.instantiate()
-		#get_parent().addchild(battleTemp)
-		#queue_free()
+func _ready():
+	parse_dialogue()
+	intimidate_button.connect("pressed", self, "_on_intimidate_button_pressed")
+	persuade_button.connect("pressed", self, "_on_persuade_button_pressed")
 
-func _on_npc_player_near(state: bool) -> void:
-	can_interact = state
-	if state:
-		print("Player is near NPC. Press 'E' to interact.")  # Debugging line
+func parse_dialogue():
+	var file = File.new()
+	if file.file_exists(dialogue_file_path):
+		file.open(dialogue_file_path, File.READ)
+		var lines = []
+		while not file.eof_reached():
+			lines.append(file.get_line())
+		file.close()
+
+		var current_list = []
+		for line in lines:
+			if line == "INT":
+				current_mode = "INT"
+				continue
+			elif line == "PER":
+				current_mode = "PER"
+				continue
+			elif line.strip_edges() == "":
+				continue
+			else:
+				if current_mode == "INT":
+					intimidation_dialogues.append(line)
+				elif current_mode == "PER":
+					persuasion_dialogues.append(line)
 	else:
-		print("Player left NPC.")  # Debugging line
+		print("Dialogue file not found at path: ", dialogue_file_path)
 
-func _hide_dialogue_window() -> void:
-	dialogue_window.visible = false  # Hide the main window
-	for child in dialogue_window.get_children():
-		child.visible = false  # Hide all children (CanvasLayer, buttons, etc.)
+func _on_intimidate_button_pressed():
+	if intimidation_dialogues.size() == 0:
+		dialogue_box.text = "No intimidation dialogues found."
+		return
 
-func _show_dialogue_window() -> void:
-	dialogue_window.visible = true  # Show the main window
-	for child in dialogue_window.get_children():
-		child.visible = true  # Show all children (CanvasLayer, buttons, etc.)
+	dialogue_box.text = intimidation_dialogues[current_dialogue_index]
+	current_dialogue_index += 1
+	if current_dialogue_index >= intimidation_dialogues.size():
+		current_dialogue_index = 0  # reset or disable button here if you want
+
+func _on_persuade_button_pressed():
+	if persuasion_dialogues.size() == 0:
+		dialogue_box.text = "No persuasion dialogues found."
+		return
+
+	dialogue_box.text = persuasion_dialogues[current_dialogue_index]
+	current_dialogue_index += 1
+	if current_dialogue_index >= persuasion_dialogues.size():
+		current_dialogue_index = 0  # reset or disable button here if you want
