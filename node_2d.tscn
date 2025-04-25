@@ -21,147 +21,158 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("16_wdk64")
-}, {
-"duration": 1.0,
-"texture": ExtResource("15_nl4om")
-}, {
-"duration": 1.0,
-"texture": ExtResource("14_gf8vy")
-}, {
-"duration": 1.0,
-"texture": ExtResource("13_o2ojs")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12_bx2ey")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_pq2ia")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_jcrl4")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_di17d")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_0w4bn")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_vbyey")
+"texture": ExtResource("5_k8o04")
 }, {
 "duration": 1.0,
 "texture": ExtResource("6_jseoi")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_k8o04")
+"texture": ExtResource("7_vbyey")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_0w4bn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_di17d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_jcrl4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_pq2ia")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_bx2ey")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_o2ojs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_gf8vy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_nl4om")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_wdk64")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }]
 
-[node name="PrototypeWindow" type="Control"]
-layout_mode = 3
-anchors_preset = 0
+[node name="DialogueWindow" type="Panel"]
+visible = false
+custom_minimum_size = Vector2(1150, 650)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -575.0
+offset_top = -325.0
+offset_right = 625.0
+offset_bottom = 375.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("1_cn4pr")
 metadata/_edit_use_anchors_ = true
 
-[node name="INT_Button" type="Button" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="INT_Button" type="Button" parent="CanvasLayer"]
 custom_minimum_size = Vector2(200, 50)
-layout_mode = 0
 offset_left = 348.0
 offset_top = 349.0
 offset_right = 626.0
 offset_bottom = 401.0
 text = "INTIMIDATION"
 
-[node name="PER_Button" type="Button" parent="."]
+[node name="PER_Button" type="Button" parent="CanvasLayer"]
 custom_minimum_size = Vector2(200, 50)
-layout_mode = 0
 offset_left = 345.0
 offset_top = 269.0
 offset_right = 624.0
 offset_bottom = 319.0
 text = "PERSUASION"
 
-[node name="LEAVE_Button" type="Button" parent="."]
-layout_mode = 0
+[node name="LEAVE_Button" type="Button" parent="CanvasLayer"]
 offset_left = 349.0
 offset_top = 432.0
 offset_right = 564.0
 offset_bottom = 464.0
 
-[node name="DialogueBoxesWithDarkenedBackground" type="Sprite2D" parent="."]
+[node name="DialogueBoxesWithDarkenedBackground" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(575.764, 319.438)
 scale = Vector2(0.899747, 0.90434)
 texture = ExtResource("2_jhs51")
 
-[node name="INT_Label" type="Label" parent="DialogueBoxesWithDarkenedBackground"]
-modulate = Color(0, 0, 0, 1)
-offset_left = -366.507
-offset_top = 41.5353
-offset_right = -38.5074
-offset_bottom = 64.5353
-scale = Vector2(1.5, 1.5)
-text = "INTIMIDATION"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="PrototypeEnemy" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(952, 489)
+scale = Vector2(0.44401, 0.44401)
+texture = ExtResource("3_uw0vv")
 
-[node name="PER_Label" type="Label" parent="DialogueBoxesWithDarkenedBackground"]
-modulate = Color(0, 0, 0, 1)
-offset_left = -369.842
-offset_top = -49.1386
-offset_right = -41.8417
-offset_bottom = -26.1386
-scale = Vector2(1.5, 1.5)
-text = "PERSUASION"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="ComplianceBar" type="AnimatedSprite2D" parent="CanvasLayer/PrototypeEnemy"]
+position = Vector2(-853.834, -372.739)
+scale = Vector2(2.02385, 2.02385)
+sprite_frames = SubResource("SpriteFrames_ttqau")
 
-[node name="LEAVE_Label" type="Label" parent="DialogueBoxesWithDarkenedBackground"]
-modulate = Color(0, 0, 0, 1)
-offset_left = -317.605
-offset_top = 128.892
-offset_right = 10.3952
-offset_bottom = 151.892
-mouse_filter = 0
-text = "LEAVE BATTLE"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="PrototypePlayer" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(156, 525)
+scale = Vector2(0.23451, 0.23451)
+texture = ExtResource("4_pu86p")
 
-[node name="DialogueText" type="Label" parent="DialogueBoxesWithDarkenedBackground"]
+[node name="DialogueText" type="Label" parent="CanvasLayer"]
 modulate = Color(0, 0, 0, 1)
 custom_minimum_size = Vector2(300, 100)
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -170.0
-offset_top = -966.0
-offset_right = -1119.0
-offset_bottom = -853.0
+offset_left = 423.0
+offset_top = -551.0
+offset_right = -429.0
+offset_bottom = -451.0
 grow_horizontal = 2
 grow_vertical = 0
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="EnemyPortrait" type="Sprite2D" parent="."]
-position = Vector2(952, 489)
-scale = Vector2(0.44401, 0.44401)
-texture = ExtResource("3_uw0vv")
+[node name="INT_Label" type="Label" parent="CanvasLayer"]
+modulate = Color(0, 0, 0, 1)
+offset_left = 246.0
+offset_top = 357.0
+offset_right = 574.0
+offset_bottom = 380.0
+scale = Vector2(1.5, 1.5)
+text = "INTIMIDATION"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="ComplianceBar" type="AnimatedSprite2D" parent="EnemyPortrait"]
-position = Vector2(-853.834, -372.739)
-scale = Vector2(2.02385, 2.02385)
-sprite_frames = SubResource("SpriteFrames_ttqau")
+[node name="PER_Label" type="Label" parent="CanvasLayer"]
+modulate = Color(0, 0, 0, 1)
+offset_left = 243.0
+offset_top = 275.0
+offset_right = 571.0
+offset_bottom = 298.0
+scale = Vector2(1.5, 1.5)
+text = "PERSUASION"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="PrototypePlayer" type="Sprite2D" parent="."]
-position = Vector2(156, 525)
-scale = Vector2(0.23451, 0.23451)
-texture = ExtResource("4_pu86p")
+[node name="LEAVE_Label" type="Label" parent="CanvasLayer"]
+modulate = Color(0, 0, 0, 1)
+offset_left = 290.0
+offset_top = 436.0
+offset_right = 618.0
+offset_bottom = 459.0
+text = "LEAVE BATTLE"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[connection signal="pressed" from="INT_Button" to="." method="_on_int_button_pressed"]
-[connection signal="pressed" from="PER_Button" to="." method="_on_per_button_pressed"]
-[connection signal="pressed" from="LEAVE_Button" to="." method="_on_leave_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/INT_Button" to="." method="_on_int_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/PER_Button" to="." method="_on_per_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/LEAVE_Button" to="." method="_on_leave_button_pressed"]

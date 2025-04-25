@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://dsw5dmox2mg1w" path="res://Character/NPC/npc.tscn" id="3_xd52q"]
 
 [node name="Game" type="Node2D"]
-visible = false
 texture_filter = 1
 script = ExtResource("1_sls5x")
 
@@ -20,16 +19,8 @@ scale = Vector2(5, 5)
 position = Vector2(332, 154)
 scale = Vector2(3, 3)
 
-[node name="NPC2" parent="." instance=ExtResource("3_xd52q")]
-position = Vector2(332, 154)
-scale = Vector2(3, 3)
-
 [node name="DialogueWindow" parent="." instance=ExtResource("3_helcj")]
-anchors_preset = -1
-anchor_left = 0.456597
-anchor_top = 0.422839
-anchor_right = 0.456597
-anchor_bottom = 0.422839
+visible = true
 offset_left = -154.0
 offset_top = -49.0
 offset_right = 996.0
