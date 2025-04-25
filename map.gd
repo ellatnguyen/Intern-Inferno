@@ -37,8 +37,12 @@ func _input(event: InputEvent) -> void:
 		get_tree().paused = true
 	
 	if event.is_action_pressed("interact") and nearby_enemy and GameManager.in_battle == false:
-		print("MAP.GD: Starting battle with:", nearby_enemy.name)
-		dialogue_battle_ui.start_battle_with(nearby_enemy)
+		if nearby_enemy.has_method("is_player_near") and nearby_enemy.is_player_near():
+			print("MAP.GD: Starting battle with:", nearby_enemy.name)
+			dialogue_battle_ui.start_battle_with(nearby_enemy)
+		else:
+			print("MAP.GD: Tried to battle but player is not near enemy anymore.")
+			nearby_enemy = null  # Clear it out just in case
 
 func _on_enemy_player_near(state: bool, enemy: Node):
 	if state:
