@@ -2183,8 +2183,7 @@ texture_region_size = Vector2i(124, 120)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q2dj1"]
 texture = ExtResource("3_10fl1")
-margins = Vector2i(0, 3)
-texture_region_size = Vector2i(164, 164)
+margins = Vector2i(2, 4)
 1:0/0 = 0
 2:0/0 = 0
 3:0/0 = 0

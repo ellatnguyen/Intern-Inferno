@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://wwy67tvhqmv4"]
+[gd_scene load_steps=3 format=3 uid="uid://wwy67tvhqmv4"]
 
 [ext_resource type="PackedScene" uid="uid://7oeqdu22e1q5" path="res://Rooms/Room.tscn" id="1"]
-[ext_resource type="PackedScene" uid="uid://r88elkkvv60o" path="res://Rooms/Furniture and Traps/Door.tscn" id="2"]
 
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(16, 8)
@@ -28,14 +27,44 @@ position = Vector2(168, 104)
 [node name="PositionWest" type="Marker2D" parent="Entrance" index="2"]
 position = Vector2(23, 121)
 
-[node name="DoorNorth" parent="Doors" index="0" instance=ExtResource("2")]
+[node name="DoorNorth" parent="Doors" index="0"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 position = Vector2(96, 17)
+script = null
 
-[node name="DoorEast" parent="Doors" index="1" instance=ExtResource("2")]
+[node name="DoorEast" parent="Doors" index="1"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 position = Vector2(175, 113)
+script = null
 
-[node name="DoorWest" parent="Doors" index="2" instance=ExtResource("2")]
+[node name="DoorWest" parent="Doors" index="2"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 position = Vector2(16, 112)
+script = null
 
 [node name="Marker2D" type="Marker2D" parent="EnemyPositions" index="0"]
 position = Vector2(64, 64)
