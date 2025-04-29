@@ -364,6 +364,7 @@ libraries = {
 [node name="Weapons" type="Node2D" parent="."]
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
 
 [node name="DustPosition" type="Marker2D" parent="."]
 position = Vector2(0, 6)
