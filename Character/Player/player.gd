@@ -15,8 +15,21 @@ const MAX_SPEED: int = 100
 var current_enemy: BaseEnemy = null
 var mov_direction: Vector2 = Vector2.ZERO
 var controls_enabled := true
+var 	player_stats = {
+		"PER_EXP": 0,
+		"INT_EXP": 0,
+		"PER_LVL": 0,
+		"INT_LVL": 0
+	}
 
 func _ready() -> void:
+	player_stats = {
+		"PER_EXP": 0,
+		"INT_EXP": 0,
+		"PER_LVL": 0,
+		"INT_LVL": 0
+	}
+	
 	add_to_group("player")
 	fsm.init(self, animation_player)
 
@@ -72,3 +85,48 @@ func collect(item):
 		return
 	print("adding item to inventory")
 	inv.insert(item)
+
+func update_levels() -> void:
+	var old_per_level = player_stats["PER_LVL"]
+	var per_exp = player_stats["PER_EXP"]
+	var new_per_level := 0
+	if per_exp >= 20:
+		new_per_level = 3
+	elif per_exp >= 10:
+		new_per_level = 2
+	elif per_exp >= 5:
+		new_per_level = 1
+	
+	var old_int_level = player_stats["INT_LVL"]
+	var int_exp = player_stats["INT_EXP"]
+	var new_int_level := 0
+	if int_exp >= 20:
+		new_int_level = 3
+	elif int_exp >= 10:
+		new_int_level = 2
+	elif int_exp >= 5:
+		new_int_level = 1
+	
+	if new_per_level > old_per_level:
+		print("PER Level Up! New Level: ", new_per_level)
+		
+	if new_int_level > old_int_level:
+		print("INT Level Up! New Level: ", new_int_level)
+	
+	player_stats["PER_LVL"] = new_per_level
+	player_stats["INT_LVL"] = new_int_level
+
+func gain_per_exp(amount: int) -> void:
+	player_stats["PER_EXP"] += amount
+	update_levels()
+	update_inventory_ui()
+
+func gain_int_exp(amount: int) -> void:
+	player_stats["INT_EXP"] += amount
+	update_levels()
+	update_inventory_ui()
+
+func update_inventory_ui():
+	var inventory_ui = get_tree().get_first_node_in_group("inventory_ui")
+	if inventory_ui:
+		inventory_ui.update_level_display()

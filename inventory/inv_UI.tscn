@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://df8m8sqxkhbdx" path="res://Assets/empty clipboard hidden.PNG" id="4_2vpmf"]
 [ext_resource type="PackedScene" uid="uid://uk0lrnj0irjc" path="res://inventory/inv_ui_slot.tscn" id="5_h7fe6"]
 
-[node name="Inv_UI" type="Control"]
+[node name="Inv_UI" type="Control" groups=["inventory_ui"]]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_06iax")
@@ -22,7 +22,6 @@ patch_margin_left = 1
 patch_margin_top = 1
 patch_margin_right = 1
 patch_margin_bottom = 1
-metadata/_edit_group_ = true
 
 [node name="GridContainer" type="GridContainer" parent="NinePatchRect"]
 custom_minimum_size = Vector2(150, 100)
@@ -53,7 +52,41 @@ layout_mode = 2
 custom_minimum_size = Vector2(270, 90)
 layout_mode = 2
 
+[node name="INT_LVL" type="Label" parent="NinePatchRect"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 405.0
+offset_top = 40.0
+offset_right = 499.0
+offset_bottom = 63.0
+text = "INT: 0"
+
+[node name="PER_LVL" type="Label" parent="NinePatchRect"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 404.0
+offset_top = 61.0
+offset_right = 498.0
+offset_bottom = 84.0
+text = "PER: 0"
+
 [node name="ClosedClipboard" type="Sprite2D" parent="."]
 position = Vector2(238, 494)
 scale = Vector2(0.42, 0.42)
 texture = ExtResource("4_2vpmf")
+
+[node name="PER_LVL_CLOSED" type="Label" parent="ClosedClipboard"]
+modulate = Color(0, 0, 0, 1)
+offset_left = 316.667
+offset_top = 264.286
+offset_right = 395.667
+offset_bottom = 287.286
+text = "PER LVL: 0"
+
+[node name="INT_LVL_CLOSED" type="Label" parent="ClosedClipboard"]
+modulate = Color(0, 0, 0, 1)
+offset_left = 319.048
+offset_top = 240.476
+offset_right = 395.048
+offset_bottom = 263.476
+text = "INT LVL: 0"
