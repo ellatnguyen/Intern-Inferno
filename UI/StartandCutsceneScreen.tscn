@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7yhn32notyng"]
+
+[ext_resource type="Script" path="res://UI/start_and_cutscene_screen.gd" id="1_ib7b5"]
+
+[node name="StartandCutsceneScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_ib7b5")
+
+[node name="RestartButton" type="Button" parent="."]
+offset_left = 374.0
+offset_top = 269.0
+offset_right = 735.0
+offset_bottom = 374.0
+text = "PRESS SPACEBAR TO RESTART"

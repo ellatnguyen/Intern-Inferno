@@ -7,6 +7,8 @@ extends Control
 @onready var health_bar = $"EnemyPortrait/ComplianceBar"
 @onready var enemy_portrait = $EnemyPortrait
 @onready var productivity_bar = get_node("/root/Game/TimerUI/Container/ProductivityBar")  # Adjust path as needed
+@onready var per_label = get_node("/root/Game/InventoryUI/Inv_UI/ClosedClipboard/PER_LVL_CLOSED")
+@onready var int_label = get_node("/root/Game/InventoryUI/Inv_UI/ClosedClipboard/PER_LVL_CLOSED")
 
 var battle_ended = false
 
@@ -20,7 +22,11 @@ var current_dialogue = []
 const MAX_HEALTH = 11
 var enemy_health = MAX_HEALTH
 
-# New: hold a reference to the enemy
+# Variables to store for cooldown bar / exp gain
+var int_count = 0
+var per_count = 0
+
+# Hold a reference to the enemy
 var current_enemy: Node = null
 
 func _ready():
@@ -135,25 +141,30 @@ func update_dialogue():
 
 func _on_int_button_pressed():
 	print("INT Button Pressed!")
+	int_count += 1
 	current_dialogue = int_dialogue
 	if current_int_line < int_dialogue.size():
 		update_dialogue()
-		var dmg = current_enemy.stats.get("INT_DMG", 1)
-		decrease_enemy_health(dmg)
+		var base_dmg = current_enemy.stats.get("INT_DMG", 1)
+		var bonus_dmg = get_bonus_damage("INT")
+		decrease_enemy_health(base_dmg + bonus_dmg)
 		current_int_line += 1
 	else:
 		dialogue_text.text = "End of INT dialogue."
 
 func _on_per_button_pressed():
 	print("PER Button Pressed!")
+	per_count += 1
 	current_dialogue = per_dialogue
 	if current_per_line < per_dialogue.size():
 		update_dialogue()
-		var dmg = current_enemy.stats.get("PER_DMG", 2)
-		decrease_enemy_health(dmg)
+		var base_dmg = current_enemy.stats.get("PER_DMG", 2)
+		var bonus_dmg = get_bonus_damage("PER")
+		decrease_enemy_health(base_dmg + bonus_dmg)
 		current_per_line += 1
 	else:
 		dialogue_text.text = "End of PER dialogue."
+
 
 func decrease_enemy_health(amount := 1):
 	if enemy_health > 0:
@@ -167,7 +178,23 @@ func decrease_enemy_health(amount := 1):
 
 			if productivity_bar:
 				print("Incrementing Productivity Bar!")
-				productivity_bar.increase_productivity_by_percent(0.20)
+				productivity_bar.increase_productivity_by_percent(0.2)
+			
+			if is_inside_tree():
+				var player = get_tree().get_first_node_in_group("player")
+				if player:
+					var exp_gain = 1 + (randi() % 3)  # 1 to 3 EXP
+
+					if int_count > per_count:
+						player.gain_int_exp(exp_gain)
+					elif per_count > int_count:
+						player.gain_per_exp(exp_gain)
+					else:
+						player.gain_int_exp(1)
+						player.gain_per_exp(1)
+				else:
+					print("Player not found in scene tree.")
+				print(player.player_stats)
 			
 			end_battle()  # Ensure battle always ends cleanly
 
@@ -233,4 +260,15 @@ func end_battle():
 
 	if defeated_enemy and is_instance_valid(defeated_enemy) and defeated_enemy.has_method("despawn"):
 		defeated_enemy.despawn()
-	#reset_battle()
+
+func get_bonus_damage(stat_type: String) -> int:
+	if not is_inside_tree():
+		return 0
+
+	var player = get_tree().get_first_node_in_group("player")
+	if player:
+		if stat_type == "INT":
+			return player.player_stats.get("INT_LVL", 0)
+		elif stat_type == "PER":
+			return player.player_stats.get("PER_LVL", 0)
+	return 0

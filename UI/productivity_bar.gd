@@ -24,8 +24,9 @@ func _ready():
 	timer.timeout.connect(_on_productivity_timer_timeout)
 
 func _process(delta):
-	if Input.is_action_just_pressed("ui_accept"):  # Default maps to Spacebar
-		decrement_frame()
+	pass
+	#if Input.is_action_just_pressed("ui_accept"):  # Default maps to Spacebar
+		#decrement_frame()
 
 func increment_frame():
 	current_frame += 1
