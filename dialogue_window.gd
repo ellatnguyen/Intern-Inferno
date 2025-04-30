@@ -178,7 +178,7 @@ func decrease_enemy_health(amount := 1):
 
 			if productivity_bar:
 				print("Incrementing Productivity Bar!")
-				productivity_bar.increase_productivity_by_percent(0.05)
+				productivity_bar.increase_productivity_by_percent(0.2)
 			
 			if is_inside_tree():
 				var player = get_tree().get_first_node_in_group("player")
