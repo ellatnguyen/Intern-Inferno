@@ -1,10 +1,31 @@
-[gd_scene load_steps=2 format=3 uid="uid://m2lxqkstfmij"]
+[gd_scene load_steps=3 format=3 uid="uid://m2lxqkstfmij"]
 
+[ext_resource type="Script" path="res://UI/end_screen.gd" id="1_5xi5j"]
 [ext_resource type="Texture2D" uid="uid://kpq5xah1fgc2" path="res://UI/UIAssets/win screen.PNG" id="1_kyoet"]
 
-[node name="WinScreen" type="Node2D"]
+[node name="WinScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_5xi5j")
 
 [node name="WinScreen" type="Sprite2D" parent="."]
 position = Vector2(574.889, 325)
 scale = Vector2(0.888889, 0.888889)
 texture = ExtResource("1_kyoet")
+
+[node name="RestartButton" type="Button" parent="."]
+offset_left = 374.0
+offset_top = 269.0
+offset_right = 735.0
+offset_bottom = 374.0
+text = "PRESS SPACEBAR TO RESTART"
+
+[node name="MainMenuButton" type="Button" parent="."]
+offset_left = 372.0
+offset_top = 394.0
+offset_right = 733.0
+offset_bottom = 499.0
+text = "PRESS ESC TO MAIN MENU"
+
+[connection signal="pressed" from="RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="MainMenuButton" to="." method="_on_esc_button_pressed"]
