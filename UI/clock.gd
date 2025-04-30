@@ -35,4 +35,4 @@ func update_clock_animation():
 func end_work_day():
 	print("Workday Over!")  
 	timer.stop()
-	get_tree().change_scene_to_file("res://UI/LoseScreen.tscn")
+	await SceneTransition.change_scene_with_fade("res://UI/LoseScreen.tscn")

@@ -11,15 +11,15 @@ config_version=5
 [application]
 
 config/name="intern-inferno"
-run/main_scene="res://UI/StartandCutsceneScreen.tscn"
+run/main_scene="res://UI/StartScreen.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
-SceneTransistor="*res://Autoloads/SceneTransistor.tscn"
+SceneTransition="*res://Autoloads/SceneTransistor.tscn"
 SavedData="*res://Autoloads/SavedData.gd"
-TransitionManager="*res://UI/transition.tscn"
+Transition="res://UI/transition.tscn"
 GameManager="*res://Autoloads/GameManager.gd"
 
 [display]

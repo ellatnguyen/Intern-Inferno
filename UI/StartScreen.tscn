@@ -1,11 +1,11 @@
 [gd_scene load_steps=2 format=3 uid="uid://c7yhn32notyng"]
 
-[ext_resource type="Script" path="res://UI/start_and_cutscene_screen.gd" id="1_ib7b5"]
+[ext_resource type="Script" path="res://UI/start_and_cutscene_screen.gd" id="1_3sl8q"]
 
-[node name="StartandCutsceneScreen" type="Control"]
+[node name="StartScreen" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-script = ExtResource("1_ib7b5")
+script = ExtResource("1_3sl8q")
 
 [node name="RestartButton" type="Button" parent="."]
 offset_left = 374.0
