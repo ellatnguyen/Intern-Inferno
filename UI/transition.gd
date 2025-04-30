@@ -16,8 +16,15 @@ func fade_to_scene(target_scene: String):
 	tween.tween_property(color_rect, "modulate:a", 1.0, 0.5)
 	await tween.finished
 
-	get_tree().change_scene_to_file(target_scene)  # Change scene
+	await SceneTransition.change_scene_with_fade(target_scene)  # Change scene
 
 	# Fade back in
 	tween = create_tween()
 	tween.tween_property(color_rect, "modulate:a", 0.0, 0.5)
+
+func fade_from_black():
+	if tween: tween.kill()
+	tween = create_tween()
+	color_rect.modulate.a = 1.0  # Ensure it starts black
+	tween.tween_property(color_rect, "modulate:a", 0.0, 0.5)
+	await tween.finished

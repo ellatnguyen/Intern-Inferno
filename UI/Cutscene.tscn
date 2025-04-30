@@ -1,0 +1,81 @@
+[gd_scene load_steps=16 format=3 uid="uid://cr67hty513730"]
+
+[ext_resource type="Script" path="res://UI/cutscene.gd" id="1_acsby"]
+[ext_resource type="Texture2D" uid="uid://de4m8a388ulal" path="res://Assets/Cool Down Bar/Cool_Down_Bar-2.png" id="2_q0l12"]
+[ext_resource type="Texture2D" uid="uid://duy8mjdc0xrrk" path="res://Assets/Cool Down Bar/Cool_Down_Bar-3.png" id="3_awkt6"]
+[ext_resource type="Texture2D" uid="uid://ugoqsrpa50rs" path="res://Assets/Cool Down Bar/Cool_Down_Bar-4.png" id="4_1v1hy"]
+[ext_resource type="Texture2D" uid="uid://dsowgapp7x52x" path="res://Assets/Cool Down Bar/Cool_Down_Bar-5.png" id="5_1mqab"]
+[ext_resource type="Texture2D" uid="uid://cktj7svtufhfv" path="res://Assets/Cool Down Bar/Cool_Down_Bar-6.png" id="6_861kh"]
+[ext_resource type="Texture2D" uid="uid://d4iwomk71el1s" path="res://Assets/Cool Down Bar/Cool_Down_Bar-7.png" id="7_qeec4"]
+[ext_resource type="Texture2D" uid="uid://dfld3pttbrhma" path="res://Assets/Cool Down Bar/Cool_Down_Bar-8.png" id="8_srcdd"]
+[ext_resource type="Texture2D" uid="uid://1mfl0mv26s5k" path="res://Assets/Cool Down Bar/Cool_Down_Bar-9.png" id="9_ouptt"]
+[ext_resource type="Texture2D" uid="uid://b1u52gahfa0yy" path="res://Assets/Cool Down Bar/Cool_Down_Bar-10.png" id="10_nblt4"]
+[ext_resource type="Texture2D" uid="uid://darkwodnj1ay3" path="res://Assets/Cool Down Bar/Cool_Down_Bar-11.png" id="11_ysvok"]
+[ext_resource type="Texture2D" uid="uid://dp5iqwiw68akg" path="res://Assets/Cool Down Bar/Cool_Down_Bar-12.png" id="12_ex4x4"]
+[ext_resource type="Texture2D" uid="uid://5ymstqrvco1v" path="res://Assets/Cool Down Bar/Cool_Down_Bar-13.png" id="13_oj44i"]
+[ext_resource type="PackedScene" uid="uid://bu37oqhwopen" path="res://UI/transition.tscn" id="14_gwoyb"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nihcq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_q0l12")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_awkt6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_1v1hy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_1mqab")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_861kh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_qeec4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_srcdd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ouptt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_nblt4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ysvok")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ex4x4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_oj44i")
+}],
+"loop": false,
+"name": &"cutscene",
+"speed": 5.0
+}]
+
+[node name="Cutscene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_acsby")
+
+[node name="Slideshow" type="AnimatedSprite2D" parent="."]
+position = Vector2(578, 374)
+scale = Vector2(0.433594, 0.433594)
+sprite_frames = SubResource("SpriteFrames_nihcq")
+animation = &"cutscene"
+
+[node name="Transition" parent="." instance=ExtResource("14_gwoyb")]
+offset_left = 4.0
+offset_top = -14.0
+offset_right = 4.0
+offset_bottom = -14.0

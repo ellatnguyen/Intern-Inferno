@@ -8,7 +8,7 @@ func _process(delta):
 
 func _on_restart_pressed():
 	print("RESTART BUTTON PRESSED")
-	get_tree().change_scene_to_file("res://Map.tscn")
+	await SceneTransition.change_scene_with_fade("res://Map.tscn")
 
 func _unhandled_input(event):
 	if event.is_action_pressed("restart"):
@@ -16,4 +16,4 @@ func _unhandled_input(event):
 
 func _on_esc_pressed():
 	print("ESC BUTTON PRESSED")
-	get_tree().change_scene_to_file("res://StartandCutsceneScreen.tscn")
+	await SceneTransition.change_scene_with_fade("res://StartandCutsceneScreen.tscn")

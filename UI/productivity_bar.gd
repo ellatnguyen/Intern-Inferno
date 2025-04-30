@@ -60,7 +60,7 @@ func increase_productivity_by_percent(percent: float):
 		if dialogue_battle:
 			dialogue_battle.reset_battle()
 		
-		get_tree().change_scene_to_file("res://UI/WinScreen.tscn")
+		await SceneTransition.change_scene_with_fade("res://UI/WinScreen.tscn")
 
 func decrement_frame():
 	current_frame -= 1
@@ -81,14 +81,14 @@ func productivity_end():
 	game_over = true
 	print("Productivity Drained!")
 	timer.stop()
-	get_tree().change_scene_to_file("res://UI/LoseScreen.tscn")  # Update path
+	await SceneTransition.change_scene_with_fade("res://UI/LoseScreen.tscn")  # Update path
 
 func productivity_win():
 	if game_over: return
 	game_over = true
 	print("Productivity Maxed! You Win!")
 	timer.stop()
-	get_tree().change_scene_to_file("res://UI/WinScreen.tscn")  # Update path
+	await SceneTransition.change_scene_with_fade("res://UI/WinScreen.tscn")  # Update path
 
 func _on_productivity_timer_timeout():
 	increment_frame()
