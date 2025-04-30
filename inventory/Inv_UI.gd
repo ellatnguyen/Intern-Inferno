@@ -14,12 +14,32 @@ extends Control
 @onready var persuasion1: Node=$NinePatchRect/PER1
 @onready var persuasion2: Node=$NinePatchRect/PER2
 @onready var persuasion3: Node=$NinePatchRect/PER3
+@onready var c_intimidate1: Node=$ClosedClipboard/c_int1
+@onready var c_intimidate2: Node=$ClosedClipboard/c_int2
+@onready var c_intimidate3: Node=$ClosedClipboard/c_int3
+@onready var c_persuasion1: Node=$ClosedClipboard/c_per1
+@onready var c_persuasion2: Node=$ClosedClipboard/c_per2
+@onready var c_persuasion3: Node=$ClosedClipboard/c_per3
 
 
 
 var is_open = false
 
 func _ready():
+	intimidate1.visible=true
+	persuasion1.visible=true
+	intimidate2.visible=false
+	intimidate3.visible=false
+	persuasion2.visible=false
+	persuasion3.visible=false
+	
+	c_intimidate1.visible=true
+	c_intimidate2.visible=false
+	c_intimidate3.visible=false
+	c_persuasion1.visible=true
+	c_persuasion2.visible=false
+	c_persuasion3.visible=false
+	
 	inv.update.connect(update_slots)
 	update_slots()
 	close() 
@@ -51,29 +71,52 @@ func close():
 
 func update_level_display():
 	var player = get_tree().get_first_node_in_group("player")
-	intimidate1.visible=true
-	persuasion1.visible=true
 	if player:
 		var per_lvl = player.player_stats.get("PER_LVL", 0)
 		var int_lvl = player.player_stats.get("INT_LVL", 0)
-		
 		if int_lvl == 2:
 			intimidate1.visible=false
 			intimidate2.visible=true
 			intimidate3.visible=false
+			
+			c_intimidate1.visible=false
+			c_intimidate2.visible=true
+			c_intimidate3.visible=false
+		elif int_lvl ==3:
+			intimidate1.visible=false
+			intimidate2.visible=false
+			intimidate3.visible=true
+			
+			c_intimidate1.visible=false
+			c_intimidate2.visible=false
+			c_intimidate3.visible=true
 		if per_lvl==2:
 			persuasion1.visible=false
 			persuasion2.visible=true
 			persuasion3.visible=false
 			
+			c_persuasion1.visible=false
+			c_persuasion2.visible=true
+			c_persuasion3.visible=false
+		elif per_lvl==3:
+			intimidate1.visible=false
+			persuasion2.visible=false
+			persuasion3.visible=true
 			
-		
-		label_per_level.text = "PER Level: " + str(per_lvl)
-		label_int_level.text = "INT Level: " + str(int_lvl)
-		label_per_level_closed.text = "PER Level: " + str(per_lvl)
-		label_int_level_closed.text = "INT Level: " + str(int_lvl)
+			intimidate1.visible=false
+			persuasion2.visible=false
+			persuasion3.visible=true
 	else:
-		label_per_level.text = "PER Level: ?"
-		label_int_level.text = "INT Level: ?"
-		label_per_level_closed.text = "PER Level: ?"
-		label_int_level_closed.text = "INT Level: ?"
+		intimidate1.visible=true
+		persuasion1.visible=true
+		intimidate2.visible=false
+		intimidate3.visible=false
+		persuasion2.visible=false
+		persuasion3.visible=false
+		
+		c_intimidate1.visible=true
+		c_intimidate2.visible=false
+		c_intimidate3.visible=false
+		c_persuasion1.visible=true
+		c_persuasion2.visible=false
+		c_persuasion3.visible=false

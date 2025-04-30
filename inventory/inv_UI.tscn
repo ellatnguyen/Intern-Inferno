@@ -84,13 +84,11 @@ scale = Vector2(0.45, 0.458)
 texture = ExtResource("4_7a5m2")
 
 [node name="INT2" type="Sprite2D" parent="NinePatchRect"]
-visible = false
 position = Vector2(260, 165)
 scale = Vector2(0.45, 0.45)
 texture = ExtResource("5_5bsej")
 
 [node name="INT3" type="Sprite2D" parent="NinePatchRect"]
-visible = false
 position = Vector2(260, 165)
 scale = Vector2(0.45, 0.45)
 texture = ExtResource("6_um08j")
@@ -101,13 +99,11 @@ scale = Vector2(0.45, 0.45)
 texture = ExtResource("7_7l48e")
 
 [node name="PER2" type="Sprite2D" parent="NinePatchRect"]
-visible = false
 position = Vector2(258, 166)
 scale = Vector2(0.45, 0.45)
 texture = ExtResource("8_1wr8r")
 
 [node name="PER3" type="Sprite2D" parent="NinePatchRect"]
-visible = false
 position = Vector2(258, 166)
 scale = Vector2(0.45, 0.45)
 texture = ExtResource("9_0rrku")
@@ -140,12 +136,10 @@ position = Vector2(5.72205e-06, 516.667)
 texture = ExtResource("4_7a5m2")
 
 [node name="c_int2" type="Sprite2D" parent="ClosedClipboard"]
-visible = false
 position = Vector2(5.72205e-06, 516.667)
 texture = ExtResource("5_5bsej")
 
 [node name="c_int3" type="Sprite2D" parent="ClosedClipboard"]
-visible = false
 position = Vector2(5.72205e-06, 516.667)
 texture = ExtResource("6_um08j")
 
@@ -154,11 +148,9 @@ position = Vector2(8.58307e-06, 521.429)
 texture = ExtResource("7_7l48e")
 
 [node name="c_per2" type="Sprite2D" parent="ClosedClipboard"]
-visible = false
 position = Vector2(8.58307e-06, 521.429)
 texture = ExtResource("8_1wr8r")
 
 [node name="c_per3" type="Sprite2D" parent="ClosedClipboard"]
-visible = false
 position = Vector2(8.58307e-06, 521.429)
 texture = ExtResource("9_0rrku")
