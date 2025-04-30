@@ -1,89 +1,57 @@
-[gd_scene load_steps=22 format=3 uid="uid://14h1seosuevn"]
+[gd_scene load_steps=14 format=3 uid="uid://14h1seosuevn"]
 
 [ext_resource type="Script" path="res://Enemies/defeat/PoofEffect.gd" id="1_865kp"]
-[ext_resource type="Texture2D" uid="uid://7nlt13hjku2u" path="res://Assets/Character Assets/NPCs/cat_defeat_frames copy/AnimationDefeatedCatPoof-0.png" id="2_02x0h"]
-[ext_resource type="Texture2D" uid="uid://du06do5srt2cu" path="res://Assets/Character Assets/NPCs/cat_defeat_frames copy/AnimationDefeatedCatPoof-1.png" id="3_ey5ag"]
-[ext_resource type="Texture2D" uid="uid://31vdhca85tgd" path="res://Assets/Character Assets/NPCs/cat_defeat_frames copy/AnimationDefeatedCatPoof-2.png" id="4_yqgth"]
-[ext_resource type="Texture2D" uid="uid://bjko6scyefi6r" path="res://Assets/Character Assets/NPCs/cat_defeat_frames copy/AnimationDefeatedCatPoof-3.png" id="5_mqkaa"]
-[ext_resource type="Texture2D" uid="uid://dd43y8e5t0l7d" path="res://Assets/Character Assets/NPCs/cat_defeat_frames copy/AnimationDefeatedCatPoof-4.png" id="6_65nt0"]
-[ext_resource type="Texture2D" uid="uid://bbu5rhp2vccqk" path="res://Assets/Character Assets/NPCs/cat_defeat_frames copy/AnimationDefeatedCatPoof-5.png" id="7_he2jn"]
-[ext_resource type="Texture2D" uid="uid://cetjcbh1esjar" path="res://Assets/Character Assets/NPCs/cat_defeat_frames copy/AnimationDefeatedCatPoof-6.png" id="8_ha8y4"]
-[ext_resource type="Texture2D" uid="uid://cr1yfwcmp4arg" path="res://Assets/Character Assets/NPCs/cat_defeat_frames copy/AnimationDefeatedCatPoof-7.png" id="9_axxi0"]
-[ext_resource type="Texture2D" uid="uid://cjhd3884tvsr5" path="res://Assets/Character Assets/NPCs/cat_defeat_frames copy/AnimationDefeatedCatPoof-8.png" id="10_ml6y5"]
-[ext_resource type="Texture2D" uid="uid://dck4dtqb67s4l" path="res://Assets/Character Assets/NPCs/cat_defeat_frames copy/AnimationDefeatedCatPoof-9.png" id="11_1fnui"]
-[ext_resource type="Texture2D" uid="uid://jm2ytidtyds7" path="res://Assets/Character Assets/NPCs/cat_defeat_frames copy/AnimationDefeatedCatPoof-10.png" id="12_ypscj"]
-[ext_resource type="Texture2D" uid="uid://dlyl71012a63k" path="res://Assets/Character Assets/NPCs/cat_defeat_frames copy/AnimationDefeatedCatPoof-11.png" id="13_j6qq4"]
-[ext_resource type="Texture2D" uid="uid://bsvx0rf3j68gv" path="res://Assets/Character Assets/NPCs/cat_defeat_frames copy/AnimationDefeatedCatPoof-12.png" id="14_ocadt"]
-[ext_resource type="Texture2D" uid="uid://caa4oni6ve7f2" path="res://Assets/Character Assets/NPCs/cat_defeat_frames copy/AnimationDefeatedCatPoof-13.png" id="15_h2hib"]
-[ext_resource type="Texture2D" uid="uid://cg55l0fsc38qo" path="res://Assets/Character Assets/NPCs/cat_defeat_frames copy/AnimationDefeatedCatPoof-14.png" id="16_ou70v"]
-[ext_resource type="Texture2D" uid="uid://cr24057ylgskx" path="res://Assets/Character Assets/NPCs/cat_defeat_frames copy/AnimationDefeatedCatPoof-15.png" id="17_1h5tf"]
-[ext_resource type="Texture2D" uid="uid://brs52wd432knh" path="res://Assets/Character Assets/NPCs/cat_defeat_frames copy/AnimationDefeatedCatPoof-16.png" id="18_82645"]
-[ext_resource type="Texture2D" uid="uid://25u0jpdsjc07" path="res://Assets/Character Assets/NPCs/cat_defeat_frames copy/AnimationDefeatedCatPoof-17.png" id="19_nmdvj"]
-[ext_resource type="Texture2D" uid="uid://bxkbsla1sxd36" path="res://Assets/Character Assets/NPCs/cat_defeat_frames copy/AnimationDefeatedCatPoof-18.png" id="20_wlber"]
+[ext_resource type="Texture2D" uid="uid://k7ulwjv0mnx" path="res://Assets/Character Assets/NPCs/POOF CHARACTERDEATHFIRESFX/Deathfiredpoof-1.png" id="2_o30vx"]
+[ext_resource type="Texture2D" uid="uid://jbdh82dw2pcu" path="res://Assets/Character Assets/NPCs/POOF CHARACTERDEATHFIRESFX/Deathfiredpoof-2.png" id="3_bncau"]
+[ext_resource type="Texture2D" uid="uid://k1awr0b6yk7x" path="res://Assets/Character Assets/NPCs/POOF CHARACTERDEATHFIRESFX/Deathfiredpoof-3.png" id="4_h1nn0"]
+[ext_resource type="Texture2D" uid="uid://bnulllex6vfbo" path="res://Assets/Character Assets/NPCs/POOF CHARACTERDEATHFIRESFX/Deathfiredpoof-4.png" id="5_cev1y"]
+[ext_resource type="Texture2D" uid="uid://faoxmixw48b8" path="res://Assets/Character Assets/NPCs/POOF CHARACTERDEATHFIRESFX/Deathfiredpoof-5.png" id="6_ns2iq"]
+[ext_resource type="Texture2D" uid="uid://vjjfe76ieg8" path="res://Assets/Character Assets/NPCs/POOF CHARACTERDEATHFIRESFX/Deathfiredpoof-6.png" id="7_0qw7y"]
+[ext_resource type="Texture2D" uid="uid://c10vy3xwfbjdy" path="res://Assets/Character Assets/NPCs/POOF CHARACTERDEATHFIRESFX/Deathfiredpoof-7.png" id="8_egove"]
+[ext_resource type="Texture2D" uid="uid://bbhkpu21c13pp" path="res://Assets/Character Assets/NPCs/POOF CHARACTERDEATHFIRESFX/Deathfiredpoof-8.png" id="9_os3ll"]
+[ext_resource type="Texture2D" uid="uid://derwrlr7kqm8y" path="res://Assets/Character Assets/NPCs/POOF CHARACTERDEATHFIRESFX/Deathfiredpoof-9.png" id="10_kcmuv"]
+[ext_resource type="Texture2D" uid="uid://bnutvthxisp8b" path="res://Assets/Character Assets/NPCs/POOF CHARACTERDEATHFIRESFX/Deathfiredpoof-10.png" id="11_a6u6g"]
+[ext_resource type="Texture2D" uid="uid://1jw5s7x27qfw" path="res://Assets/Character Assets/NPCs/POOF CHARACTERDEATHFIRESFX/Deathfiredpoof-11.png" id="12_tuh1u"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_l5qa0"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_02x0h")
+"texture": ExtResource("2_o30vx")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_ey5ag")
+"texture": ExtResource("3_bncau")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_yqgth")
+"texture": ExtResource("4_h1nn0")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_mqkaa")
+"texture": ExtResource("5_cev1y")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_65nt0")
+"texture": ExtResource("6_ns2iq")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_he2jn")
+"texture": ExtResource("7_0qw7y")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_ha8y4")
+"texture": ExtResource("8_egove")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_axxi0")
+"texture": ExtResource("9_os3ll")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_ml6y5")
+"texture": ExtResource("10_kcmuv")
 }, {
 "duration": 1.0,
-"texture": ExtResource("11_1fnui")
+"texture": ExtResource("11_a6u6g")
 }, {
 "duration": 1.0,
-"texture": ExtResource("12_ypscj")
-}, {
-"duration": 1.0,
-"texture": ExtResource("13_j6qq4")
-}, {
-"duration": 1.0,
-"texture": ExtResource("14_ocadt")
-}, {
-"duration": 1.0,
-"texture": ExtResource("15_h2hib")
-}, {
-"duration": 1.0,
-"texture": ExtResource("16_ou70v")
-}, {
-"duration": 1.0,
-"texture": ExtResource("17_1h5tf")
-}, {
-"duration": 1.0,
-"texture": ExtResource("18_82645")
-}, {
-"duration": 1.0,
-"texture": ExtResource("19_nmdvj")
-}, {
-"duration": 1.0,
-"texture": ExtResource("20_wlber")
+"texture": ExtResource("12_tuh1u")
 }],
 "loop": false,
 "name": &"poof",
-"speed": 10.0
+"speed": 5.0
 }]
 
 [node name="PoofEffect" type="Node2D"]

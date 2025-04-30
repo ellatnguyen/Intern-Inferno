@@ -8,6 +8,13 @@ extends Control
 @onready var label_int_level = $NinePatchRect/INT_LVL
 @onready var label_per_level_closed = $ClosedClipboard/PER_LVL_CLOSED
 @onready var label_int_level_closed = $ClosedClipboard/INT_LVL_CLOSED
+@onready var intimidate1: Node=$NinePatchRect/INT1
+@onready var intimidate2: Node=$NinePatchRect/INT2
+@onready var intimidate3: Node=$NinePatchRect/INT3
+@onready var persuasion1: Node=$NinePatchRect/PER1
+@onready var persuasion2: Node=$NinePatchRect/PER2
+@onready var persuasion3: Node=$NinePatchRect/PER3
+
 
 
 var is_open = false
@@ -44,9 +51,22 @@ func close():
 
 func update_level_display():
 	var player = get_tree().get_first_node_in_group("player")
+	intimidate1.visible=true
+	persuasion1.visible=true
 	if player:
 		var per_lvl = player.player_stats.get("PER_LVL", 0)
 		var int_lvl = player.player_stats.get("INT_LVL", 0)
+		
+		if int_lvl == 2:
+			intimidate1.visible=false
+			intimidate2.visible=true
+			intimidate3.visible=false
+		if per_lvl==2:
+			persuasion1.visible=false
+			persuasion2.visible=true
+			persuasion3.visible=false
+			
+			
 		
 		label_per_level.text = "PER Level: " + str(per_lvl)
 		label_int_level.text = "INT Level: " + str(int_lvl)
