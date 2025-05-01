@@ -1,9 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://bwwpnla8wmau4"]
+[gd_scene load_steps=11 format=3 uid="uid://bwwpnla8wmau4"]
 
 [ext_resource type="Script" path="res://inventory/Inv_UI.gd" id="1_06iax"]
-[ext_resource type="Texture2D" uid="uid://bqk0e056l8gs1" path="res://audrey_assets/empty clipboard expanded.PNG" id="2_8ng60"]
+[ext_resource type="Texture2D" uid="uid://bvw8yfkb2va1q" path="res://Assets/inventory/Clipboard with layout.PNG" id="2_1mg8q"]
 [ext_resource type="Texture2D" uid="uid://df8m8sqxkhbdx" path="res://Assets/empty clipboard hidden.PNG" id="4_2vpmf"]
+[ext_resource type="Texture2D" uid="uid://dtn1fmjfnncga" path="res://Assets/inventory/stat levels/intimidate 1.PNG" id="4_7a5m2"]
+[ext_resource type="Texture2D" uid="uid://cte03nhacc2pg" path="res://Assets/inventory/stat levels/intimidate 2.PNG" id="5_5bsej"]
 [ext_resource type="PackedScene" uid="uid://uk0lrnj0irjc" path="res://inventory/inv_ui_slot.tscn" id="5_h7fe6"]
+[ext_resource type="Texture2D" uid="uid://cuikebbjx05ki" path="res://Assets/inventory/stat levels/intimidate 3.PNG" id="6_um08j"]
+[ext_resource type="Texture2D" uid="uid://c46m8i5fq3lqb" path="res://Assets/inventory/stat levels/persuade 1.PNG" id="7_7l48e"]
+[ext_resource type="Texture2D" uid="uid://bbwpewqm3685" path="res://Assets/inventory/stat levels/persuade 2.PNG" id="8_1wr8r"]
+[ext_resource type="Texture2D" uid="uid://3i2dk3fxygbt" path="res://Assets/inventory/stat levels/persuade 3.PNG" id="9_0rrku"]
 
 [node name="Inv_UI" type="Control" groups=["inventory_ui"]]
 layout_mode = 3
@@ -13,11 +19,11 @@ script = ExtResource("1_06iax")
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 custom_minimum_size = Vector2(541, 321)
 layout_mode = 0
-offset_left = -34.0
-offset_top = 324.0
-offset_right = 507.0
-offset_bottom = 645.0
-texture = ExtResource("2_8ng60")
+offset_left = -30.0
+offset_top = 216.0
+offset_right = 511.0
+offset_bottom = 537.0
+texture = ExtResource("2_1mg8q")
 patch_margin_left = 1
 patch_margin_top = 1
 patch_margin_right = 1
@@ -27,66 +33,87 @@ patch_margin_bottom = 1
 custom_minimum_size = Vector2(150, 100)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.594
-anchor_top = 0.683
+anchor_left = 0.514
+anchor_top = 0.543
 anchor_right = 0.641
 anchor_bottom = 0.924
-offset_left = -178.614
-offset_top = 11.981
-offset_right = 1037.22
-offset_bottom = 178.396
+offset_left = -179.074
+offset_top = 12.747
+offset_right = 478.219
+offset_bottom = 69.396
 scale = Vector2(0.3, 0.3)
 pivot_offset = Vector2(1, 0)
 columns = 4
 
 [node name="inv_UI_slot1" parent="NinePatchRect/GridContainer" instance=ExtResource("5_h7fe6")]
-custom_minimum_size = Vector2(270, 90)
+custom_minimum_size = Vector2(182, 90)
 layout_mode = 2
 size_flags_horizontal = 0
 
 [node name="inv_UI_slot2" parent="NinePatchRect/GridContainer" instance=ExtResource("5_h7fe6")]
-custom_minimum_size = Vector2(270, 130)
+custom_minimum_size = Vector2(182, 130)
 layout_mode = 2
 
 [node name="inv_UI_slot3" parent="NinePatchRect/GridContainer" instance=ExtResource("5_h7fe6")]
-custom_minimum_size = Vector2(270, 90)
+custom_minimum_size = Vector2(182, 90)
 layout_mode = 2
 
-[node name="INT_LVL" type="Label" parent="NinePatchRect"]
-modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = 405.0
-offset_top = 40.0
-offset_right = 499.0
-offset_bottom = 63.0
-text = "INT: 0"
+[node name="INT1" type="Sprite2D" parent="NinePatchRect"]
+position = Vector2(260, 167)
+scale = Vector2(0.45, 0.458)
+texture = ExtResource("4_7a5m2")
 
-[node name="PER_LVL" type="Label" parent="NinePatchRect"]
-modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = 404.0
-offset_top = 61.0
-offset_right = 498.0
-offset_bottom = 84.0
-text = "PER: 0"
+[node name="INT2" type="Sprite2D" parent="NinePatchRect"]
+position = Vector2(260, 165)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("5_5bsej")
+
+[node name="INT3" type="Sprite2D" parent="NinePatchRect"]
+position = Vector2(260, 165)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("6_um08j")
+
+[node name="PER1" type="Sprite2D" parent="NinePatchRect"]
+position = Vector2(258, 166)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("7_7l48e")
+
+[node name="PER2" type="Sprite2D" parent="NinePatchRect"]
+position = Vector2(258, 166)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("8_1wr8r")
+
+[node name="PER3" type="Sprite2D" parent="NinePatchRect"]
+position = Vector2(258, 166)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("9_0rrku")
 
 [node name="ClosedClipboard" type="Sprite2D" parent="."]
-position = Vector2(238, 494)
+visible = false
+position = Vector2(234, 385)
 scale = Vector2(0.42, 0.42)
 texture = ExtResource("4_2vpmf")
 
-[node name="PER_LVL_CLOSED" type="Label" parent="ClosedClipboard"]
-modulate = Color(0, 0, 0, 1)
-offset_left = 316.667
-offset_top = 264.286
-offset_right = 395.667
-offset_bottom = 287.286
-text = "PER LVL: 0"
+[node name="c_int1" type="Sprite2D" parent="ClosedClipboard"]
+position = Vector2(5.72205e-06, 516.667)
+texture = ExtResource("4_7a5m2")
 
-[node name="INT_LVL_CLOSED" type="Label" parent="ClosedClipboard"]
-modulate = Color(0, 0, 0, 1)
-offset_left = 319.048
-offset_top = 240.476
-offset_right = 395.048
-offset_bottom = 263.476
-text = "INT LVL: 0"
+[node name="c_int2" type="Sprite2D" parent="ClosedClipboard"]
+position = Vector2(5.72205e-06, 516.667)
+texture = ExtResource("5_5bsej")
+
+[node name="c_int3" type="Sprite2D" parent="ClosedClipboard"]
+position = Vector2(5.72205e-06, 516.667)
+texture = ExtResource("6_um08j")
+
+[node name="c_per1" type="Sprite2D" parent="ClosedClipboard"]
+position = Vector2(8.58307e-06, 521.429)
+texture = ExtResource("7_7l48e")
+
+[node name="c_per2" type="Sprite2D" parent="ClosedClipboard"]
+position = Vector2(8.58307e-06, 521.429)
+texture = ExtResource("8_1wr8r")
+
+[node name="c_per3" type="Sprite2D" parent="ClosedClipboard"]
+position = Vector2(8.58307e-06, 521.429)
+texture = ExtResource("9_0rrku")

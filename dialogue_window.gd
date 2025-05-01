@@ -190,8 +190,8 @@ func decrease_enemy_health(amount := 1):
 					elif per_count > int_count:
 						player.gain_per_exp(exp_gain)
 					else:
-						player.gain_int_exp(1)
-						player.gain_per_exp(1)
+						player.gain_int_exp(3)
+						player.gain_per_exp(3)
 				else:
 					print("Player not found in scene tree.")
 				print(player.player_stats)

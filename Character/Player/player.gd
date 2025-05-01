@@ -18,16 +18,16 @@ var controls_enabled := true
 var 	player_stats = {
 		"PER_EXP": 0,
 		"INT_EXP": 0,
-		"PER_LVL": 0,
-		"INT_LVL": 0
+		"PER_LVL": 1,
+		"INT_LVL": 1
 	}
 
 func _ready() -> void:
 	player_stats = {
 		"PER_EXP": 0,
 		"INT_EXP": 0,
-		"PER_LVL": 0,
-		"INT_LVL": 0
+		"PER_LVL": 1,
+		"INT_LVL": 1
 	}
 	
 	add_to_group("player")
@@ -87,34 +87,33 @@ func collect(item):
 	inv.insert(item)
 
 func update_levels() -> void:
-	var old_per_level = player_stats["PER_LVL"]
 	var per_exp = player_stats["PER_EXP"]
-	var new_per_level := 0
+	var int_exp = player_stats["INT_EXP"]
+
+	var new_per_level := 1
 	if per_exp >= 20:
 		new_per_level = 3
-	elif per_exp >= 10:
+	elif per_exp >= 3:
 		new_per_level = 2
-	elif per_exp >= 5:
-		new_per_level = 1
-	
-	var old_int_level = player_stats["INT_LVL"]
-	var int_exp = player_stats["INT_EXP"]
-	var new_int_level := 0
+
+	var new_int_level := 1
 	if int_exp >= 20:
 		new_int_level = 3
-	elif int_exp >= 10:
+	elif int_exp >= 3:
 		new_int_level = 2
-	elif int_exp >= 5:
-		new_int_level = 1
-	
+
+	var old_per_level = player_stats["PER_LVL"]
+	var old_int_level = player_stats["INT_LVL"]
+
 	if new_per_level > old_per_level:
 		print("PER Level Up! New Level: ", new_per_level)
-		
+
 	if new_int_level > old_int_level:
 		print("INT Level Up! New Level: ", new_int_level)
-	
+
 	player_stats["PER_LVL"] = new_per_level
 	player_stats["INT_LVL"] = new_int_level
+
 
 func gain_per_exp(amount: int) -> void:
 	player_stats["PER_EXP"] += amount
@@ -129,4 +128,7 @@ func gain_int_exp(amount: int) -> void:
 func update_inventory_ui():
 	var inventory_ui = get_tree().get_first_node_in_group("inventory_ui")
 	if inventory_ui:
+		print("✅ Found inventory_ui group node:", inventory_ui.name)
 		inventory_ui.update_level_display()
+	else:
+		print("❌ Inventory UI NOT FOUND!")

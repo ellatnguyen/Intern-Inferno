@@ -1,49 +1,52 @@
-[gd_scene load_steps=3 format=3 uid="uid://uk0lrnj0irjc"]
+[gd_scene load_steps=4 format=3 uid="uid://uk0lrnj0irjc"]
 
 [ext_resource type="Script" path="res://inventory/inv_ui_slot.gd" id="1_utj6c"]
-[ext_resource type="Texture2D" uid="uid://bx6i5gntm2gif" path="res://Assets/Vending/better_empty_slot.png" id="2_s57hi"]
+[ext_resource type="Texture2D" uid="uid://caicqcdibetr1" path="res://Assets/inventory/Screenshot 2025-04-28 at 11.20.38 PM.png" id="2_67mo7"]
+[ext_resource type="FontFile" uid="uid://cfxsciymhjn2e" path="res://Assets/inventory/Pangolin-Regular.ttf" id="3_2r72w"]
 
 [node name="inv_UI_slot" type="Panel"]
-custom_minimum_size = Vector2(185, 175)
-offset_left = 2.0
-offset_top = 3.0
-offset_right = 276.0
-offset_bottom = 277.0
+custom_minimum_size = Vector2(182, 180)
+offset_right = 180.0
+offset_bottom = 180.0
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_utj6c")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-3, -4)
-scale = Vector2(1.51648, 1.55056)
-texture = ExtResource("2_s57hi")
+scale = Vector2(0.798246, 0.818182)
+texture = ExtResource("2_67mo7")
 centered = false
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 custom_minimum_size = Vector2(185, 175)
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 0.978
-anchor_bottom = 0.957
-offset_left = 4.0
-offset_top = 1.0
-offset_right = -78.972
-offset_bottom = -77.218
+anchor_left = 0.058
+anchor_top = 0.053
+anchor_right = 1.156
+anchor_bottom = 0.951
+offset_left = -12.556
+offset_top = -9.54
+offset_right = -27.392
+offset_bottom = 10.41
 grow_horizontal = 2
-scale = Vector2(1.5, 1.5)
 
 [node name="Panel" type="Panel" parent="CenterContainer"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 
 [node name="item_display" type="Sprite2D" parent="CenterContainer/Panel"]
+centered = false
 
 [node name="Label" type="Label" parent="CenterContainer/Panel"]
 self_modulate = Color(0, 0, 0, 1)
 custom_minimum_size = Vector2(19, 23)
 layout_mode = 0
-offset_left = 12.6666
-offset_top = 34.0
-offset_right = 42.6666
-offset_bottom = 64.0
-scale = Vector2(2, 2)
+offset_left = -44.0
+offset_top = 12.0
+offset_right = -14.0
+offset_bottom = 42.0
+scale = Vector2(4, 4)
+theme_override_colors/font_color = Color(0.385493, 0.385492, 0.385492, 1)
+theme_override_fonts/font = ExtResource("3_2r72w")
 text = "99"
 horizontal_alignment = 2
