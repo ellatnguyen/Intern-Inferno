@@ -11,7 +11,7 @@ func update(slot:InvSlot):
 	else:
 		item_visual.visible=true
 		item_visual.texture=slot.item.texture
-		item_visual.scale = Vector2(1, 1)  # tweak this if needed
+		item_visual.scale = Vector2(.7, .7)  # tweak this if needed
 		item_visual.centered = true
 		item_visual.position = Vector2.ZERO
 		if slot.amount > 1:
