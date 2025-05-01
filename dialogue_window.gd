@@ -224,6 +224,11 @@ func decrease_enemy_health(amount := 1) -> bool:
 
 	return false  # Enemy was not defeated
 
+			end_battle()
+			return true  # Enemy was defeated
+
+	return false  # Enemy was not defeated
+
 func update_health_bar():
 	if health_bar:
 		health_bar.frame = enemy_health
@@ -258,12 +263,9 @@ func reset_battle():
 	# Clear enemy portrait
 	enemy_portrait.texture = null
 
-	# Re-enable player controls
+	# DO NOT re-enable controls here
+	# Only GameManager.in_battle is reset
 	GameManager.in_battle = false
-	if productivity_bar.is_full == false:
-		var player = get_tree().get_first_node_in_group("player")
-		if player:
-			player.controls_enabled = true
 
 func _on_leave_button_pressed():
 	print("LEAVE Button Pressed!")
@@ -333,7 +335,6 @@ func handle_consecutive_attack(attack_type: String):
 func enter_cooldown():
 	is_on_cooldown = true
 	dialogue_text.text = "Cooldown! You were kicked out for 5 seconds."
-
 	# Hide battle UI
 	self.visible = false
 
@@ -345,11 +346,15 @@ func enter_cooldown():
 			player.controls_enabled = false
 			await cooldown_ui.cooldown_finished
 		else:
+			player.controls_enabled = false
 			await get_tree().create_timer(5.0).timeout
 
 	is_on_cooldown = false
 	consecutive_same_attacks = 0
 	last_attack_type = ""
+	if not battle_ended and player:
+		player.controls_enabled = false  # stays disabled during battle
+
 
 	# Show battle UI again
 	self.visible = true
