@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnutvthxisp8b"
-path="res://.godot/imported/Deathfiredpoof-10.png-e2c341225801fe3470b56248bc24ff11.ctex"
+uid="uid://bt4yc6l3klkje"
+path="res://.godot/imported/Deathfiredpoof-3.png-cf97adf7be958e580752ef1bc304567b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Character Assets/NPCs/POOF CHARACTERDEATHFIRESFX/Deathfiredpoof-10.png"
-dest_files=["res://.godot/imported/Deathfiredpoof-10.png-e2c341225801fe3470b56248bc24ff11.ctex"]
+source_file="res://Assets/Character Assets/NPCs/POOF CHARACTERDEATHFIRESFX-2/Deathfiredpoof-3.png"
+dest_files=["res://.godot/imported/Deathfiredpoof-3.png-cf97adf7be958e580752ef1bc304567b.ctex"]
 
 [params]
 

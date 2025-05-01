@@ -34,28 +34,28 @@ custom_minimum_size = Vector2(150, 100)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.514
-anchor_top = 0.493
+anchor_top = 0.543
 anchor_right = 0.641
 anchor_bottom = 0.924
 offset_left = -179.074
-offset_top = 12.377
+offset_top = 12.747
 offset_right = 478.219
-offset_bottom = 107.396
+offset_bottom = 69.396
 scale = Vector2(0.3, 0.3)
 pivot_offset = Vector2(1, 0)
 columns = 4
 
 [node name="inv_UI_slot1" parent="NinePatchRect/GridContainer" instance=ExtResource("5_h7fe6")]
-custom_minimum_size = Vector2(226, 90)
+custom_minimum_size = Vector2(182, 90)
 layout_mode = 2
 size_flags_horizontal = 0
 
 [node name="inv_UI_slot2" parent="NinePatchRect/GridContainer" instance=ExtResource("5_h7fe6")]
-custom_minimum_size = Vector2(226, 130)
+custom_minimum_size = Vector2(182, 130)
 layout_mode = 2
 
 [node name="inv_UI_slot3" parent="NinePatchRect/GridContainer" instance=ExtResource("5_h7fe6")]
-custom_minimum_size = Vector2(226, 90)
+custom_minimum_size = Vector2(182, 90)
 layout_mode = 2
 
 [node name="INT1" type="Sprite2D" parent="NinePatchRect"]
@@ -89,6 +89,7 @@ scale = Vector2(0.45, 0.45)
 texture = ExtResource("9_0rrku")
 
 [node name="ClosedClipboard" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(234, 385)
 scale = Vector2(0.42, 0.42)
 texture = ExtResource("4_2vpmf")
