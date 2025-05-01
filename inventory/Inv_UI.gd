@@ -1,6 +1,6 @@
 extends Control
 
-@onready var inv: Inv=preload("res://inventory/player_inv.tres")
+var inv: Inv  # No preload!
 @onready var slots: Array = $NinePatchRect/GridContainer.get_children()
 @onready var closed_clipboard: Node=$ClosedClipboard
 @onready var inventory_panel: Node=$NinePatchRect
@@ -56,7 +56,10 @@ func update_slots():
 		print("Slot ", i, " - Item: ", inv.slots[i].item, " Amount: ", inv.slots[i].amount)
 		slots[i].update(inv.slots[i])
 
-
+func set_inventory(inventory: Inv):
+	inv = inventory
+	inv.update.connect(update_slots)
+	update_slots()
 
 func _on_slot_hovered(slot: InvSlot):
 	if slot.item:

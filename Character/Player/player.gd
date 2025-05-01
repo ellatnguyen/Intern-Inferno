@@ -23,6 +23,9 @@ var 	player_stats = {
 	}
 
 func _ready() -> void:
+	var inv_factory:=preload("res://inventory/new_inventory.gd")
+	inv=inv_factory.create_inventory(3)
+	print("created new inventory")
 	player_stats = {
 		"PER_EXP": 0,
 		"INT_EXP": 0,
@@ -32,6 +35,10 @@ func _ready() -> void:
 	
 	add_to_group("player")
 	fsm.init(self, animation_player)
+	
+	var inventory_ui = get_tree().get_first_node_in_group("inventory_ui")
+	if inventory_ui:
+		inventory_ui.set_inventory(inv)
 
 func _physics_process(_delta: float) -> void:
 	if is_inventory_open():
