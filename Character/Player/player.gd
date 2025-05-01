@@ -40,6 +40,7 @@ func _ready() -> void:
 	}
 	
 	add_to_group("player")
+	animated_sprite.stop()
 	fsm.init(self, animation_player)
 	
 	var inventory_ui = get_tree().get_first_node_in_group("inventory_ui")
@@ -150,6 +151,13 @@ func update_inventory_ui():
 		inventory_ui.update_level_display()
 	else:
 		print("...Inventory UI NOT FOUND!")
+    
 func _on_fahrenheit_timer_timeout():
 	speed_multiplier = 1.0
 	print("BOOO Fahrenheit effect has ended.")
+
+func reset_after_battle() -> void:
+	velocity = Vector2.ZERO
+	mov_direction = Vector2.ZERO
+	fsm.set_state(fsm.states.idle)
+	animated_sprite.play("idle")
