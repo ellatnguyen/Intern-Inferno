@@ -118,12 +118,17 @@ func consume_selected_item():
 			if player:
 				player.has_damage_boost = true
 				print ("!? Damage boost activated")
-		if item_name=="fahrenheit":
+		elif item_name=="fahrenheit":
 			var player = get_tree().get_first_node_in_group("player")
 			if player:
 				player.speed_multiplier = 2.0
 				player.fahrenheit_timer.start()
 				print ("!!!! Fahrenheit consumed! Speed doubled")
+		elif item_name =="lucky harms":
+			var player = get_tree().get_first_node_in_group("player")
+			if player:
+				player.has_exp_boost=true
+				print("YAYA Lucky Harms consumed. EXP Gain increased")
 		#get rid of item/reduce
 		slot.amount -= 1
 		if slot.amount <= 0:

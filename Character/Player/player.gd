@@ -19,6 +19,8 @@ var controls_enabled := true
 
 var has_damage_boost :=false
 var speed_multiplier :=1.0
+var has_exp_boost := false
+
 var 	player_stats = {
 		"PER_EXP": 0,
 		"INT_EXP": 0,

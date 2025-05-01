@@ -184,6 +184,11 @@ func decrease_enemy_health(amount := 1):
 				var player = get_tree().get_first_node_in_group("player")
 				if player:
 					var exp_gain = 1 + (randi() % 3)  # 1 to 3 EXP
+					if player.has_exp_boost:
+						exp_gain = int(exp_gain * 1.5)
+						exp_gain = max(exp_gain, 2)  # Ensure at least +2 EXP
+						print("WHAT Lucky Harms EXP Boost! New gain:", exp_gain)
+						player.has_exp_boost = false  # One-time use
 
 					if int_count > per_count:
 						player.gain_int_exp(exp_gain)
