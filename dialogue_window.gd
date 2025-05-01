@@ -22,9 +22,14 @@ var current_dialogue = []
 const MAX_HEALTH = 11
 var enemy_health = MAX_HEALTH
 
-# Variables to store for cooldown bar / exp gain
+# Variables to store for exp gain
 var int_count = 0
 var per_count = 0
+
+# Variables to store for cooldown bar
+var last_attack_type = ""
+var consecutive_same_attacks = 0
+var is_on_cooldown = false
 
 # Hold a reference to the enemy
 var current_enemy: Node = null
@@ -59,6 +64,7 @@ func start_battle_with(enemy: Node):
 	# Disable player controls
 	var player = get_tree().get_first_node_in_group("player")
 	if player:
+		player.reset_after_battle()
 		player.controls_enabled = false
 
 	current_enemy = enemy
@@ -140,33 +146,48 @@ func update_dialogue():
 		dialogue_text.text = "No dialogue available."
 
 func _on_int_button_pressed():
+	if is_on_cooldown:
+		return
+
 	print("INT Button Pressed!")
 	int_count += 1
 	current_dialogue = int_dialogue
+
 	if current_int_line < int_dialogue.size():
 		update_dialogue()
 		var base_dmg = current_enemy.stats.get("INT_DMG", 1)
 		var bonus_dmg = get_bonus_damage("INT")
-		decrease_enemy_health(base_dmg + bonus_dmg)
+		var defeated = decrease_enemy_health(base_dmg + bonus_dmg)
 		current_int_line += 1
+
+		if not defeated:
+			handle_consecutive_attack("INT")
 	else:
 		dialogue_text.text = "End of INT dialogue."
 
+
 func _on_per_button_pressed():
+	if is_on_cooldown:
+		return
+
 	print("PER Button Pressed!")
 	per_count += 1
 	current_dialogue = per_dialogue
+
 	if current_per_line < per_dialogue.size():
 		update_dialogue()
 		var base_dmg = current_enemy.stats.get("PER_DMG", 2)
 		var bonus_dmg = get_bonus_damage("PER")
-		decrease_enemy_health(base_dmg + bonus_dmg)
+		var defeated = decrease_enemy_health(base_dmg + bonus_dmg)
 		current_per_line += 1
+
+		if not defeated:
+			handle_consecutive_attack("PER")
 	else:
 		dialogue_text.text = "End of PER dialogue."
 
 
-func decrease_enemy_health(amount := 1):
+func decrease_enemy_health(amount := 1) -> bool:
 	if enemy_health > 0:
 		enemy_health -= amount
 		enemy_health = max(enemy_health, 0)
@@ -177,14 +198,12 @@ func decrease_enemy_health(amount := 1):
 			print("Enemy defeated!")
 
 			if productivity_bar:
-				print("Incrementing Productivity Bar!")
 				productivity_bar.increase_productivity_by_percent(0.2)
-			
+
 			if is_inside_tree():
 				var player = get_tree().get_first_node_in_group("player")
 				if player:
-					var exp_gain = 1 + (randi() % 3)  # 1 to 3 EXP
-
+					var exp_gain = 1 + (randi() % 3)
 					if int_count > per_count:
 						player.gain_int_exp(exp_gain)
 					elif per_count > int_count:
@@ -192,11 +211,11 @@ func decrease_enemy_health(amount := 1):
 					else:
 						player.gain_int_exp(1)
 						player.gain_per_exp(1)
-				else:
-					print("Player not found in scene tree.")
-				print(player.player_stats)
-			
-			end_battle()  # Ensure battle always ends cleanly
+
+			end_battle()
+			return true  # Battle ended
+
+	return false  # Still alive
 
 
 func update_health_bar():
@@ -221,6 +240,11 @@ func reset_battle():
 	# Clear dialogue data
 	per_dialogue.clear()
 	int_dialogue.clear()
+
+	# Reset cooldown tracking
+	last_attack_type = ""
+	consecutive_same_attacks = 0
+	is_on_cooldown = false
 
 	# Reset health bar visuals
 	update_health_bar()
@@ -256,7 +280,7 @@ func end_battle():
 		if player:
 			player.controls_enabled= true
 		else:
-			print("dialogue windo is no longer inside the scene tree")
+			print("dialogue window is no longer inside the scene tree")
 
 	if defeated_enemy and is_instance_valid(defeated_enemy) and defeated_enemy.has_method("despawn"):
 		defeated_enemy.despawn()
@@ -272,3 +296,43 @@ func get_bonus_damage(stat_type: String) -> int:
 		elif stat_type == "PER":
 			return player.player_stats.get("PER_LVL", 0)
 	return 0
+
+func handle_consecutive_attack(attack_type: String):
+	if last_attack_type == attack_type:
+		consecutive_same_attacks += 1
+	else:
+		consecutive_same_attacks = 1  # reset chain
+		last_attack_type = attack_type
+
+	if consecutive_same_attacks >= 3:
+		if battle_ended:
+			return
+		else:
+			print("Too many", attack_type, "attacks in a row. Entering cooldown.")
+			enter_cooldown()
+		
+func enter_cooldown():
+	is_on_cooldown = true
+	dialogue_text.text = "Cooldown! You were kicked out for 5 seconds."
+
+	# Hide battle UI
+	self.visible = false
+
+	var player = get_tree().get_first_node_in_group("player")
+	if player:
+		var cooldown_ui = get_node("/root/Game/CooldownBarUI")
+		if cooldown_ui:
+			cooldown_ui.start_cooldown()
+			player.controls_enabled = false
+			await cooldown_ui.cooldown_finished
+		else:
+			await get_tree().create_timer(5.0).timeout
+
+	is_on_cooldown = false
+	consecutive_same_attacks = 0
+	last_attack_type = ""
+
+	# Show battle UI again
+	self.visible = true
+	dialogue_text.text = "You're back in the battle!"
+	update_dialogue()

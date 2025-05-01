@@ -31,6 +31,7 @@ func _ready() -> void:
 	}
 	
 	add_to_group("player")
+	animated_sprite.stop()
 	fsm.init(self, animation_player)
 
 func _physics_process(_delta: float) -> void:
@@ -130,3 +131,9 @@ func update_inventory_ui():
 	var inventory_ui = get_tree().get_first_node_in_group("inventory_ui")
 	if inventory_ui:
 		inventory_ui.update_level_display()
+
+func reset_after_battle() -> void:
+	velocity = Vector2.ZERO
+	mov_direction = Vector2.ZERO
+	fsm.set_state(fsm.states.idle)
+	animated_sprite.play("idle")

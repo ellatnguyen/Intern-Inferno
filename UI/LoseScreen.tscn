@@ -14,6 +14,7 @@ scale = Vector2(0.897222, 0.897222)
 texture = ExtResource("1_atosw")
 
 [node name="RestartButton" type="Button" parent="."]
+layout_mode = 0
 offset_left = 374.0
 offset_top = 269.0
 offset_right = 735.0
@@ -21,6 +22,7 @@ offset_bottom = 374.0
 text = "PRESS SPACEBAR TO RESTART"
 
 [node name="MainMenuButton" type="Button" parent="."]
+layout_mode = 0
 offset_left = 372.0
 offset_top = 394.0
 offset_right = 733.0

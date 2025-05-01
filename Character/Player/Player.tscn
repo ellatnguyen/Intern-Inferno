@@ -162,7 +162,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"move",
-"speed": 5.0
+"speed": 25.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l3m23"]
@@ -352,6 +352,7 @@ script = ExtResource("2_b7fkq")
 scale = Vector2(0.015, 0.015)
 sprite_frames = SubResource("SpriteFrames_x1iip")
 animation = &"idle"
+frame_progress = 0.140217
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(0.1, 0.4)
