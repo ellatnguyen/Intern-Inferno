@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dk3cijlstx2xw"]
+[gd_scene load_steps=4 format=3 uid="uid://dk3cijlstx2xw"]
 
 [ext_resource type="Texture2D" uid="uid://b5fceousqvt2g" path="res://UI/UIAssets/lose screen.PNG" id="1_atosw"]
 [ext_resource type="Script" path="res://UI/end_screen.gd" id="1_cdo7v"]
+[ext_resource type="FontFile" uid="uid://b6vkv518jbaxh" path="res://Assets/Font/Pangolin-Regular.ttf" id="3_ssnxy"]
 
 [node name="LoseScene" type="Control"]
 layout_mode = 3
@@ -19,6 +20,7 @@ offset_left = 374.0
 offset_top = 269.0
 offset_right = 735.0
 offset_bottom = 374.0
+theme_override_fonts/font = ExtResource("3_ssnxy")
 text = "PRESS SPACEBAR TO RESTART"
 
 [node name="MainMenuButton" type="Button" parent="."]
@@ -27,4 +29,5 @@ offset_left = 372.0
 offset_top = 394.0
 offset_right = 733.0
 offset_bottom = 499.0
+theme_override_fonts/font = ExtResource("3_ssnxy")
 text = "PRESS ESC TO MAIN MENU"

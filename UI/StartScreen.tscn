@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://c7yhn32notyng"]
+[gd_scene load_steps=3 format=3 uid="uid://c7yhn32notyng"]
 
 [ext_resource type="Script" path="res://UI/start_and_cutscene_screen.gd" id="1_3sl8q"]
+[ext_resource type="FontFile" uid="uid://b6vkv518jbaxh" path="res://Assets/Font/Pangolin-Regular.ttf" id="2_up4r4"]
 
 [node name="StartScreen" type="Control"]
 layout_mode = 3
@@ -13,4 +14,5 @@ offset_left = 374.0
 offset_top = 269.0
 offset_right = 735.0
 offset_bottom = 374.0
+theme_override_fonts/font = ExtResource("2_up4r4")
 text = "PRESS SPACEBAR TO RESTART"

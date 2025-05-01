@@ -186,7 +186,6 @@ func _on_per_button_pressed():
 	else:
 		dialogue_text.text = "End of PER dialogue."
 
-
 func decrease_enemy_health(amount := 1) -> bool:
 	if enemy_health > 0:
 		enemy_health -= amount
@@ -225,6 +224,10 @@ func decrease_enemy_health(amount := 1) -> bool:
 
 	return false  # Enemy was not defeated
 
+			end_battle()
+			return true  # Enemy was defeated
+
+	return false  # Enemy was not defeated
 
 func update_health_bar():
 	if health_bar:
