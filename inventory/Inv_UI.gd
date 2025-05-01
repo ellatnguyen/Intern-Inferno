@@ -129,6 +129,13 @@ func consume_selected_item():
 			if player:
 				player.has_exp_boost=true
 				print("YAYA Lucky Harms consumed. EXP Gain increased")
+		elif item_name=="life sparer":
+			var productivity_bar = get_node_or_null("/root/Game/TimerUI/Container/ProductivityBar")
+			if productivity_bar:
+				productivity_bar.increase_productivity_by_percent(0.01)
+				print("Life Sparer consumed! Productivity +1%")
+			else:
+				print("Productivity bar not found.")
 		#get rid of item/reduce
 		slot.amount -= 1
 		if slot.amount <= 0:
