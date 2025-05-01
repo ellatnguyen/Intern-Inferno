@@ -103,7 +103,14 @@ func update_slot_selection():
 	
 	var slot = inv.slots[selected_index]
 	if slot.item:
-		item_description_label.text = slot.item.name
+		if slot.item.name =="lucky harms":
+			item_description_label.text = "Lucky Harms: Mischievous cereal with magical luck. Increases EXP gain after your next successful battle."
+		elif slot.item.name =="scrappy":
+			item_description_label.text = "Scrappy: A jagged charm buzzing with energy. Temporarily boosts your dialogue damage by 50%."
+		elif slot.item.name =="fahrenheit":
+			item_description_label.text = "Fahrenheit: A flickering flame in a bottle. Doubles your movement speed for a short time"
+		elif slot.item.name =="life sparer":
+			item_description_label.text = "Life Sparer: A soft glowing orb of purpose. Instantly increases your productivity by 1%."
 	else:
 		item_description_label.text = ""
 
