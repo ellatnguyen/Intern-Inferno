@@ -118,6 +118,12 @@ func consume_selected_item():
 			if player:
 				player.has_damage_boost = true
 				print ("!? Damage boost activated")
+		if item_name=="fahrenheit":
+			var player = get_tree().get_first_node_in_group("player")
+			if player:
+				player.speed_multiplier = 2.0
+				player.fahrenheit_timer.start()
+				print ("!!!! Fahrenheit consumed! Speed doubled")
 		#get rid of item/reduce
 		slot.amount -= 1
 		if slot.amount <= 0:

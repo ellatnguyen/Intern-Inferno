@@ -11,11 +11,14 @@ const MAX_SPEED: int = 100
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var fsm: PlayerFSM = $PlayerFSM
 @onready var camera_main: Camera2D = $Camera2D
+@onready var fahrenheit_timer: Timer = $FahrenheitTimer
 
 var current_enemy: BaseEnemy = null
 var mov_direction: Vector2 = Vector2.ZERO
 var controls_enabled := true
+
 var has_damage_boost :=false
+var speed_multiplier :=1.0
 var 	player_stats = {
 		"PER_EXP": 0,
 		"INT_EXP": 0,
@@ -40,6 +43,7 @@ func _ready() -> void:
 	var inventory_ui = get_tree().get_first_node_in_group("inventory_ui")
 	if inventory_ui:
 		inventory_ui.set_inventory(inv)
+	fahrenheit_timer.timeout.connect(_on_fahrenheit_timer_timeout)
 
 func _physics_process(_delta: float) -> void:
 	if is_inventory_open():
@@ -66,8 +70,8 @@ func get_input() -> void:
 
 func move_player() -> void:
 	mov_direction = mov_direction.normalized()
-	velocity += mov_direction * ACCELERATION
-	velocity = velocity.limit_length(MAX_SPEED)
+	velocity += mov_direction * ACCELERATION * speed_multiplier
+	velocity = velocity.limit_length(MAX_SPEED*speed_multiplier)
 
 func _process(_delta: float) -> void:
 	if mov_direction.x > 0:
@@ -144,3 +148,6 @@ func update_inventory_ui():
 		inventory_ui.update_level_display()
 	else:
 		print("...Inventory UI NOT FOUND!")
+func _on_fahrenheit_timer_timeout():
+	speed_multiplier = 1.0
+	print("BOOO Fahrenheit effect has ended.")
