@@ -370,3 +370,7 @@ zoom = Vector2(4, 4)
 
 [node name="DustPosition" type="Marker2D" parent="."]
 position = Vector2(0, 6)
+
+[node name="FahrenheitTimer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true

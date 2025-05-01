@@ -184,6 +184,11 @@ func decrease_enemy_health(amount := 1):
 				var player = get_tree().get_first_node_in_group("player")
 				if player:
 					var exp_gain = 1 + (randi() % 3)  # 1 to 3 EXP
+					if player.has_exp_boost:
+						exp_gain = int(exp_gain * 1.5)
+						exp_gain = max(exp_gain, 2)  # Ensure at least +2 EXP
+						print("WHAT Lucky Harms EXP Boost! New gain:", exp_gain)
+						player.has_exp_boost = false  # One-time use
 
 					if int_count > per_count:
 						player.gain_int_exp(exp_gain)
@@ -267,8 +272,21 @@ func get_bonus_damage(stat_type: String) -> int:
 
 	var player = get_tree().get_first_node_in_group("player")
 	if player:
+		var base_bonus = 0
 		if stat_type == "INT":
-			return player.player_stats.get("INT_LVL", 0)
+			base_bonus = player.player_stats.get("INT_LVL", 0)
 		elif stat_type == "PER":
-			return player.player_stats.get("PER_LVL", 0)
+			base_bonus = player.player_stats.get("PER_LVL", 0)
+
+		if player.has_damage_boost:
+			var boosted = int(base_bonus * 1.5)  # +50% damage boost
+			if boosted == base_bonus and base_bonus>0:
+				boosted+=1
+			print("!? Scrappy boost! Base:", base_bonus, "→ Boosted:", boosted)
+			player.has_damage_boost = false
+			print("Scrppy has worn off :(")
+			return boosted
+			
+		else:
+			return base_bonus
 	return 0

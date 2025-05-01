@@ -5,5 +5,5 @@
 
 [resource]
 script = ExtResource("1_2ufhv")
-name = "lifesparer"
+name = "life sparer"
 texture = ExtResource("2_lqotb")

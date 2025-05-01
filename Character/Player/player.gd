@@ -11,10 +11,16 @@ const MAX_SPEED: int = 100
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var fsm: PlayerFSM = $PlayerFSM
 @onready var camera_main: Camera2D = $Camera2D
+@onready var fahrenheit_timer: Timer = $FahrenheitTimer
 
 var current_enemy: BaseEnemy = null
 var mov_direction: Vector2 = Vector2.ZERO
 var controls_enabled := true
+
+var has_damage_boost :=false
+var speed_multiplier :=1.0
+var has_exp_boost := false
+
 var 	player_stats = {
 		"PER_EXP": 0,
 		"INT_EXP": 0,
@@ -23,6 +29,9 @@ var 	player_stats = {
 	}
 
 func _ready() -> void:
+	var inv_factory:=preload("res://inventory/new_inventory.gd")
+	inv=inv_factory.create_inventory(3)
+	print("created new inventory")
 	player_stats = {
 		"PER_EXP": 0,
 		"INT_EXP": 0,
@@ -32,14 +41,23 @@ func _ready() -> void:
 	
 	add_to_group("player")
 	fsm.init(self, animation_player)
+	
+	var inventory_ui = get_tree().get_first_node_in_group("inventory_ui")
+	if inventory_ui:
+		inventory_ui.set_inventory(inv)
+	fahrenheit_timer.timeout.connect(_on_fahrenheit_timer_timeout)
 
 func _physics_process(_delta: float) -> void:
-	if not controls_enabled:
-		return
-		
+	if is_inventory_open():
+		return  # Freeze player movement input only
+
 	fsm._physics_process(_delta)
 	move_and_slide()
 	velocity = lerp(velocity, Vector2.ZERO, FRICTION)
+
+func is_inventory_open() -> bool:
+	var inv_ui = get_tree().get_first_node_in_group("inventory_ui")
+	return inv_ui != null and inv_ui.is_open
 
 func get_input() -> void:
 	mov_direction = Vector2.ZERO
@@ -54,8 +72,8 @@ func get_input() -> void:
 
 func move_player() -> void:
 	mov_direction = mov_direction.normalized()
-	velocity += mov_direction * ACCELERATION
-	velocity = velocity.limit_length(MAX_SPEED)
+	velocity += mov_direction * ACCELERATION * speed_multiplier
+	velocity = velocity.limit_length(MAX_SPEED*speed_multiplier)
 
 func _process(_delta: float) -> void:
 	if mov_direction.x > 0:
@@ -128,7 +146,10 @@ func gain_int_exp(amount: int) -> void:
 func update_inventory_ui():
 	var inventory_ui = get_tree().get_first_node_in_group("inventory_ui")
 	if inventory_ui:
-		print("✅ Found inventory_ui group node:", inventory_ui.name)
+		print("YIPEE Found inventory_ui group node:", inventory_ui.name)
 		inventory_ui.update_level_display()
 	else:
-		print("❌ Inventory UI NOT FOUND!")
+		print("...Inventory UI NOT FOUND!")
+func _on_fahrenheit_timer_timeout():
+	speed_multiplier = 1.0
+	print("BOOO Fahrenheit effect has ended.")
