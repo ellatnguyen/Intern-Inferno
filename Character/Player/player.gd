@@ -151,7 +151,7 @@ func update_inventory_ui():
 		inventory_ui.update_level_display()
 	else:
 		print("...Inventory UI NOT FOUND!")
-    
+	
 func _on_fahrenheit_timer_timeout():
 	speed_multiplier = 1.0
 	print("BOOO Fahrenheit effect has ended.")

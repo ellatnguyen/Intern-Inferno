@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cr67hty513730"]
+[gd_scene load_steps=17 format=3 uid="uid://cr67hty513730"]
 
 [ext_resource type="Script" path="res://UI/cutscene.gd" id="1_acsby"]
 [ext_resource type="Texture2D" uid="uid://de4m8a388ulal" path="res://Assets/Cool Down Bar/Cool_Down_Bar-2.png" id="2_q0l12"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://darkwodnj1ay3" path="res://Assets/Cool Down Bar/Cool_Down_Bar-11.png" id="11_ysvok"]
 [ext_resource type="Texture2D" uid="uid://dp5iqwiw68akg" path="res://Assets/Cool Down Bar/Cool_Down_Bar-12.png" id="12_ex4x4"]
 [ext_resource type="Texture2D" uid="uid://5ymstqrvco1v" path="res://Assets/Cool Down Bar/Cool_Down_Bar-13.png" id="13_oj44i"]
+[ext_resource type="FontFile" uid="uid://b6vkv518jbaxh" path="res://Assets/Font/Pangolin-Regular.ttf" id="14_62ba1"]
 [ext_resource type="PackedScene" uid="uid://bu37oqhwopen" path="res://UI/transition.tscn" id="14_gwoyb"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nihcq"]
@@ -74,7 +75,30 @@ scale = Vector2(0.433594, 0.433594)
 sprite_frames = SubResource("SpriteFrames_nihcq")
 animation = &"cutscene"
 
+[node name="DialogueLabel" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0.631373)
+layout_mode = 0
+offset_left = 62.0
+offset_top = 423.0
+offset_right = 1122.0
+offset_bottom = 619.0
+theme_override_fonts/font = ExtResource("14_62ba1")
+theme_override_font_sizes/font_size = 30
+text = "???"
+autowrap_mode = 2
+
+[node name="NameLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 62.0
+offset_top = 382.0
+offset_right = 407.0
+offset_bottom = 421.0
+theme_override_fonts/font = ExtResource("14_62ba1")
+theme_override_font_sizes/font_size = 30
+text = "???"
+
 [node name="Transition" parent="." instance=ExtResource("14_gwoyb")]
+visible = false
 offset_left = 4.0
 offset_top = -14.0
 offset_right = 4.0

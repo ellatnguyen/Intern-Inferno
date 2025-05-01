@@ -186,7 +186,6 @@ func _on_per_button_pressed():
 	else:
 		dialogue_text.text = "End of PER dialogue."
 
-
 func decrease_enemy_health(amount := 1) -> bool:
 	if enemy_health > 0:
 		enemy_health -= amount
@@ -206,9 +205,9 @@ func decrease_enemy_health(amount := 1) -> bool:
 					var exp_gain = 1 + (randi() % 3)  # 1 to 3 EXP
 					if player.has_exp_boost:
 						exp_gain = int(exp_gain * 1.5)
-						exp_gain = max(exp_gain, 2)  # Ensure at least +2 EXP
+						exp_gain = max(exp_gain, 2)
 						print("WHAT Lucky Harms EXP Boost! New gain:", exp_gain)
-						player.has_exp_boost = false  # One-time use
+						player.has_exp_boost = false
 
 					if int_count > per_count:
 						player.gain_int_exp(exp_gain)
@@ -217,12 +216,13 @@ func decrease_enemy_health(amount := 1) -> bool:
 					else:
 						player.gain_int_exp(3)
 						player.gain_per_exp(3)
-				else:
-					print("Player not found in scene tree.")
-				print(player.player_stats)
-			
-			end_battle()  # Ensure battle always ends cleanly
 
+				print(player.player_stats)
+
+			end_battle()
+			return true  # Enemy was defeated
+
+	return false  # Enemy was not defeated
 
 func update_health_bar():
 	if health_bar:

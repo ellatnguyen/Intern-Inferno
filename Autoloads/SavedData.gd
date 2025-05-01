@@ -12,4 +12,3 @@ func reset_data() -> void:
 	hp = 4
 	weapons = []
 	equipped_weapon_index = 0
-
