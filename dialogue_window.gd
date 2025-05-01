@@ -206,9 +206,9 @@ func decrease_enemy_health(amount := 1) -> bool:
 					var exp_gain = 1 + (randi() % 3)  # 1 to 3 EXP
 					if player.has_exp_boost:
 						exp_gain = int(exp_gain * 1.5)
-						exp_gain = max(exp_gain, 2)  # Ensure at least +2 EXP
+						exp_gain = max(exp_gain, 2)
 						print("WHAT Lucky Harms EXP Boost! New gain:", exp_gain)
-						player.has_exp_boost = false  # One-time use
+						player.has_exp_boost = false
 
 					if int_count > per_count:
 						player.gain_int_exp(exp_gain)
@@ -217,11 +217,13 @@ func decrease_enemy_health(amount := 1) -> bool:
 					else:
 						player.gain_int_exp(3)
 						player.gain_per_exp(3)
-				else:
-					print("Player not found in scene tree.")
+
 				print(player.player_stats)
-			
-			end_battle()  # Ensure battle always ends cleanly
+
+			end_battle()
+			return true  # Enemy was defeated
+
+	return false  # Enemy was not defeated
 
 
 func update_health_bar():
@@ -258,12 +260,9 @@ func reset_battle():
 	# Clear enemy portrait
 	enemy_portrait.texture = null
 
-	# Re-enable player controls
+	# DO NOT re-enable controls here
+	# Only GameManager.in_battle is reset
 	GameManager.in_battle = false
-	if productivity_bar.is_full == false:
-		var player = get_tree().get_first_node_in_group("player")
-		if player:
-			player.controls_enabled = true
 
 func _on_leave_button_pressed():
 	print("LEAVE Button Pressed!")
@@ -333,7 +332,6 @@ func handle_consecutive_attack(attack_type: String):
 func enter_cooldown():
 	is_on_cooldown = true
 	dialogue_text.text = "Cooldown! You were kicked out for 5 seconds."
-
 	# Hide battle UI
 	self.visible = false
 
@@ -345,11 +343,15 @@ func enter_cooldown():
 			player.controls_enabled = false
 			await cooldown_ui.cooldown_finished
 		else:
+			player.controls_enabled = false
 			await get_tree().create_timer(5.0).timeout
 
 	is_on_cooldown = false
 	consecutive_same_attacks = 0
 	last_attack_type = ""
+	if not battle_ended and player:
+		player.controls_enabled = false  # stays disabled during battle
+
 
 	# Show battle UI again
 	self.visible = true

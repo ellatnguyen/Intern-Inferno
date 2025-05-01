@@ -19,7 +19,7 @@ func _ready():
 	update_productivity_animation()
 
 	#timer.wait_time = 0.2
-	timer.wait_time = 2
+	timer.wait_time = 0.5
 	timer.start()
 	timer.timeout.connect(_on_productivity_timer_timeout)
 
@@ -29,12 +29,12 @@ func _process(delta):
 		#decrement_frame()
 
 func increment_frame():
-	current_frame += 1
+	current_frame -= 1  # Decreasing frame number = more productivity
 	current_frame = clamp(current_frame, 0, TOTAL_FRAMES)
 	update_productivity_animation()
 
-	if current_frame >= TOTAL_FRAMES:
-		productivity_end()  # now correctly triggers loss
+	if current_frame <= 0:
+		productivity_win()
 		
 func increase_productivity_by_percent(percent: float):
 	var increase_amount = percent * max_value
@@ -68,7 +68,7 @@ func decrement_frame():
 	update_productivity_animation()
 
 	if current_frame <= 0:
-		productivity_win()  # You won because productivity bar is full
+		productivity_end()  # You LOSE when productivity drains
 
 func update_productivity_animation():
 	if animation != "productivityrun":
@@ -91,4 +91,12 @@ func productivity_win():
 	await SceneTransition.change_scene_with_fade("res://UI/WinScreen.tscn")  # Update path
 
 func _on_productivity_timer_timeout():
-	increment_frame()
+	var decrease_percent = 0.02  # or whatever makes sense for your pacing
+	value = max(value - (decrease_percent * max_value), 0)
+	print("Timer decreased productivity to", value)
+	
+	current_frame = clamp(TOTAL_FRAMES - round((value / max_value) * TOTAL_FRAMES), 0, TOTAL_FRAMES)
+	update_productivity_animation()
+
+	if value <= 0:
+		productivity_end()
