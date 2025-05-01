@@ -34,12 +34,16 @@ func _ready() -> void:
 	fsm.init(self, animation_player)
 
 func _physics_process(_delta: float) -> void:
-	if not controls_enabled:
-		return
-		
+	if is_inventory_open():
+		return  # Freeze player movement input only
+
 	fsm._physics_process(_delta)
 	move_and_slide()
 	velocity = lerp(velocity, Vector2.ZERO, FRICTION)
+
+func is_inventory_open() -> bool:
+	var inv_ui = get_tree().get_first_node_in_group("inventory_ui")
+	return inv_ui != null and inv_ui.is_open
 
 func get_input() -> void:
 	mov_direction = Vector2.ZERO
@@ -128,7 +132,7 @@ func gain_int_exp(amount: int) -> void:
 func update_inventory_ui():
 	var inventory_ui = get_tree().get_first_node_in_group("inventory_ui")
 	if inventory_ui:
-		print("✅ Found inventory_ui group node:", inventory_ui.name)
+		print("YIPEE Found inventory_ui group node:", inventory_ui.name)
 		inventory_ui.update_level_display()
 	else:
-		print("❌ Inventory UI NOT FOUND!")
+		print("...Inventory UI NOT FOUND!")

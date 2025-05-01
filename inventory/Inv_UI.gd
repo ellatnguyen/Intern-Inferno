@@ -8,6 +8,11 @@ extends Control
 @onready var label_int_level = $NinePatchRect/INT_LVL
 @onready var label_per_level_closed = $ClosedClipboard/PER_LVL_CLOSED
 @onready var label_int_level_closed = $ClosedClipboard/INT_LVL_CLOSED
+
+@onready var item_description_label: Label = $NinePatchRect/ItemDescriptionLabel
+
+#challenge: let's make this as inefficient as possible 
+#i'm sorry i literally do not know any other way and my brain isnt funcitioning
 @onready var intimidate1: Node=$NinePatchRect/INT1
 @onready var intimidate2: Node=$NinePatchRect/INT2
 @onready var intimidate3: Node=$NinePatchRect/INT3
@@ -22,11 +27,10 @@ extends Control
 @onready var c_persuasion3: Node=$ClosedClipboard/c_per3
 
 
-
+var selected_index := 0  # Index of currently hovered slot
 var is_open = false
 
 func _ready():
-	print("🧩 Inv_UI _ready called!")
 	add_to_group("inventory_ui")
 	intimidate1.visible=true
 	persuasion1.visible=true
@@ -53,29 +57,69 @@ func update_slots():
 		slots[i].update(inv.slots[i])
 
 
+
+func _on_slot_hovered(slot: InvSlot):
+	if slot.item:
+		item_description_label.text = slot.item.name
+	else:
+		item_description_label.text = "boo"
+
+
 func _process(_delta):
 	if Input.is_action_just_pressed("toggle_inventory"):
 		if is_open:
 			close()
 		else:
 			open()
+	if is_open:
+		if Input.is_action_just_pressed("move_left"):
+			selected_index = max(0, selected_index - 1)
+			update_slot_selection()
+		elif Input.is_action_just_pressed("move_right"):
+			selected_index = min(slots.size() - 1, selected_index + 1)
+			update_slot_selection()
+		elif Input.is_action_just_pressed("interact"):  # "E" key
+			consume_selected_item()
 
 func open():
 	inventory_panel.visible = true
 	closed_clipboard.visible = false
 	is_open = true
+	selected_index=0
 	update_level_display()
-	
+	update_slot_selection()
+
 func close():
 	inventory_panel.visible=false
 	closed_clipboard.visible=true
 	is_open = false
 
+func update_slot_selection():
+	for i in range(slots.size()):
+		slots[i].set_hovered(i == selected_index)
+	
+	var slot = inv.slots[selected_index]
+	if slot.item:
+		item_description_label.text = slot.item.name
+	else:
+		item_description_label.text = ""
+
+func consume_selected_item():
+	var slot = inv.slots[selected_index]
+	if slot.item:
+		print("Consumed item: ", slot.item.name)
+		slot.amount -= 1
+		if slot.amount <= 0:
+			slot.item = null
+		inv.update.emit()
+		update_slot_selection()
+
+
+
 func update_level_display():
 	var player = get_tree().get_first_node_in_group("player")
 	var int_lvl = 1
 	var per_lvl = 1
-	
 
 	if player:
 		int_lvl = player.player_stats.get("INT_LVL", 1)
@@ -107,4 +151,4 @@ func update_inventory_ui():
 		print("Updating UI:", inventory_ui)
 		inventory_ui.update_level_display()
 	else:
-		print("⚠️ Inventory UI not found in tree")
+		print("!! Inventory UI not found in tree")
