@@ -11,36 +11,54 @@ const MAX_SPEED: int = 100
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var fsm: PlayerFSM = $PlayerFSM
 @onready var camera_main: Camera2D = $Camera2D
+@onready var fahrenheit_timer: Timer = $FahrenheitTimer
 
 var current_enemy: BaseEnemy = null
 var mov_direction: Vector2 = Vector2.ZERO
 var controls_enabled := true
+
+var has_damage_boost :=false
+var speed_multiplier :=1.0
+var has_exp_boost := false
+
 var 	player_stats = {
 		"PER_EXP": 0,
 		"INT_EXP": 0,
-		"PER_LVL": 0,
-		"INT_LVL": 0
+		"PER_LVL": 1,
+		"INT_LVL": 1
 	}
 
 func _ready() -> void:
+	var inv_factory:=preload("res://inventory/new_inventory.gd")
+	inv=inv_factory.create_inventory(3)
+	print("created new inventory")
 	player_stats = {
 		"PER_EXP": 0,
 		"INT_EXP": 0,
-		"PER_LVL": 0,
-		"INT_LVL": 0
+		"PER_LVL": 1,
+		"INT_LVL": 1
 	}
 	
 	add_to_group("player")
 	animated_sprite.stop()
 	fsm.init(self, animation_player)
+	
+	var inventory_ui = get_tree().get_first_node_in_group("inventory_ui")
+	if inventory_ui:
+		inventory_ui.set_inventory(inv)
+	fahrenheit_timer.timeout.connect(_on_fahrenheit_timer_timeout)
 
 func _physics_process(_delta: float) -> void:
-	if not controls_enabled:
-		return
-		
+	if is_inventory_open():
+		return  # Freeze player movement input only
+
 	fsm._physics_process(_delta)
 	move_and_slide()
 	velocity = lerp(velocity, Vector2.ZERO, FRICTION)
+
+func is_inventory_open() -> bool:
+	var inv_ui = get_tree().get_first_node_in_group("inventory_ui")
+	return inv_ui != null and inv_ui.is_open
 
 func get_input() -> void:
 	mov_direction = Vector2.ZERO
@@ -55,8 +73,8 @@ func get_input() -> void:
 
 func move_player() -> void:
 	mov_direction = mov_direction.normalized()
-	velocity += mov_direction * ACCELERATION
-	velocity = velocity.limit_length(MAX_SPEED)
+	velocity += mov_direction * ACCELERATION * speed_multiplier
+	velocity = velocity.limit_length(MAX_SPEED*speed_multiplier)
 
 func _process(_delta: float) -> void:
 	if mov_direction.x > 0:
@@ -88,34 +106,33 @@ func collect(item):
 	inv.insert(item)
 
 func update_levels() -> void:
-	var old_per_level = player_stats["PER_LVL"]
 	var per_exp = player_stats["PER_EXP"]
-	var new_per_level := 0
+	var int_exp = player_stats["INT_EXP"]
+
+	var new_per_level := 1
 	if per_exp >= 20:
 		new_per_level = 3
-	elif per_exp >= 10:
+	elif per_exp >= 3:
 		new_per_level = 2
-	elif per_exp >= 5:
-		new_per_level = 1
-	
-	var old_int_level = player_stats["INT_LVL"]
-	var int_exp = player_stats["INT_EXP"]
-	var new_int_level := 0
+
+	var new_int_level := 1
 	if int_exp >= 20:
 		new_int_level = 3
-	elif int_exp >= 10:
+	elif int_exp >= 3:
 		new_int_level = 2
-	elif int_exp >= 5:
-		new_int_level = 1
-	
+
+	var old_per_level = player_stats["PER_LVL"]
+	var old_int_level = player_stats["INT_LVL"]
+
 	if new_per_level > old_per_level:
 		print("PER Level Up! New Level: ", new_per_level)
-		
+
 	if new_int_level > old_int_level:
 		print("INT Level Up! New Level: ", new_int_level)
-	
+
 	player_stats["PER_LVL"] = new_per_level
 	player_stats["INT_LVL"] = new_int_level
+
 
 func gain_per_exp(amount: int) -> void:
 	player_stats["PER_EXP"] += amount
@@ -130,7 +147,14 @@ func gain_int_exp(amount: int) -> void:
 func update_inventory_ui():
 	var inventory_ui = get_tree().get_first_node_in_group("inventory_ui")
 	if inventory_ui:
+		print("YIPEE Found inventory_ui group node:", inventory_ui.name)
 		inventory_ui.update_level_display()
+	else:
+		print("...Inventory UI NOT FOUND!")
+    
+func _on_fahrenheit_timer_timeout():
+	speed_multiplier = 1.0
+	print("BOOO Fahrenheit effect has ended.")
 
 func reset_after_battle() -> void:
 	velocity = Vector2.ZERO

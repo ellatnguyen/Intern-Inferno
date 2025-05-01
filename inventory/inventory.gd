@@ -21,4 +21,3 @@ func insert(item:InvItem):
 		else:
 			print("no empty slots available")
 	update.emit()
-	

@@ -1,49 +1,71 @@
-[gd_scene load_steps=3 format=3 uid="uid://uk0lrnj0irjc"]
+[gd_scene load_steps=5 format=3 uid="uid://uk0lrnj0irjc"]
 
 [ext_resource type="Script" path="res://inventory/inv_ui_slot.gd" id="1_utj6c"]
-[ext_resource type="Texture2D" uid="uid://bx6i5gntm2gif" path="res://Assets/Vending/better_empty_slot.png" id="2_s57hi"]
+[ext_resource type="Texture2D" uid="uid://caicqcdibetr1" path="res://Assets/inventory/Screenshot 2025-04-28 at 11.20.38 PM.png" id="2_67mo7"]
+[ext_resource type="FontFile" uid="uid://cfxsciymhjn2e" path="res://Assets/inventory/Pangolin-Regular.ttf" id="3_2r72w"]
+[ext_resource type="Texture2D" uid="uid://doafcrjpk41as" path="res://Assets/inventory/centered_arrow.png" id="4_cov6x"]
 
 [node name="inv_UI_slot" type="Panel"]
-custom_minimum_size = Vector2(185, 175)
-offset_left = 2.0
-offset_top = 3.0
-offset_right = 276.0
-offset_bottom = 277.0
+custom_minimum_size = Vector2(182, 180)
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 183.0
+offset_bottom = 181.0
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_utj6c")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-3, -4)
-scale = Vector2(1.51648, 1.55056)
-texture = ExtResource("2_s57hi")
+position = Vector2(-2, -2)
+scale = Vector2(0.824561, 0.836364)
+texture = ExtResource("2_67mo7")
 centered = false
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 custom_minimum_size = Vector2(185, 175)
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 0.978
-anchor_bottom = 0.957
-offset_left = 4.0
-offset_top = 1.0
-offset_right = -78.972
-offset_bottom = -77.218
+anchor_left = 0.058
+anchor_top = 0.053
+anchor_right = 1.156
+anchor_bottom = 0.951
+offset_left = -8.556
+offset_top = -3.54
+offset_right = -23.392
+offset_bottom = 9.82001
 grow_horizontal = 2
-scale = Vector2(1.5, 1.5)
 
 [node name="Panel" type="Panel" parent="CenterContainer"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 
 [node name="item_display" type="Sprite2D" parent="CenterContainer/Panel"]
+centered = false
 
 [node name="Label" type="Label" parent="CenterContainer/Panel"]
 self_modulate = Color(0, 0, 0, 1)
 custom_minimum_size = Vector2(19, 23)
 layout_mode = 0
-offset_left = 12.6666
-offset_top = 34.0
-offset_right = 42.6666
-offset_bottom = 64.0
-scale = Vector2(2, 2)
+offset_left = -60.0
+offset_top = 39.0
+offset_right = -25.0
+offset_bottom = 75.0
+scale = Vector2(4, 4)
+theme_override_colors/font_color = Color(0.385493, 0.385492, 0.385492, 1)
+theme_override_fonts/font = ExtResource("3_2r72w")
+theme_override_font_sizes/font_size = 9
 text = "99"
 horizontal_alignment = 2
+
+[node name="HoverArrow" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.473
+anchor_top = -0.122
+anchor_right = 0.473
+anchor_bottom = -0.122
+offset_left = -640.086
+offset_top = -360.04
+offset_right = 639.914
+offset_bottom = 359.96
+pivot_offset = Vector2(0, -10)
+texture = ExtResource("4_cov6x")
