@@ -15,6 +15,7 @@ const MAX_SPEED: int = 100
 var current_enemy: BaseEnemy = null
 var mov_direction: Vector2 = Vector2.ZERO
 var controls_enabled := true
+var has_damage_boost :=false
 var 	player_stats = {
 		"PER_EXP": 0,
 		"INT_EXP": 0,

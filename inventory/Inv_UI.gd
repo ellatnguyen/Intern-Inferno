@@ -110,7 +110,15 @@ func update_slot_selection():
 func consume_selected_item():
 	var slot = inv.slots[selected_index]
 	if slot.item:
+		var item_name =slot.item.name
 		print("Consumed item: ", slot.item.name)
+		
+		if item_name=="scrappy":
+			var player = get_tree().get_first_node_in_group("player")
+			if player:
+				player.has_damage_boost = true
+				print ("!? Damage boost activated")
+		#get rid of item/reduce
 		slot.amount -= 1
 		if slot.amount <= 0:
 			slot.item = null
