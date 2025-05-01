@@ -26,6 +26,8 @@ extends Control
 var is_open = false
 
 func _ready():
+	print("🧩 Inv_UI _ready called!")
+	add_to_group("inventory_ui")
 	intimidate1.visible=true
 	persuasion1.visible=true
 	intimidate2.visible=false
@@ -71,52 +73,38 @@ func close():
 
 func update_level_display():
 	var player = get_tree().get_first_node_in_group("player")
+	var int_lvl = 1
+	var per_lvl = 1
+	
+
 	if player:
-		var per_lvl = player.player_stats.get("PER_LVL", 0)
-		var int_lvl = player.player_stats.get("INT_LVL", 0)
-		if int_lvl == 2:
-			intimidate1.visible=false
-			intimidate2.visible=true
-			intimidate3.visible=false
-			
-			c_intimidate1.visible=false
-			c_intimidate2.visible=true
-			c_intimidate3.visible=false
-		elif int_lvl ==3:
-			intimidate1.visible=false
-			intimidate2.visible=false
-			intimidate3.visible=true
-			
-			c_intimidate1.visible=false
-			c_intimidate2.visible=false
-			c_intimidate3.visible=true
-		if per_lvl==2:
-			persuasion1.visible=false
-			persuasion2.visible=true
-			persuasion3.visible=false
-			
-			c_persuasion1.visible=false
-			c_persuasion2.visible=true
-			c_persuasion3.visible=false
-		elif per_lvl==3:
-			intimidate1.visible=false
-			persuasion2.visible=false
-			persuasion3.visible=true
-			
-			intimidate1.visible=false
-			persuasion2.visible=false
-			persuasion3.visible=true
+		int_lvl = player.player_stats.get("INT_LVL", 1)
+		per_lvl = player.player_stats.get("PER_LVL", 1)
+
+	# Open clipboard - Intimidate
+	intimidate1.visible = int_lvl == 1
+	intimidate2.visible = int_lvl == 2
+	intimidate3.visible = int_lvl == 3
+
+	# Open clipboard - Persuade
+	persuasion1.visible = per_lvl == 1
+	persuasion2.visible = per_lvl == 2
+	persuasion3.visible = per_lvl == 3
+
+	# Closed clipboard - Intimidate
+	c_intimidate1.visible = int_lvl == 1
+	c_intimidate2.visible = int_lvl == 2
+	c_intimidate3.visible = int_lvl == 3
+
+	# Closed clipboard - Persuade
+	c_persuasion1.visible = per_lvl == 1
+	c_persuasion2.visible = per_lvl == 2
+	c_persuasion3.visible = per_lvl == 3
+	
+func update_inventory_ui():
+	var inventory_ui = get_tree().get_first_node_in_group("inventory_ui")
+	if inventory_ui:
+		print("Updating UI:", inventory_ui)
+		inventory_ui.update_level_display()
 	else:
-		intimidate1.visible=true
-		persuasion1.visible=true
-		intimidate2.visible=false
-		intimidate3.visible=false
-		persuasion2.visible=false
-		persuasion3.visible=false
-		
-		c_intimidate1.visible=true
-		c_intimidate2.visible=false
-		c_intimidate3.visible=false
-		c_persuasion1.visible=true
-		c_persuasion2.visible=false
-		c_persuasion3.visible=false
+		print("⚠️ Inventory UI not found in tree")

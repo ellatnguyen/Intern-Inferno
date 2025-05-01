@@ -1,6 +1,5 @@
-[gd_scene load_steps=6 format=3 uid="uid://dpcfof278gdfn"]
+[gd_scene load_steps=5 format=3 uid="uid://dpcfof278gdfn"]
 
-[ext_resource type="PackedScene" uid="uid://bv8r5dfmekrat" path="res://player/player.tscn" id="1_4j7wn"]
 [ext_resource type="PackedScene" uid="uid://de6upgnsf7rg7" path="res://vending_machine_stuff/vending.tscn" id="2_b8a5p"]
 [ext_resource type="PackedScene" uid="uid://dplwtea3vse1f" path="res://vending_machine_stuff/UIvendingmachine.tscn" id="3_58u68"]
 [ext_resource type="PackedScene" uid="uid://bwwpnla8wmau4" path="res://inventory/inv_UI.tscn" id="4_cyqyf"]
@@ -12,10 +11,6 @@
 position = Vector2(4, 1)
 anchor_mode = 0
 zoom = Vector2(0.5, 0.5)
-
-[node name="Player" parent="." instance=ExtResource("1_4j7wn")]
-position = Vector2(541, 789)
-scale = Vector2(0.3, 0.3)
 
 [node name="VendingUI" parent="." instance=ExtResource("3_58u68")]
 offset_left = 11639.0

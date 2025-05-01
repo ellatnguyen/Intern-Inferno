@@ -58,26 +58,6 @@ layout_mode = 2
 custom_minimum_size = Vector2(226, 90)
 layout_mode = 2
 
-[node name="INT_LVL" type="Label" parent="NinePatchRect"]
-visible = false
-modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = 530.0
-offset_top = -31.0
-offset_right = 624.0
-offset_bottom = -8.0
-text = "INT: 0"
-
-[node name="PER_LVL" type="Label" parent="NinePatchRect"]
-visible = false
-modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = 542.0
-offset_top = -31.0
-offset_right = 636.0
-offset_bottom = -8.0
-text = "PER: 0"
-
 [node name="INT1" type="Sprite2D" parent="NinePatchRect"]
 position = Vector2(260, 167)
 scale = Vector2(0.45, 0.458)
@@ -112,24 +92,6 @@ texture = ExtResource("9_0rrku")
 position = Vector2(234, 385)
 scale = Vector2(0.42, 0.42)
 texture = ExtResource("4_2vpmf")
-
-[node name="PER_LVL_CLOSED" type="Label" parent="ClosedClipboard"]
-visible = false
-modulate = Color(0, 0, 0, 1)
-offset_left = 738.095
-offset_top = -142.857
-offset_right = 817.095
-offset_bottom = -119.857
-text = "PER LVL: 0"
-
-[node name="INT_LVL_CLOSED" type="Label" parent="ClosedClipboard"]
-visible = false
-modulate = Color(0, 0, 0, 1)
-offset_left = 661.905
-offset_top = 73.8096
-offset_right = 737.905
-offset_bottom = 96.8096
-text = "INT LVL: 0"
 
 [node name="c_int1" type="Sprite2D" parent="ClosedClipboard"]
 position = Vector2(5.72205e-06, 516.667)
