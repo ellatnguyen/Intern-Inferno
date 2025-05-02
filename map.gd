@@ -23,6 +23,7 @@ func _init() -> void:
 
 func _ready():
 	WwiseManager.play_overworld_music()
+	Wwise.set_rtpc_value_id(AK.GAME_PARAMETERS.TIMER, 300, WwiseManager)
 
 
 	# No need to reference GameManager if it's autoloaded

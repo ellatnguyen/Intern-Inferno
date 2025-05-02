@@ -149,7 +149,8 @@ func update_dialogue():
 func _on_int_button_pressed():
 	if is_on_cooldown:
 		return
-	#WwiseManager.trigger_intimidation()
+	WwiseManager.apply_sidechain()
+	WwiseManager.trigger_intimidation()
 	print("INT Button Pressed!")
 	int_count += 1
 	current_dialogue = int_dialogue
@@ -158,7 +159,7 @@ func _on_int_button_pressed():
 		update_dialogue()
 		var base_dmg = current_enemy.stats.get("INT_DMG", 1)
 		var bonus_dmg = get_bonus_damage("INT")
-		var defeated = decrease_enemy_health(base_dmg + bonus_dmg)
+		var defeated = await decrease_enemy_health(base_dmg + bonus_dmg)
 		current_int_line += 1
 
 		if not defeated:
@@ -170,7 +171,8 @@ func _on_int_button_pressed():
 func _on_per_button_pressed():
 	if is_on_cooldown:
 		return
-	#WwiseManager.trigger_persuasion()
+	WwiseManager.apply_sidechain()
+	WwiseManager.trigger_persuasion()
 	print("PER Button Pressed!")
 	per_count += 1
 	current_dialogue = per_dialogue
@@ -179,7 +181,7 @@ func _on_per_button_pressed():
 		update_dialogue()
 		var base_dmg = current_enemy.stats.get("PER_DMG", 2)
 		var bonus_dmg = get_bonus_damage("PER")
-		var defeated = decrease_enemy_health(base_dmg + bonus_dmg)
+		var defeated = await decrease_enemy_health(base_dmg + bonus_dmg)
 		current_per_line += 1
 
 		if not defeated:
@@ -197,7 +199,8 @@ func decrease_enemy_health(amount := 1) -> bool:
 			battle_ended = true
 			print("Enemy defeated!")
 			print("Playing VICTORY jingle now...")
-			#WwiseManager.play_victory_music()
+			await get_tree().create_timer(0.4).timeout 
+			WwiseManager.play_victory_music()
 			
 
 			if productivity_bar:

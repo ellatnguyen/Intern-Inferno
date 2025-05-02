@@ -91,11 +91,15 @@ func open():
 	selected_index=0
 	update_level_display()
 	update_slot_selection()
+	WwiseManager.set_menu_state(true)
+
 
 func close():
 	inventory_panel.visible=false
 	closed_clipboard.visible=true
 	is_open = false
+	WwiseManager.set_menu_state(false)
+
 
 func update_slot_selection():
 	for i in range(slots.size()):

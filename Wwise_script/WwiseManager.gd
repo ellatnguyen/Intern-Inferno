@@ -41,8 +41,9 @@ func set_music_state(state_id: int):
 	Wwise.set_state_id(AK.STATES.MUSIC_STATE.GROUP, state_id)
 
 func set_menu_state(in_menu: bool):
-	var state = AK.STATES.MENU_STATE.STATE.IN_MENU if in_menu else AK.STATES.MENU_STATE.STATE.OUT_OF_MENU
-	Wwise.set_state_id(AK.STATES.MENU_STATE.GROUP, state)
+	var state_id = AK.STATES.MENU_STATE.STATE.IN_MENU if in_menu else AK.STATES.MENU_STATE.STATE.OUT_OF_MENU
+	Wwise.set_state_id(AK.STATES.MENU_STATE.GROUP, state_id)
+
 
 func start_game():
 	# Sequence when game boots up
