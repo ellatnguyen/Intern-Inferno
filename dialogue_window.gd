@@ -60,6 +60,7 @@ func start_battle_with(enemy: Node):
 
 	print("Battle started with:", enemy.name)
 	GameManager.in_battle = true
+	WwiseManager.play_battle_music()
 
 	# Disable player controls
 	var player = get_tree().get_first_node_in_group("player")
@@ -148,7 +149,8 @@ func update_dialogue():
 func _on_int_button_pressed():
 	if is_on_cooldown:
 		return
-
+	WwiseManager.apply_sidechain()
+	WwiseManager.trigger_intimidation()
 	print("INT Button Pressed!")
 	int_count += 1
 	current_dialogue = int_dialogue
@@ -157,7 +159,7 @@ func _on_int_button_pressed():
 		update_dialogue()
 		var base_dmg = current_enemy.stats.get("INT_DMG", 1)
 		var bonus_dmg = get_bonus_damage("INT")
-		var defeated = decrease_enemy_health(base_dmg + bonus_dmg)
+		var defeated = await decrease_enemy_health(base_dmg + bonus_dmg)
 		current_int_line += 1
 
 		if not defeated:
@@ -169,7 +171,8 @@ func _on_int_button_pressed():
 func _on_per_button_pressed():
 	if is_on_cooldown:
 		return
-
+	WwiseManager.apply_sidechain()
+	WwiseManager.trigger_persuasion()
 	print("PER Button Pressed!")
 	per_count += 1
 	current_dialogue = per_dialogue
@@ -178,7 +181,7 @@ func _on_per_button_pressed():
 		update_dialogue()
 		var base_dmg = current_enemy.stats.get("PER_DMG", 2)
 		var bonus_dmg = get_bonus_damage("PER")
-		var defeated = decrease_enemy_health(base_dmg + bonus_dmg)
+		var defeated = await decrease_enemy_health(base_dmg + bonus_dmg)
 		current_per_line += 1
 
 		if not defeated:
@@ -195,6 +198,10 @@ func decrease_enemy_health(amount := 1) -> bool:
 		if enemy_health == 0 and not battle_ended:
 			battle_ended = true
 			print("Enemy defeated!")
+			print("Playing VICTORY jingle now...")
+			await get_tree().create_timer(0.4).timeout 
+			WwiseManager.play_victory_music()
+			
 
 			if productivity_bar:
 				productivity_bar.increase_productivity_by_percent(0.2)
@@ -208,6 +215,7 @@ func decrease_enemy_health(amount := 1) -> bool:
 						exp_gain = max(exp_gain, 2)
 						print("WHAT Lucky Harms EXP Boost! New gain:", exp_gain)
 						player.has_exp_boost = false
+						WwiseManager.trigger_xp_boost(false)
 
 					if int_count > per_count:
 						player.gain_int_exp(exp_gain)
@@ -290,6 +298,7 @@ func end_battle():
 
 	if defeated_enemy and is_instance_valid(defeated_enemy) and defeated_enemy.has_method("despawn"):
 		defeated_enemy.despawn()
+	WwiseManager.play_overworld_music()
 
 func get_bonus_damage(stat_type: String) -> int:
 	if not is_inside_tree():
@@ -309,6 +318,7 @@ func get_bonus_damage(stat_type: String) -> int:
 				boosted+=1
 			print("!? Scrappy boost! Base:", base_bonus, "→ Boosted:", boosted)
 			player.has_damage_boost = false
+			WwiseManager.trigger_damage_buff(false)
 			print("Scrppy has worn off :(")
 			return boosted
 			

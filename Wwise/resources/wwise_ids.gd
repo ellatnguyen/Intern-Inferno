@@ -1,0 +1,111 @@
+class_name AK
+
+class EVENTS:
+
+	const PLAY_FOOTSTEPCYCLE : int = 1012858046
+	const BATTLES : int = 2813898782
+	const CREDITS : int = 2201105581
+	const CUTSCENE : int = 1182958561
+	const DAMAGE_BUFF_OFF : int = 886789088
+	const DAMAGE_BUFF_ON : int = 3869452842
+	const DEFEATED : int = 2791675679
+	const ENERGY_DRINK_OFF : int = 2961129376
+	const ENERGY_DRINK_ON : int = 2225353962
+	const GAME_FINISHED : int = 3967959712
+	const GAME_START : int = 733168346
+	const IN_MENU : int = 1631528850
+	const INTIMIDATION : int = 332169852
+	const LIFESPARER_ON : int = 3278048498
+	const OUT_OF_MENU : int = 860659345
+	const OVERWORLD : int = 1562068129
+	const PERSUASION : int = 4256397380
+	const SIDECHAIN : int = 1883033791
+	const TIMER : int = 3920142940
+	const TITLE_THEME : int = 2521525023
+	const VICTORY : int = 2716678721
+	const XP_BOOST_OFF : int = 2369474171
+	const XP_BOOST_ON : int = 3730046855
+
+class STATES:
+
+	class MENU_STATE:
+		const GROUP : int = 3941853002
+	
+		class STATE:
+			const IN_MENU : int = 1631528850
+			const NONE : int = 748895195
+			const OUT_OF_MENU : int = 860659345
+
+	class MUSIC_STATE:
+		const GROUP : int = 3826569560
+	
+		class STATE:
+			const BATTLES : int = 2813898782
+			const CREDITS : int = 2201105581
+			const CUTSCENE : int = 1182958561
+			const NONE : int = 748895195
+			const OVERWORLD : int = 1562068129
+			const TITLE_THEME : int = 2521525023
+			const VICTORY : int = 2716678721
+
+
+class SWITCHES:
+
+	class LIFE:
+		const GROUP : int = 2137943
+	
+		class SWITCH:
+			const ALIVE : int = 655265632
+			const DEFEATED : int = 2791675679
+
+
+class GAME_PARAMETERS:
+
+	const SIDECHAIN : int = 1883033791
+	const TIMER : int = 3920142940
+	const SS_AIR_FEAR : int = 1351367891
+	const SS_AIR_FREEFALL : int = 3002758120
+	const SS_AIR_FURY : int = 1029930033
+	const SS_AIR_MONTH : int = 2648548617
+	const SS_AIR_PRESENCE : int = 3847924954
+	const SS_AIR_RPM : int = 822163944
+	const SS_AIR_SIZE : int = 3074696722
+	const SS_AIR_STORM : int = 3715662592
+	const SS_AIR_TIMEOFDAY : int = 3203397129
+	const SS_AIR_TURBULENCE : int = 4160247818
+
+class TRIGGERS:
+
+	const DAMAGE_BUFF_OFF : int = 886789088
+	const DAMAGE_BUFF_ON : int = 3869452842
+	const ENERGY_DRINK_OFF : int = 2961129376
+	const ENERGY_DRINK_ON : int = 2225353962
+	const INTIMIDATION : int = 332169852
+	const LIFESPARER_ON : int = 3278048498
+	const PERSUASION : int = 4256397380
+	const XP_BOOST_OFF : int = 2369474171
+	const XP_BOOST_ON : int = 3730046855
+
+class BANKS:
+
+	const WORK_YOURSELF_TO_DEATH_MUSIC : int = 309844313
+
+class AUX_BUSSES:
+	pass
+
+class ACOUSTIC_TEXTURES:
+
+	const ACOUSTIC_BANNER : int = 4168643977
+	const ANECHOIC : int = 1873957695
+	const BRICK : int = 504532776
+	const CARPET : int = 2412606308
+	const CONCRETE : int = 841620460
+	const CORK_TILES : int = 3195498748
+	const CURTAINS : int = 2928161104
+	const DRYWALL : int = 3670307564
+	const FABRIC : int = 1970351858
+	const MOUNTAIN : int = 513139656
+	const TILE : int = 2637588553
+	const WOOD : int = 2058049674
+	const WOOD_BRIGHT : int = 4262522749
+	const WOOD_DEEP : int = 1755085759

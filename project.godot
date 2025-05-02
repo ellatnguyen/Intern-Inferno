@@ -21,6 +21,8 @@ SceneTransition="*res://Autoloads/SceneTransistor.tscn"
 SavedData="*res://Autoloads/SavedData.gd"
 Transition="res://UI/transition.tscn"
 GameManager="*res://Autoloads/GameManager.gd"
+WwiseRuntimeManager="*res://addons/Wwise/runtime/wwise_runtime_manager.gd"
+WwiseManager="*res://Wwise_script/WwiseManager.gd"
 
 [display]
 
@@ -161,3 +163,10 @@ common/enable_pause_aware_picking=true
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
 environment/defaults/default_environment="res://default_env.tres"
+
+[wwise]
+
+common_user_settings/root_output_path="res://GeneratedSoundBanks"
+project_settings/use_soundbank_names=false
+project_settings/windows_platform_info="res://Wwise/resources/Windows.tres"
+project_settings/mac_platform_info="res://Wwise/resources/Mac.tres"

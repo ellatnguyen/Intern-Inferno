@@ -1,0 +1,84 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "154",
+  "SoundBanks": [
+   {
+    "Id": "1012858046",
+    "Type": "Event",
+    "GUID": "{82994C4D-59C9-443F-BCF0-98F79F2A1170}",
+    "Language": "SFX",
+    "Hash": "{250C60C9-AB90-9718-1096-BFC038D26E82}",
+    "ObjectPath": "Play_footstepCycle",
+    "ShortName": "Play_footstepCycle",
+    "Path": "Event/1012858046.bnk",
+    "Media": [
+     {
+      "Id": "194362677",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "footstep cycle tentative\\footstep004.wav",
+      "Path": "Media/194362677.wem",
+      "CachePath": "FA/{FADA515B-69F5-855A-FDD5-7490D3653D0F}.wem"
+     },
+     {
+      "Id": "430175717",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "footstep cycle tentative\\footstep003.wav",
+      "Path": "Media/430175717.wem",
+      "CachePath": "C7/{C7EE3C73-0AE3-14B5-B3A7-8D3680689FF2}.wem"
+     },
+     {
+      "Id": "559876125",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "footstep cycle tentative\\footstep002.wav",
+      "Path": "Media/559876125.wem",
+      "CachePath": "FE/{FE09600B-E569-6EC5-D672-DE12093DAD36}.wem"
+     },
+     {
+      "Id": "616227757",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "footstep cycle tentative\\footstep001.wav",
+      "Path": "Media/616227757.wem",
+      "CachePath": "6F/{6FF021C0-E7FF-9855-6E5C-9EF78F38B02B}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "1012858046",
+      "Name": "Play_footstepCycle",
+      "ObjectPath": "\\Events\\Default Work Unit Klaud\\Play_footstepCycle",
+      "GUID": "{82994C4D-59C9-443F-BCF0-98F79F2A1170}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.24025743",
+      "DurationMax": "0.39455557",
+      "MediaRefs": [
+       {
+        "Id": "194362677"
+       },
+       {
+        "Id": "430175717"
+       },
+       {
+        "Id": "559876125"
+       },
+       {
+        "Id": "616227757"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{3FDB0D25-CB6A-18E2-EBDB-2CBE9804B8D4}"
+ }
+}
