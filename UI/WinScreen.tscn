@@ -1,8 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://m2lxqkstfmij"]
+[gd_scene load_steps=8 format=3 uid="uid://m2lxqkstfmij"]
 
 [ext_resource type="Script" path="res://UI/end_screen.gd" id="1_5xi5j"]
 [ext_resource type="Texture2D" uid="uid://kpq5xah1fgc2" path="res://UI/UIAssets/win screen.PNG" id="1_kyoet"]
 [ext_resource type="FontFile" uid="uid://b6vkv518jbaxh" path="res://Assets/Font/Pangolin-Regular.ttf" id="3_jxyj8"]
+[ext_resource type="Texture2D" uid="uid://b6bfaqej01fi6" path="res://Assets/Death Screen/Untitled_Artwork-1 7.PNG" id="4_26myd"]
+[ext_resource type="Texture2D" uid="uid://ch4yryl1j8eyx" path="res://Assets/Death Screen/Untitled_Artwork-2 8.PNG" id="5_376db"]
+[ext_resource type="Texture2D" uid="uid://ojns20hkoh7t" path="res://Assets/Death Screen/Untitled_Artwork-4 7.png" id="6_g73kn"]
+[ext_resource type="Texture2D" uid="uid://bhkbbxjif1if8" path="res://Assets/Death Screen/Untitled_Artwork-5 3.PNG" id="7_8l6xk"]
 
 [node name="WinScreen" type="Control"]
 layout_mode = 3
@@ -10,6 +14,7 @@ anchors_preset = 0
 script = ExtResource("1_5xi5j")
 
 [node name="WinScreen" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(574.889, 325)
 scale = Vector2(0.888889, 0.888889)
 texture = ExtResource("1_kyoet")
@@ -22,6 +27,7 @@ offset_right = 735.0
 offset_bottom = 374.0
 theme_override_fonts/font = ExtResource("3_jxyj8")
 text = "PRESS SPACEBAR TO RESTART"
+metadata/_edit_lock_ = true
 
 [node name="MainMenuButton" type="Button" parent="."]
 layout_mode = 0
@@ -31,6 +37,27 @@ offset_right = 733.0
 offset_bottom = 499.0
 theme_override_fonts/font = ExtResource("3_jxyj8")
 text = "PRESS ESC TO MAIN MENU"
+metadata/_edit_lock_ = true
+
+[node name="UntitledArtwork-17" type="Sprite2D" parent="."]
+position = Vector2(577, 324)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("4_26myd")
+
+[node name="UntitledArtwork-28" type="Sprite2D" parent="."]
+position = Vector2(576.556, 325.5)
+scale = Vector2(0.898611, 0.898611)
+texture = ExtResource("5_376db")
+
+[node name="UntitledArtwork-47" type="Sprite2D" parent="."]
+position = Vector2(574.889, 328.5)
+scale = Vector2(0.901389, 0.901389)
+texture = ExtResource("6_g73kn")
+
+[node name="UntitledArtwork-53" type="Sprite2D" parent="."]
+position = Vector2(575.333, 326.5)
+scale = Vector2(0.895833, 0.895833)
+texture = ExtResource("7_8l6xk")
 
 [connection signal="pressed" from="RestartButton" to="." method="_on_restart_button_pressed"]
 [connection signal="pressed" from="MainMenuButton" to="." method="_on_esc_button_pressed"]

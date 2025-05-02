@@ -1,8 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://dk3cijlstx2xw"]
+[gd_scene load_steps=8 format=3 uid="uid://dk3cijlstx2xw"]
 
 [ext_resource type="Texture2D" uid="uid://b5fceousqvt2g" path="res://UI/UIAssets/lose screen.PNG" id="1_atosw"]
 [ext_resource type="Script" path="res://UI/end_screen.gd" id="1_cdo7v"]
 [ext_resource type="FontFile" uid="uid://b6vkv518jbaxh" path="res://Assets/Font/Pangolin-Regular.ttf" id="3_ssnxy"]
+[ext_resource type="Texture2D" uid="uid://b6bfaqej01fi6" path="res://Assets/Death Screen/Untitled_Artwork-1 7.PNG" id="4_15ob7"]
+[ext_resource type="Texture2D" uid="uid://ch4yryl1j8eyx" path="res://Assets/Death Screen/Untitled_Artwork-2 8.PNG" id="5_ssu14"]
+[ext_resource type="Texture2D" uid="uid://ojns20hkoh7t" path="res://Assets/Death Screen/Untitled_Artwork-4 7.png" id="6_gstfb"]
+[ext_resource type="Texture2D" uid="uid://bhkbbxjif1if8" path="res://Assets/Death Screen/Untitled_Artwork-5 3.PNG" id="7_uxshv"]
 
 [node name="LoseScene" type="Control"]
 layout_mode = 3
@@ -10,6 +14,7 @@ anchors_preset = 0
 script = ExtResource("1_cdo7v")
 
 [node name="LoseScreen" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(563.222, 332)
 scale = Vector2(0.897222, 0.897222)
 texture = ExtResource("1_atosw")
@@ -31,3 +36,23 @@ offset_right = 733.0
 offset_bottom = 499.0
 theme_override_fonts/font = ExtResource("3_ssnxy")
 text = "PRESS ESC TO MAIN MENU"
+
+[node name="UntitledArtwork-17" type="Sprite2D" parent="."]
+position = Vector2(577, 324)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("4_15ob7")
+
+[node name="UntitledArtwork-28" type="Sprite2D" parent="."]
+position = Vector2(576.556, 325.5)
+scale = Vector2(0.898611, 0.898611)
+texture = ExtResource("5_ssu14")
+
+[node name="UntitledArtwork-47" type="Sprite2D" parent="."]
+position = Vector2(574.889, 328.5)
+scale = Vector2(0.901389, 0.901389)
+texture = ExtResource("6_gstfb")
+
+[node name="UntitledArtwork-53" type="Sprite2D" parent="."]
+position = Vector2(575.333, 326.5)
+scale = Vector2(0.895833, 0.895833)
+texture = ExtResource("7_uxshv")
