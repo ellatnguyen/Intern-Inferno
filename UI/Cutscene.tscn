@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cr67hty513730"]
+[gd_scene load_steps=63 format=3 uid="uid://cr67hty513730"]
 
 [ext_resource type="Script" path="res://UI/cutscene.gd" id="1_acsby"]
 [ext_resource type="Texture2D" uid="uid://de4m8a388ulal" path="res://Assets/Cool Down Bar/Cool_Down_Bar-2.png" id="2_q0l12"]
@@ -15,6 +15,51 @@
 [ext_resource type="Texture2D" uid="uid://5ymstqrvco1v" path="res://Assets/Cool Down Bar/Cool_Down_Bar-13.png" id="13_oj44i"]
 [ext_resource type="FontFile" uid="uid://b6vkv518jbaxh" path="res://Assets/Font/Pangolin-Regular.ttf" id="14_62ba1"]
 [ext_resource type="PackedScene" uid="uid://bu37oqhwopen" path="res://UI/transition.tscn" id="14_gwoyb"]
+[ext_resource type="Texture2D" uid="uid://cgqtflqe55bpl" path="res://Assets/Opening Cutscene Pieces/ShottwoInelevatorsilence/ShottwoInelevatorsilence/Elevatorsilencebackround1.png" id="14_j16fe"]
+[ext_resource type="Texture2D" uid="uid://ba46rni5mxob7" path="res://Assets/Opening Cutscene Pieces/ShottwoInelevatorsilence/ShottwoInelevatorsilence/Elevatorsilencebackround2.png" id="15_ksmem"]
+[ext_resource type="Texture2D" uid="uid://xrtjebd1x8ee" path="res://Assets/Opening Cutscene Pieces/ShottwoInelevatorsilence/ShottwoInelevatorsilence/Elevatorsilencebackround3.png" id="16_pxbsj"]
+[ext_resource type="Texture2D" uid="uid://bvl0qv4ye1wuf" path="res://Assets/Opening Cutscene Pieces/ShottwoInelevatorsilence/ShottwoInelevatorsilence/Elevatorsilencebackround4.png" id="17_0rt4e"]
+[ext_resource type="Texture2D" uid="uid://c345xeolhyq3h" path="res://Assets/Opening Cutscene Pieces/ShottwoInelevatorsilence/ShottwoInelevatorsilence/Elevatorsilencebackround5.png" id="18_1cowy"]
+[ext_resource type="Texture2D" uid="uid://dh470cscmlqld" path="res://Assets/Opening Cutscene Pieces/ShottwoInelevatorsilence/ShottwoInelevatorsilence/Elevatorsilencebackround6.png" id="19_r6cfs"]
+[ext_resource type="Texture2D" uid="uid://30wduvbtpvd" path="res://Assets/Opening Cutscene Pieces/ShottwoInelevatorsilence/ShottwoInelevatorsilence/Elevatorsilencebackround7.png" id="20_cfys6"]
+[ext_resource type="Texture2D" uid="uid://cxxuu7qbncc4n" path="res://Assets/Opening Cutscene Pieces/ShottwoInelevatorsilence/ShottwoInelevatorsilence/Elevatorsilencebackround8.png" id="21_h36lk"]
+[ext_resource type="Texture2D" uid="uid://bh5yp48rvmj01" path="res://Assets/Opening Cutscene Pieces/ShottwoInelevatorsilence/ShottwoInelevatorsilence/Elevatorsilencebackround9.png" id="22_dhy1e"]
+[ext_resource type="Texture2D" uid="uid://e5bx41sncdb0" path="res://Assets/Opening Cutscene Pieces/ShottwoInelevatorsilence/ShottwoInelevatorsilence/Elevatorsilencebackround10.png" id="23_i46cf"]
+[ext_resource type="Texture2D" uid="uid://6644b840t52l" path="res://Assets/Opening Cutscene Pieces/ShottwoInelevatorsilence/ShottwoInelevatorsilence/Elevatorsilencebackround11.png" id="24_y6jve"]
+[ext_resource type="Texture2D" uid="uid://dhpkl2sv24ly4" path="res://Assets/Opening Cutscene Pieces/ShottwoInelevatorsilence/ShottwoInelevatorsilence/Elevatorsilencebackround12.png" id="25_d4van"]
+[ext_resource type="Texture2D" uid="uid://d057h50bvadsb" path="res://Assets/Opening Cutscene Pieces/ShottwoInelevatorsilence/ShottwoInelevatorsilence/Elevatorsilencebackround13.png" id="26_l3g15"]
+[ext_resource type="Texture2D" uid="uid://bqap6px34yt6m" path="res://Assets/Opening Cutscene Pieces/ShottwoInelevatorsilence/ShottwoInelevatorsilence/Elevatorsilencebackround14.png" id="27_3nvll"]
+[ext_resource type="Texture2D" uid="uid://chryy7bw2r2cg" path="res://Assets/Opening Cutscene Pieces/ShottwoInelevatorsilence/ShottwoInelevatorsilence/Elevatorsilencebackround15.png" id="28_0nyff"]
+[ext_resource type="Texture2D" uid="uid://4v1tfw1o67we" path="res://Assets/Opening Cutscene Pieces/ShottwoInelevatorsilence/ShottwoInelevatorsilence/Elevatorsilencebackround16.png" id="29_du5u8"]
+[ext_resource type="Texture2D" uid="uid://bnh16amxug63g" path="res://Assets/Opening Cutscene Pieces/ShottwoInelevatorsilence/ShottwoInelevatorsilence/Elevatorsilencebackround17.png" id="30_w3rvy"]
+[ext_resource type="Texture2D" uid="uid://cawoqxftanfx7" path="res://Assets/Opening Cutscene Pieces/ShottwoInelevatorsilence/ShottwoInelevatorsilence/Elevatorsilencebackround18.png" id="31_c2l2e"]
+[ext_resource type="Texture2D" uid="uid://c6iqoatusk7is" path="res://Assets/Opening Cutscene Pieces/ShottwoInelevatorsilence/ShottwoInelevatorsilence/Elevatorsilencebackround19.png" id="32_voy0k"]
+[ext_resource type="Texture2D" uid="uid://c8xtdtry14g2q" path="res://Assets/Opening Cutscene Pieces/ShottwoInelevatorsilence/ShottwoInelevatorsilence/Elevatorsilencebackround20.png" id="33_bhyqr"]
+[ext_resource type="Texture2D" uid="uid://d16br7bp4t8e" path="res://Assets/Opening Cutscene Pieces/ShottwoInelevatorsilence/ShottwoInelevatorsilence/Elevatorsilencebackround21.png" id="34_6oh7y"]
+[ext_resource type="Texture2D" uid="uid://cpfn3c2m5eg2m" path="res://Assets/Opening Cutscene Pieces/ShottwoInelevatorsilence/ShottwoInelevatorsilence/Elevatorsilencebackround22.png" id="35_r4k3a"]
+[ext_resource type="Texture2D" uid="uid://c6jgvwdr7j6ti" path="res://Assets/Opening Cutscene Pieces/ShottwoInelevatorsilence/ShottwoInelevatorsilence/Elevatorsilencebackround23.png" id="36_jctup"]
+[ext_resource type="Texture2D" uid="uid://7g0ljsjgxcbn" path="res://Assets/Opening Cutscene Pieces/ShottwoInelevatorsilence/ShottwoInelevatorsilence/Elevatorsilencebackround24.png" id="37_s3ayu"]
+[ext_resource type="Texture2D" uid="uid://chgle15ge06n8" path="res://Assets/Opening Cutscene Pieces/ShottwoInelevatorsilence/ShottwoInelevatorsilence/Elevatorsilencebackround25.png" id="38_i0ik8"]
+[ext_resource type="Texture2D" uid="uid://ddofftd8akexr" path="res://Assets/Opening Cutscene Pieces/ShottwoInelevatorsilence/ShottwoInelevatorsilence/Elevatorsilencebackround26.png" id="39_s824y"]
+[ext_resource type="Texture2D" uid="uid://dto0imdsikw6b" path="res://Assets/Opening Cutscene Pieces/ShottwoInelevatorsilence/ShottwoInelevatorsilence/Elevatorsilencebackround27.png" id="40_k6rhf"]
+[ext_resource type="Texture2D" uid="uid://demgrdxvkv20a" path="res://Assets/Opening Cutscene Pieces/ShottwoInelevatorsilence/ShottwoInelevatorsilence/Elevatorsilencebackround28.png" id="41_6tkrv"]
+[ext_resource type="Texture2D" uid="uid://c4sxh008y8atp" path="res://Assets/Opening Cutscene Pieces/ShottwoInelevatorsilence/ShottwoInelevatorsilence/Elevatorsilencebackround29.png" id="42_3e2vi"]
+[ext_resource type="Texture2D" uid="uid://u2yiewi2ktm8" path="res://Assets/Opening Cutscene Pieces/ShottwoInelevatorsilence/ShottwoInelevatorsilence/Elevatorsilencebackround30.png" id="43_wgd8m"]
+[ext_resource type="Texture2D" uid="uid://jgtgio7vi7t5" path="res://Assets/Opening Cutscene Pieces/ShottwoInelevatorsilence/ShottwoInelevatorsilence/Elevatorsilencebackround31.png" id="44_ujnl2"]
+[ext_resource type="Texture2D" uid="uid://di0o1l4bfk8gm" path="res://Assets/Opening Cutscene Pieces/ShottwoInelevatorsilence/ShottwoInelevatorsilence/Elevatorsilencebackround32.png" id="45_ix6qh"]
+[ext_resource type="Texture2D" uid="uid://q34lok3mjfmi" path="res://Assets/Opening Cutscene Pieces/ShottwoInelevatorsilence/ShottwoInelevatorsilence/Elevatorsilencebackround33.png" id="46_fh765"]
+[ext_resource type="Texture2D" uid="uid://b4ssxcomc4vcf" path="res://Assets/Opening Cutscene Pieces/ShottwoInelevatorsilence/ShottwoInelevatorsilence/Elevatorsilencebackround34.png" id="47_0ld3y"]
+[ext_resource type="Texture2D" uid="uid://d2rp4am0doy4o" path="res://Assets/Opening Cutscene Pieces/ShottwoInelevatorsilence/ShottwoInelevatorsilence/Elevatorsilencebackround35.png" id="48_fcp5l"]
+[ext_resource type="Texture2D" uid="uid://dsh465i6qrn1v" path="res://Assets/Opening Cutscene Pieces/ShottwoInelevatorsilence/ShottwoInelevatorsilence/Elevatorsilencebackround36.png" id="49_tjlnj"]
+[ext_resource type="Texture2D" uid="uid://fp8p30lrc7xl" path="res://Assets/Opening Cutscene Pieces/ShottwoInelevatorsilence/ShottwoInelevatorsilence/Elevatorsilencebackround37.png" id="50_qfs2m"]
+[ext_resource type="Texture2D" uid="uid://cpuymxy1loi30" path="res://Assets/Opening Cutscene Pieces/ShottwoInelevatorsilence/ShottwoInelevatorsilence/Elevatorsilencebackround38.png" id="51_x80im"]
+[ext_resource type="Texture2D" uid="uid://bxl3ballbsqc3" path="res://Assets/Opening Cutscene Pieces/ShottwoInelevatorsilence/ShottwoInelevatorsilence/Elevatorsilencebackround39.png" id="52_534ds"]
+[ext_resource type="Texture2D" uid="uid://bnm6hgihajvj4" path="res://Assets/Opening Cutscene Pieces/ShottwoInelevatorsilence/ShottwoInelevatorsilence/Elevatorsilencebackround40.png" id="53_fokls"]
+[ext_resource type="Texture2D" uid="uid://nk0wqakwr1l0" path="res://Assets/Opening Cutscene Pieces/ShottwoInelevatorsilence/ShottwoInelevatorsilence/Elevatorsilencebackround41.png" id="54_yb6cb"]
+[ext_resource type="Texture2D" uid="uid://bq2ms5bt1cgq2" path="res://Assets/Opening Cutscene Pieces/ShottwoInelevatorsilence/ShottwoInelevatorsilence/Elevatorsilencebackround42.png" id="55_q8ybo"]
+[ext_resource type="Texture2D" uid="uid://cg6128qbokij0" path="res://Assets/Opening Cutscene Pieces/ShottwoInelevatorsilence/ShottwoInelevatorsilence/Elevatorsilencebackround43.png" id="56_51ytn"]
+[ext_resource type="Texture2D" uid="uid://dv75dldgpmkcd" path="res://Assets/Opening Cutscene Pieces/ShottwoInelevatorsilence/ShottwoInelevatorsilence/Elevatorsilencebackround44.png" id="57_qy7sd"]
+[ext_resource type="Texture2D" uid="uid://cr00suiohwgb4" path="res://Assets/Opening Cutscene Pieces/shotfourdialougestill/shotfourdialougestill/stilldialouge44.png" id="60_yfft2"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nihcq"]
 animations = [{
@@ -58,6 +103,161 @@ animations = [{
 "loop": false,
 "name": &"cutscene",
 "speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"shot1",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"shot2",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"shot3",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_67xaf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_j16fe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_ksmem")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_pxbsj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_0rt4e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_1cowy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_r6cfs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_cfys6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_h36lk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_dhy1e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_i46cf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_y6jve")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_d4van")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_l3g15")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_3nvll")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_0nyff")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_du5u8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_w3rvy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_c2l2e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_voy0k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_bhyqr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_6oh7y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_r4k3a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_jctup")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_s3ayu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_i0ik8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_s824y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_k6rhf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_6tkrv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_3e2vi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_wgd8m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_ujnl2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_ix6qh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_fh765")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_0ld3y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_fcp5l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_tjlnj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_qfs2m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_x80im")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_534ds")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_fokls")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_yb6cb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_q8ybo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_51ytn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_qy7sd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
 }]
 
 [node name="Cutscene" type="Control"]
@@ -70,24 +270,19 @@ grow_vertical = 2
 script = ExtResource("1_acsby")
 
 [node name="Slideshow" type="AnimatedSprite2D" parent="."]
-position = Vector2(578, 374)
-scale = Vector2(0.433594, 0.433594)
+position = Vector2(-1023, 193)
+scale = Vector2(0.894575, 0.894575)
 sprite_frames = SubResource("SpriteFrames_nihcq")
 animation = &"cutscene"
 
-[node name="DialogueLabel" type="Label" parent="."]
-modulate = Color(1, 1, 1, 0.631373)
-layout_mode = 0
-offset_left = 62.0
-offset_top = 423.0
-offset_right = 1122.0
-offset_bottom = 619.0
-theme_override_fonts/font = ExtResource("14_62ba1")
-theme_override_font_sizes/font_size = 30
-text = "???"
-autowrap_mode = 2
+[node name="AnimationBG" type="AnimatedSprite2D" parent="."]
+position = Vector2(576.889, 325.5)
+scale = Vector2(0.901389, 0.901389)
+sprite_frames = SubResource("SpriteFrames_67xaf")
+frame_progress = 0.746446
 
 [node name="NameLabel" type="Label" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 62.0
 offset_top = 382.0
@@ -103,3 +298,21 @@ offset_left = 4.0
 offset_top = -14.0
 offset_right = 4.0
 offset_bottom = -14.0
+
+[node name="Stilldialouge44" type="Sprite2D" parent="."]
+position = Vector2(575, 328)
+scale = Vector2(0.884722, 0.884722)
+texture = ExtResource("60_yfft2")
+
+[node name="DialogueLabel" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0.631373)
+layout_mode = 0
+offset_left = 292.0
+offset_top = 57.0
+offset_right = 704.0
+offset_bottom = 204.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("14_62ba1")
+theme_override_font_sizes/font_size = 20
+text = "???"
+autowrap_mode = 2
