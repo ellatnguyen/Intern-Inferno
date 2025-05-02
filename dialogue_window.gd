@@ -160,7 +160,8 @@ func _on_int_button_pressed():
 		var base_dmg = current_enemy.stats.get("INT_DMG", 1)
 		var bonus_dmg = get_bonus_damage("INT")
 		var defeated = await decrease_enemy_health(base_dmg + bonus_dmg)
-		current_int_line += 1
+		current_int_line = randi() % int_dialogue.size()
+		print(current_int_line)
 
 		if not defeated:
 			handle_consecutive_attack("INT")
@@ -182,7 +183,8 @@ func _on_per_button_pressed():
 		var base_dmg = current_enemy.stats.get("PER_DMG", 2)
 		var bonus_dmg = get_bonus_damage("PER")
 		var defeated = await decrease_enemy_health(base_dmg + bonus_dmg)
-		current_per_line += 1
+		current_per_line = randi() % per_dialogue.size()
+		print(current_per_line)
 
 		if not defeated:
 			handle_consecutive_attack("PER")
