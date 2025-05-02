@@ -35,7 +35,6 @@ func increment_frame():
 
 	if current_frame <= 0:
 		productivity_win()
-		WwiseManager.play_victory_music()
 		
 func increase_productivity_by_percent(percent: float):
 	var increase_amount = percent * max_value
@@ -49,7 +48,6 @@ func increase_productivity_by_percent(percent: float):
 	if value >= max_value:
 		is_full = true
 		print("You win! Transitioning to WinScreen...")
-		WwiseManager.play_victory_music()
 
 		# Just in case frame is off-sync
 		current_frame = TOTAL_FRAMES
@@ -61,7 +59,7 @@ func increase_productivity_by_percent(percent: float):
 		var dialogue_battle = get_node_or_null("/root/Game/DialogueBattleUI/DialogueWindow")
 		if dialogue_battle:
 			dialogue_battle.reset_battle()
-		
+
 		await SceneTransition.change_scene_with_fade("res://UI/WinScreen.tscn")
 
 func decrement_frame():
@@ -89,6 +87,7 @@ func productivity_win():
 	if game_over: return
 	game_over = true
 	print("Productivity Maxed! You Win!")
+
 	timer.stop()
 	await SceneTransition.change_scene_with_fade("res://UI/WinScreen.tscn")  # Update path
 

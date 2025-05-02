@@ -62,8 +62,6 @@ func play_overworld_music():
 	set_music_state(AK.STATES.MUSIC_STATE.STATE.OVERWORLD)
 	play_event(AK.EVENTS.OVERWORLD)
 
-
-
 func play_battle_music():
 	set_music_state(AK.STATES.MUSIC_STATE.STATE.BATTLES)
 	play_event(AK.EVENTS.BATTLES)

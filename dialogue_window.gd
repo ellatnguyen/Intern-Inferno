@@ -196,6 +196,9 @@ func decrease_enemy_health(amount := 1) -> bool:
 		if enemy_health == 0 and not battle_ended:
 			battle_ended = true
 			print("Enemy defeated!")
+			print("Playing VICTORY jingle now...")
+			WwiseManager.play_victory_music()
+			
 
 			if productivity_bar:
 				productivity_bar.increase_productivity_by_percent(0.2)
