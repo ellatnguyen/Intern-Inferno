@@ -1,0 +1,3 @@
+Event	ID	Name			Wwise Object Path	Notes
+	1012858046	Play_footstepCycle			\Default Work Unit Klaud\Play_footstepCycle	
+

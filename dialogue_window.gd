@@ -60,6 +60,7 @@ func start_battle_with(enemy: Node):
 
 	print("Battle started with:", enemy.name)
 	GameManager.in_battle = true
+	WwiseManager.play_battle_music()
 
 	# Disable player controls
 	var player = get_tree().get_first_node_in_group("player")
@@ -290,6 +291,7 @@ func end_battle():
 
 	if defeated_enemy and is_instance_valid(defeated_enemy) and defeated_enemy.has_method("despawn"):
 		defeated_enemy.despawn()
+	WwiseManager.play_overworld_music()
 
 func get_bonus_damage(stat_type: String) -> int:
 	if not is_inside_tree():

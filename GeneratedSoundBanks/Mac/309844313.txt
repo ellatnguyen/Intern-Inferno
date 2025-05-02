@@ -1,0 +1,134 @@
+Event	ID	Name			Wwise Object Path	Notes
+	332169852	Intimidation			\Music\Intimidation	
+	733168346	Game_Start			\Music\Game_Start	
+	860659345	Out_of_Menu			\Music\Out_of_Menu	
+	886789088	Damage_Buff_OFF			\Music\Damage_Buff_OFF	
+	1182958561	Cutscene			\Music\Cutscene	
+	1562068129	Overworld			\Music\Overworld	
+	1631528850	In_Menu			\Music\In_Menu	
+	2201105581	Credits			\Music\Credits	
+	2225353962	Energy_Drink_ON			\Music\Energy_Drink_ON	
+	2369474171	XP_Boost_OFF			\Music\XP_Boost_OFF	
+	2521525023	Title_Theme			\Music\Title_Theme	
+	2716678721	Victory			\Music\Victory	
+	2791675679	Defeated			\Music\Defeated	
+	2813898782	Battles			\Music\Battles	
+	2961129376	Energy_Drink_OFF			\Music\Energy_Drink_OFF	
+	3278048498	Lifesparer_ON			\Music\Lifesparer_ON	
+	3730046855	XP_Boost_ON			\Music\XP_Boost_ON	
+	3869452842	Damage_Buff_ON			\Music\Damage_Buff_ON	
+	3920142940	Timer			\Music\Timer	
+	3967959712	Game_Finished			\Music\Game_Finished	
+	4256397380	Persuasion			\Music\Persuasion	
+
+Switch Group	ID	Name			Wwise Object Path	Notes
+	2137943	Life			\Default Work Unit\Life	
+
+Switch	ID	Name	Switch Group			Notes
+	655265632	Alive	Life			
+	2791675679	Defeated	Life			
+
+State Group	ID	Name			Wwise Object Path	Notes
+	3826569560	Music_State			\Music\Music_State	
+	3941853002	Menu_State			\Music\Menu_State	
+
+State	ID	Name	State Group			Notes
+	748895195	None	Music_State			
+	1182958561	Cutscene	Music_State			
+	1562068129	Overworld	Music_State			
+	2201105581	Credits	Music_State			
+	2521525023	Title_Theme	Music_State			
+	2716678721	Victory	Music_State			
+	2813898782	Battles	Music_State			
+	748895195	None	Menu_State			
+	860659345	Out_of_Menu	Menu_State			
+	1631528850	In_Menu	Menu_State			
+
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	3920142940	Timer			\Default Work Unit\Timer	
+
+Trigger	ID	Name			Wwise Object Path	Notes
+	332169852	Intimidation			\Default Work Unit\Intimidation	
+	886789088	Damage_Buff_OFF			\Default Work Unit\Damage_Buff_OFF	
+	2225353962	Energy_Drink_ON			\Default Work Unit\Energy_Drink_ON	
+	2369474171	XP_Boost_OFF			\Default Work Unit\XP_Boost_OFF	
+	2961129376	Energy_Drink_OFF			\Default Work Unit\Energy_Drink_OFF	
+	3278048498	Lifesparer_ON			\Default Work Unit\Lifesparer_ON	
+	3730046855	XP_Boost_ON			\Default Work Unit\XP_Boost_ON	
+	3869452842	Damage_Buff_ON			\Default Work Unit\Damage_Buff_ON	
+	4256397380	Persuasion			\Default Work Unit\Persuasion	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	2326452	Cutscene_Flute1	Y:\Documents\WwiseProjects\Work Yourself to Death_updated\.cache\B4\{B4162674-23E0-E389-EC87-CDE514A835A9}.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Game_Music\Cutscene\Cutscene\Cutscene_Flute1		3840096
+	7780513	Overworld_Flute1B	Y:\Documents\WwiseProjects\Work Yourself to Death_updated\.cache\4A\{4A7DEDAE-F9E5-07D2-6DF2-B7317717CE72}.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Game_Music\Credits\OverworldB_Credits\Overworld_Flute1B		3072096
+	21141433	Overworld_Vibraphone1A	Y:\Documents\WwiseProjects\Work Yourself to Death_updated\.cache\5C\{5CC0132D-1F48-A496-C728-EF3C59436300}.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Game_Music\Credits\OverworldA_Credits\Overworld_Vibraphone1A		3072096
+	32060743	Overworld_Flute1A	Y:\Documents\WwiseProjects\Work Yourself to Death_updated\.cache\D3\{D3FAA268-3466-3E62-2658-3B19FF0117E9}.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Game_Music\Credits\OverworldA_Credits\Overworld_Flute1A		3072096
+	35331834	Defeated_Defeated_ClarinetC_60bpm4-4_L8_P0	Y:\Documents\WwiseProjects\Work Yourself to Death_updated\.cache\0D\{0DA426FA-7C15-6B34-971A-4F8AB5A7EA43}.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Game_Music\Defeated\DefeatedC\Defeated_Defeated_ClarinetC_60bpm4-4_L8_P0		6144096
+	62080164	Overworld_Vibraphone1B	Y:\Documents\WwiseProjects\Work Yourself to Death_updated\.cache\2A\{2ADEAF78-1302-4865-FE10-3B3EE905C822}.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Game_Music\Credits\OverworldB_Credits\Overworld_Vibraphone1B		3072096
+	63635261	Battles_Level1Enemy_Piano1_80bpm4-4_L8_P0	Y:\Documents\WwiseProjects\Work Yourself to Death_updated\.cache\8D\{8D4B3D7D-C027-D992-CB17-1D4F7397D4CF}.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Game_Music\Battles\Battles\Battles_Level1Enemy_Piano1_80bpm4-4_L8_P0		9216096
+	69866192	Vibraphone High Intro	Y:\Documents\WwiseProjects\Work Yourself to Death_updated\.cache\A6\{A61A718E-C049-CAF0-5ED5-9F88AAD51655}.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Game_Music\Cutscene\Cutscene_Intro\Vibraphone High Intro		3840096
+	72286419	Battles_Level1Enemy_Piano1_80bpm4-4_L8_P0	Y:\Documents\WwiseProjects\Work Yourself to Death_updated\.cache\3C\{3C729E21-32BA-4CF3-15B2-40F2E0527411}.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Game_Music\Battles\Battles\Battles_Level1Enemy_Piano1_80bpm4-4_L8_P0		9216096
+	78505196	Defeated_Defeated_BassC_60bpm4-4_L8_P0	Y:\Documents\WwiseProjects\Work Yourself to Death_updated\.cache\43\{43BDE458-C4B5-68CB-7DDD-C862D3DB8C61}.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Game_Music\Defeated\DefeatedC\Defeated_Defeated_BassC_60bpm4-4_L8_P0		6144096
+	83709439	Overworld_Elevator_Drums1_120bpm4-4_L10_P2	Y:\Documents\WwiseProjects\Work Yourself to Death_updated\.cache\C8\{C85D504D-B2BF-ED48-6E6F-E2C8688ADBD9}.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Game_Music\Cutscene\Cutscene\Overworld_Elevator_Drums1_120bpm4-4_L10_P2		3840096
+	131779585	Damage Buff On	Y:\Documents\WwiseProjects\Work Yourself to Death_updated\.cache\91\{910F4991-1471-19D0-B60F-F50FA6990EDD}.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Stingers\Damage_Buff_ON\Damage Buff On		512096
+	150546690	Overworld_DrumsA	Y:\Documents\WwiseProjects\Work Yourself to Death_updated\.cache\4E\{4EF14286-ED06-0EE1-76D7-CDC133180BEF}.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Game_Music\Overworld\OverworldA\Overworld_DrumsA		3072096
+	152031424	Overworld_Flute1A	Y:\Documents\WwiseProjects\Work Yourself to Death_updated\.cache\3F\{3F669DD6-B870-C590-48EC-1646922564B2}.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Game_Music\Overworld\OverworldA\Overworld_Flute1A		3072096
+	182119906	TitleTheme_TitleTheme_All_90bpm4-4_L32_P0	Y:\Documents\WwiseProjects\Work Yourself to Death_updated\.cache\5A\{5AEBF04A-E3D0-33F2-6F8E-50E9720DE5B9}.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Game_Music\Title_Theme\TitleTheme\TitleTheme_TitleTheme_All_90bpm4-4_L32_P0		16384080
+	193952533	Intimidation Jingle	Y:\Documents\WwiseProjects\Work Yourself to Death_updated\.cache\0E\{0E6DA429-611A-1218-0F37-00C3A36658CA}.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Stingers\Intimidation\Intimidation Jingle		2304096
+	206466471	Overworld_Flute1B	Y:\Documents\WwiseProjects\Work Yourself to Death_updated\.cache\D0\{D0844C74-A995-6042-5CE6-0E42DDAAE28B}.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Game_Music\Overworld\OverworldB\Overworld_Flute1B		3072096
+	227174976	Overworld_Bass1B	Y:\Documents\WwiseProjects\Work Yourself to Death_updated\.cache\21\{21AA21FB-D13F-DB82-F43D-AE5552FDED9A}.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Game_Music\Credits\OverworldB_Credits\Overworld_Bass1B		3072096
+	251106027	Overworld_Elevator_Drums1_120bpm4-4_L10_P2	Y:\Documents\WwiseProjects\Work Yourself to Death_updated\.cache\D8\{D840F90F-7FFF-AE2E-EF43-BEDC562D02B4}.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Game_Music\Cutscene\Cutscene\Overworld_Elevator_Drums1_120bpm4-4_L10_P2		3840096
+	251744624	Defeated_Defeated_VibraphoneA_60bpm4-4_L8_P0	Y:\Documents\WwiseProjects\Work Yourself to Death_updated\.cache\87\{8730AFC1-D49C-AC8A-BDF6-445E361A3632}.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Game_Music\Defeated\DefeatedA\Defeated_Defeated_VibraphoneA_60bpm4-4_L8_P0		6144096
+	302039960	Defeated_Defeated_BassA_60bpm4-4_L8_P0	Y:\Documents\WwiseProjects\Work Yourself to Death_updated\.cache\64\{6470F345-44E4-C598-C4FD-1B07F4704388}.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Game_Music\Defeated\DefeatedA\Defeated_Defeated_BassA_60bpm4-4_L8_P0		6144096
+	303870136	Overworld_Flute1B	Y:\Documents\WwiseProjects\Work Yourself to Death_updated\.cache\3A\{3A64B475-DB59-800D-96CE-2E2AF14FA0E0}.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Game_Music\Overworld\OverworldB\Overworld_Flute1B		3072096
+	310447952	Overworld_Flute1A	Y:\Documents\WwiseProjects\Work Yourself to Death_updated\.cache\9B\{9B19640D-B732-65D6-4542-0BDE3BD9E354}.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Game_Music\Overworld\OverworldA\Overworld_Flute1A		3072096
+	317142339	Overworld_Bass1A	Y:\Documents\WwiseProjects\Work Yourself to Death_updated\.cache\B2\{B2D316C9-1442-B92A-4B91-C4D8974C9583}.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Game_Music\Overworld\OverworldA\Overworld_Bass1A		3072096
+	320304646	Overworld_Vibraphone1A	Y:\Documents\WwiseProjects\Work Yourself to Death_updated\.cache\68\{68F74F5B-F467-A664-809E-D471F5C83FDB}.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Game_Music\Overworld\OverworldA\Overworld_Vibraphone1A		3072096
+	324933773	Cutscene_Vibraphone1	Y:\Documents\WwiseProjects\Work Yourself to Death_updated\.cache\35\{3551CC49-C781-4959-A147-676B2BE23AEA}.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Game_Music\Cutscene\Cutscene\Cutscene_Vibraphone1		3840096
+	333224553	Luck Boost On	Y:\Documents\WwiseProjects\Work Yourself to Death_updated\.cache\75\{754CF730-CF23-1B03-6DE0-C14292F11D70}.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Stingers\XP_Boost_ON\Luck Boost On		768096
+	353111109	Overworld_Vibraphone1B	Y:\Documents\WwiseProjects\Work Yourself to Death_updated\.cache\2F\{2FE05D0E-8201-43A0-750F-000F8C365CA2}.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Game_Music\Overworld\OverworldB\Overworld_Vibraphone1B		3072096
+	390268653	Battles_Level1Enemy_LowSax1_80bpm4-4_L8_P0	Y:\Documents\WwiseProjects\Work Yourself to Death_updated\.cache\5D\{5D4FA0CF-7A90-6BD2-2E74-B0669D94716C}.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Game_Music\Battles\Battles\Battles_Level1Enemy_LowSax1_80bpm4-4_L8_P0		9216096
+	435491049	Cutscene_Flute1	Y:\Documents\WwiseProjects\Work Yourself to Death_updated\.cache\55\{5536342E-5F6E-4111-8F64-313547F3D9BF}.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Game_Music\Cutscene\Cutscene\Cutscene_Flute1		3840096
+	465663932	Battles_Level1Enemy_HighSax1_80bpm4-4_L8_P0	Y:\Documents\WwiseProjects\Work Yourself to Death_updated\.cache\E4\{E4456A4F-1786-2AC6-388C-11EC4EF3EAC9}.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Game_Music\Battles\Battles\Battles_Level1Enemy_HighSax1_80bpm4-4_L8_P0		9216096
+	471352541	Defeated_Defeated_ClarinetD_60bpm4-4_L8_P0	Y:\Documents\WwiseProjects\Work Yourself to Death_updated\.cache\93\{93FB8F52-514B-D134-3331-6D9D25E5E860}.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Game_Music\Defeated\DefeatedD\Defeated_Defeated_ClarinetD_60bpm4-4_L8_P0		6144096
+	474132419	Vibraphone Low Intro	Y:\Documents\WwiseProjects\Work Yourself to Death_updated\.cache\5D\{5DB36C1E-0904-1FD0-C419-85B2F4C6153A}.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Game_Music\Cutscene\Cutscene_Intro\Vibraphone Low Intro		3840096
+	490959174	Defeated_Defeated_VibraphoneB_60bpm4-4_L8_P0	Y:\Documents\WwiseProjects\Work Yourself to Death_updated\.cache\15\{1551A57E-C084-9AF0-43C0-536C872F7AD7}.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Game_Music\Defeated\DefeatedB\Defeated_Defeated_VibraphoneB_60bpm4-4_L8_P0		6144096
+	498708518	Overworld_Elevator_Guitar1_120bpm4-4_L10_P2	Y:\Documents\WwiseProjects\Work Yourself to Death_updated\.cache\56\{5604BC17-F26A-179B-EFB5-7A384C6B5F95}.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Game_Music\Credits\Cutscene_Credits\Overworld_Elevator_Guitar1_120bpm4-4_L10_P2		3840096
+	529614626	Luck Boost Off	Y:\Documents\WwiseProjects\Work Yourself to Death_updated\.cache\D8\{D8F60E87-5725-AD99-DCB0-A21AED28E963}.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Stingers\XP_Boost_OFF\Luck Boost Off		384096
+	548477774	Overworld_Bass1A	Y:\Documents\WwiseProjects\Work Yourself to Death_updated\.cache\EF\{EF684E13-5C26-0431-CA01-939857FF9EFC}.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Game_Music\Overworld\OverworldA\Overworld_Bass1A		3072096
+	553684559	Defeated_Defeated_ClarinetB_60bpm4-4_L8_P0	Y:\Documents\WwiseProjects\Work Yourself to Death_updated\.cache\39\{39503F15-5B83-2C4A-0EA8-9529163601D5}.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Game_Music\Defeated\DefeatedB\Defeated_Defeated_ClarinetB_60bpm4-4_L8_P0		6144096
+	554376411	Defeated_Defeated_VibraphoneC_60bpm4-4_L8_P0	Y:\Documents\WwiseProjects\Work Yourself to Death_updated\.cache\E3\{E3CEB9E0-259E-22C5-6C8E-1FDC01C8601B}.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Game_Music\Defeated\DefeatedC\Defeated_Defeated_VibraphoneC_60bpm4-4_L8_P0		6144096
+	560890506	Defeated_Defeated_BassB_60bpm4-4_L8_P0	Y:\Documents\WwiseProjects\Work Yourself to Death_updated\.cache\59\{59525160-F94C-CA99-B2FD-7F2CD49AE073}.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Game_Music\Defeated\DefeatedB\Defeated_Defeated_BassB_60bpm4-4_L8_P0		6144096
+	570638418	Battles_Level1Enemy_Drums1_80bpm4-4_L8_P0	Y:\Documents\WwiseProjects\Work Yourself to Death_updated\.cache\56\{56E613B2-2803-AF86-52C0-326DD7E021FE}.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Game_Music\Credits\Battles_Credits\Battles_Level1Enemy_Drums1_80bpm4-4_L8_P0		9216096
+	574052949	Persuasion Jingle	Y:\Documents\WwiseProjects\Work Yourself to Death_updated\.cache\E3\{E3AE9838-99F5-DD4A-6AD2-C964A9FA0BE7}.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Stingers\Persuasion\Persuasion Jingle		2304096
+	579735765	Battles_Level1Enemy_HighSax1_80bpm4-4_L8_P0	Y:\Documents\WwiseProjects\Work Yourself to Death_updated\.cache\00\{00F55268-BB6A-8EDD-CC41-9377D1CA79B5}.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Game_Music\Battles\Battles\Battles_Level1Enemy_HighSax1_80bpm4-4_L8_P0		9216096
+	587004680	Cutscene_Flute1	Y:\Documents\WwiseProjects\Work Yourself to Death_updated\.cache\CA\{CAF6EB42-1468-277F-BCD1-99DB5C894D18}.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Game_Music\Credits\Cutscene_Credits\Cutscene_Flute1		3840096
+	613138436	Overworld_Bass1B	Y:\Documents\WwiseProjects\Work Yourself to Death_updated\.cache\61\{61621550-859E-4B1E-FD5E-288DF849B06F}.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Game_Music\Overworld\OverworldB\Overworld_Bass1B		3072096
+	619545766	Defeated_Defeated_TambourineD_60bpm4-4_L8_P0	Y:\Documents\WwiseProjects\Work Yourself to Death_updated\.cache\EE\{EEEEB068-0464-D52C-8706-D11DD1A333DF}.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Game_Music\Defeated\DefeatedD\Defeated_Defeated_TambourineD_60bpm4-4_L8_P0		6144096
+	625446123	Battles_Drums1New	Y:\Documents\WwiseProjects\Work Yourself to Death_updated\.cache\8F\{8F7DB555-5B57-F779-BB79-0F679F58ED39}.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Game_Music\Battles\Battles\Battles_Drums1New		9216096
+	637097260	Overworld_Elevator_Guitar1_120bpm4-4_L10_P2	Y:\Documents\WwiseProjects\Work Yourself to Death_updated\.cache\DC\{DC237DA2-7B3E-608A-12ED-34CDB4EC0B21}.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Game_Music\Credits\Cutscene_Credits\Overworld_Elevator_Guitar1_120bpm4-4_L10_P2		3840096
+	642760876	Victory Jingle	Y:\Documents\WwiseProjects\Work Yourself to Death_updated\.cache\A8\{A81C3619-19A9-7F02-58BE-E151C4053B3A}.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Game_Music\Victory\Victory Jingle\Victory Jingle		2304096
+	731006498	Overworld_Elevator_Drums1_120bpm4-4_L10_P2	Y:\Documents\WwiseProjects\Work Yourself to Death_updated\.cache\07\{070CCC24-1754-400F-E6EF-D08033913556}.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Game_Music\Credits\Cutscene_Credits\Overworld_Elevator_Drums1_120bpm4-4_L10_P2		3840096
+	733493580	Defeated_Defeated_TambourineC_60bpm4-4_L8_P0	Y:\Documents\WwiseProjects\Work Yourself to Death_updated\.cache\CB\{CB92A96E-9200-C713-84CB-3E56A786106D}.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Game_Music\Defeated\DefeatedC\Defeated_Defeated_TambourineC_60bpm4-4_L8_P0		6144096
+	747859039	Defeated_Defeated_VibraphoneD_60bpm4-4_L8_P0	Y:\Documents\WwiseProjects\Work Yourself to Death_updated\.cache\94\{94E21F70-4348-D24C-611B-4396EE524EEE}.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Game_Music\Defeated\DefeatedD\Defeated_Defeated_VibraphoneD_60bpm4-4_L8_P0		6144096
+	754747897	Energy Drink On	Y:\Documents\WwiseProjects\Work Yourself to Death_updated\.cache\1C\{1CBE4438-7EA1-25DA-7687-87657688323E}.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Stingers\Energy_Drink_ON\Energy Drink On		384096
+	787011098	Overworld_Elevator_Shaker1_120bpm4-4_L10_P2	Y:\Documents\WwiseProjects\Work Yourself to Death_updated\.cache\79\{7947D363-CC47-1F9D-F9B4-8049407CE8ED}.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Game_Music\Cutscene\Cutscene\Overworld_Elevator_Shaker1_120bpm4-4_L10_P2		3840096
+	809101649	Battles_Shaker1NewReal	Y:\Documents\WwiseProjects\Work Yourself to Death_updated\.cache\72\{72E1B66A-42E7-3230-5D23-03020C5C66CC}.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Game_Music\Battles\Battles\Battles_Shaker1NewReal		9216096
+	842409383	Overworld_Vibraphone1B	Y:\Documents\WwiseProjects\Work Yourself to Death_updated\.cache\49\{495D8507-90AE-0A29-1CC3-E5E571CAD0BF}.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Game_Music\Overworld\OverworldB\Overworld_Vibraphone1B		3072096
+	851187902	Defeated_Defeated_TambourineB_60bpm4-4_L8_P0	Y:\Documents\WwiseProjects\Work Yourself to Death_updated\.cache\FA\{FA647BF9-6C89-AC14-27BF-C44713F17A25}.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Game_Music\Defeated\DefeatedB\Defeated_Defeated_TambourineB_60bpm4-4_L8_P0		6144096
+	868536948	Battles_Shaker1NewReal	Y:\Documents\WwiseProjects\Work Yourself to Death_updated\.cache\DC\{DC618895-B5A2-3301-BEDD-B999DD362C78}.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Game_Music\Battles\Battles\Battles_Shaker1NewReal		9216096
+	909290845	Escape Jingle	Y:\Documents\WwiseProjects\Work Yourself to Death_updated\.cache\2B\{2BE29475-3663-B7B7-3621-1CA0406211CD}.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Stingers\Escape\Escape Jingle		2304096
+	951123656	Overworld_Elevator_Shaker1_120bpm4-4_L10_P2	Y:\Documents\WwiseProjects\Work Yourself to Death_updated\.cache\2E\{2E75D86E-1AAC-5389-0E1C-FA6F5FDCB7AA}.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Game_Music\Credits\Cutscene_Credits\Overworld_Elevator_Shaker1_120bpm4-4_L10_P2		3840096
+	960027801	Overworld_Elevator_Piano_120bpm4-4_L10_P2	Y:\Documents\WwiseProjects\Work Yourself to Death_updated\.cache\F6\{F66C1E88-1EA2-AD8A-806E-94DAC8326D99}.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Game_Music\Cutscene\Cutscene\Overworld_Elevator_Piano_120bpm4-4_L10_P2		3840096
+	961088450	Defeated_Defeated_BassD_60bpm4-4_L8_P0	Y:\Documents\WwiseProjects\Work Yourself to Death_updated\.cache\77\{778A6ADF-D07A-33A6-E20F-FA900D3B1D85}.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Game_Music\Defeated\DefeatedD\Defeated_Defeated_BassD_60bpm4-4_L8_P0		6144096
+	963609231	Damage Buff Off	Y:\Documents\WwiseProjects\Work Yourself to Death_updated\.cache\48\{4845DC19-D21D-D4E0-694C-575571C405C1}.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Stingers\Damage_Buff_OFF\Damage Buff Off		512096
+	969482955	Overworld_DrumsB	Y:\Documents\WwiseProjects\Work Yourself to Death_updated\.cache\15\{15FA6AA3-F6C7-FFE5-E682-14BB917C54E4}.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Game_Music\Overworld\OverworldB\Overworld_DrumsB		3072096
+	976239997	Overworld_Bass1B	Y:\Documents\WwiseProjects\Work Yourself to Death_updated\.cache\7B\{7BDE8434-D9C1-DD51-ED72-66D35FE59568}.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Game_Music\Overworld\OverworldB\Overworld_Bass1B		3072096
+	988562447	Energy Drink Off	Y:\Documents\WwiseProjects\Work Yourself to Death_updated\.cache\15\{150B9DB6-2D3A-315D-E5D7-D6ED946E12CE}.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Stingers\Energy_Drink_OFF\Energy Drink Off		384096
+	999266724	Overworld_Bass1A	Y:\Documents\WwiseProjects\Work Yourself to Death_updated\.cache\5C\{5C1BC6D8-EDAA-BB19-B27D-BDF92FED8E2C}.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Game_Music\Credits\OverworldA_Credits\Overworld_Bass1A		3072096
+	1027186496	Overworld_Elevator_Guitar1_120bpm4-4_L10_P2	Y:\Documents\WwiseProjects\Work Yourself to Death_updated\.cache\AC\{AC8DBECC-389A-A54C-91E5-24E8B3BD071C}.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Game_Music\Cutscene\Cutscene\Overworld_Elevator_Guitar1_120bpm4-4_L10_P2		3840096
+	1046413277	Overworld_Vibraphone1A	Y:\Documents\WwiseProjects\Work Yourself to Death_updated\.cache\1D\{1D54C1C1-2DE8-43EC-03B6-D00008028E48}.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Game_Music\Overworld\OverworldA\Overworld_Vibraphone1A		3072096
+	1048450217	Battles_Level1Enemy_LowSax1_80bpm4-4_L8_P0	Y:\Documents\WwiseProjects\Work Yourself to Death_updated\.cache\AB\{ABB1D995-34F9-114C-3C3E-F41DB8E03034}.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Game_Music\Battles\Battles\Battles_Level1Enemy_LowSax1_80bpm4-4_L8_P0		9216096
+	1053501049	Overworld_Elevator_Shaker1_120bpm4-4_L10_P2	Y:\Documents\WwiseProjects\Work Yourself to Death_updated\.cache\AA\{AA3E8BFE-B85B-CB89-DCA4-4AC4725CE27A}.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Game_Music\Credits\Cutscene_Credits\Overworld_Elevator_Shaker1_120bpm4-4_L10_P2		3840096
+	1060836631	Lifesparer	Y:\Documents\WwiseProjects\Work Yourself to Death_updated\.cache\D9\{D9EDE4AA-8D0D-A373-5336-75D7F9FC0F7D}.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Stingers\Lifesparer_ON\Lifesparer		419008
+
