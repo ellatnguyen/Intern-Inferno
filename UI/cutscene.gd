@@ -54,4 +54,3 @@ func _unhandled_input(event):
 				name_label.text = ""
 		else:
 			await SceneTransition.change_scene_with_fade("res://Map.tscn")
-			WwiseManager.play_overworld_music()

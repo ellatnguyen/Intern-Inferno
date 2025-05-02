@@ -149,7 +149,7 @@ func update_dialogue():
 func _on_int_button_pressed():
 	if is_on_cooldown:
 		return
-	WwiseManager.trigger_intimidation()
+	#WwiseManager.trigger_intimidation()
 	print("INT Button Pressed!")
 	int_count += 1
 	current_dialogue = int_dialogue
@@ -170,7 +170,7 @@ func _on_int_button_pressed():
 func _on_per_button_pressed():
 	if is_on_cooldown:
 		return
-	WwiseManager.trigger_persuasion()
+	#WwiseManager.trigger_persuasion()
 	print("PER Button Pressed!")
 	per_count += 1
 	current_dialogue = per_dialogue
@@ -197,7 +197,7 @@ func decrease_enemy_health(amount := 1) -> bool:
 			battle_ended = true
 			print("Enemy defeated!")
 			print("Playing VICTORY jingle now...")
-			WwiseManager.play_victory_music()
+			#WwiseManager.play_victory_music()
 			
 
 			if productivity_bar:
@@ -212,6 +212,7 @@ func decrease_enemy_health(amount := 1) -> bool:
 						exp_gain = max(exp_gain, 2)
 						print("WHAT Lucky Harms EXP Boost! New gain:", exp_gain)
 						player.has_exp_boost = false
+						WwiseManager.trigger_xp_boost(false)
 
 					if int_count > per_count:
 						player.gain_int_exp(exp_gain)
@@ -314,6 +315,7 @@ func get_bonus_damage(stat_type: String) -> int:
 				boosted+=1
 			print("!? Scrappy boost! Base:", base_bonus, "→ Boosted:", boosted)
 			player.has_damage_boost = false
+			WwiseManager.trigger_damage_buff(false)
 			print("Scrppy has worn off :(")
 			return boosted
 			

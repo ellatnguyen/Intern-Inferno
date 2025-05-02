@@ -155,6 +155,8 @@ func update_inventory_ui():
 func _on_fahrenheit_timer_timeout():
 	speed_multiplier = 1.0
 	print("BOOO Fahrenheit effect has ended.")
+	WwiseManager.trigger_energy_drink(false)
+
 
 func reset_after_battle() -> void:
 	velocity = Vector2.ZERO
