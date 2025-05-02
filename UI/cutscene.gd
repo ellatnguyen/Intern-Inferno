@@ -3,6 +3,7 @@ extends Control
 @onready var slideshow = $Slideshow
 @onready var dialogue_label = $DialogueLabel
 @onready var name_label = $NameLabel
+@onready var animationbg = $AnimationBG
 
 var current_frame := 0
 
@@ -35,6 +36,7 @@ var dialogue_lines := [
 ]
 
 func _ready():
+	animationbg.play()
 	slideshow.animation = "cutscene"
 	slideshow.frame = current_frame
 	dialogue_label.text = dialogue_lines[current_frame]
