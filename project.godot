@@ -21,7 +21,7 @@ SceneTransition="*res://Autoloads/SceneTransistor.tscn"
 SavedData="*res://Autoloads/SavedData.gd"
 Transition="res://UI/transition.tscn"
 GameManager="*res://Autoloads/GameManager.gd"
-WwiseRuntimeManager="*res://addons/Wwise/runtime/wwise_runtime_manager.gd"
+
 WwiseManager="*res://Wwise_script/WwiseManager.gd"
 
 [display]
