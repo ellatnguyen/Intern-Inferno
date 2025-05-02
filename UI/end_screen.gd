@@ -13,6 +13,7 @@ func _on_restart_button_pressed():
 func _on_esc_button_pressed():
 	print("ESC BUTTON PRESSED")
 	await SceneTransition.change_scene_with_fade("res://UI/StartScreen.tscn")
+	WwiseManager.start_game()
 
 func _unhandled_input(event):
 	if event.is_action_pressed("restart"):

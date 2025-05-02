@@ -125,22 +125,26 @@ func consume_selected_item():
 			if player:
 				player.has_damage_boost = true
 				print ("!? Damage boost activated")
+				WwiseManager.trigger_damage_buff(true)
 		elif item_name=="fahrenheit":
 			var player = get_tree().get_first_node_in_group("player")
 			if player:
 				player.speed_multiplier = 2.0
 				player.fahrenheit_timer.start()
 				print ("!!!! Fahrenheit consumed! Speed doubled")
+				WwiseManager.trigger_energy_drink(true)
 		elif item_name =="lucky harms":
 			var player = get_tree().get_first_node_in_group("player")
 			if player:
 				player.has_exp_boost=true
 				print("YAYA Lucky Harms consumed. EXP Gain increased")
+				WwiseManager.trigger_xp_boost(true)
 		elif item_name=="life sparer":
 			var productivity_bar = get_node_or_null("/root/Game/TimerUI/Container/ProductivityBar")
 			if productivity_bar:
 				productivity_bar.increase_productivity_by_percent(0.01)
 				print("Life Sparer consumed! Productivity +1%")
+				WwiseManager.trigger_lifesparer()
 			else:
 				print("Productivity bar not found.")
 		#get rid of item/reduce

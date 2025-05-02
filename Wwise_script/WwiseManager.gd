@@ -19,23 +19,23 @@ func play_event(event_id: int, game_obj: Node = self):
 func set_rtpc(rtpc_id: int, value: float, game_obj: Node = self):
 	Wwise.set_rtpc_value_id(rtpc_id, value, game_obj)
 
-func trigger_damage_buff(on: bool, game_obj: Node):
-	play_event(AK.EVENTS.DAMAGE_BUFF_ON if on else AK.EVENTS.DAMAGE_BUFF_OFF, game_obj)
+func trigger_damage_buff(on: bool):
+	play_event(AK.EVENTS.DAMAGE_BUFF_ON if on else AK.EVENTS.DAMAGE_BUFF_OFF)
 
-func trigger_energy_drink(on: bool, game_obj: Node):
-	play_event(AK.EVENTS.ENERGY_DRINK_ON if on else AK.EVENTS.ENERGY_DRINK_OFF, game_obj)
+func trigger_energy_drink(on: bool):
+	play_event(AK.EVENTS.ENERGY_DRINK_ON if on else AK.EVENTS.ENERGY_DRINK_OFF)
 
-func trigger_xp_boost(on: bool, game_obj: Node):
-	play_event(AK.EVENTS.XP_BOOST_ON if on else AK.EVENTS.XP_BOOST_OFF, game_obj)
+func trigger_xp_boost(on: bool):
+	play_event(AK.EVENTS.XP_BOOST_ON if on else AK.EVENTS.XP_BOOST_OFF)
 
-func trigger_lifesparer(game_obj: Node):
-	play_event(AK.EVENTS.LIFESPARER_ON, game_obj)
+func trigger_lifesparer():
+	play_event(AK.EVENTS.LIFESPARER_ON)
 
-func trigger_intimidation(game_obj: Node):
-	play_event(AK.EVENTS.INTIMIDATION, game_obj)
+func trigger_intimidation():
+	play_event(AK.EVENTS.INTIMIDATION)
 
-func trigger_persuasion(game_obj: Node):
-	play_event(AK.EVENTS.PERSUASION, game_obj)
+func trigger_persuasion():
+	play_event(AK.EVENTS.PERSUASION)
 
 func set_music_state(state_id: int):
 	Wwise.set_state_id(AK.STATES.MUSIC_STATE.GROUP, state_id)
@@ -52,8 +52,17 @@ func start_game():
 	play_event(AK.EVENTS.GAME_START)
 
 func play_overworld_music():
+	#Set the LIFE switch to ALIVE (resets defeated state)
+	Wwise.set_switch_id(AK.SWITCHES.LIFE.GROUP, AK.SWITCHES.LIFE.SWITCH.ALIVE, self)
+
+	# Explicitly reset music state (optional but good)
+	Wwise.set_state_id(AK.STATES.MUSIC_STATE.GROUP, AK.STATES.MUSIC_STATE.STATE.NONE)
+
+	# apply OVERWORLD music state and play event
 	set_music_state(AK.STATES.MUSIC_STATE.STATE.OVERWORLD)
 	play_event(AK.EVENTS.OVERWORLD)
+
+
 
 func play_battle_music():
 	set_music_state(AK.STATES.MUSIC_STATE.STATE.BATTLES)

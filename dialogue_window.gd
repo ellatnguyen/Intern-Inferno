@@ -149,7 +149,7 @@ func update_dialogue():
 func _on_int_button_pressed():
 	if is_on_cooldown:
 		return
-
+	WwiseManager.trigger_intimidation()
 	print("INT Button Pressed!")
 	int_count += 1
 	current_dialogue = int_dialogue
@@ -170,7 +170,7 @@ func _on_int_button_pressed():
 func _on_per_button_pressed():
 	if is_on_cooldown:
 		return
-
+	WwiseManager.trigger_persuasion()
 	print("PER Button Pressed!")
 	per_count += 1
 	current_dialogue = per_dialogue

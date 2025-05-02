@@ -35,6 +35,7 @@ func increment_frame():
 
 	if current_frame <= 0:
 		productivity_win()
+		WwiseManager.play_victory_music()
 		
 func increase_productivity_by_percent(percent: float):
 	var increase_amount = percent * max_value
@@ -48,6 +49,7 @@ func increase_productivity_by_percent(percent: float):
 	if value >= max_value:
 		is_full = true
 		print("You win! Transitioning to WinScreen...")
+		WwiseManager.play_victory_music()
 
 		# Just in case frame is off-sync
 		current_frame = TOTAL_FRAMES
@@ -91,7 +93,7 @@ func productivity_win():
 	await SceneTransition.change_scene_with_fade("res://UI/WinScreen.tscn")  # Update path
 
 func _on_productivity_timer_timeout():
-	var decrease_percent = 0.02  # or whatever makes sense for your pacing
+	var decrease_percent = 0.005  # or whatever makes sense for your pacing
 	value = max(value - (decrease_percent * max_value), 0)
 	print("Timer decreased productivity to", value)
 	
@@ -100,3 +102,4 @@ func _on_productivity_timer_timeout():
 
 	if value <= 0:
 		productivity_end()
+		WwiseManager.play_defeated_music()

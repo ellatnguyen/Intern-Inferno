@@ -22,6 +22,9 @@ func _init() -> void:
 	randomize()
 
 func _ready():
+	WwiseManager.play_overworld_music()
+
+
 	# No need to reference GameManager if it's autoloaded
 	nearby_enemy = null
 	if dialogue_battle_ui:
