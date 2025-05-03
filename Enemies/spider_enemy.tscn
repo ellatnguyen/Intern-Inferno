@@ -25,7 +25,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"spider_overworld",
-"speed": 20.0
+"speed": 10.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s50h4"]
@@ -43,7 +43,7 @@ shape = SubResource("CircleShape2D_bljew")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["enemies"]]
 position = Vector2(5, -6)
-scale = Vector2(0.170972, 0.170972)
+scale = Vector2(0.03, 0.03)
 sprite_frames = SubResource("SpriteFrames_qgft7")
 animation = &"spider_overworld"
 frame_progress = 0.0580818
