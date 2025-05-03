@@ -1,0 +1,53 @@
+[gd_scene load_steps=9 format=3 uid="uid://d1fmm1r42h7uv"]
+
+[ext_resource type="Script" path="res://Enemies/spider_enemy.gd" id="1_0qj70"]
+[ext_resource type="Texture2D" uid="uid://b6q1no2wrud1q" path="res://Assets/Character Assets/NPCs/Spider/spider_1.png" id="31_o1ac6"]
+[ext_resource type="Texture2D" uid="uid://da6glmfcjmop8" path="res://Assets/Character Assets/NPCs/Spider/spider_2.png" id="32_y6067"]
+[ext_resource type="Texture2D" uid="uid://owrogoginex3" path="res://Assets/Character Assets/NPCs/Spider/spider_3.png" id="33_inuyn"]
+[ext_resource type="Texture2D" uid="uid://ciopxwgfu3evj" path="res://Assets/Character Assets/NPCs/Spider/spider_4.png" id="34_dutnw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bljew"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qgft7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("31_o1ac6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_y6067")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_inuyn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_dutnw")
+}],
+"loop": true,
+"name": &"spider_overworld",
+"speed": 20.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s50h4"]
+
+[node name="SpiderEnemy" type="CharacterBody2D" groups=["enemies"]]
+script = ExtResource("1_0qj70")
+
+[node name="InteractionArea" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+scale = Vector2(2, 2)
+shape = SubResource("CircleShape2D_bljew")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["enemies"]]
+position = Vector2(5, -6)
+scale = Vector2(0.170972, 0.170972)
+sprite_frames = SubResource("SpriteFrames_qgft7")
+animation = &"spider_overworld"
+frame_progress = 0.0580818
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.5, 1.3)
+shape = SubResource("CapsuleShape2D_s50h4")
