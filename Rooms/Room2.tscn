@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://r88elkkvv60o" path="res://Rooms/Furniture and Traps/Door.tscn" id="2"]
 [ext_resource type="PackedScene" path="res://Rooms/Furniture and Traps/Torch.tscn" id="3"]
 
+
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(16, 10)
 
