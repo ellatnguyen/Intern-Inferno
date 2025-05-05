@@ -30,9 +30,6 @@ tile_set = ExtResource("2_wc5w8")
 format = 2
 layer_0/tile_data = PackedInt32Array(720897, 10, 65536, 720898, 10, 65536, 720899, 10, 65536, 720900, 10, 65536, 720903, 10, 65536, 720904, 10, 65536, 720905, 10, 65536, 720906, 10, 65536, 6, 37, 65536, 5, 38, 65536)
 
-[node name="FurnitureTileMap" parent="." index="4"]
-layer_0/tile_data = PackedInt32Array(262150, 26, 0, 262151, 25, 0, 393223, 24, 0, 458757, 24, 0)
-
 [node name="PositionSouth" type="Marker2D" parent="Entrance" index="0"]
 position = Vector2(104, 185)
 
