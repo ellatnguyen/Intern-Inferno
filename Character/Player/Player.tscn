@@ -352,10 +352,9 @@ script = ExtResource("2_b7fkq")
 scale = Vector2(0.015, 0.015)
 sprite_frames = SubResource("SpriteFrames_x1iip")
 animation = &"idle"
-frame_progress = 0.140217
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(0.1, 0.4)
+scale = Vector2(0.075, 0.3)
 shape = SubResource("CapsuleShape2D_l3m23")
 one_way_collision_margin = 0.0
 
@@ -364,13 +363,8 @@ libraries = {
 "": SubResource("AnimationLibrary_qxyws")
 }
 
-[node name="Weapons" type="Node2D" parent="."]
-
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(4, 4)
-
-[node name="DustPosition" type="Marker2D" parent="."]
-position = Vector2(0, 6)
 
 [node name="FahrenheitTimer" type="Timer" parent="."]
 wait_time = 10.0
