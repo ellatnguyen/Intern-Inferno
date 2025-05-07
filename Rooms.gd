@@ -43,7 +43,7 @@ func _spawn_rooms() -> void:
 			rooms_spawned += 1
 			
 			# For spawn room, ensure only north is open
-			_set_wall_visibility(room, true, false, false)
+			_set_wall_visibility(room, true, false, false, true)
 		else:
 			# For the second room (first after spawn), force north direction
 			if rooms_spawned == 1:
@@ -80,7 +80,7 @@ func _spawn_rooms() -> void:
 						room_position.y
 					)
 			
-			# Connect with corridor and handle hallways
+			# Connect with corridor and handle hallways/walls
 			var door = _get_door_in_direction(previous_room, previous_direction)
 			if door:
 				var corridor_length = randi() % (max_corridor_length - min_corridor_length + 1) + min_corridor_length
@@ -88,23 +88,34 @@ func _spawn_rooms() -> void:
 				match previous_direction:
 					Vector2.UP:
 						_generate_vertical_corridor(previous_room.get_node("TileMap"), door, corridor_length)
-						# For vertical connections, show exit hallway and hide north wall
+						# For north connection (previous room to new room above it)
 						var north_hallway = previous_room.get_node_or_null("NorthHallway")
 						if north_hallway:
 							north_hallway.visible = true
 						var north_wall = previous_room.get_node_or_null("NorthWall")
 						if north_wall:
 							north_wall.visible = false
+						
+						# Hide south wall in new room (since it connects to room below)
+						var south_wall = room.get_node_or_null("SouthWall")
+						if south_wall:
+							south_wall.visible = false
+						
+						# Special case: Second room shouldn't show south wall
+						if rooms_spawned == 1:
+							if south_wall:
+								south_wall.visible = false
 					Vector2.RIGHT:
 						_generate_horizontal_corridor(previous_room.get_node("TileMap"), door, corridor_length, true)
-						# Show exit hallway in previous room (east) and hide east wall
+						# Previous room (east exit)
 						var east_hallway = previous_room.get_node_or_null("EastHallway")
 						if east_hallway:
 							east_hallway.visible = true
 						var east_wall = previous_room.get_node_or_null("EastWall")
 						if east_wall:
 							east_wall.visible = false
-						# Show entrance hallway in new room (west) and hide west wall
+						
+						# New room (west entrance)
 						var west_hallway = room.get_node_or_null("WestHallway")
 						if west_hallway:
 							west_hallway.visible = true
@@ -113,14 +124,15 @@ func _spawn_rooms() -> void:
 							west_wall.visible = false
 					Vector2.LEFT:
 						_generate_horizontal_corridor(previous_room.get_node("TileMap"), door, corridor_length, false)
-						# Show exit hallway in previous room (west) and hide west wall
+						# Previous room (west exit)
 						var west_hallway = previous_room.get_node_or_null("WestHallway")
 						if west_hallway:
 							west_hallway.visible = true
 						var west_wall = previous_room.get_node_or_null("WestWall")
 						if west_wall:
 							west_wall.visible = false
-						# Show entrance hallway in new room (east) and hide east wall
+						
+						# New room (east entrance)
 						var east_hallway = room.get_node_or_null("EastHallway")
 						if east_hallway:
 							east_hallway.visible = true
@@ -143,7 +155,12 @@ func _spawn_rooms() -> void:
 		room.position = room_position
 		add_child(room)
 		
-		# Hide walls where connections exist, show where they don't
+		# Special case: Second room should never show south wall
+		if rooms_spawned == 2:  # Second room (first after spawn)
+			var south_wall = room.get_node_or_null("SouthWall")
+			south_wall.visible = false
+		
+		# Update wall visibility based on connections
 		_update_wall_visibility(room)
 		previous_room = room
 		room_positions[room_position] = room
@@ -153,6 +170,7 @@ func _update_wall_visibility(room: Node2D) -> void:
 	var show_north = true
 	var show_east = true
 	var show_west = true
+	var show_south = true
 	
 	# Check if hallways are visible (indicating a connection)
 	if room.has_node("NorthHallway") and room.get_node("NorthHallway").visible:
@@ -162,6 +180,21 @@ func _update_wall_visibility(room: Node2D) -> void:
 	if room.has_node("WestHallway") and room.get_node("WestHallway").visible:
 		show_west = false
 	
+	# Check if this room is connected from below (north hallway to south entrance)
+	for existing_pos in room_positions:
+		var existing_room = room_positions[existing_pos]
+		if existing_room != room:
+			var existing_tilemap = existing_room.get_node("TileMap")
+			var existing_size = existing_tilemap.get_used_rect().size * TILE_SIZE
+			
+			# Check if existing room is directly below this one with a north hallway
+			if (existing_pos.y == room.position.y + existing_size.y and 
+				abs(existing_pos.x - room.position.x) < existing_size.x and
+				existing_room.has_node("NorthHallway") and 
+				existing_room.get_node("NorthHallway").visible):
+				show_south = false
+				break
+	
 	# Apply visibility
 	if room.has_node("NorthWall"):
 		room.get_node("NorthWall").visible = show_north
@@ -169,14 +202,18 @@ func _update_wall_visibility(room: Node2D) -> void:
 		room.get_node("EastWall").visible = show_east
 	if room.has_node("WestWall"):
 		room.get_node("WestWall").visible = show_west
+	if room.has_node("SouthWall"):
+		room.get_node("SouthWall").visible = show_south
 
-func _set_wall_visibility(room: Node2D, north: bool, east: bool, west: bool) -> void:
+func _set_wall_visibility(room: Node2D, north: bool, east: bool, west: bool, south: bool) -> void:
 	if room.has_node("NorthWall"):
 		room.get_node("NorthWall").visible = north
 	if room.has_node("EastWall"):
 		room.get_node("EastWall").visible = east
 	if room.has_node("WestWall"):
 		room.get_node("WestWall").visible = west
+	if room.has_node("SouthWall"):
+		room.get_node("SouthWall").visible = south
 
 func _get_valid_directions(last_direction: Vector2) -> Array:
 	var valid_directions = []
