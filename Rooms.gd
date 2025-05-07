@@ -2,12 +2,13 @@
 extends Node2D
 
 const SPAWN_ROOMS: Array = [preload("res://Rooms/SpawnRoom0.tscn")]
+
 const INTERMEDIATE_ROOMS: Array = [
 	preload("res://Rooms/Room0.tscn"), preload("res://Rooms/Room1.tscn"),
 	preload("res://Rooms/Room2.tscn"), preload("res://Rooms/Room3.tscn"), 
 	preload("res://Rooms/Room4.tscn"), preload("res://Rooms/Room5.tscn"),
 	preload("res://Rooms/Room6.tscn")]
-
+  
 const TILE_SIZE: int = 16
 const FLOOR_TILE_INDEX: int = 14
 const RIGHT_WALL_TILE_INDEX: int = 5
