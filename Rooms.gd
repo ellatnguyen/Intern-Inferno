@@ -18,7 +18,7 @@ var room_positions := {}
 var previous_directions := [] # Tracks the last two directions to prevent 3 in a row
 var rooms_spawned := 0
 
-@export var num_levels: int = 7
+@export var num_levels: int = 20
 @export var min_corridor_length: int = 5
 @export var max_corridor_length: int = 5
 
@@ -41,6 +41,9 @@ func _spawn_rooms() -> void:
 			player.position = room.get_node("PlayerSpawnPos").position
 			room_position = Vector2.ZERO
 			rooms_spawned += 1
+			
+			# For spawn room, ensure only north is open
+			_set_wall_visibility(room, true, false, false)
 		else:
 			# For the second room (first after spawn), force north direction
 			if rooms_spawned == 1:
@@ -77,7 +80,7 @@ func _spawn_rooms() -> void:
 						room_position.y
 					)
 			
-			# Connect with corridor
+			# Connect with corridor and handle hallways
 			var door = _get_door_in_direction(previous_room, previous_direction)
 			if door:
 				var corridor_length = randi() % (max_corridor_length - min_corridor_length + 1) + min_corridor_length
@@ -85,10 +88,45 @@ func _spawn_rooms() -> void:
 				match previous_direction:
 					Vector2.UP:
 						_generate_vertical_corridor(previous_room.get_node("TileMap"), door, corridor_length)
+						# For vertical connections, show exit hallway and hide north wall
+						var north_hallway = previous_room.get_node_or_null("NorthHallway")
+						if north_hallway:
+							north_hallway.visible = true
+						var north_wall = previous_room.get_node_or_null("NorthWall")
+						if north_wall:
+							north_wall.visible = false
 					Vector2.RIGHT:
 						_generate_horizontal_corridor(previous_room.get_node("TileMap"), door, corridor_length, true)
+						# Show exit hallway in previous room (east) and hide east wall
+						var east_hallway = previous_room.get_node_or_null("EastHallway")
+						if east_hallway:
+							east_hallway.visible = true
+						var east_wall = previous_room.get_node_or_null("EastWall")
+						if east_wall:
+							east_wall.visible = false
+						# Show entrance hallway in new room (west) and hide west wall
+						var west_hallway = room.get_node_or_null("WestHallway")
+						if west_hallway:
+							west_hallway.visible = true
+						var west_wall = room.get_node_or_null("WestWall")
+						if west_wall:
+							west_wall.visible = false
 					Vector2.LEFT:
 						_generate_horizontal_corridor(previous_room.get_node("TileMap"), door, corridor_length, false)
+						# Show exit hallway in previous room (west) and hide west wall
+						var west_hallway = previous_room.get_node_or_null("WestHallway")
+						if west_hallway:
+							west_hallway.visible = true
+						var west_wall = previous_room.get_node_or_null("WestWall")
+						if west_wall:
+							west_wall.visible = false
+						# Show entrance hallway in new room (east) and hide east wall
+						var east_hallway = room.get_node_or_null("EastHallway")
+						if east_hallway:
+							east_hallway.visible = true
+						var east_wall = room.get_node_or_null("EastWall")
+						if east_wall:
+							east_wall.visible = false
 				
 				# Position the new room's entrance correctly
 				var entrance_direction = -previous_direction
@@ -104,8 +142,41 @@ func _spawn_rooms() -> void:
 		# Position and add the room
 		room.position = room_position
 		add_child(room)
+		
+		# Hide walls where connections exist, show where they don't
+		_update_wall_visibility(room)
 		previous_room = room
 		room_positions[room_position] = room
+
+func _update_wall_visibility(room: Node2D) -> void:
+	# Default to showing all walls
+	var show_north = true
+	var show_east = true
+	var show_west = true
+	
+	# Check if hallways are visible (indicating a connection)
+	if room.has_node("NorthHallway") and room.get_node("NorthHallway").visible:
+		show_north = false
+	if room.has_node("EastHallway") and room.get_node("EastHallway").visible:
+		show_east = false
+	if room.has_node("WestHallway") and room.get_node("WestHallway").visible:
+		show_west = false
+	
+	# Apply visibility
+	if room.has_node("NorthWall"):
+		room.get_node("NorthWall").visible = show_north
+	if room.has_node("EastWall"):
+		room.get_node("EastWall").visible = show_east
+	if room.has_node("WestWall"):
+		room.get_node("WestWall").visible = show_west
+
+func _set_wall_visibility(room: Node2D, north: bool, east: bool, west: bool) -> void:
+	if room.has_node("NorthWall"):
+		room.get_node("NorthWall").visible = north
+	if room.has_node("EastWall"):
+		room.get_node("EastWall").visible = east
+	if room.has_node("WestWall"):
+		room.get_node("WestWall").visible = west
 
 func _get_valid_directions(last_direction: Vector2) -> Array:
 	var valid_directions = []
@@ -130,42 +201,54 @@ func _update_direction_history(direction: Vector2):
 	previous_directions.append(direction)
 	if previous_directions.size() > 2:
 		previous_directions.pop_front()
-# Corridor generation functions remain the same...
+
 func _generate_vertical_corridor(tilemap: TileMap, door: Node2D, height: int) -> void:
 	var door_tile_pos := tilemap.local_to_map(door.position)
+	
+	# Show north hallway in the previous room (since we're going up)
+	var north_hallway = tilemap.get_parent().get_node_or_null("NorthHallway")
+	if north_hallway:
+		north_hallway.visible = true
 	
 	for y in height:
 		# Floor tiles
 		tilemap.set_cell(0, door_tile_pos + Vector2i(-1, -y), FLOOR_TILE_INDEX, Vector2i.ZERO)
 		tilemap.set_cell(0, door_tile_pos + Vector2i(0, -y), FLOOR_TILE_INDEX, Vector2i.ZERO)
-		
 
 func _generate_horizontal_corridor(tilemap: TileMap, door: Node2D, length: int, right_direction: bool) -> void:
 	var door_tile_pos := tilemap.local_to_map(door.position)
 	var direction := 1 if right_direction else -1
 	
+	# Show appropriate hallway based on direction
+	if right_direction:
+		var east_hallway = tilemap.get_parent().get_node_or_null("EastHallway")
+		if east_hallway:
+			east_hallway.visible = true
+	else:
+		var west_hallway = tilemap.get_parent().get_node_or_null("WestHallway")
+		if west_hallway:
+			west_hallway.visible = true
+	
 	for x in length:
 		# Floor tiles
 		tilemap.set_cell(0, door_tile_pos + Vector2i(direction * x, 0), FLOOR_TILE_INDEX, Vector2i.ZERO)
-		tilemap.set_cell(0, door_tile_pos + Vector2i(direction * x, -1), FLOOR_TILE_INDEX, Vector2i.ZERO)
-		
-# Helper functions remain the same...
+		tilemap.set_cell(0, door_tile_pos + Vector2i(direction * x, -1), FLOOR_TILE_INDEX, Vector2i.ZERO)	
 func _get_door_in_direction(room: Node2D, direction: Vector2) -> Node2D:
 	var door_container = room.get_node("Doors")
 	if direction == Vector2.UP:  # North
-		return door_container.get_node_or_null("Door")
+		return door_container.get_node_or_null("DoorNorth")
 	elif direction == Vector2.RIGHT:  # East
-		return door_container.get_node_or_null("Door2")
+		return door_container.get_node_or_null("DoorEast")
 	elif direction == Vector2.LEFT:  # West
-		return door_container.get_node_or_null("Door3")
+		return door_container.get_node_or_null("DoorWest")
 	return null
 
 func _get_entrance_in_direction(room: Node2D, direction: Vector2) -> Node2D:
 	var entrance_container = room.get_node("Entrance")
 	if direction == Vector2.DOWN:  # South
-		return entrance_container.get_node_or_null("Position2D2")
+		return entrance_container.get_node_or_null("PositionSouth")
 	elif direction == Vector2.RIGHT:  # East
-		return entrance_container.get_node_or_null("Position2D3")
+		return entrance_container.get_node_or_null("PositionEast")
 	elif direction == Vector2.LEFT:  # West
-		return entrance_container.get_node_or_null("Position2D4")
+		return entrance_container.get_node_or_null("PositionWest")
 	return null
