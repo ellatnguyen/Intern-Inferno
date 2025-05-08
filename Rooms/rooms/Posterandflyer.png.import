@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bh58wmcffs6h8"
-path="res://.godot/imported/items for break room.PNG-e7195546168f7e1b2b0ead5732c83f45.ctex"
+uid="uid://dpahhl8tock8s"
+path="res://.godot/imported/Posterandflyer.png-30969d0b66149e464ba2107d4d821428.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Rooms/rooms/items for break room.PNG"
-dest_files=["res://.godot/imported/items for break room.PNG-e7195546168f7e1b2b0ead5732c83f45.ctex"]
+source_file="res://Rooms/rooms/Posterandflyer.png"
+dest_files=["res://.godot/imported/Posterandflyer.png-30969d0b66149e464ba2107d4d821428.ctex"]
 
 [params]
 

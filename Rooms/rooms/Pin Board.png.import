@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bh58wmcffs6h8"
-path="res://.godot/imported/items for break room.PNG-e7195546168f7e1b2b0ead5732c83f45.ctex"
+uid="uid://bn5e3yyvlj0rl"
+path="res://.godot/imported/Pin Board.png-4e4e0657d2bd0c192feb87978c8ae949.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Rooms/rooms/items for break room.PNG"
-dest_files=["res://.godot/imported/items for break room.PNG-e7195546168f7e1b2b0ead5732c83f45.ctex"]
+source_file="res://Rooms/rooms/Pin Board.png"
+dest_files=["res://.godot/imported/Pin Board.png-4e4e0657d2bd0c192feb87978c8ae949.ctex"]
 
 [params]
 
