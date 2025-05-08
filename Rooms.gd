@@ -205,16 +205,39 @@ func _update_wall_visibility(room: Node2D) -> void:
 		room.get_node("WestWall").visible = show_west
 	if room.has_node("SouthWall"):
 		room.get_node("SouthWall").visible = show_south
-
+		
 func _set_wall_visibility(room: Node2D, north: bool, east: bool, west: bool, south: bool) -> void:
+	# North Wall
 	if room.has_node("NorthWall"):
-		room.get_node("NorthWall").visible = north
+		var north_wall = room.get_node("NorthWall")
+		north_wall.visible = north
+		# Enable/disable collision based on visibility
+		if room.has_node("NorthWallBody"):
+			var north_wall_body = room.get_node("NorthWallBody")
+			north_wall_body.get_node("CollisionShape2D").disabled = not north
+		
+	# East Wall
 	if room.has_node("EastWall"):
-		room.get_node("EastWall").visible = east
+		var east_wall = room.get_node("EastWall")
+		east_wall.visible = east
+		if room.has_node("EastWallBody"):
+			room.get_node("EastWallBody/CollisionShape2D").disabled = not east
+			
+	# West Wall
 	if room.has_node("WestWall"):
-		room.get_node("WestWall").visible = west
+		var west_wall = room.get_node("WestWall")
+		west_wall.visible = west
+		if room.has_node("WestWallBody"):
+			var west_wall_body = room.get_node("WestWallBody")
+			west_wall_body.get_node("CollisionShape2D").disabled = not west
+			
+	# South Wall
 	if room.has_node("SouthWall"):
-		room.get_node("SouthWall").visible = south
+		var south_wall = room.get_node("SouthWall")
+		south_wall.visible = south
+		if room.has_node("SouthWallBody"):
+			var south_wall_body = room.get_node("SouthWallBody")
+			south_wall_body.get_node("CollisionShape2D").disabled = not south
 
 func _get_valid_directions(last_direction: Vector2) -> Array:
 	var valid_directions = []
