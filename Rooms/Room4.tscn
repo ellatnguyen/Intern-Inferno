@@ -3,8 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://7oeqdu22e1q5" path="res://Rooms/Room.tscn" id="1"]
 [ext_resource type="PackedScene" uid="uid://r88elkkvv60o" path="res://Rooms/Furniture and Traps/Door.tscn" id="2"]
 [ext_resource type="TileSet" uid="uid://b6ahcd27jnf2v" path="res://Rooms/TileSet.tres" id="2_cg1xf"]
-[ext_resource type="PackedScene" uid="uid://d11ye7ex6k5tq" path="res://Enemies/imp_enemy.tscn" id="3_xq25h"]
 [ext_resource type="PackedScene" uid="uid://de6upgnsf7rg7" path="res://vending_machine_stuff/vending.tscn" id="4_skung"]
+[ext_resource type="PackedScene" uid="uid://lftcgkvul8oi" path="res://Enemies/couple_enemy.tscn" id="5_khbcf"]
 
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(16, 8)
@@ -95,10 +95,7 @@ position = Vector2(175, 113)
 [node name="DoorWest" parent="Doors" index="2" instance=ExtResource("2")]
 position = Vector2(16, 112)
 
-[node name="ImpEnemy" parent="." index="12" instance=ExtResource("3_xq25h")]
-position = Vector2(48, 80)
-
-[node name="VendingMachine" parent="." index="13" instance=ExtResource("4_skung")]
+[node name="VendingMachine" parent="." index="12" instance=ExtResource("4_skung")]
 position = Vector2(159, 28)
 scale = Vector2(0.13, 0.13)
 
@@ -111,3 +108,6 @@ position = Vector2(80, 176)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetector" index="0"]
 position = Vector2(96, 177)
 shape = SubResource("1")
+
+[node name="CoupleEnemy" parent="." index="15" instance=ExtResource("5_khbcf")]
+position = Vector2(57, 76)
