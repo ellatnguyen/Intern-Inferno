@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://lftcgkvul8oi"]
+
+[ext_resource type="Script" path="res://Enemies/couple_enemy.gd" id="1_7tppk"]
+[ext_resource type="Texture2D" uid="uid://bcd6bxjjd0qpf" path="res://Assets/Character Assets/NPCs/Couple/Unsanctionedoffice_Couple-1.png" id="2_p7mt8"]
+[ext_resource type="Texture2D" uid="uid://x7h75qw88er0" path="res://Assets/Character Assets/NPCs/Couple/Unsanctionedoffice_Couple-2.png" id="3_1eiy2"]
+[ext_resource type="Texture2D" uid="uid://cns787x5f4jwm" path="res://Assets/Character Assets/NPCs/Couple/Unsanctionedoffice_Couple-3.png" id="4_f0qma"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bljew"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qgft7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_p7mt8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_1eiy2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_f0qma")
+}],
+"loop": true,
+"name": &"couple_overworld",
+"speed": 3.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s50h4"]
+
+[node name="CoupleEnemy" type="CharacterBody2D" groups=["enemies"]]
+script = ExtResource("1_7tppk")
+
+[node name="InteractionArea" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+scale = Vector2(2, 2)
+shape = SubResource("CircleShape2D_bljew")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["enemies"]]
+scale = Vector2(0.05, 0.05)
+sprite_frames = SubResource("SpriteFrames_qgft7")
+animation = &"couple_overworld"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.5, 1.3)
+shape = SubResource("CapsuleShape2D_s50h4")
