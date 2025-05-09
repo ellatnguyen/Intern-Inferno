@@ -117,7 +117,7 @@ position = Vector2(16, 111)
 [node name="SpiderEnemy" parent="." index="15" instance=ExtResource("4_i2gsh")]
 position = Vector2(71, 100)
 
-[node name="Area2D" type="Area2D" parent="." index="16"]
-
-[node name="MinotaurEnemy" parent="." index="17" instance=ExtResource("5_vvj2l")]
+[node name="MinotaurEnemy" parent="." index="16" instance=ExtResource("5_vvj2l")]
 position = Vector2(154, 141)
+
+[node name="Area2D" type="Area2D" parent="." index="17"]
