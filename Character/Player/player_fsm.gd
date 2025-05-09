@@ -11,11 +11,11 @@ var state: int = -1
 var previous_state: int = -1
 
 var player
-var animation_player
+var animated_sprite  # Changed from animation_player
 
-func init(p, anim):
+func init(p, sprite):
 	player = p
-	animation_player = anim
+	animated_sprite = sprite  # Use animated_sprite instead
 	set_state(states.idle)
 
 func _physics_process(delta: float) -> void:
@@ -25,11 +25,34 @@ func _physics_process(delta: float) -> void:
 		if transition != -1 and transition != state:
 			set_state(transition)
 
-
 func _state_logic(_delta: float) -> void:
 	if state in [states.idle, states.move]:
 		player.get_input()
 		player.move_player()
+		
+		# Update animation based on movement direction
+		if state == states.move:
+			update_movement_animation()
+
+func update_movement_animation() -> void:
+	# Get the dominant direction
+	var dir = player.mov_direction
+	
+	if dir.length() > 0.1:
+		if abs(dir.y) > abs(dir.x):
+			# Vertical movement is dominant
+			if dir.y > 0:
+				# Moving down/forward
+				if animated_sprite.animation != "forward":
+					animated_sprite.play("forward")
+			else:
+				# Moving up/backward
+				if animated_sprite.animation != "move":
+					animated_sprite.play("move")
+		else:
+			# Horizontal movement is dominant
+			if animated_sprite.animation != "move":
+				animated_sprite.play("move")
 
 func _get_transition() -> int:
 	match state:
@@ -50,13 +73,15 @@ func set_state(new_state: int) -> void:
 func _enter_state(_prev: int, new_state: int) -> void:
 	match new_state:
 		states.idle:
-			if animation_player.current_animation != "idle":
-				animation_player.play("idle")
+			if animated_sprite.animation != "idle":
+				animated_sprite.play("idle")
 			player.scale = Vector2(1, 1)  # Normal scale
 		states.move:
-			if animation_player.current_animation != "move":
-				animation_player.play("move")
+			# Initial animation will be set in update_movement_animation()
+			# Set default animation for initial state
+			animated_sprite.play("move")
 			player.scale = Vector2(2, 2)  # 2x scale
+			# Animation will be updated on next _state_logic call
 
 func _exit_state(_state_exited: int) -> void:
 	pass

@@ -40,8 +40,8 @@ func _ready() -> void:
 	}
 	
 	add_to_group("player")
-	animated_sprite.stop()
-	fsm.init(self, animation_player)
+	# Modified: No need to stop the animated_sprite as it will be controlled by FSM
+	fsm.init(self, animated_sprite)  # Changed to pass animated_sprite instead of animation_player
 	
 	var inventory_ui = get_tree().get_first_node_in_group("inventory_ui")
 	if inventory_ui:
@@ -77,10 +77,12 @@ func move_player() -> void:
 	velocity = velocity.limit_length(MAX_SPEED*speed_multiplier)
 
 func _process(_delta: float) -> void:
-	if mov_direction.x > 0:
-		animated_sprite.flip_h = true
-	elif mov_direction.x < 0:
-		animated_sprite.flip_h = false
+	# Handle horizontal flipping only when not moving forward/down
+	if animated_sprite.animation != "forward":
+		if mov_direction.x > 0:
+			animated_sprite.flip_h = true
+		elif mov_direction.x < 0:
+			animated_sprite.flip_h = false
 
 func switch_camera() -> void:
 	camera_main.position = position
@@ -162,4 +164,5 @@ func reset_after_battle() -> void:
 	velocity = Vector2.ZERO
 	mov_direction = Vector2.ZERO
 	fsm.set_state(fsm.states.idle)
+	# Modified to use animated_sprite directly instead of animation_player
 	animated_sprite.play("idle")
