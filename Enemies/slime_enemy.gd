@@ -3,8 +3,8 @@ extends "res://Enemies/base_enemy.gd"
 
 func _ready():
 	stats = {
-		"PER_DMG": 2,
-		"INT_DMG": 2,
+		"PER_DMG": 1,
+		"INT_DMG": 3,
 	}
 	dialogue_file_path = "res://Enemies/Dialogue/slime_dialogue.txt"
 	super._ready()

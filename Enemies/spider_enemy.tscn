@@ -1,10 +1,50 @@
-[gd_scene load_steps=9 format=3 uid="uid://d1fmm1r42h7uv"]
+[gd_scene load_steps=49 format=3 uid="uid://d1fmm1r42h7uv"]
 
 [ext_resource type="Script" path="res://Enemies/spider_enemy.gd" id="1_0qj70"]
-[ext_resource type="Texture2D" uid="uid://b6q1no2wrud1q" path="res://Assets/Character Assets/NPCs/Spider/spider_1.png" id="31_o1ac6"]
-[ext_resource type="Texture2D" uid="uid://da6glmfcjmop8" path="res://Assets/Character Assets/NPCs/Spider/spider_2.png" id="32_y6067"]
-[ext_resource type="Texture2D" uid="uid://owrogoginex3" path="res://Assets/Character Assets/NPCs/Spider/spider_3.png" id="33_inuyn"]
-[ext_resource type="Texture2D" uid="uid://ciopxwgfu3evj" path="res://Assets/Character Assets/NPCs/Spider/spider_4.png" id="34_dutnw"]
+[ext_resource type="Texture2D" uid="uid://bu4rshob7gh5x" path="res://Assets/Character Assets/NPCs/Spider/SpiderGrandmaOnMapanimSprite/SpiderGrandmaOnMapSprite1.png" id="2_r2lkn"]
+[ext_resource type="Texture2D" uid="uid://bog3uecpdkomj" path="res://Assets/Character Assets/NPCs/Spider/SpiderGrandmaOnMapanimSprite/SpiderGrandmaOnMapSprite2.png" id="3_hm8fn"]
+[ext_resource type="Texture2D" uid="uid://d3kp32griqrpb" path="res://Assets/Character Assets/NPCs/Spider/SpiderGrandmaOnMapanimSprite/SpiderGrandmaOnMapSprite3.png" id="4_xbgoy"]
+[ext_resource type="Texture2D" uid="uid://cymilts5du5yw" path="res://Assets/Character Assets/NPCs/Spider/SpiderGrandmaOnMapanimSprite/SpiderGrandmaOnMapSprite4.png" id="5_aub7x"]
+[ext_resource type="Texture2D" uid="uid://cgnejtusquf6v" path="res://Assets/Character Assets/NPCs/Spider/SpiderGrandmaOnMapanimSprite/SpiderGrandmaOnMapSprite5.png" id="6_wiwm7"]
+[ext_resource type="Texture2D" uid="uid://bbsuypur6p4be" path="res://Assets/Character Assets/NPCs/Spider/SpiderGrandmaOnMapanimSprite/SpiderGrandmaOnMapSprite6.png" id="7_p84u4"]
+[ext_resource type="Texture2D" uid="uid://b4cetjnb0i1vw" path="res://Assets/Character Assets/NPCs/Spider/SpiderGrandmaOnMapanimSprite/SpiderGrandmaOnMapSprite7.png" id="8_w0rwc"]
+[ext_resource type="Texture2D" uid="uid://b6k80eev48xal" path="res://Assets/Character Assets/NPCs/Spider/SpiderGrandmaOnMapanimSprite/SpiderGrandmaOnMapSprite8.png" id="9_ywdsr"]
+[ext_resource type="Texture2D" uid="uid://ddqbw2xkf2qj1" path="res://Assets/Character Assets/NPCs/Spider/SpiderGrandmaOnMapanimSprite/SpiderGrandmaOnMapSprite9.png" id="10_w1w77"]
+[ext_resource type="Texture2D" uid="uid://md710n834pdk" path="res://Assets/Character Assets/NPCs/Spider/SpiderGrandmaOnMapanimSprite/SpiderGrandmaOnMapSprite10.png" id="11_q1gdf"]
+[ext_resource type="Texture2D" uid="uid://chdjntstwumhi" path="res://Assets/Character Assets/NPCs/Spider/SpiderGrandmaOnMapanimSprite/SpiderGrandmaOnMapSprite11.png" id="12_0us6s"]
+[ext_resource type="Texture2D" uid="uid://c6sbls3exi12v" path="res://Assets/Character Assets/NPCs/Spider/SpiderGrandmaOnMapanimSprite/SpiderGrandmaOnMapSprite12.png" id="13_md4l5"]
+[ext_resource type="Texture2D" uid="uid://bxkhb7cfm0b7y" path="res://Assets/Character Assets/NPCs/Spider/SpiderGrandmaOnMapanimSprite/SpiderGrandmaOnMapSprite13.png" id="14_xrfdu"]
+[ext_resource type="Texture2D" uid="uid://70k3q7ylilkk" path="res://Assets/Character Assets/NPCs/Spider/SpiderGrandmaOnMapanimSprite/SpiderGrandmaOnMapSprite14.png" id="15_ia16c"]
+[ext_resource type="Texture2D" uid="uid://x0rkjsgcmt6t" path="res://Assets/Character Assets/NPCs/Spider/SpiderGrandmaOnMapanimSprite/SpiderGrandmaOnMapSprite15.png" id="16_dgmbg"]
+[ext_resource type="Texture2D" uid="uid://c4ruxavqc2g6q" path="res://Assets/Character Assets/NPCs/Spider/SpiderGrandmaOnMapanimSprite/SpiderGrandmaOnMapSprite16.png" id="17_howab"]
+[ext_resource type="Texture2D" uid="uid://bvfr2gm8jr0o0" path="res://Assets/Character Assets/NPCs/Spider/SpiderGrandmaOnMapanimSprite/SpiderGrandmaOnMapSprite17.png" id="18_p1x4c"]
+[ext_resource type="Texture2D" uid="uid://8jwjykagf4tr" path="res://Assets/Character Assets/NPCs/Spider/SpiderGrandmaOnMapanimSprite/SpiderGrandmaOnMapSprite18.png" id="19_3txwd"]
+[ext_resource type="Texture2D" uid="uid://ctt2bduxu1cpk" path="res://Assets/Character Assets/NPCs/Spider/SpiderGrandmaOnMapanimSprite/SpiderGrandmaOnMapSprite19.png" id="20_p7283"]
+[ext_resource type="Texture2D" uid="uid://r0j53mth62q0" path="res://Assets/Character Assets/NPCs/Spider/SpiderGrandmaOnMapanimSprite/SpiderGrandmaOnMapSprite20.png" id="21_6vbsn"]
+[ext_resource type="Texture2D" uid="uid://dj3lpfvvc5gep" path="res://Assets/Character Assets/NPCs/Spider/SpiderGrandmaOnMapanimSprite/SpiderGrandmaOnMapSprite21.png" id="22_m6g84"]
+[ext_resource type="Texture2D" uid="uid://c33p44sdjc2wy" path="res://Assets/Character Assets/NPCs/Spider/SpiderGrandmaOnMapanimSprite/SpiderGrandmaOnMapSprite22.png" id="23_g8wle"]
+[ext_resource type="Texture2D" uid="uid://de6mhkjq7hl0j" path="res://Assets/Character Assets/NPCs/Spider/SpiderGrandmaOnMapanimSprite/SpiderGrandmaOnMapSprite23.png" id="24_i27kx"]
+[ext_resource type="Texture2D" uid="uid://b2ybfr3lti1o6" path="res://Assets/Character Assets/NPCs/Spider/SpiderGrandmaOnMapanimSprite/SpiderGrandmaOnMapSprite24.png" id="25_mnsko"]
+[ext_resource type="Texture2D" uid="uid://3upuhno3kq8t" path="res://Assets/Character Assets/NPCs/Spider/SpiderGrandmaOnMapanimSprite/SpiderGrandmaOnMapSprite25.png" id="26_6ral4"]
+[ext_resource type="Texture2D" uid="uid://ckjihsbigxx3m" path="res://Assets/Character Assets/NPCs/Spider/SpiderGrandmaOnMapanimSprite/SpiderGrandmaOnMapSprite26.png" id="27_e776q"]
+[ext_resource type="Texture2D" uid="uid://dk05pd1jngpk4" path="res://Assets/Character Assets/NPCs/Spider/SpiderGrandmaOnMapanimSprite/SpiderGrandmaOnMapSprite27.png" id="28_e8tr3"]
+[ext_resource type="Texture2D" uid="uid://dnb35cp7wqk5q" path="res://Assets/Character Assets/NPCs/Spider/SpiderGrandmaOnMapanimSprite/SpiderGrandmaOnMapSprite28.png" id="29_dngvy"]
+[ext_resource type="Texture2D" uid="uid://cpyy85kk8aqe7" path="res://Assets/Character Assets/NPCs/Spider/SpiderGrandmaOnMapanimSprite/SpiderGrandmaOnMapSprite29.png" id="30_ga5es"]
+[ext_resource type="Texture2D" uid="uid://dfan7n7uj7aqn" path="res://Assets/Character Assets/NPCs/Spider/SpiderGrandmaOnMapanimSprite/SpiderGrandmaOnMapSprite30.png" id="31_jn8kl"]
+[ext_resource type="Texture2D" uid="uid://bqqkey6ysju34" path="res://Assets/Character Assets/NPCs/Spider/SpiderGrandmaOnMapanimSprite/SpiderGrandmaOnMapSprite31.png" id="32_jsgtd"]
+[ext_resource type="Texture2D" uid="uid://crb6ig2ibcfnc" path="res://Assets/Character Assets/NPCs/Spider/SpiderGrandmaOnMapanimSprite/SpiderGrandmaOnMapSprite32.png" id="33_mftiu"]
+[ext_resource type="Texture2D" uid="uid://s2k68lyo7o0q" path="res://Assets/Character Assets/NPCs/Spider/SpiderGrandmaOnMapanimSprite/SpiderGrandmaOnMapSprite33.png" id="34_05po3"]
+[ext_resource type="Texture2D" uid="uid://da7ifjexacxg3" path="res://Assets/Character Assets/NPCs/Spider/SpiderGrandmaOnMapanimSprite/SpiderGrandmaOnMapSprite34.png" id="35_tqf2p"]
+[ext_resource type="Texture2D" uid="uid://4t7un4kdsf67" path="res://Assets/Character Assets/NPCs/Spider/SpiderGrandmaOnMapanimSprite/SpiderGrandmaOnMapSprite35.png" id="36_vla4n"]
+[ext_resource type="Texture2D" uid="uid://cxxhy264tefi" path="res://Assets/Character Assets/NPCs/Spider/SpiderGrandmaOnMapanimSprite/SpiderGrandmaOnMapSprite36.png" id="37_3db6s"]
+[ext_resource type="Texture2D" uid="uid://cqocqogr7wqki" path="res://Assets/Character Assets/NPCs/Spider/SpiderGrandmaOnMapanimSprite/SpiderGrandmaOnMapSprite37.png" id="38_6qki0"]
+[ext_resource type="Texture2D" uid="uid://kni7vr1pxoud" path="res://Assets/Character Assets/NPCs/Spider/SpiderGrandmaOnMapanimSprite/SpiderGrandmaOnMapSprite38.png" id="39_1eskm"]
+[ext_resource type="Texture2D" uid="uid://jiweagyhudca" path="res://Assets/Character Assets/NPCs/Spider/SpiderGrandmaOnMapanimSprite/SpiderGrandmaOnMapSprite39.png" id="40_hbg0f"]
+[ext_resource type="Texture2D" uid="uid://bgcw8od2oqrys" path="res://Assets/Character Assets/NPCs/Spider/SpiderGrandmaOnMapanimSprite/SpiderGrandmaOnMapSprite40.png" id="41_uiqsm"]
+[ext_resource type="Texture2D" uid="uid://c47wgrccf0v3s" path="res://Assets/Character Assets/NPCs/Spider/SpiderGrandmaOnMapanimSprite/SpiderGrandmaOnMapSprite41.png" id="42_q4ksv"]
+[ext_resource type="Texture2D" uid="uid://d1li0qw5mtq0r" path="res://Assets/Character Assets/NPCs/Spider/SpiderGrandmaOnMapanimSprite/SpiderGrandmaOnMapSprite42.png" id="43_rrvhf"]
+[ext_resource type="Texture2D" uid="uid://ck0jejptrysly" path="res://Assets/Character Assets/NPCs/Spider/SpiderGrandmaOnMapanimSprite/SpiderGrandmaOnMapSprite43.png" id="44_o6e0b"]
+[ext_resource type="Texture2D" uid="uid://d4fueq67s4l6g" path="res://Assets/Character Assets/NPCs/Spider/SpiderGrandmaOnMapanimSprite/SpiderGrandmaOnMapSprite44.png" id="45_82ro4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bljew"]
 
@@ -12,20 +52,140 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("31_o1ac6")
+"texture": ExtResource("2_r2lkn")
 }, {
 "duration": 1.0,
-"texture": ExtResource("32_y6067")
+"texture": ExtResource("3_hm8fn")
 }, {
 "duration": 1.0,
-"texture": ExtResource("33_inuyn")
+"texture": ExtResource("4_xbgoy")
 }, {
 "duration": 1.0,
-"texture": ExtResource("34_dutnw")
+"texture": ExtResource("5_aub7x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_wiwm7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_p84u4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_w0rwc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ywdsr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_w1w77")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_q1gdf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_0us6s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_md4l5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_xrfdu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_ia16c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_dgmbg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_howab")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_p1x4c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_3txwd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_p7283")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_6vbsn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_m6g84")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_g8wle")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_i27kx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_mnsko")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_6ral4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_e776q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_e8tr3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_dngvy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_ga5es")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_jn8kl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_jsgtd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_mftiu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_05po3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_tqf2p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_vla4n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_3db6s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_6qki0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_1eskm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_hbg0f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_uiqsm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_q4ksv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_rrvhf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_o6e0b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_82ro4")
 }],
 "loop": true,
 "name": &"spider_overworld",
-"speed": 1.0
+"speed": 15.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s50h4"]
@@ -44,10 +204,10 @@ shape = SubResource("CircleShape2D_bljew")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["enemies"]]
 position = Vector2(5, -6)
-scale = Vector2(0.03, 0.03)
+scale = Vector2(0.08, 0.08)
 sprite_frames = SubResource("SpriteFrames_qgft7")
 animation = &"spider_overworld"
-frame_progress = 0.0580818
+frame_progress = 0.868567
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(5, -4)

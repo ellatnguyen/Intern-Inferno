@@ -1,4 +1,4 @@
-[gd_scene load_steps=90 format=3 uid="uid://cq5rvx78xrn6m"]
+[gd_scene load_steps=89 format=3 uid="uid://cq5rvx78xrn6m"]
 
 [ext_resource type="Script" path="res://UI/end_cutscene.gd" id="1_iu6l8"]
 [ext_resource type="Texture2D" uid="uid://dx6lwtqrl0nsg" path="res://Assets/Ending cutscene assets/Shotonewalkup/Shotonewalkin1.png" id="2_oiw0i"]
@@ -87,7 +87,6 @@
 [ext_resource type="Texture2D" uid="uid://d3v0lwf5miu5s" path="res://Assets/Ending cutscene assets/Shotonewalkup/Shotonewalkin84.png" id="85_cdt5k"]
 [ext_resource type="Texture2D" uid="uid://bdt28qtwxlfh" path="res://Assets/Ending cutscene assets/Shotonewalkup/Shotonewalkin85.png" id="86_f7tcl"]
 [ext_resource type="Texture2D" uid="uid://cuxdtmioj803c" path="res://Assets/Ending cutscene assets/Shotonewalkup/Shotonewalkin86.png" id="87_l8e4y"]
-[ext_resource type="Texture2D" uid="uid://bdwutpiegch38" path="res://Assets/Ending cutscene assets/Shotonewalkup/Shotonewalkin87.png" id="88_sgcw8"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5wavi"]
 animations = [{
@@ -349,9 +348,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("87_l8e4y")
-}, {
-"duration": 1.0,
-"texture": ExtResource("88_sgcw8")
 }],
 "loop": false,
 "name": &"default",
@@ -365,5 +361,5 @@ script = ExtResource("1_iu6l8")
 position = Vector2(576.222, 327)
 scale = Vector2(0.897222, 0.897222)
 sprite_frames = SubResource("SpriteFrames_5wavi")
-frame = 86
+frame = 85
 frame_progress = 1.0
