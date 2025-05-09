@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://m2lxqkstfmij"]
+[gd_scene load_steps=9 format=3 uid="uid://m2lxqkstfmij"]
 
 [ext_resource type="Script" path="res://UI/end_screen.gd" id="1_5xi5j"]
 [ext_resource type="Texture2D" uid="uid://kpq5xah1fgc2" path="res://UI/UIAssets/win screen.PNG" id="1_kyoet"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://ch4yryl1j8eyx" path="res://Assets/Death Screen/Untitled_Artwork-2 8.PNG" id="5_376db"]
 [ext_resource type="Texture2D" uid="uid://ojns20hkoh7t" path="res://Assets/Death Screen/Untitled_Artwork-4 7.png" id="6_g73kn"]
 [ext_resource type="Texture2D" uid="uid://bhkbbxjif1if8" path="res://Assets/Death Screen/Untitled_Artwork-5 3.PNG" id="7_8l6xk"]
+[ext_resource type="Texture2D" uid="uid://uwu0mqryyjql" path="res://Assets/credits 1.png" id="8_13xe0"]
 
 [node name="WinScreen" type="Control"]
 layout_mode = 3
@@ -40,24 +41,39 @@ text = "PRESS ESC TO MAIN MENU"
 metadata/_edit_lock_ = true
 
 [node name="UntitledArtwork-17" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(577, 324)
 scale = Vector2(0.9, 0.9)
 texture = ExtResource("4_26myd")
 
 [node name="UntitledArtwork-28" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(576.556, 325.5)
 scale = Vector2(0.898611, 0.898611)
 texture = ExtResource("5_376db")
 
 [node name="UntitledArtwork-47" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(574.889, 328.5)
 scale = Vector2(0.901389, 0.901389)
 texture = ExtResource("6_g73kn")
 
 [node name="UntitledArtwork-53" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(575.333, 326.5)
 scale = Vector2(0.895833, 0.895833)
 texture = ExtResource("7_8l6xk")
+
+[node name="Credits1" type="Sprite2D" parent="."]
+position = Vector2(576, 327)
+scale = Vector2(0.449306, 0.449306)
+texture = ExtResource("8_13xe0")
+
+[node name="UntitledArtwork-29" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(575.555, 423.5)
+scale = Vector2(0.579167, 0.579167)
+texture = ExtResource("5_376db")
 
 [connection signal="pressed" from="RestartButton" to="." method="_on_restart_button_pressed"]
 [connection signal="pressed" from="MainMenuButton" to="." method="_on_esc_button_pressed"]

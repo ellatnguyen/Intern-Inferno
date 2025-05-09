@@ -56,7 +56,7 @@ func _enter_state(_prev: int, new_state: int) -> void:
 		states.move:
 			if animation_player.current_animation != "move":
 				animation_player.play("move")
-			player.scale = Vector2(2, 2)  # 2x scale
+			player.scale = Vector2(2.5, 2.5)  # 2x scale
 
 func _exit_state(_state_exited: int) -> void:
 	pass
