@@ -1,21 +1,38 @@
-[gd_scene load_steps=20 format=3 uid="uid://dhupa63vesanu"]
+[gd_scene load_steps=37 format=3 uid="uid://dhupa63vesanu"]
 
 [ext_resource type="Script" path="res://Enemies/minotaur_enemy.gd" id="1_6ehj4"]
-[ext_resource type="Texture2D" uid="uid://b6hntjegnjqdk" path="res://Assets/Character Assets/NPCs/Minotaur/onmapspriteminotaur1.png" id="2_t3yeh"]
-[ext_resource type="Texture2D" uid="uid://ce015yx1cj5aw" path="res://Assets/Character Assets/NPCs/Minotaur/onmapspriteminotaur2.png" id="3_aybmh"]
-[ext_resource type="Texture2D" uid="uid://c3glg0tdg4njb" path="res://Assets/Character Assets/NPCs/Minotaur/onmapspriteminotaur10.png" id="4_5b18m"]
-[ext_resource type="Texture2D" uid="uid://cmnrs3opp4yrg" path="res://Assets/Character Assets/NPCs/Minotaur/onmapspriteminotaur11.png" id="5_pi44t"]
-[ext_resource type="Texture2D" uid="uid://bup8ymfo2tbyw" path="res://Assets/Character Assets/NPCs/Minotaur/onmapspriteminotaur12.png" id="6_gyrqa"]
-[ext_resource type="Texture2D" uid="uid://c5a7of5mrhd5f" path="res://Assets/Character Assets/NPCs/Minotaur/onmapspriteminotaur13.png" id="7_aptad"]
-[ext_resource type="Texture2D" uid="uid://b63fvcvjwgoyt" path="res://Assets/Character Assets/NPCs/Minotaur/onmapspriteminotaur14.png" id="8_5lyrl"]
-[ext_resource type="Texture2D" uid="uid://csejlstot0ex4" path="res://Assets/Character Assets/NPCs/Minotaur/onmapspriteminotaur15.png" id="9_l75mb"]
-[ext_resource type="Texture2D" uid="uid://pcjojsk5g6pu" path="res://Assets/Character Assets/NPCs/Minotaur/onmapspriteminotaur16.png" id="10_lml7o"]
-[ext_resource type="Texture2D" uid="uid://2ngmeu76pqfr" path="res://Assets/Character Assets/NPCs/Minotaur/onmapspriteminotaur17.png" id="11_0jkec"]
-[ext_resource type="Texture2D" uid="uid://c6dekj5rbadql" path="res://Assets/Character Assets/NPCs/Minotaur/onmapspriteminotaur18.png" id="12_gshid"]
-[ext_resource type="Texture2D" uid="uid://bhkyoyk358d1p" path="res://Assets/Character Assets/NPCs/Minotaur/onmapspriteminotaur19.png" id="13_6e61x"]
-[ext_resource type="Texture2D" uid="uid://dwwni6wm1ybx5" path="res://Assets/Character Assets/NPCs/Minotaur/onmapspriteminotaur20.png" id="14_3p5vg"]
-[ext_resource type="Texture2D" uid="uid://cejgf5tlf7xbg" path="res://Assets/Character Assets/NPCs/Minotaur/onmapspriteminotaur21.png" id="15_o7pmc"]
-[ext_resource type="Texture2D" uid="uid://dr4ufmpd7lds2" path="res://Assets/Character Assets/NPCs/Minotaur/onmapspriteminotaur22.png" id="16_ec5ok"]
+[ext_resource type="Texture2D" uid="uid://b44orobjx3n38" path="res://Assets/Character Assets/NPCs/Minotaur/onmapspriteminotaur1.png" id="2_t3yeh"]
+[ext_resource type="Texture2D" uid="uid://c5mtb5gfx21cl" path="res://Assets/Character Assets/NPCs/Minotaur/onmapspriteminotaur2.png" id="3_aybmh"]
+[ext_resource type="Texture2D" uid="uid://dcnoye6qlksxv" path="res://Assets/Character Assets/NPCs/Minotaur/onmapspriteminotaur10.png" id="4_5b18m"]
+[ext_resource type="Texture2D" uid="uid://bwkwxyd5hsqlw" path="res://Assets/Character Assets/NPCs/Minotaur/onmapspriteminotaur3.png" id="4_c0f7q"]
+[ext_resource type="Texture2D" uid="uid://bcr5dd8uej8pi" path="res://Assets/Character Assets/NPCs/Minotaur/onmapspriteminotaur4.png" id="5_phxro"]
+[ext_resource type="Texture2D" uid="uid://dkow4opnmwktf" path="res://Assets/Character Assets/NPCs/Minotaur/onmapspriteminotaur11.png" id="5_pi44t"]
+[ext_resource type="Texture2D" uid="uid://b2nwwcg58ykul" path="res://Assets/Character Assets/NPCs/Minotaur/onmapspriteminotaur5.png" id="6_b3pfn"]
+[ext_resource type="Texture2D" uid="uid://ce0rgdgew005b" path="res://Assets/Character Assets/NPCs/Minotaur/onmapspriteminotaur12.png" id="6_gyrqa"]
+[ext_resource type="Texture2D" uid="uid://pwqpposp0gte" path="res://Assets/Character Assets/NPCs/Minotaur/onmapspriteminotaur13.png" id="7_aptad"]
+[ext_resource type="Texture2D" uid="uid://brddplt4415r6" path="res://Assets/Character Assets/NPCs/Minotaur/onmapspriteminotaur6.png" id="7_ejwyd"]
+[ext_resource type="Texture2D" uid="uid://bjc1emy1467fw" path="res://Assets/Character Assets/NPCs/Minotaur/onmapspriteminotaur14.png" id="8_5lyrl"]
+[ext_resource type="Texture2D" uid="uid://cxfoxkha31nhe" path="res://Assets/Character Assets/NPCs/Minotaur/onmapspriteminotaur7.png" id="8_43a6w"]
+[ext_resource type="Texture2D" uid="uid://cngcsrxicsgin" path="res://Assets/Character Assets/NPCs/Minotaur/onmapspriteminotaur15.png" id="9_l75mb"]
+[ext_resource type="Texture2D" uid="uid://c6bvl746sy4qy" path="res://Assets/Character Assets/NPCs/Minotaur/onmapspriteminotaur8.png" id="9_onw10"]
+[ext_resource type="Texture2D" uid="uid://c8l62cgxych0u" path="res://Assets/Character Assets/NPCs/Minotaur/onmapspriteminotaur16.png" id="10_lml7o"]
+[ext_resource type="Texture2D" uid="uid://bx3jefwludtyi" path="res://Assets/Character Assets/NPCs/Minotaur/onmapspriteminotaur9.png" id="10_rmqef"]
+[ext_resource type="Texture2D" uid="uid://dayjn330fdqgp" path="res://Assets/Character Assets/NPCs/Minotaur/onmapspriteminotaur17.png" id="11_0jkec"]
+[ext_resource type="Texture2D" uid="uid://d2a344yu6pnld" path="res://Assets/Character Assets/NPCs/Minotaur/onmapspriteminotaur18.png" id="12_gshid"]
+[ext_resource type="Texture2D" uid="uid://bytx1b13bteoe" path="res://Assets/Character Assets/NPCs/Minotaur/onmapspriteminotaur19.png" id="13_6e61x"]
+[ext_resource type="Texture2D" uid="uid://cbrc1oqnrdrdo" path="res://Assets/Character Assets/NPCs/Minotaur/onmapspriteminotaur20.png" id="14_3p5vg"]
+[ext_resource type="Texture2D" uid="uid://co3nqrckmy3px" path="res://Assets/Character Assets/NPCs/Minotaur/onmapspriteminotaur21.png" id="15_o7pmc"]
+[ext_resource type="Texture2D" uid="uid://dk226tlwu6sxh" path="res://Assets/Character Assets/NPCs/Minotaur/onmapspriteminotaur22.png" id="16_ec5ok"]
+[ext_resource type="Texture2D" uid="uid://dxkmst8x5217e" path="res://Assets/Character Assets/NPCs/Minotaur/onmapspriteminotaur23.png" id="24_812lh"]
+[ext_resource type="Texture2D" uid="uid://bl7c7udjaf5n" path="res://Assets/Character Assets/NPCs/Minotaur/onmapspriteminotaur24.png" id="25_hs66k"]
+[ext_resource type="Texture2D" uid="uid://dah5uc65r11i5" path="res://Assets/Character Assets/NPCs/Minotaur/onmapspriteminotaur25.png" id="26_vpjx6"]
+[ext_resource type="Texture2D" uid="uid://cdlt7mlp2sowt" path="res://Assets/Character Assets/NPCs/Minotaur/onmapspriteminotaur26.png" id="27_nixhx"]
+[ext_resource type="Texture2D" uid="uid://depqu3vr84xn5" path="res://Assets/Character Assets/NPCs/Minotaur/onmapspriteminotaur27.png" id="28_6n5bh"]
+[ext_resource type="Texture2D" uid="uid://cohuqxmy5wk1" path="res://Assets/Character Assets/NPCs/Minotaur/onmapspriteminotaur28.png" id="29_s0lj8"]
+[ext_resource type="Texture2D" uid="uid://c0p8d7w6bp7q6" path="res://Assets/Character Assets/NPCs/Minotaur/onmapspriteminotaur29.png" id="30_mgg4t"]
+[ext_resource type="Texture2D" uid="uid://bv5h5smepgdx7" path="res://Assets/Character Assets/NPCs/Minotaur/onmapspriteminotaur30.png" id="31_x25lc"]
+[ext_resource type="Texture2D" uid="uid://dmnmqb6xr8iaq" path="res://Assets/Character Assets/NPCs/Minotaur/onmapspriteminotaur31.png" id="32_m4g60"]
+[ext_resource type="Texture2D" uid="uid://bqdql8108xaln" path="res://Assets/Character Assets/NPCs/Minotaur/onmapspriteminotaur32.png" id="33_wjgfm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bljew"]
 
@@ -27,6 +44,27 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("3_aybmh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_c0f7q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_phxro")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_b3pfn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ejwyd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_43a6w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_onw10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_rmqef")
 }, {
 "duration": 1.0,
 "texture": ExtResource("4_5b18m")
@@ -66,6 +104,36 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("16_ec5ok")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_812lh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_hs66k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_vpjx6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_nixhx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_6n5bh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_s0lj8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_mgg4t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_x25lc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_m4g60")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_wjgfm")
 }],
 "loop": true,
 "name": &"minotaur_overworld",
@@ -86,11 +154,10 @@ scale = Vector2(3, 3)
 shape = SubResource("CircleShape2D_bljew")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["enemies"]]
-scale = Vector2(0.05, 0.05)
+scale = Vector2(0.07, 0.07)
 sprite_frames = SubResource("SpriteFrames_qgft7")
 animation = &"minotaur_overworld"
-frame = 3
-frame_progress = 0.316596
+frame_progress = 0.987199
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -4)
