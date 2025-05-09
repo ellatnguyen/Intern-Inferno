@@ -4,7 +4,7 @@
 [ext_resource type="TileSet" uid="uid://b6ahcd27jnf2v" path="res://Rooms/TileSet.tres" id="2_wc5w8"]
 [ext_resource type="PackedScene" uid="uid://r88elkkvv60o" path="res://Rooms/Furniture and Traps/Door.tscn" id="3_wqpmt"]
 [ext_resource type="PackedScene" uid="uid://d1fmm1r42h7uv" path="res://Enemies/spider_enemy.tscn" id="4_i2gsh"]
-[ext_resource type="PackedScene" uid="uid://d11ye7ex6k5tq" path="res://Enemies/imp_enemy.tscn" id="5_b31bs"]
+[ext_resource type="PackedScene" uid="uid://dhupa63vesanu" path="res://Enemies/minotaur_enemy.tscn" id="5_vvj2l"]
 
 [node name="Room0" instance=ExtResource("1")]
 
@@ -117,7 +117,7 @@ position = Vector2(16, 111)
 [node name="SpiderEnemy" parent="." index="15" instance=ExtResource("4_i2gsh")]
 position = Vector2(71, 100)
 
-[node name="ImpEnemy" parent="." index="16" instance=ExtResource("5_b31bs")]
-position = Vector2(153, 148)
+[node name="MinotaurEnemy" parent="." index="16" instance=ExtResource("5_vvj2l")]
+position = Vector2(154, 141)
 
 [node name="Area2D" type="Area2D" parent="." index="17"]

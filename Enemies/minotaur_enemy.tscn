@@ -82,7 +82,7 @@ collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
-scale = Vector2(2, 2)
+scale = Vector2(3, 3)
 shape = SubResource("CircleShape2D_bljew")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["enemies"]]
@@ -93,5 +93,6 @@ frame = 3
 frame_progress = 0.316596
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(0.5, 1.3)
+position = Vector2(0, -4)
+scale = Vector2(0.7, 0.3)
 shape = SubResource("CapsuleShape2D_s50h4")

@@ -110,6 +110,7 @@ position = Vector2(16, 111)
 
 [node name="ImpEnemy" parent="." index="15" instance=ExtResource("2_gb20m")]
 position = Vector2(138, 154)
+scale = Vector2(0.7, 0.7)
 
 [node name="VendingMachine" parent="." index="16" instance=ExtResource("3_ddpth")]
 position = Vector2(159, 28)

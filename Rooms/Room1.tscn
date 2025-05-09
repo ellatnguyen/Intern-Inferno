@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://r88elkkvv60o" path="res://Rooms/Furniture and Traps/Door.tscn" id="2"]
 [ext_resource type="TileSet" uid="uid://b6ahcd27jnf2v" path="res://Rooms/TileSet.tres" id="2_jjr4w"]
 [ext_resource type="PackedScene" uid="uid://c6bdn56nwfpo8" path="res://Enemies/slime_enemy.tscn" id="4_d7y20"]
-[ext_resource type="PackedScene" uid="uid://d1fmm1r42h7uv" path="res://Enemies/spider_enemy.tscn" id="5_glhjk"]
+[ext_resource type="PackedScene" uid="uid://lftcgkvul8oi" path="res://Enemies/couple_enemy.tscn" id="5_7n141"]
 
 [node name="Room1" instance=ExtResource("1")]
 
@@ -114,6 +114,5 @@ position = Vector2(16, 111)
 [node name="SlimeEnemy" parent="." index="15" instance=ExtResource("4_d7y20")]
 position = Vector2(48, 162)
 
-[node name="SpiderEnemy" parent="." index="16" instance=ExtResource("5_glhjk")]
-z_index = 1
-position = Vector2(154, 35)
+[node name="CoupleEnemy" parent="." index="16" instance=ExtResource("5_7n141")]
+position = Vector2(137, 34)

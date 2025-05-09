@@ -1,11 +1,9 @@
-
-[gd_scene load_steps=6 format=3 uid="uid://dch821e805o68"]
-
+[gd_scene load_steps=5 format=3 uid="uid://dch821e805o68"]
 
 [ext_resource type="PackedScene" uid="uid://7oeqdu22e1q5" path="res://Rooms/Room.tscn" id="1"]
 [ext_resource type="PackedScene" uid="uid://r88elkkvv60o" path="res://Rooms/Furniture and Traps/Door.tscn" id="2"]
 [ext_resource type="TileSet" uid="uid://b6ahcd27jnf2v" path="res://Rooms/TileSet.tres" id="2_1vjn3"]
-[ext_resource type="PackedScene" uid="uid://dhupa63vesanu" path="res://Enemies/minotaur_enemy.tscn" id="4_qlj7g"]
+[ext_resource type="PackedScene" uid="uid://dhupa63vesanu" path="res://Enemies/minotaur_enemy.tscn" id="4_8xws0"]
 
 [node name="Room3" instance=ExtResource("1")]
 
@@ -111,11 +109,5 @@ position = Vector2(175, 112)
 [node name="DoorWest" parent="Doors" index="2" instance=ExtResource("2")]
 position = Vector2(16, 111)
 
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetector" index="0"]
-position = Vector2(96, 176)
-shape = SubResource("1")
-
-[node name="MinotaurEnemy" parent="." index="14" instance=ExtResource("4_qlj7g")]
-position = Vector2(96, 104)
-
+[node name="MinotaurEnemy" parent="." index="15" instance=ExtResource("4_8xws0")]
+position = Vector2(73, 139)
