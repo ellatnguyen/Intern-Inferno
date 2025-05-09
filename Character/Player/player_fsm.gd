@@ -79,7 +79,7 @@ func _enter_state(_prev: int, new_state: int) -> void:
 		states.move:
 			# Initial animation will be set in update_movement_animation()
 			animated_sprite.play("move")
-			player.scale = Vector2(2, 2)  # 2x scale
+			player.scale = Vector2(2.5, 2.5)  # 2x scale
 
 func _exit_state(_state_exited: int) -> void:
 	pass
