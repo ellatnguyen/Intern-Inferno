@@ -204,10 +204,10 @@ shape = SubResource("CircleShape2D_bljew")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["enemies"]]
 position = Vector2(5, -6)
-scale = Vector2(0.08, 0.08)
+scale = Vector2(0.07, 0.07)
 sprite_frames = SubResource("SpriteFrames_qgft7")
 animation = &"spider_overworld"
-frame_progress = 0.868567
+frame_progress = 0.285055
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(5, -4)
