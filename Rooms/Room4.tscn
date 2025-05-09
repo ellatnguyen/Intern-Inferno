@@ -1,13 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://wwy67tvhqmv4"]
+[gd_scene load_steps=6 format=3 uid="uid://wwy67tvhqmv4"]
 
 [ext_resource type="PackedScene" uid="uid://7oeqdu22e1q5" path="res://Rooms/Room.tscn" id="1"]
 [ext_resource type="PackedScene" uid="uid://r88elkkvv60o" path="res://Rooms/Furniture and Traps/Door.tscn" id="2"]
 [ext_resource type="TileSet" uid="uid://b6ahcd27jnf2v" path="res://Rooms/TileSet.tres" id="2_cg1xf"]
 [ext_resource type="PackedScene" uid="uid://d11ye7ex6k5tq" path="res://Enemies/imp_enemy.tscn" id="3_xq25h"]
 [ext_resource type="PackedScene" uid="uid://de6upgnsf7rg7" path="res://vending_machine_stuff/vending.tscn" id="4_skung"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ci5ny"]
-size = Vector2(20, 18.6667)
 
 [node name="Room4" instance=ExtResource("1")]
 
@@ -49,12 +46,6 @@ layer_0/tile_data = PackedInt32Array(7602187, 4390963, 29, 7667723, 4390963, 30,
 position = Vector2(16, 83)
 collision_layer = 7
 collision_mask = 7
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WestWallBody" index="0"]
-visible = false
-position = Vector2(-1, 18)
-scale = Vector2(0.1, 3)
-shape = SubResource("RectangleShape2D_ci5ny")
 
 [node name="WestWall" type="TileMap" parent="." index="7"]
 visible = false
@@ -145,10 +136,9 @@ position = Vector2(175, 113)
 position = Vector2(16, 112)
 
 [node name="ImpEnemy" parent="." index="19" instance=ExtResource("3_xq25h")]
-visible = false
 position = Vector2(104, 154)
+scale = Vector2(0.7, 0.7)
 
 [node name="VendingMachine" parent="." index="20" instance=ExtResource("4_skung")]
-visible = false
 position = Vector2(159, 28)
 scale = Vector2(0.13, 0.13)
