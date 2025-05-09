@@ -3,7 +3,7 @@ extends "res://Enemies/base_enemy.gd"
 
 func _ready():
 	stats = {
-		"PER_DMG": 2,
+		"PER_DMG": 1,
 		"INT_DMG": 2,
 	}
 	dialogue_file_path = "res://Enemies/Dialogue/couple_dialogue.txt"
