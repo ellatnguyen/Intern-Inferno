@@ -1,64 +1,64 @@
 [gd_scene load_steps=22 format=3 uid="uid://u6okdsefflug"]
 
-[ext_resource type="Script" path="res://map.gd" id="1_och07"]
-[ext_resource type="PackedScene" uid="uid://smetfn8s0tt1" path="res://Character/Player/Player.tscn" id="3_4rtyr"]
-[ext_resource type="Script" path="res://Rooms.gd" id="4"]
-[ext_resource type="PackedScene" uid="uid://cwdhjfvc85pcm" path="res://UI/timerui.tscn" id="4_nm2n1"]
-[ext_resource type="PackedScene" uid="uid://bwwpnla8wmau4" path="res://inventory/inv_UI.tscn" id="5_e2ith"]
-[ext_resource type="PackedScene" uid="uid://dehtxhciuiucy" path="res://DialogueBattle.tscn" id="6_86hdy"]
-[ext_resource type="Script" path="res://Character/Player/cooldown_bar.gd" id="7_jbfgh"]
-[ext_resource type="Texture2D" uid="uid://d3jf20mbmx43u" path="res://Assets/Cool Down Bar/Cool_Down_Bar-1.png" id="8_x6884"]
-[ext_resource type="Texture2D" uid="uid://de4m8a388ulal" path="res://Assets/Cool Down Bar/Cool_Down_Bar-2.png" id="9_mdt4f"]
-[ext_resource type="Texture2D" uid="uid://duy8mjdc0xrrk" path="res://Assets/Cool Down Bar/Cool_Down_Bar-3.png" id="10_gqwxx"]
-[ext_resource type="Texture2D" uid="uid://ugoqsrpa50rs" path="res://Assets/Cool Down Bar/Cool_Down_Bar-4.png" id="11_1tjyb"]
-[ext_resource type="Texture2D" uid="uid://dsowgapp7x52x" path="res://Assets/Cool Down Bar/Cool_Down_Bar-5.png" id="12_3jx2d"]
-[ext_resource type="Texture2D" uid="uid://cktj7svtufhfv" path="res://Assets/Cool Down Bar/Cool_Down_Bar-6.png" id="13_j5ukp"]
-[ext_resource type="Texture2D" uid="uid://d4iwomk71el1s" path="res://Assets/Cool Down Bar/Cool_Down_Bar-7.png" id="14_eu3es"]
-[ext_resource type="Texture2D" uid="uid://dfld3pttbrhma" path="res://Assets/Cool Down Bar/Cool_Down_Bar-8.png" id="15_r3pbq"]
-[ext_resource type="Texture2D" uid="uid://1mfl0mv26s5k" path="res://Assets/Cool Down Bar/Cool_Down_Bar-9.png" id="16_x8yob"]
-[ext_resource type="Texture2D" uid="uid://b1u52gahfa0yy" path="res://Assets/Cool Down Bar/Cool_Down_Bar-10.png" id="17_dwv72"]
-[ext_resource type="Texture2D" uid="uid://darkwodnj1ay3" path="res://Assets/Cool Down Bar/Cool_Down_Bar-11.png" id="18_dw04f"]
-[ext_resource type="Texture2D" uid="uid://dp5iqwiw68akg" path="res://Assets/Cool Down Bar/Cool_Down_Bar-12.png" id="19_bsy7a"]
-[ext_resource type="Texture2D" uid="uid://5ymstqrvco1v" path="res://Assets/Cool Down Bar/Cool_Down_Bar-13.png" id="20_n6q3l"]
+[ext_resource type="Script" path="res://map.gd" id="1_ly7es"]
+[ext_resource type="Script" path="res://Rooms.gd" id="2_h2w77"]
+[ext_resource type="PackedScene" uid="uid://smetfn8s0tt1" path="res://Character/Player/Player.tscn" id="3_0akms"]
+[ext_resource type="PackedScene" uid="uid://bwwpnla8wmau4" path="res://inventory/inv_UI.tscn" id="4_bdxsq"]
+[ext_resource type="PackedScene" uid="uid://dehtxhciuiucy" path="res://DialogueBattle.tscn" id="5_fp5ma"]
+[ext_resource type="PackedScene" uid="uid://cwdhjfvc85pcm" path="res://UI/timerui.tscn" id="6_qmv6f"]
+[ext_resource type="Script" path="res://Character/Player/cooldown_bar.gd" id="7_x3fyu"]
+[ext_resource type="Texture2D" uid="uid://d3jf20mbmx43u" path="res://Assets/Cool Down Bar/Cool_Down_Bar-1.png" id="8_vwobx"]
+[ext_resource type="Texture2D" uid="uid://de4m8a388ulal" path="res://Assets/Cool Down Bar/Cool_Down_Bar-2.png" id="9_grhqo"]
+[ext_resource type="Texture2D" uid="uid://duy8mjdc0xrrk" path="res://Assets/Cool Down Bar/Cool_Down_Bar-3.png" id="10_hcjdg"]
+[ext_resource type="Texture2D" uid="uid://ugoqsrpa50rs" path="res://Assets/Cool Down Bar/Cool_Down_Bar-4.png" id="11_u5dwp"]
+[ext_resource type="Texture2D" uid="uid://dsowgapp7x52x" path="res://Assets/Cool Down Bar/Cool_Down_Bar-5.png" id="12_awi7i"]
+[ext_resource type="Texture2D" uid="uid://cktj7svtufhfv" path="res://Assets/Cool Down Bar/Cool_Down_Bar-6.png" id="13_a3ho5"]
+[ext_resource type="Texture2D" uid="uid://d4iwomk71el1s" path="res://Assets/Cool Down Bar/Cool_Down_Bar-7.png" id="14_v17re"]
+[ext_resource type="Texture2D" uid="uid://dfld3pttbrhma" path="res://Assets/Cool Down Bar/Cool_Down_Bar-8.png" id="15_el4yo"]
+[ext_resource type="Texture2D" uid="uid://1mfl0mv26s5k" path="res://Assets/Cool Down Bar/Cool_Down_Bar-9.png" id="16_sswyv"]
+[ext_resource type="Texture2D" uid="uid://b1u52gahfa0yy" path="res://Assets/Cool Down Bar/Cool_Down_Bar-10.png" id="17_tb7sb"]
+[ext_resource type="Texture2D" uid="uid://darkwodnj1ay3" path="res://Assets/Cool Down Bar/Cool_Down_Bar-11.png" id="18_ujr1h"]
+[ext_resource type="Texture2D" uid="uid://dp5iqwiw68akg" path="res://Assets/Cool Down Bar/Cool_Down_Bar-12.png" id="19_uotlm"]
+[ext_resource type="Texture2D" uid="uid://5ymstqrvco1v" path="res://Assets/Cool Down Bar/Cool_Down_Bar-13.png" id="20_4pcqw"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_w3tg0"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("9_mdt4f")
+"texture": ExtResource("9_grhqo")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_gqwxx")
+"texture": ExtResource("10_hcjdg")
 }, {
 "duration": 1.0,
-"texture": ExtResource("11_1tjyb")
+"texture": ExtResource("11_u5dwp")
 }, {
 "duration": 1.0,
-"texture": ExtResource("12_3jx2d")
+"texture": ExtResource("12_awi7i")
 }, {
 "duration": 1.0,
-"texture": ExtResource("13_j5ukp")
+"texture": ExtResource("13_a3ho5")
 }, {
 "duration": 1.0,
-"texture": ExtResource("14_eu3es")
+"texture": ExtResource("14_v17re")
 }, {
 "duration": 1.0,
-"texture": ExtResource("15_r3pbq")
+"texture": ExtResource("15_el4yo")
 }, {
 "duration": 1.0,
-"texture": ExtResource("16_x8yob")
+"texture": ExtResource("16_sswyv")
 }, {
 "duration": 1.0,
-"texture": ExtResource("17_dwv72")
+"texture": ExtResource("17_tb7sb")
 }, {
 "duration": 1.0,
-"texture": ExtResource("18_dw04f")
+"texture": ExtResource("18_ujr1h")
 }, {
 "duration": 1.0,
-"texture": ExtResource("19_bsy7a")
+"texture": ExtResource("19_uotlm")
 }, {
 "duration": 1.0,
-"texture": ExtResource("20_n6q3l")
+"texture": ExtResource("20_4pcqw")
 }],
 "loop": false,
 "name": &"default",
@@ -72,39 +72,39 @@ animations = [{
 
 [node name="Game" type="Node2D"]
 texture_filter = 1
-script = ExtResource("1_och07")
+script = ExtResource("1_ly7es")
 
 [node name="Rooms" type="Node2D" parent="."]
-script = ExtResource("4")
+script = ExtResource("2_h2w77")
 
-[node name="Player" parent="." groups=["player"] instance=ExtResource("3_4rtyr")]
+[node name="Player" parent="." groups=["player"] instance=ExtResource("3_0akms")]
 
 [node name="InventoryUI" type="CanvasLayer" parent="."]
 scale = Vector2(1.5, 1.5)
 transform = Transform2D(1.5, 0, 0, 1.5, 0, 0)
 
-[node name="Inv_UI" parent="InventoryUI" instance=ExtResource("5_e2ith")]
+[node name="Inv_UI" parent="InventoryUI" instance=ExtResource("4_bdxsq")]
 offset_left = 124.0
 offset_top = -105.333
 offset_right = 124.0
 offset_bottom = -105.333
 
-[node name="DialogueBattleUI" parent="." instance=ExtResource("6_86hdy")]
+[node name="DialogueBattleUI" parent="." instance=ExtResource("5_fp5ma")]
 
-[node name="TimerUI" parent="." instance=ExtResource("4_nm2n1")]
+[node name="TimerUI" parent="." instance=ExtResource("6_qmv6f")]
 
 [node name="CooldownBarUI" type="Control" parent="."]
 visible = false
 layout_mode = 3
 anchors_preset = 0
 scale = Vector2(2, 2)
-script = ExtResource("7_jbfgh")
+script = ExtResource("7_x3fyu")
 metadata/_edit_use_anchors_ = true
 
 [node name="CoolDownBarBase" type="Sprite2D" parent="CooldownBarUI"]
 position = Vector2(-5.68434e-14, -11.5)
 scale = Vector2(0.009, 0.009)
-texture = ExtResource("8_x6884")
+texture = ExtResource("8_vwobx")
 
 [node name="CooldownBarSprite" type="AnimatedSprite2D" parent="CooldownBarUI"]
 position = Vector2(0, -11.5)
