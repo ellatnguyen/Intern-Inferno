@@ -212,7 +212,7 @@ func decrease_enemy_health(amount := 1) -> bool:
 			
 
 			if productivity_bar:
-				productivity_bar.increase_productivity_by_percent(0.2)
+				productivity_bar.increase_productivity_by_percent(0.08)
 
 			if is_inside_tree():
 				var player = get_tree().get_first_node_in_group("player")

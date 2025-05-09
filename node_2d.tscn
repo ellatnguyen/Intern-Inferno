@@ -94,8 +94,8 @@ offset_right = 564.0
 offset_bottom = 464.0
 
 [node name="DialogueBoxesWithDarkenedBackground" type="Sprite2D" parent="."]
-position = Vector2(575.227, 322.438)
-scale = Vector2(0.905274, 0.909895)
+position = Vector2(577.801, 330.938)
+scale = Vector2(0.901252, 0.933506)
 texture = ExtResource("2_jhs51")
 
 [node name="INT_Label" type="Label" parent="DialogueBoxesWithDarkenedBackground"]

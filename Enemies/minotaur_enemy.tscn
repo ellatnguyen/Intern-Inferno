@@ -157,7 +157,7 @@ shape = SubResource("CircleShape2D_bljew")
 scale = Vector2(0.07, 0.07)
 sprite_frames = SubResource("SpriteFrames_qgft7")
 animation = &"minotaur_overworld"
-frame_progress = 0.987199
+frame_progress = 0.472795
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -4)

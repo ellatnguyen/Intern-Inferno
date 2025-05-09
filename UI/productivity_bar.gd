@@ -3,7 +3,7 @@ extends AnimatedSprite2D
 @onready var timer: Timer = $"ProductivityTimer" 
 
 const TOTAL_FRAMES: int = 29
-var current_frame: int = 14  # Start around 50%
+var current_frame: int = 10  # Start around 40%
 var game_over: bool = false
 var is_full: bool = false
 
@@ -22,7 +22,7 @@ func _ready():
 	update_productivity_animation()
 
 	#timer.wait_time = 0.2
-	timer.wait_time = 0.5
+	timer.wait_time = 0.4
 	timer.start()
 	timer.timeout.connect(_on_productivity_timer_timeout)
 

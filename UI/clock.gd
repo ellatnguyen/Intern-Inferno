@@ -22,7 +22,8 @@ func _on_timer_timeout():
 func increment_frame():
 	current_frame += 1
 	if current_frame >= TOTAL_FRAMES:
-		end_work_day()
+		current_frame = 0
+		#end_work_day()
 
 func update_clock_animation():
 	if animation != "clockrun":
@@ -31,8 +32,8 @@ func update_clock_animation():
 	frame = current_frame  
 
 	print("Frame:", current_frame)  # Debug output
-
-func end_work_day():
-	print("Workday Over!")  
-	timer.stop()
-	await SceneTransition.change_scene_with_fade("res://UI/LoseScreen.tscn")
+#
+#func end_work_day():
+	#print("Workday Over!")  
+	#timer.stop()
+	#await SceneTransition.change_scene_with_fade("res://UI/LoseScreen.tscn")
