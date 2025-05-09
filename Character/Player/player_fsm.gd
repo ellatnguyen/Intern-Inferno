@@ -78,10 +78,8 @@ func _enter_state(_prev: int, new_state: int) -> void:
 			player.scale = Vector2(1, 1)  # Normal scale
 		states.move:
 			# Initial animation will be set in update_movement_animation()
-			# Set default animation for initial state
 			animated_sprite.play("move")
 			player.scale = Vector2(2, 2)  # 2x scale
-			# Animation will be updated on next _state_logic call
 
 func _exit_state(_state_exited: int) -> void:
 	pass

@@ -63,7 +63,7 @@ func increase_productivity_by_percent(percent: float):
 		if dialogue_battle:
 			dialogue_battle.reset_battle()
 
-		await SceneTransition.change_scene_with_fade("res://UI/WinScreen.tscn")
+		await SceneTransition.change_scene_with_fade("res://UI/EndCutscene.tscn")
 
 func decrement_frame():
 	current_frame -= 1
@@ -100,7 +100,7 @@ func productivity_win():
 
 
 	timer.stop()
-	await SceneTransition.change_scene_with_fade("res://UI/WinScreen.tscn")  # Update path
+	await SceneTransition.change_scene_with_fade("res://UI/EndCutscene.tscn")  # Update path
 
 func _on_productivity_timer_timeout():
 	var decrease_percent = 0.005  # or whatever makes sense for your pacing

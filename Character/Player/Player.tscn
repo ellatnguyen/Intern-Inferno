@@ -59,6 +59,24 @@
 [ext_resource type="Texture2D" uid="uid://dpbh1fhdiprnk" path="res://Assets/Character Assets/Main Character MC/AnimatdOnMapSprite/WalkcycleprodotypeWalkingLeft/WalkcyclePrototypeLEFT34.png" id="37_bfllh"]
 [ext_resource type="Texture2D" uid="uid://bsr43xad45bap" path="res://Assets/Character Assets/Main Character MC/AnimatdOnMapSprite/WalkcycleprodotypeWalkingLeft/WalkcyclePrototypeLEFT35.png" id="38_dbgka"]
 [ext_resource type="Texture2D" uid="uid://ch8cgte1mn3sh" path="res://Assets/Character Assets/Main Character MC/AnimatdOnMapSprite/WalkcycleprodotypeWalkingLeft/WalkcyclePrototypeLEFT36.png" id="39_hfe7s"]
+[ext_resource type="Texture2D" uid="uid://c3o5t3kh4cp5c" path="res://Assets/Character Assets/Main Character MC/AnimatdOnMapSprite/StillSpritesLeft,RIght,Foward,Away/STILLSPRITES_0002_Layer-25.png" id="41_4boxo"]
+[ext_resource type="Texture2D" uid="uid://c3o1syb5sy00o" path="res://Assets/Character Assets/Main Character MC/AnimatdOnMapSprite/MCWALKCYCLELEFT/MCWalkcycleLEFT1.png" id="41_v0a7f"]
+[ext_resource type="Texture2D" uid="uid://bqw1d1lndhxpi" path="res://Assets/Character Assets/Main Character MC/AnimatdOnMapSprite/MCWALKCYCLELEFT/MCWalkcycleLEFT2.png" id="42_o7xpu"]
+[ext_resource type="Texture2D" uid="uid://in2fgvttvbsn" path="res://Assets/Character Assets/Main Character MC/AnimatdOnMapSprite/MCWALKCYCLELEFT/MCWalkcycleLEFT3.png" id="43_4b6rx"]
+[ext_resource type="Texture2D" uid="uid://c6nx4choc1udf" path="res://Assets/Character Assets/Main Character MC/AnimatdOnMapSprite/MCWALKCYCLELEFT/MCWalkcycleLEFT4.png" id="44_2horo"]
+[ext_resource type="Texture2D" uid="uid://btuus45regux7" path="res://Assets/Character Assets/Main Character MC/AnimatdOnMapSprite/MCWALKCYCLELEFT/MCWalkcycleLEFT5.png" id="45_ho04y"]
+[ext_resource type="Texture2D" uid="uid://cnlkxtjbnnkce" path="res://Assets/Character Assets/Main Character MC/AnimatdOnMapSprite/MCWALKCYCLELEFT/MCWalkcycleLEFT6.png" id="46_r2y7f"]
+[ext_resource type="Texture2D" uid="uid://bmk4t8x2woppv" path="res://Assets/Character Assets/Main Character MC/AnimatdOnMapSprite/MCWALKCYCLELEFT/MCWalkcycleLEFT7.png" id="47_p6sgr"]
+[ext_resource type="Texture2D" uid="uid://c5jiaasv61p8w" path="res://Assets/Character Assets/Main Character MC/AnimatdOnMapSprite/MCWALKCYCLELEFT/MCWalkcycleLEFT8.png" id="48_w110o"]
+[ext_resource type="Texture2D" uid="uid://c5og4odysj16y" path="res://Assets/Character Assets/Main Character MC/AnimatdOnMapSprite/MCWALKCYCLELEFT/MCWalkcycleLEFT9.png" id="49_bxkc5"]
+[ext_resource type="Texture2D" uid="uid://dko8ylslb5s28" path="res://Assets/Character Assets/Main Character MC/AnimatdOnMapSprite/MCWALKCYCLELEFT/MCWalkcycleLEFT10.png" id="50_o2gnm"]
+[ext_resource type="Texture2D" uid="uid://dwu4dk3yqk8ag" path="res://Assets/Character Assets/Main Character MC/AnimatdOnMapSprite/MCWALKCYCLELEFT/MCWalkcycleLEFT11.png" id="51_xk5ie"]
+[ext_resource type="Texture2D" uid="uid://boideo2y0gwli" path="res://Assets/Character Assets/Main Character MC/AnimatdOnMapSprite/MCWALKCYCLELEFT/MCWalkcycleLEFT12.png" id="52_41ckt"]
+[ext_resource type="Texture2D" uid="uid://batd3tjiksqhx" path="res://Assets/Character Assets/Main Character MC/AnimatdOnMapSprite/MCWALKCYCLELEFT/MCWalkcycleLEFT13.png" id="53_w0jb6"]
+[ext_resource type="Texture2D" uid="uid://c7d070xdyamyk" path="res://Assets/Character Assets/Main Character MC/AnimatdOnMapSprite/MCWALKCYCLELEFT/MCWalkcycleLEFT14.png" id="54_63q0q"]
+[ext_resource type="Texture2D" uid="uid://i1jchgqxkf61" path="res://Assets/Character Assets/Main Character MC/AnimatdOnMapSprite/MCWALKCYCLELEFT/MCWalkcycleLEFT15.png" id="55_hj1vb"]
+[ext_resource type="Texture2D" uid="uid://dhu6get700q4w" path="res://Assets/Character Assets/Main Character MC/AnimatdOnMapSprite/MCWALKCYCLELEFT/MCWalkcycleLEFT16.png" id="56_jxbk4"]
+[ext_resource type="Texture2D" uid="uid://boglwa6ivoxjn" path="res://Assets/Character Assets/Main Character MC/AnimatdOnMapSprite/MCWALKCYCLELEFT/MCWalkcycleLEFT17.png" id="57_wjo31"]
 [ext_resource type="Texture2D" uid="uid://dek6gskp36hix" path="res://Art/Main Character/upward/MCwalkcycleWalkinupward1.png" id="60_elem4"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_x1iip"]
@@ -130,7 +148,7 @@ animations = [{
 "texture": ExtResource("3_m3jx8")
 }],
 "loop": true,
-"name": &"idle",
+"name": &"OLDIDLE",
 "speed": 5.0
 }, {
 "frames": [{
@@ -241,6 +259,70 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("39_hfe7s")
+}],
+"loop": true,
+"name": &"OLDMOVE",
+"speed": 25.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("41_4boxo")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("41_v0a7f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_o7xpu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_4b6rx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_2horo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_ho04y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_r2y7f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_p6sgr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_w110o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_bxkc5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_o2gnm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_xk5ie")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_41ckt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_w0jb6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_63q0q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_hj1vb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_jxbk4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_wjo31")
 }],
 "loop": true,
 "name": &"move",
