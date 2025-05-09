@@ -133,7 +133,7 @@ func consume_selected_item():
 		elif item_name=="fahrenheit":
 			var player = get_tree().get_first_node_in_group("player")
 			if player:
-				player.speed_multiplier = 2.0
+				player.speed_multiplier = 1.8
 				player.fahrenheit_timer.start()
 				print ("!!!! Fahrenheit consumed! Speed doubled")
 				WwiseManager.trigger_energy_drink(true)

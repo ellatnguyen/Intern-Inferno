@@ -1,7 +1,8 @@
-[gd_scene load_steps=18 format=3 uid="uid://bfhymvscy3g8h"]
+[gd_scene load_steps=19 format=3 uid="uid://bfhymvscy3g8h"]
 
 [ext_resource type="Script" path="res://dialogue_window.gd" id="1_cn4pr"]
 [ext_resource type="Texture2D" uid="uid://108bpp23fgbs" path="res://Assets/dialogue boxes with darkened background.PNG" id="2_jhs51"]
+[ext_resource type="FontFile" uid="uid://b6vkv518jbaxh" path="res://Assets/Font/Pangolin-Regular.ttf" id="3_s0jex"]
 [ext_resource type="Texture2D" uid="uid://bvj8rrosv83bb" path="res://Assets/Character Assets/NPCs/Bear Bones (enemy NPC)/Bear Bones, Enemy NPC Incombat Pose.png" id="3_uw0vv"]
 [ext_resource type="Texture2D" uid="uid://le726garw2um" path="res://Assets/Character Assets/Main Character MC/INDialougueMCReactions/NuetralINdialougeposeMCTransparetnBackround.png" id="4_pu86p"]
 [ext_resource type="Texture2D" uid="uid://bn6031eo2287c" path="res://Assets/ComplianceBar/compliance0.PNG" id="5_k8o04"]
@@ -93,39 +94,47 @@ offset_right = 564.0
 offset_bottom = 464.0
 
 [node name="DialogueBoxesWithDarkenedBackground" type="Sprite2D" parent="."]
-position = Vector2(575.764, 319.438)
-scale = Vector2(0.899747, 0.90434)
+position = Vector2(577.801, 330.938)
+scale = Vector2(0.901252, 0.933506)
 texture = ExtResource("2_jhs51")
 
 [node name="INT_Label" type="Label" parent="DialogueBoxesWithDarkenedBackground"]
 modulate = Color(0, 0, 0, 1)
-offset_left = -366.507
-offset_top = 41.5353
-offset_right = -38.5074
-offset_bottom = 64.5353
+offset_left = -265.0
+offset_top = 42.0
+offset_right = -44.0
+offset_bottom = 65.0
 scale = Vector2(1.5, 1.5)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.223529)
+theme_override_fonts/font = ExtResource("3_s0jex")
+theme_override_font_sizes/font_size = 20
 text = "INTIMIDATION"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="PER_Label" type="Label" parent="DialogueBoxesWithDarkenedBackground"]
 modulate = Color(0, 0, 0, 1)
-offset_left = -369.842
-offset_top = -49.1386
-offset_right = -41.8417
-offset_bottom = -26.1386
+offset_left = -265.0
+offset_top = -45.6826
+offset_right = -45.0
+offset_bottom = -22.6826
 scale = Vector2(1.5, 1.5)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.223529)
+theme_override_fonts/font = ExtResource("3_s0jex")
+theme_override_font_sizes/font_size = 20
 text = "PERSUASION"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="LEAVE_Label" type="Label" parent="DialogueBoxesWithDarkenedBackground"]
 modulate = Color(0, 0, 0, 1)
-offset_left = -317.605
-offset_top = 128.892
-offset_right = 10.3952
-offset_bottom = 151.892
+offset_left = -261.0
+offset_top = 131.894
+offset_right = -9.0
+offset_bottom = 154.894
 mouse_filter = 0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.223529)
+theme_override_fonts/font = ExtResource("3_s0jex")
 text = "LEAVE BATTLE"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -143,6 +152,8 @@ offset_right = -1119.0
 offset_bottom = -853.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.223529)
+theme_override_fonts/font = ExtResource("3_s0jex")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2

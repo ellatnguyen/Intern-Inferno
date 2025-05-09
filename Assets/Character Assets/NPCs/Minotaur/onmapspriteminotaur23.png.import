@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cngcsrxicsgin"
-path="res://.godot/imported/onmapspriteminotaur15.png-869058fdb8c731ff7e2e1e79c0daca2a.ctex"
+uid="uid://dxkmst8x5217e"
+path="res://.godot/imported/onmapspriteminotaur23.png-83ddbc7ee26c9f55d565a6fb413d05bb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Character Assets/NPCs/Minotaur/onmapspriteminotaur15.png"
-dest_files=["res://.godot/imported/onmapspriteminotaur15.png-869058fdb8c731ff7e2e1e79c0daca2a.ctex"]
+source_file="res://Assets/Character Assets/NPCs/Minotaur/onmapspriteminotaur23.png"
+dest_files=["res://.godot/imported/onmapspriteminotaur23.png-83ddbc7ee26c9f55d565a6fb413d05bb.ctex"]
 
 [params]
 
